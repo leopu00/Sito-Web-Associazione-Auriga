@@ -1,0 +1,16 @@
+# Node / build
+node_modules/
+dist/
+.vercel/
+.netlify/
+
+# Astro
+.astro/
+
+# Env / OS
+.env
+.env.*
+.DS_Store
+
+# Editor
+.vscode/
