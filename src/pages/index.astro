@@ -1,10 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionCards from "../components/SectionCards.astro";
 ---
-
 <BaseLayout title="Auriga — Benvenuti">
-  <section class="p-10">
-    <h1 class="text-4xl font-bold text-red-500">Ciao Tailwind!</h1>
-    <p class="mt-4 text-slate-600">Questo è il sito dell'Associazione Auriga.</p>
+  <Hero />
+  <SectionCards />
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold">Chi è Auriga</h2>
+    <p class="mt-3 text-slate-700 max-w-3xl">
+      Auriga promuove attività culturali, sportive e formative: corsi, teatro, poesia, eventi e progetti per la comunità.
+    </p>
   </section>
 </BaseLayout>
