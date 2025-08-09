@@ -1,6 +1,6 @@
 ---
 const { title = "Auriga" } = Astro.props;
-import "../styles/global.css"; // importa Tailwind qui
+import "../styles/global.css";
 ---
 
 <html lang="it">
@@ -9,7 +9,29 @@ import "../styles/global.css"; // importa Tailwind qui
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-white text-slate-900">
-    <slot />  <!-- Qui verrà iniettato il contenuto delle pagine -->
+  <body class="min-h-screen flex flex-col bg-white text-slate-900">
+    <header class="border-b bg-white">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="font-semibold text-lg">Auriga</a>
+        <nav class="flex gap-6 text-sm">
+          <a href="/chi-siamo" class="hover:underline">Chi siamo</a>
+          <a href="/corsi" class="hover:underline">Corsi</a>
+          <a href="/teatro" class="hover:underline">Teatro</a>
+          <a href="/poesia" class="hover:underline">Poesia</a>
+          <a href="/eventi" class="hover:underline">Eventi</a>
+          <a href="/contatti" class="hover:underline">Contatti</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t">
+      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-600">
+        © {new Date().getFullYear()} Associazione Auriga — Tutti i diritti riservati
+      </div>
+    </footer>
   </body>
 </html>
