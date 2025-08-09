@@ -1,0 +1,15 @@
+---
+const { title = "Auriga" } = Astro.props;
+import "../styles/global.css"; // importa Tailwind qui
+---
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-white text-slate-900">
+    <slot />  <!-- Qui verrà iniettato il contenuto delle pagine -->
+  </body>
+</html>
