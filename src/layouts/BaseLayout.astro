@@ -9,8 +9,8 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col bg-white text-slate-900">
-    <header class="border-b bg-white">
+  <body class="min-h-screen flex flex-col bg-black text-white">
+    <header class="border-b border-slate-800 bg-black text-white">
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" class="font-semibold text-lg">Auriga</a>
         <nav class="flex gap-6 text-sm">
@@ -28,8 +28,8 @@ import "../styles/global.css";
       <slot />
     </main>
 
-    <footer class="border-t">
-      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-600">
+    <footer class="border-t border-slate-800 bg-black text-slate-300">
+      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-400">
         © {new Date().getFullYear()} Associazione Auriga — Tutti i diritti riservati
       </div>
     </footer>
