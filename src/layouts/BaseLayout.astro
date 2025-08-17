@@ -1,5 +1,5 @@
 ---
-const { title = "Auriga", headerTheme = "dark" } = Astro.props;
+const { title = "Auriga", headerTheme = "dark", pageNamespace = "page", pageClass = "", pageBg = "dark" } = Astro.props;
 import "../styles/global.css";
 ---
 
@@ -28,7 +28,7 @@ import "../styles/global.css";
       </div>
     </header>
 
-    <main class="flex-1">
+    <main class={`flex-1 min-h-screen ${pageClass}`} data-page-bg={pageBg}>
       <slot />
     </main>
 
@@ -37,5 +37,46 @@ import "../styles/global.css";
         © {new Date().getFullYear()} Associazione Auriga — Tutti i diritti riservati
       </div>
     </footer>
+
+    <style is:global>
+      /* Transizione leggerissima per mitigare il flash bianco */
+    </style>
+
+    <script is:inline>
+      // Simple full-page fade overlay across navigations (no Barba)
+      (function () {
+        const CURRENT_THEME = /* astro inject */ "{pageBg}"; // 'light' | 'dark'
+        const PREV_KEY = 'aurigaPrevTheme';
+
+        const prevTheme = sessionStorage.getItem(PREV_KEY) || CURRENT_THEME;
+        const prevColor = prevTheme === 'light' ? '#ffffff' : '#000000';
+
+        // Ensure body matches current page theme immediately
+        document.body.style.backgroundColor = (CURRENT_THEME === 'light') ? '#ffffff' : '#000000';
+
+        // Create overlay using the previous page color, then fade it out
+        const overlay = document.createElement('div');
+        overlay.setAttribute('aria-hidden', 'true');
+        Object.assign(overlay.style, {
+          position: 'fixed',
+          inset: '0',
+          backgroundColor: prevColor,
+          pointerEvents: 'none',
+          zIndex: '9999',
+          opacity: '1',
+          transition: 'opacity 500ms ease'
+        });
+        document.body.appendChild(overlay);
+        // Double rAF to guarantee first paint at opacity:1
+        requestAnimationFrame(() => { requestAnimationFrame(() => { overlay.style.opacity = '0'; }); });
+        overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+
+        // Persist current theme for next navigation
+        const save = () => { sessionStorage.setItem(PREV_KEY, CURRENT_THEME); };
+        window.addEventListener('pagehide', save, { once: true });
+        window.addEventListener('beforeunload', save, { once: true });
+        document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') save(); });
+      })();
+    </script>
   </body>
 </html>
