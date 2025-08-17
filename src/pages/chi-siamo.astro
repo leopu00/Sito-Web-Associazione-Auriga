@@ -5,51 +5,52 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <section class="max-w-6xl mx-auto px-4 py-12 bg-white text-black pt-20">
   <h1 class="text-3xl md:text-4xl font-bold mb-6">Chi siamo</h1>
 
-  <div class="grid md:grid-cols-1 gap-8 items-start">
-    <p class="leading-relaxed">
-      <span class="font-semibold">L’Associazione Auriga</span> è un centro di ricerca artistica attivo nel
-      promuovere la pratica dell’<strong>Arte Drammatica</strong> e della
-      <strong>Sprachgestaltung</strong> (formazione artistica del linguaggio).
-    </p>
-  </div>
-
-  <!-- Griglia: solo testo (occupando spazio pieno su mobile, 2/3 su desktop), con box riconoscimenti a destra -->
-  <div class="mt-8 space-y-6">
-    <p class="leading-relaxed">
-      Le attività di Auriga prendono forma in diversi contesti formativi e operativi:
-    </p>
-
-    <ul class="list-disc list-inside leading-relaxed">
-      <li>
-        <strong>Accademia Aldo Bargero</strong>, Oriago di Mira (VE)
-      </li>
-      <li>
-        Spazi della <strong>Fondazione “Culturasì”</strong>, Roma
-      </li>
-      <li>
-        Collaborazione con l’<strong>Università La Sapienza</strong> — Dipartimento Teatro
-      </li>
-    </ul>
-
-    <p class="leading-relaxed">
-      Il nostro lavoro intreccia ricerca, didattica e produzione artistica, con percorsi
-      continuativi e intensivi aperti a diverse età e livelli di esperienza.
-    </p>
-  </div>
-
-  <div class="mt-12">
-    <div class="border-2 border-black/10 rounded-xl p-4 text-sm bg-white shadow-sm max-w-[60%]">
-      <h2 class="text-xl font-semibold mb-3">Riconoscimenti</h2>
-      <p class="leading-relaxed">
-        Il percorso di Auriga è riconosciuto dalla
-        <strong>Sezione delle Arti della Parola e della Musica</strong> presso il
-        <strong>Goetheanum</strong> di Dornach (CH).
+  <div class="grid md:grid-cols-3 gap-8 items-start">
+    <div class="space-y-6 md:col-span-2">
+      <p class="leading-relaxed text-lg">
+        <span class="font-semibold">L’Associazione Auriga</span> è un centro di ricerca artistica attivo nel
+        promuovere la pratica dell’<strong>Arte Drammatica</strong> e della
+        <strong>Sprachgestaltung</strong> (formazione artistica del linguaggio).
       </p>
-      <p class="leading-relaxed mt-2">
-        I nostri insegnanti partecipano regolarmente al
-        coordinamento internazionale dei percorsi di formazione.
+      <div class="mb-15"></div>
+      <p class="leading-relaxed">
+        Le attività di Auriga prendono forma in diversi contesti formativi e operativi:
+      </p>
+
+      <ul class="list-disc list-inside leading-relaxed">
+        <li>
+          <strong>Accademia Aldo Bargero</strong>, Oriago di Mira (VE)
+        </li>
+        <li>
+          Spazi della <strong>Fondazione “Culturasì”</strong>, Roma
+        </li>
+        <li>
+          Collaborazione con l’<strong>Università La Sapienza</strong> — Dipartimento Teatro
+        </li>
+      </ul>
+
+      <div class="mb-10"></div>
+      <p class="leading-relaxed">
+        Il nostro lavoro intreccia ricerca, didattica e produzione artistica, con percorsi
+        continuativi e intensivi aperti a diverse età e livelli di esperienza.
       </p>
     </div>
+
+    <aside class="md:col-start-3 self-start">
+      <div class="border-2 border-black/10 rounded-xl p-4 text-sm bg-white shadow-sm">
+        <!-- <h2 class="text-xl font-semibold mb-3">Riconoscimenti</h2> -->
+        <img src="/img/goetheanum-1.jpg" alt="Goetheanum" class="mb-3 rounded-md" />
+        <p class="leading-relaxed">
+          Il percorso di Auriga è riconosciuto dalla
+          <strong>Sezione delle Arti della Parola e della Musica</strong> presso il
+          <strong>Goetheanum</strong> di Dornach (CH).
+        </p>
+        <!-- <p class="leading-relaxed mt-2">
+          I nostri insegnanti partecipano regolarmente al
+          coordinamento internazionale dei percorsi di formazione.
+        </p> -->
+      </div>
+    </aside>
   </div>
 
   <!-- Soci fondatori -->
