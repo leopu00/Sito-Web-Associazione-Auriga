@@ -14,3 +14,7 @@ dist/
 
 # Editor
 .vscode/
+
+# Generated metadata / types
+**/_metadata.json
+src/types.d.ts
