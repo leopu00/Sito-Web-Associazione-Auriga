@@ -1,9 +1,99 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Teatro — Auriga">
-  <section class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-4">Teatro</h1>
-    <p>Spettacoli, laboratori e iniziative teatrali per promuovere la cultura e la creatività.</p>
+
+<BaseLayout title="Teatro — Auriga" headerTheme="dark" pageNamespace="teatro" pageClass="bg-black text-white" pageBg="light">
+  <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
+    <h1 class="text-3xl font-bold mb-6">Teatro</h1>
+    <p class="text-lg leading-relaxed mb-8">
+      Gli spettacoli teatrali realizzati da <strong>APS Auriga</strong> negli ultimi anni:
+    </p>
+    <!-- Sezione spettacolo: La tempesta continua -->
+    <section id="spettacolo-tempesta" class="bg-black">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+        <div class="border-2 border-white rounded-lg p-6">
+          <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+            <img
+              src="/img/tempesta-continua.jpg"
+              alt="La tempesta continua"
+              class="w-full h-64 md:h-96 object-cover rounded-lg"
+            />
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-white">La tempesta continua</h2>
+              <p class="mt-3 text-slate-300">
+                Uno studio scenico sulla parola poetica tra vento, silenzi e ripartenze: immagini sonore, ritmo e coralità al centro dell’azione.
+              </p>
+              <a
+                href="/teatro/tempesta-continua"
+                class="mt-6 inline-block px-5 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition-colors"
+              >
+                Maggiori informazioni
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione spettacolo: La battaglia delle rane e dei topi -->
+    <section id="spettacolo-battaglia" class="bg-black">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+        <div class="border-2 border-white rounded-lg p-6">
+          <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-white">La battaglia delle rane e dei topi</h2>
+              <p class="mt-3 text-slate-300">
+                Dalla tradizione classica, una satira epico‑burlesca: ritmo, fonemi e giochi vocali per un racconto corale e brillante.
+              </p>
+              <a
+                href="/teatro/battaglia-rane-topi"
+                class="mt-6 inline-block px-5 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition-colors"
+              >
+                Maggiori informazioni
+              </a>
+            </div>
+            <img
+              src="/img/battaglia-rane.jpg"
+              alt="La battaglia delle rane e dei topi"
+              class="w-full h-64 md:h-96 object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione spettacolo: Il Paradiso -->
+    <section id="spettacolo-paradiso" class="bg-black">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+        <div class="border-2 border-white rounded-lg p-6">
+          <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+            <img
+              src="/img/paradiso.jpg"
+              alt="Il Paradiso"
+              class="w-full h-64 md:h-96 object-cover rounded-lg"
+            />
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-white">Il Paradiso</h2>
+              <p class="mt-3 text-slate-300">
+                Un itinerario nella terza cantica dantesca: luce, parola e musica per una drammaturgia della visione.
+              </p>
+              <a
+                href="/teatro/paradiso"
+                class="mt-6 inline-block px-5 py-3 border border-white text-white rounded hover:bg-white hover:text-black transition-colors"
+              >
+                Maggiori informazioni
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
+  <style is:global>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
 </BaseLayout>
