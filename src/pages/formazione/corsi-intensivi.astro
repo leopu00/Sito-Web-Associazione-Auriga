@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Corsi intensivi — Auriga" headerTheme="light" pageNamespace="corsi-intensivi" pageClass="bg-white text-black" pageBg="light">
+  <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
+    <h1 class="text-3xl font-bold mb-6">Corsi intensivi</h1>
+    <div class="flex justify-center mb-6">
+      <img src="/img/sapienza-logo.png" alt="Corsi intensivi" class="w-[400px] h-auto object-contain mx-auto" style="max-width:400px;" />
+    </div>
+    <p class="text-lg leading-relaxed text-justify">
+    Dal <strong>2025</strong>, l’APS Auriga, grazie a una <strong>convenzione triennale</strong> con l’Università <strong>“La Sapienza” di Roma</strong>, organizza <strong>corsi intensivi</strong> di circa <strong>30 incontri</strong> in un <strong>trimestre</strong>, dedicati agli studenti dell’Università.<br></p>
+<div class="mb-10"></div>
+<div class="w-full mb-6 rounded-lg overflow-hidden h-64 md:h-80">
+      <div class="relative w-full h-full">
+        <div class="flex transition-transform duration-700 h-full" id="carousel-permanenti">
+          <img src="/img/CorsoIntensivoSapienza.jpg" alt="Corsi permanenti – 1" class="w-full h-full object-contain" />
+          <img src="/img/CorsoIntensivoSapienza1.jpg" alt="Corsi permanenti – 2" class="w-full h-full object-contain" />
+          <img src="/img/CorsoIntensivoSapienza2.jpg" alt="Corsi permanenti – 3" class="w-full h-full object-contain" />
+        </div>
+        <!-- Frecce -->
+        <button onclick="movePermanenti(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
+        <button onclick="movePermanenti(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
+      </div>
+    </div>
+
+    <script is:inline>
+      let idxP = 0;
+      const carP = document.getElementById('carousel-permanenti');
+      const totP = carP ? carP.children.length : 0;
+      function movePermanenti(d) {
+        if (!carP || totP === 0) return;
+        idxP = (idxP + d + totP) % totP;
+        carP.style.transform = `translateX(-${idxP * 100}%)`;
+      }
+    </script>
+    <div class="mb-10"></div>
+
+    <p class="text-lg leading-relaxed text-justify"></p>Le sedi: <strong>Teatro Ateneo della Sapienza</strong> e <strong><a href="https://fondazioneculturasi.it/fondazione/" target="_blank" class="text-blue-500 underline font-bold">Fondazione Culturasì</a></strong> (Città dell’Altra Economia, <strong>Testaccio</strong>).
+    </p>
+    <div class="w-full max-w-4xl mx-auto mt-10">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.8125799552986!2d12.472194866131586!3d41.875378665972534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6028ab731951%3A0x8d4ffbd95d854f43!2sCitt%C3%A0%20dell&#39;Altra%20Economia!5e0!3m2!1sen!2sit!4v1755550944241!5m2!1sen!2sit"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <p class="mt-2 text-center">
+        <a href="https://maps.app.goo.gl/ZeiEjdKukN8AWKah6" target="_blank" class="text-blue-500 underline">
+          Apri in Google Maps
+        </a>
+      </p>
+    </div>
+    <div class="mt-10 flex justify-between items-center max-w-2xl mx-auto w-full">
+      <a
+        href="/formazione"
+        class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors"
+      >
+        Indietro
+      </a>
+      <a
+        href="/contatti"
+        class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors"
+      >
+        Contattaci per ulteriori informazioni
+      </a>
+    </div>
+  </section>
+  <style is:global>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
+</BaseLayout>
