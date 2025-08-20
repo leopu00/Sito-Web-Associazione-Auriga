@@ -2,16 +2,38 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Triennale di Arte della Parola — Auriga" headerTheme="light" pageNamespace="triennale-arte-parola" pageClass="bg-white text-black" pageBg="light">
+<BaseLayout title="Corsi permanenti — Auriga" headerTheme="light" pageNamespace="corsi-permanenti" pageClass="bg-white text-black" pageBg="light">
   <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
-    <h1 class="text-3xl font-bold mb-6">Triennale di Arte della Parola</h1>
-    <div class="w-full mb-6 rounded-lg overflow-hidden h-64 md:h-80">
-      <img src="/img/corso-cla.jpg" alt="Triennale di Arte della Parola" class="w-full h-full object-cover object-center" />
-    </div>
+    <h1 class="text-3xl font-bold mb-6">Corsi permanenti</h1>
     <p class="text-lg leading-relaxed text-justify">
       Fin dal <strong>2016</strong>, APS Auriga organizza corsi della durata <strong>triennale</strong>, con incontri a cadenza <strong>mensile</strong>,
-      per tutti coloro che desiderano specializzarsi in <strong>Sprachgestaltung</strong> in lingua italiana e <strong>Arte drammatica</strong>.<br>
-      I corsi sono organizzati in collaborazione con l’
+      per tutti coloro che desiderano specializzarsi in <strong>Sprachgestaltung</strong> in lingua italiana e <strong>Arte drammatica</strong>.<br></p>
+    <div class="mb-10"></div>
+    <div class="w-full mb-6 rounded-lg overflow-hidden h-64 md:h-80">
+      <div class="relative w-full h-full">
+        <div class="flex transition-transform duration-700 h-full" id="carousel-permanenti">
+          <img src="/img/CorsoPermanente1.jpg" alt="Corsi permanenti – 1" class="w-full h-full object-contain" />
+          <img src="/img/CorsoPermanente2.jpg" alt="Corsi permanenti – 2" class="w-full h-full object-contain" />
+          <img src="/img/CorsoPermanente3.jpg" alt="Corsi permanenti – 3" class="w-full h-full object-contain" />
+        </div>
+        <!-- Frecce -->
+        <button onclick="movePermanenti(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
+        <button onclick="movePermanenti(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
+      </div>
+    </div>
+
+    <script is:inline>
+      let idxP = 0;
+      const carP = document.getElementById('carousel-permanenti');
+      const totP = carP ? carP.children.length : 0;
+      function movePermanenti(d) {
+        if (!carP || totP === 0) return;
+        idxP = (idxP + d + totP) % totP;
+        carP.style.transform = `translateX(-${idxP * 100}%)`;
+      }
+    </script>
+    <div class="mb-10"></div>
+      <p class="text-lg leading-relaxed text-justify">I corsi sono organizzati in collaborazione con l’
       <strong>
         <a href="https://www.accademiaaldobargero.com/" target="_blank" rel="noopener" class="text-blue-600 underline"
         >Accademia Aldo Bargero</a>
