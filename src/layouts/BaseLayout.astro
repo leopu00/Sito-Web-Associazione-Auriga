@@ -1,5 +1,5 @@
 ---
-const { title = "Auriga", headerTheme = "dark", pageNamespace = "page", pageClass = "", pageBg = "dark" } = Astro.props;
+const { title = "Auriga", headerTheme = "dark", pageNamespace = "page", pageClass = "", pageBg = "dark", headerClass = "", headerStyle = "" } = Astro.props;
 import "../styles/global.css";
 ---
 
@@ -11,7 +11,7 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/LOGO-2.svg" />
   </head>
   <body class={`min-h-screen flex flex-col ${headerTheme === "dark" ? "bg-black text-white" : "bg-white text-black"}`}>
-    <header class={`border-b ${headerTheme === "dark" ? "border-slate-800 bg-black text-white" : "border-slate-200 bg-white text-black"}`}>
+    <header class={`border-b ${headerTheme === "dark" ? "border-slate-800 bg-black text-white" : "border-slate-200 bg-white text-black"} ${headerClass}`} style={headerStyle}>
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center h-full">
           <img src="/LOGO-2.svg" alt="Auriga Logo" class="h-full" />

@@ -1,19 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="formazione — Auriga" headerTheme="light" pageClass="bg-[#ee0700] text-white" pageBg="dark">
+<BaseLayout title="formazione — Auriga" headerTheme="light" pageClass="bg-[#faf7f2] text-black" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2" pageBg="light">
     <section class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-4">Formazione</h1>
+    <h1  class="text-3xl font-bold mb-4 text-[#7c2935]">Formazione</h1>
     <div class="mt-12"></div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-transparent border-2 border-white rounded-lg p-6 shadow-lg w-full text-white">
-          <a href="/formazione/corsi-permanenti" class="text-xl font-semibold text-[#65FF1C] hover:underline block mb-2">
+        <div class="bg-transparent border-2 border-black rounded-lg p-6 shadow-lg w-full text-black">
+          <a href="/formazione/corsi-permanenti" class="text-xl font-semibold text-[#7c2935] hover:underline block mb-2">
             Corsi permanenti
           </a>
           <p>Corsi <strong>triennali mensili</strong> di Sprachgestaltung e Arte drammatica, in collaborazione con l’Accademia <strong>“Aldo Bargero”</strong>.</p>
         </div>
-        <div class="bg-transparent border-2 border-white rounded-lg p-6 shadow-lg w-full text-white">
-          <a href="/formazione/corsi-intensivi" class="text-xl font-semibold text-[#65FF1C] hover:underline block mb-2">
+        <div class="bg-transparent border-2 border-black rounded-lg p-6 shadow-lg w-full text-black">
+          <a href="/formazione/corsi-intensivi" class="text-xl font-semibold text-[#7c2935] hover:underline block mb-2">
             Corsi intensivi
           </a>
           <p>Corsi <strong>trimestrali intensivi</strong> per studenti universitari, in collaborazione con <strong>La Sapienza</strong>.</p>
@@ -27,4 +27,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p>Il <strong>fonema</strong> - vocalico e consonantico -, l’<strong>immagine sonora</strong>, il susseguirsi ritmico delle sillabe e dei versi, la frase nella sua costruzione, le atmosfere suggerite dalle risonanze prevalenti nel <strong>testo poetico</strong>, e tanti altri aspetti del <strong>linguaggio</strong> sempre meno presenti in quegli anni di trasformazione, tornano a divenire strumenti espressivi grazie a nuovi punti di vista che colgono la sostanza conoscitiva vivente nel linguaggio.</p>
     </div>
   </section>
+    <style is:global>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
 </BaseLayout>
