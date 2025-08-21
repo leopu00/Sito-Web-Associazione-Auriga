@@ -1,9 +1,75 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Poesia — Auriga">
+<BaseLayout title="Poesia — Auriga" headerTheme="light"  pageClass="bg-[#faf7f2] text-white"  headerClass="bg-[#faf7f2]" pageBg="light">
   <section class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-4">Poesia</h1>
-    <p>Eventi e incontri dedicati alla poesia, con letture, workshop e momenti di condivisione.</p>
+    <h1 class="text-3xl font-bold mb-4 text-[#7c2935]">Poesia</h1>
+    <div class="space-y-8 text-black">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2 text-[#7c2935]">Premio Paolo Giuranna</h2>
+        <p>
+          L’APS Auriga, in collaborazione con la Fondazione Culturasì, la Società “Dante Alighieri”,
+          l’Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”, il Dipartimento di Lettere e
+          Culture Moderne dell’Università Sapienza di Roma, e con il sostegno della famiglia Giuranna,
+          organizza il <strong class="text-[#7c2935]">Premio Paolo Giuranna</strong>. Il Premio è dedicato a giovani interpreti di
+          poesia lirica di età compresa tra i 18 e i 32 anni, si svolge annualmente nel mese di marzo
+          ed è giunto nel 2025 alla sua seconda edizione.
+        </p>
+        <div class="mt-4">
+          <img src="/img/premiogiuranna.jpg" alt="Premio Paolo Giuranna" class="w-full max-w-xl h-[32rem] object-contain mx-auto rounded-lg shadow-lg" />
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <h2 class="text-2xl font-semibold mb-2 text-[#7c2935]">La Città della Poesia</h2>
+        <p>
+          L’APS Auriga organizza la rassegna <strong class="text-[#7c2935]">“La città della poesia”</strong>, serie di incontri dedicati
+          alla recitazione della poesia ad alta voce. Gli incontri sono di volta in volta dedicati a temi
+          o autori diversi: attori professionisti, con una particolare attenzione per la poesia,
+          presentano testi poetici del ‘900 e contemporanei in un dialogo creativo con la musica
+          (violino, tiorba, fisarmonica, clarinetto, viola da gamba, etc.).
+        </p>
+        <div class="mt-6">
+          <div class="relative w-full max-w-xl h-[32rem] mx-auto">
+            <div class="flex transition-transform duration-700 h-full" id="carousel-poesia">
+              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
+                <img src="/img/Poesia1.webp" alt="Poesia 1" class="max-h-[32rem] object-contain" />
+              </div>
+              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
+                <img src="/img/Poesia2.webp" alt="Poesia 2" class="max-h-[32rem] object-contain" />
+              </div>
+              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
+                <img src="/img/Poesia3.jpg" alt="Poesia 3" class="max-h-[32rem] object-contain" />
+              </div>
+              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
+                <img src="/img/Poesia5.jpg" alt="Poesia 5" class="max-h-[32rem] object-contain" />
+              </div>
+              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
+                <img src="/img/Poesia4.jpg" alt="Poesia 4" class="max-h-[32rem] object-contain" />
+              </div>
+            </div>
+            <button onclick="movePoesia(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
+            <button onclick="movePoesia(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
+          </div>
+        </div>
+        <script is:inline>
+          let idxPoesia = 0;
+          const carPoesia = document.getElementById('carousel-poesia');
+          const totPoesia = carPoesia ? carPoesia.children.length : 0;
+          function movePoesia(d) {
+            if (!carPoesia || totPoesia === 0) return;
+            idxPoesia = (idxPoesia + d + totPoesia) % totPoesia;
+            carPoesia.style.transform = `translateX(-${idxPoesia * 100}%)`;
+          }
+        </script>
+      </div>
+    </div>
   </section>
+    <style is:global>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
 </BaseLayout>
