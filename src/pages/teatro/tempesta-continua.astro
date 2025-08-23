@@ -60,16 +60,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="mt-2 relative w-full max-w-3xl mx-auto">
       <div class="overflow-hidden rounded bg-black">
         <!-- altezza del viewport del carosello -->
-        <div class="flex transition-transform duration-2000 h-96 md:h-[40rem]" id="carousel-tempesta">
+        <div class="flex transition-transform duration-2000 ease-in-out will-change-transform h-96 md:h-[40rem]" id="carousel-tempesta">
           <!-- ogni immagine occupa il 100% del viewport e NON viene tagliata -->
-          <img src="/img/tempesta-2.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 2" />
-          <img src="/img/tempesta-3.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 3" />
-          <img src="/img/tempesta-4.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 4" />
-          <img src="/img/tempesta-5.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 5" />
-          <img src="/img/tempesta-6.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 6" />
-          <img src="/img/tempesta-8.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 8" />
-          <img src="/img/tempesta-9.jpg"  class="w-full h-full object-contain" alt="La tempesta continua – scena 9" />
-          <img src="/img/tempesta-10.jpg" class="w-full h-full object-contain" alt="La tempesta continua – scena 10" />
+          <img src="/img/tempesta-2.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 2" />
+          <img src="/img/tempesta-3.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 3" />
+          <img src="/img/tempesta-4.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 4" />
+          <img src="/img/tempesta-5.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 5" />
+          <img src="/img/tempesta-6.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 6" />
+          <img src="/img/tempesta-8.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 8" />
+          <img src="/img/tempesta-9.jpg"  class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 9" />
+          <img src="/img/tempesta-10.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="La tempesta continua – scena 10" />
         </div>
       </div>
 
@@ -79,13 +79,52 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
 
     <script is:inline>
-      let index = 0;
-      const carousel = document.getElementById('carousel-tempesta');
-      const total = carousel.children.length;
-      function moveCarousel(direction) {
-        index = (index + direction + total) % total;
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-      }
+      window.addEventListener('DOMContentLoaded', () => {
+        let index = 0;
+        const carousel = document.getElementById('carousel-tempesta');
+        const total = carousel ? carousel.children.length : 0;
+        function moveCarousel(direction) {
+          if (!carousel || total === 0) return;
+          index = (index + direction + total) % total;
+          carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+        // expose for inline onclick arrows
+        window.moveCarousel = moveCarousel;
+
+        // fullscreen modal
+        const imgs = carousel ? carousel.querySelectorAll('img') : [];
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImg');
+
+        imgs.forEach((img) => {
+          img.classList.add('cursor-zoom-in');
+          img.addEventListener('click', () => {
+            if (modal && modalImg) {
+              modalImg.src = img.src;
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+            }
+          });
+        });
+
+        function closeModal() {
+          if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            if (modalImg) modalImg.src = '';
+          }
+        }
+        window.closeModal = closeModal;
+
+        if (modal) {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+        }
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeModal();
+        });
+      });
     </script>
 
     <!-- Scheda tecnica (opzionale) -->
@@ -107,6 +146,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <a href="/teatro" class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors">
         ← Indietro
       </a>
+    </div>
+
+    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
 

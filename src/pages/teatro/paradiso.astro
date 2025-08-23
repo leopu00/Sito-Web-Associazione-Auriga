@@ -57,30 +57,73 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <h2 class="mt-10 text-2xl font-semibold">Galleria</h2>
     <div class="mt-2 relative w-full max-w-3xl mx-auto">
       <div class="overflow-hidden rounded bg-black">
-        <div class="flex transition-transform duration-700 h-96 md:h-[40rem]" id="carousel-paradiso">
-          <img src="/img/paradiso/_02A6841 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 5" />
-          <img src="/img/paradiso/_02A6942 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 6" />
-          <img src="/img/paradiso/_02A7242 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 7" />
-          <img src="/img/paradiso/_MG_0043 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 8" />
-          <img src="/img/paradiso/_MG_0054 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 9" />
-          <img src="/img/paradiso/_MG_0114 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 10" />
-          <img src="/img/paradiso/_MG_0165 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 11" />
-          <img src="/img/paradiso/_MG_0201 copia.jpg" class="w-full h-full object-contain" alt="Il Paradiso – scena 12" />
+        <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-96 md:h-[40rem]" id="carousel-paradiso">
+          <img src="/img/paradiso/_02A6841 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 5" />
+          <img src="/img/paradiso/_02A6942 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 6" />
+          <img src="/img/paradiso/_02A7242 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 7" />
+          <img src="/img/paradiso/_MG_0043 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 8" />
+          <img src="/img/paradiso/_MG_0054 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 9" />
+          <img src="/img/paradiso/_MG_0114 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 10" />
+          <img src="/img/paradiso/_MG_0165 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 11" />
+          <img src="/img/paradiso/_MG_0201 copia.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Il Paradiso – scena 12" />
         </div>
       </div>
       <button onclick="moveParadiso(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
       <button onclick="moveParadiso(1)"  class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
     </div>
     <script is:inline>
-      let indexP = 0;
-      const carouselP = document.getElementById('carousel-paradiso');
-      const totalP = carouselP ? carouselP.children.length : 0;
-      function moveParadiso(direction) {
-        if (!carouselP || totalP === 0) return;
-        indexP = (indexP + direction + totalP) % totalP;
-        carouselP.style.transform = `translateX(-${indexP * 100}%)`;
-      }
+      window.addEventListener('DOMContentLoaded', () => {
+        let indexP = 0;
+        const carouselP = document.getElementById('carousel-paradiso');
+        const totalP = carouselP ? carouselP.children.length : 0;
+        function moveParadiso(direction) {
+          if (!carouselP || totalP === 0) return;
+          indexP = (indexP + direction + totalP) % totalP;
+          carouselP.style.transform = `translateX(-${indexP * 100}%)`;
+        }
+        // expose for inline arrows
+        window.moveParadiso = moveParadiso;
+
+        // fullscreen modal
+        const imgs = carouselP ? carouselP.querySelectorAll('img') : [];
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImg');
+
+        imgs.forEach((img) => {
+          img.classList.add('cursor-zoom-in');
+          img.addEventListener('click', () => {
+            if (modal && modalImg) {
+              modalImg.src = img.src;
+              modal.classList.remove('hidden');
+              modal.classList.add('flex');
+            }
+          });
+        });
+
+        function closeModal() {
+          if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            if (modalImg) modalImg.src = '';
+          }
+        }
+        window.closeModal = closeModal;
+
+        if (modal) {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+        }
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeModal();
+        });
+      });
     </script>
+
+    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
+    </div>
 
     <!-- Scheda tecnica -->
     <h2 class="mt-10 text-2xl font-semibold">Scheda tecnica</h2>
@@ -96,7 +139,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
 
     <!-- Locandina -->
-    <h2 class="mt-10 text-2xl font-semibold">Locandina</h2>
     <div class="mt-4 rounded-xl overflow-hidden flex justify-start">
       <img src="/img/il-paradiso-locandina.jpg" alt="Locandina Il Paradiso – Teatro Belli" class="max-w-xl w-full h-auto object-contain" />
     </div>

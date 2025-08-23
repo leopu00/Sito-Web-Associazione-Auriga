@@ -31,38 +31,63 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
         <div class="mt-6">
           <div class="relative w-full max-w-xl h-[32rem] mx-auto">
-            <div class="flex transition-transform duration-700 h-full" id="carousel-poesia">
-              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
-                <img src="/img/Poesia1.webp" alt="Poesia 1" class="max-h-[32rem] object-contain" />
-              </div>
-              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
-                <img src="/img/Poesia2.webp" alt="Poesia 2" class="max-h-[32rem] object-contain" />
-              </div>
-              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
-                <img src="/img/Poesia3.jpg" alt="Poesia 3" class="max-h-[32rem] object-contain" />
-              </div>
-              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
-                <img src="/img/Poesia5.jpg" alt="Poesia 5" class="max-h-[32rem] object-contain" />
-              </div>
-              <div class="min-w-full flex-shrink-0 flex justify-center items-center">
-                <img src="/img/Poesia4.jpg" alt="Poesia 4" class="max-h-[32rem] object-contain" />
-              </div>
+            <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-full" id="carousel-poesia">
+              <img src="/img/Poesia1.webp" alt="Poesia 1" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" />
+              <img src="/img/Poesia2.webp" alt="Poesia 2" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" />
+              <img src="/img/Poesia3.jpg" alt="Poesia 3" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" />
+              <img src="/img/Poesia5.jpg" alt="Poesia 5" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" />
+              <img src="/img/Poesia4.jpg" alt="Poesia 4" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" />
             </div>
             <button onclick="movePoesia(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
             <button onclick="movePoesia(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
           </div>
         </div>
         <script is:inline>
-          let idxPoesia = 0;
-          const carPoesia = document.getElementById('carousel-poesia');
-          const totPoesia = carPoesia ? carPoesia.children.length : 0;
-          function movePoesia(d) {
-            if (!carPoesia || totPoesia === 0) return;
-            idxPoesia = (idxPoesia + d + totPoesia) % totPoesia;
-            carPoesia.style.transform = `translateX(-${idxPoesia * 100}%)`;
-          }
+          window.addEventListener('DOMContentLoaded', () => {
+            let idxPoesia = 0;
+            const carPoesia = document.getElementById('carousel-poesia');
+            const totPoesia = carPoesia ? carPoesia.children.length : 0;
+            function movePoesia(d) {
+              if (!carPoesia || totPoesia === 0) return;
+              idxPoesia = (idxPoesia + d + totPoesia) % totPoesia;
+              carPoesia.style.transform = `translateX(-${idxPoesia * 100}%)`;
+            }
+            window.movePoesia = movePoesia;
+            const imgs = carPoesia ? carPoesia.querySelectorAll('img') : [];
+            const modal = document.getElementById('imgModal');
+            const modalImg = document.getElementById('modalImg');
+            imgs.forEach((img) => {
+              img.addEventListener('click', () => {
+                if (modal && modalImg) {
+                  modalImg.src = img.src;
+                  modal.classList.remove('hidden');
+                  modal.classList.add('flex');
+                }
+              });
+            });
+            function closeModal() {
+              if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                if (modalImg) modalImg.src = '';
+              }
+            }
+            window.closeModal = closeModal;
+            if (modal) {
+              modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+              });
+            }
+            document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape') closeModal();
+            });
+          });
         </script>
       </div>
+    </div>
+    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
     <style is:global>

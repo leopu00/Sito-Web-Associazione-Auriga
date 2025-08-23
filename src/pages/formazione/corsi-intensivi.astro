@@ -13,27 +13,65 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <div class="mb-10"></div>
 <div class="w-full mb-6 rounded-lg overflow-hidden h-64 md:h-80">
       <div class="relative w-full h-full">
-        <div class="flex transition-transform duration-700 h-full" id="carousel-permanenti">
-          <img src="/img/CorsoIntensivoSapienza.jpg" alt="Corsi permanenti – 1" class="w-full h-full object-contain" />
-          <img src="/img/CorsoIntensivoSapienza1.jpg" alt="Corsi permanenti – 2" class="w-full h-full object-contain" />
-          <img src="/img/CorsoIntensivoSapienza2.jpg" alt="Corsi permanenti – 3" class="w-full h-full object-contain" />
+        <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-full" id="carousel-intensivi">
+          <img src="/img/CorsoIntensivoSapienza0.jpg" alt="Corsi intensivi – 1" class="w-full h-full object-contain object-center flex-none shrink-0" />
+          <img src="/img/CorsoIntensivoSapienza1.jpg" alt="Corsi intensivi – 2" class="w-full h-full object-contain object-center flex-none shrink-0" />
+          <img src="/img/CorsoIntensivoSapienza2.jpg" alt="Corsi intensivi – 3" class="w-full h-full object-contain object-center flex-none shrink-0" />
         </div>
         <!-- Frecce -->
-        <button onclick="movePermanenti(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
-        <button onclick="movePermanenti(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
+        <button onclick="moveIntensivi(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
+        <button onclick="moveIntensivi(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
       </div>
     </div>
 
     <script is:inline>
-      let idxP = 0;
-      const carP = document.getElementById('carousel-permanenti');
-      const totP = carP ? carP.children.length : 0;
-      function movePermanenti(d) {
-        if (!carP || totP === 0) return;
-        idxP = (idxP + d + totP) % totP;
-        carP.style.transform = `translateX(-${idxP * 100}%)`;
+    window.addEventListener('DOMContentLoaded', () => {
+      let idxI = 0;
+      const carI = document.getElementById('carousel-intensivi');
+      const totI = carI ? carI.children.length : 0;
+      function moveIntensivi(d) {
+        if (!carI || totI === 0) return;
+        idxI = (idxI + d + totI) % totI;
+        carI.style.transform = `translateX(-${idxI * 100}%)`;
       }
-    </script>
+      // Expose for arrow buttons
+      window.moveIntensivi = moveIntensivi;
+
+      // Modal handling (same pattern as corsi permanenti)
+      const imgs = carI ? carI.querySelectorAll('img') : [];
+      const modal = document.getElementById('imgModal');
+      const modalImg = document.getElementById('modalImg');
+
+      imgs.forEach((img) => {
+        img.classList.add('cursor-zoom-in');
+        img.addEventListener('click', () => {
+          if (modal && modalImg) {
+            modalImg.src = img.src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+          }
+        });
+      });
+
+      function closeModal() {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          if (modalImg) modalImg.src = '';
+        }
+      }
+      window.closeModal = closeModal;
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+  </script>
     <div class="mb-10"></div>
 
     <p class="text-lg leading-relaxed text-justify"></p>Le sedi: <strong>Teatro Ateneo della Sapienza</strong> e <strong><a href="https://fondazioneculturasi.it/fondazione/" target="_blank" class="text-blue-500 underline font-bold">Fondazione Culturasì</a></strong> (Città dell’Altra Economia, <strong>Testaccio</strong>).
@@ -66,6 +104,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       >
         Contattaci per ulteriori informazioni
       </a>
+    </div>
+
+    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
   <style is:global>
