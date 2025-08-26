@@ -1,5 +1,5 @@
 ---
-const { title = "Auriga", headerTheme = "dark", pageNamespace = "page", pageClass = "", pageBg = "dark", headerClass = "", headerStyle = "" } = Astro.props;
+const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", headerClass = "bg-[#faf7f2]", headerStyle = "" } = Astro.props;
 import "../styles/global.css";
 ---
 
@@ -10,8 +10,8 @@ import "../styles/global.css";
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/LOGO-2.svg" />
   </head>
-  <body class={`min-h-screen flex flex-col ${headerTheme === "dark" ? "bg-black text-white" : "bg-white text-black"}`}>
-    <header class={`border-b ${headerTheme === "dark" ? "border-slate-800 bg-black text-white" : "border-slate-200 bg-white text-black"} ${headerClass}`} style={headerStyle}>
+  <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`}>
+    <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-slate-800 text-white" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center h-full">
           <img src="/LOGO-2.svg" alt="Auriga Logo" class="h-full" />
@@ -21,8 +21,8 @@ import "../styles/global.css";
           <a href="/formazione" class="hover:underline">Formazione</a>
           <a href="/teatro" class="hover:underline">Teatro</a>
           <a href="/poesia" class="hover:underline">Poesia</a>
-          <a href="/arteterapia" class="hover:underline">Arteterapia</a>
-          <a href="/eventi" class="hover:underline">Eventi</a>
+          <!-- <a href="/arteterapia" class="hover:underline">Arteterapia</a> -->
+          <!-- <a href="/eventi" class="hover:underline">Eventi</a> -->
           <a href="/contatti" class="hover:underline">Contatti</a>
         </nav>
       </div>
@@ -32,51 +32,10 @@ import "../styles/global.css";
       <slot />
     </main>
 
-    <footer class={`border-t ${headerTheme === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-white text-black"}`}>
+    <footer class={`border-t ${pageBg === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-[#faf7f2] text-black"}`}>
       <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-400">
         © {new Date().getFullYear()} Associazione Auriga — Tutti i diritti riservati
       </div>
     </footer>
-
-    <style is:global>
-      /* Transizione leggerissima per mitigare il flash bianco */
-    </style>
-
-    <script is:inline>
-      // Simple full-page fade overlay across navigations (no Barba)
-      (function () {
-        const CURRENT_THEME = /* astro inject */ "{pageBg}"; // 'light' | 'dark'
-        const PREV_KEY = 'aurigaPrevTheme';
-
-        const prevTheme = sessionStorage.getItem(PREV_KEY) || CURRENT_THEME;
-        const prevColor = prevTheme === 'light' ? '#ffffff' : '#000000';
-
-        // Ensure body matches current page theme immediately
-        document.body.style.backgroundColor = (CURRENT_THEME === 'light') ? '#ffffff' : '#000000';
-
-        // Create overlay using the previous page color, then fade it out
-        const overlay = document.createElement('div');
-        overlay.setAttribute('aria-hidden', 'true');
-        Object.assign(overlay.style, {
-          position: 'fixed',
-          inset: '0',
-          backgroundColor: prevColor,
-          pointerEvents: 'none',
-          zIndex: '9999',
-          opacity: '1',
-          transition: 'opacity 500ms ease'
-        });
-        document.body.appendChild(overlay);
-        // Double rAF to guarantee first paint at opacity:1
-        requestAnimationFrame(() => { requestAnimationFrame(() => { overlay.style.opacity = '0'; }); });
-        overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-
-        // Persist current theme for next navigation
-        const save = () => { sessionStorage.setItem(PREV_KEY, CURRENT_THEME); };
-        window.addEventListener('pagehide', save, { once: true });
-        window.addEventListener('beforeunload', save, { once: true });
-        document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') save(); });
-      })();
-    </script>
   </body>
 </html>

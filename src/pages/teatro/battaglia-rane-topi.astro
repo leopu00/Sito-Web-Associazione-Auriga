@@ -2,17 +2,17 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="La battaglia delle rane e dei topi — Auriga" headerTheme="light" pageNamespace="teatro-battaglia-rane-topi" pageClass="bg-white text-black" pageBg="light">
+<BaseLayout title="La battaglia delle rane e dei topi — Auriga" headerTheme="light" pageNamespace="teatro-battaglia-rane-topi" pageClass="bg-[#faf7f2] text-black" pageBg="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2">
   <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
 
     <!-- Header -->
     <h1 class="text-3xl md:text-4xl font-bold">La battaglia delle rane e dei topi</h1>
-    <div class="mt-2 text-sm text-slate-600">
+    <div class="mt-2 text-sm text-gray-700">
       <span>Durata: 50 minuti</span> · <span>Età: dai 9 anni</span>
     </div>
 
     <!-- Teaser / breve descrizione -->
-    <p class="mt-6 text-lg leading-relaxed text-slate-700">
+    <p class="mt-6 text-lg leading-relaxed text-gray-700">
       Adattamento della <em>Batracomiomachia</em> attribuita ad Omero: una satira epico‑burlesca che racconta, tra rane e topi, la storia di tutte le guerre.
     </p>
 
@@ -23,13 +23,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Sinossi -->
     <h2 class="mt-10 text-2xl font-semibold">Sinossi</h2>
-    <p class="mt-3 leading-relaxed text-slate-700">
+    <p class="mt-3 leading-relaxed text-gray-700">
       In uno stagno, all’alba di un giorno qualunque, un topo assetato incontra una rana. Dopo un breve scambio, la rana lo traghetta verso l’altra riva, ma un incidente scatena una guerra senza ritorno. I due popoli si armano e si fronteggiano: lo stagno, fonte di vita, diventa campo di morte. Due attrici raccontano, alternando epico e drammatico, la storia di tutte le guerre in un gioco grottesco che diverte e fa riflettere. Le guerre sono tante, la guerra è una sola: nasce e cresce nel cuore dell’essere topo, dell’essere rana, dell’essere umano.
     </p>
 
     <!-- Crediti e Cast -->
     <h2 class="mt-10 text-2xl font-semibold">Crediti e Cast</h2>
-    <ul class="mt-3 space-y-1 text-slate-700">
+    <ul class="mt-3 space-y-1 text-gray-700">
       <li><strong>Interpreti:</strong> Marzia Di Giulio, Tiziana Di Nunno</li>
       <li><strong>Regia:</strong> Flavia Giovannelli</li>
       <li><strong>Drammaturgia/Adattamento:</strong> da “Batracomiomachia” attribuita ad Omero</li>
@@ -40,7 +40,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <!-- Galleria: carosello con frecce, immagini di esempio -->
     <h2 class="mt-10 text-2xl font-semibold">Galleria</h2>
     <div class="mt-2 relative w-full max-w-3xl mx-auto">
-      <div class="overflow-hidden rounded bg-black">
+      <div class="overflow-hidden rounded">
         <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-96 md:h-[40rem]" id="carousel-battaglia">
           <img src="/img/battaglia-rane-topi/DSCF3810.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Battaglia rane e topi – scena 1" />
           <img src="/img/battaglia-rane-topi/DSCF3838.jpg" class="w-full h-full object-contain object-center flex-none shrink-0" alt="Battaglia rane e topi – scena 2" />
@@ -107,7 +107,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     <!-- Scheda tecnica (placeholder) -->
     <h2 class="mt-10 text-2xl font-semibold">Scheda tecnica</h2>
-    <ul class="mt-3 list-disc pl-6 text-slate-600">
+    <ul class="mt-3 list-disc pl-6 text-gray-700">
       <li>Età consigliata: dai 9 anni</li>
       <li>Spettacolo adattabile a qualunque spazio scenico</li>
       <li>Nessuna amplificazione richiesta (né musiche, né microfoni)</li>
@@ -126,8 +126,4 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
-
-  <style is:global>
-    header { position: sticky; top: 0; z-index: 50; }
-  </style>
 </BaseLayout>
