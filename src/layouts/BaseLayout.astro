@@ -34,8 +34,28 @@ import "../styles/global.css";
     </main>
 
     <footer class={`border-t ${pageBg === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-[#faf7f2] text-black"}`}>
-      <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-400">
-        © {new Date().getFullYear()} Associazione Auriga — Tutti i diritti riservati
+      <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700 flex flex-col items-center text-center space-y-4">
+        <nav class="text-xs text-gray-600">
+          <a href="/" class="underline">Home</a>
+          <span class="mx-2">•</span>
+          <a href="/chi-siamo" class="underline">Chi siamo</a>
+          <span class="mx-2">•</span>
+          <a href="/formazione" class="underline">Formazione</a>
+          <span class="mx-2">•</span>
+          <a href="/teatro" class="underline">Teatro</a>
+          <span class="mx-2">•</span>
+          <a href="/poesia" class="underline">Poesia</a>
+          <span class="mx-2">•</span>
+          <a href="/contatti" class="underline">Contatti</a>
+        </nav>
+
+        <p class="text-sm font-semibold">© {new Date().getFullYear()} APS Auriga</p>
+
+        <nav class="text-xs text-gray-600">
+          <a href="/privacy" class="underline">Privacy Policy</a>
+          <span class="mx-2">•</span>
+          <a href="/cookie-policy" class="underline">Cookie Policy</a>
+        </nav>
       </div>
     </footer>
   </body>
