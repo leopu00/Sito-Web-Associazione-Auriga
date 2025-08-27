@@ -2,8 +2,8 @@ TODO LIST SITO AURIGA
 ----------------------
 
 🎨 Layout & Stile
-[ ] Uniformare layout: passare tutte le pagine da sfondo scuro a sfondo chiaro elegante
-[ ] Adattare colori di testi, bordi e link al nuovo schema chiaro
+[x] Uniformare layout: passare tutte le pagine da sfondo scuro a sfondo chiaro elegante
+[x] Adattare colori di testi, bordi e link al nuovo schema chiaro
 [x] Sistemare carousel immagini in Formazione (dimensioni/spaziature)
 
 📸 Contenuti Multimediali
