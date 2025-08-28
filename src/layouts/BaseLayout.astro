@@ -1,6 +1,7 @@
 ---
 const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", headerClass = "bg-[#faf7f2]", headerStyle = "" } = Astro.props;
 import "../styles/global.css";
+import { Analytics } from '@vercel/analytics/astro';
 ---
 
 <html lang="it">
@@ -58,5 +59,6 @@ import "../styles/global.css";
         </nav>
       </div>
     </footer>
+    {import.meta.env.PROD && <Analytics />}
   </body>
 </html>
