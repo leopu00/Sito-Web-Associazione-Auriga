@@ -10,7 +10,18 @@ import Analytics from '@vercel/analytics/astro';
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/LOGO-2.svg" />
+    <link rel="stylesheet" href="/MyWebfontsKit.css" />
+    <link rel="preload" href="/webFonts/WaldorfschriftRegular/font.woff2" as="font" type="font/woff2" crossorigin>
   </head>
+  <style is:global>
+    header nav a,
+    h1,
+    h2,
+    h3 {
+      font-family: "WaldorfschriftRegular", serif;
+      font-weight: normal;
+    }
+  </style>
   <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`}>
     <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-slate-800 text-white" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">

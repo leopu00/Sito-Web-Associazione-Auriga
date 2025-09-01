@@ -18,3 +18,10 @@ dist/
 # Generated metadata / types
 **/_metadata.json
 src/types.d.ts
+
+# Config / dati locali
+data-store.json
+settings.json
+
+# Types generati fuori da src/
+types.d.ts
