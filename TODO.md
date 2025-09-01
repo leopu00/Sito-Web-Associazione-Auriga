@@ -10,7 +10,7 @@ TODO LIST SITO AURIGA
 [x] Aggiungere immagini Premio Paolo Giuranna
 [x] Aggiungere immagini La Città della Poesia (serate di poesia)
 [x] Aggiornare immagine e didascalia sezione Poesia in home page
-[ ] Inserire nuove foto e materiali in Teatro (recensioni, rassegne stampa)
+[x] Inserire nuove foto e materiali in Teatro (recensioni, rassegne stampa)
 [ ] Integrare materiale per sezione Arte Terapia
 
 👥 Pagina “Chi Siamo”
@@ -20,7 +20,7 @@ TODO LIST SITO AURIGA
 📑 Pagine Specifiche
 [x] Formazione: correzioni di layout/carousel
 [x] Poesia: completare con immagini (Premio e Città della poesia)
-[ ] Teatro: aggiungere rassegne stampa, recensioni, articoli online, info spettacoli (valutare rimozione scheda tecnica)
+[x] Teatro: aggiungere rassegne stampa, recensioni, articoli online, info spettacoli (valutare rimozione scheda tecnica)
 [ ] Arte Terapia: inserire testi e materiale (in attesa del materiale da collaboratori)
 [ ] Eventi: creare timeline cronologica con foto, date e link agli eventi passati e futuri
 [ ] Contatti: arricchire con ulteriori informazioni
@@ -37,7 +37,7 @@ TODO LIST SITO AURIGA
 🖼️ Ottimizzazione & Design
 [ ] Ottimizzare dimensione/weight delle immagini pesanti (es. NASA stelle)
 [ ] Valutare nuovo hero layout per la home page
-[ ] Applicare font Waldorf/font2 per titoli e layout personalizzato
+[x] Applicare font Waldorf/font2 per titoli e layout personalizzato
 [ ] Usare colori del logo per rendere il design più pulito
 [ ] Sistemare colore giallastro di background
 
