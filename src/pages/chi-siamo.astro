@@ -6,19 +6,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <h1 class="text-3xl md:text-4xl font-bold mb-6">Chi siamo</h1>
 
   <div class="space-y-6">
-    <div class="space-y-6">
-      <p class="leading-relaxed">
+    <div class="space-y-4">
+      <p class="leading-relaxed text-justify">
         <span class="font-semibold">L’Associazione Auriga</span> è un centro di ricerca artistica attivo nel promuovere la pratica dell’<strong>Arte Drammatica</strong> e della <strong>Sprachgestaltung</strong> (formazione artistica del linguaggio).
       </p>
-      <div class="mb-6"></div>
-      <p class="leading-relaxed">
+      <p class="leading-relaxed text-justify">
         Le attività di Auriga prendono forma in diversi contesti formativi e operativi. Il nostro lavoro intreccia ricerca, didattica e produzione artistica, con percorsi continuativi e intensivi aperti a diverse età e livelli di esperienza.
+      </p>
+      <p class="leading-relaxed text-justify">
+        Il percorso di Auriga è riconosciuto dalla <strong>Sezione delle Arti della Parola e della Musica</strong> presso il <strong>Goetheanum</strong> di Dornach.
       </p>
     </div>
   </div>
 
   <!-- Soci fondatori -->
-  <div class="mt-8">
+  <div class="mt-12">
     <h2 class="text-2xl font-semibold mb-4">Soci fondatori</h2>
     <ul class="list-disc list-inside leading-relaxed space-y-1">
       <li>
@@ -55,6 +57,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </button>
       </li>
     </ul>
+  </div>
+
+  <!-- Collaboratori -->
+  <div class="mt-12">
+    <h2 class="text-2xl font-semibold mb-4">Collaboratori</h2>
+    <div class="inline-grid grid-cols-1 md:grid-cols-[max-content_max-content] gap-x-6 md:gap-x-8 gap-y-2">
+      <ul class="list-disc list-inside space-y-1">
+        <li><button type="button" id="collab-chiara-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-chiara" aria-expanded="false">Chiara Catalano</button></li>
+        <li><button type="button" id="collab-flavia-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-flavia" aria-expanded="false">Flavia Giovannelli</button></li>
+        <li><button type="button" id="collab-mortelliti-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-mortelliti" aria-expanded="false">Giuseppe Mortelliti</button></li>
+        <li><button type="button" id="collab-savio-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-savio" aria-expanded="false">Giuseppe Savio</button></li>
+      </ul>
+      <ul class="list-disc list-inside space-y-1">
+        <li><button type="button" id="collab-marco-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-marco" aria-expanded="false">Marco Conti</button></li>
+        <li><button type="button" id="collab-marzia-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-marzia" aria-expanded="false">Marzia Di Giulio</button></li>
+        <li><button type="button" id="collab-tiziana-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-tiziana" aria-expanded="false">Tiziana Di Nunno</button></li>
+        <li><button type="button" id="collab-valeria-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-valeria" aria-expanded="false">Valeria Almerighi</button></li>
+      </ul>
+    </div>
   </div>
 
   <!-- Overlay modal: Elisa Stagni -->
@@ -101,7 +122,7 @@ Attualmente collabora nel coordinamento della gestione della segreteria del cors
       <img
         src="/img/marialucia-carones.jpeg"
         alt="Marialucia Carones"
-        class="h-20 md:h-24 object-contain"
+        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
         loading="lazy"
       />
       <div>
@@ -128,7 +149,7 @@ Attualmente collabora nel coordinamento della gestione della segreteria del cors
       <img
         src="/img/claudio-puglisi.jpg"
         alt="Claudio Puglisi"
-        class="h-20 md:h-24 object-contain"
+        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
         loading="lazy"
       />
       <div>
@@ -140,9 +161,89 @@ Diplomato all’<strong>Accademia Silvio D’Amico</strong> nel 1973, dopo alcun
     </div>
   </div>
 
+  <!-- Overlay modal: Chiara Catalano -->
+  <div id="collab-overlay-chiara" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-chiara-title">
+    <div id="collab-overlay-backdrop-chiara" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-chiara" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-chiara-title" class="text-xl font-semibold">Chiara Catalano</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Si diploma in pianoforte presso il <strong>Conservatorio "Santa Cecilia" di Roma</strong>, e successivamente inizia gli studi come attrice presso l’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong> di Roma. Lavora dal 2007, sia come attrice che come pianista, in progetti teatrali, televisivi e cinematografici, in contesti pubblici e privati (Rai, Lux Vide, Cattleya, Auditorium Parco della Musica, Teatro Stabile d’Abruzzo, Nuovo Teatro, Mittelfest, ecc.).</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Flavia Giovannelli -->
+  <div id="collab-overlay-flavia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-flavia-title">
+    <div id="collab-overlay-backdrop-flavia" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-flavia" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-flavia-title" class="text-xl font-semibold">Flavia Giovannelli</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Si forma come attrice e successivamente come pedagoga presso l’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong> di Roma. Si specializza all’<strong>Accademia Teatrale Nazionale della Polonia “Im. Aleksandra Zelwerowicza”</strong> di Varsavia. Studia <strong>Sprachgestaltung</strong> con Paolo Giuranna, di cui è assistente alla “Silvio D’Amico” (2006–2012). Dal 2012 è docente di recitazione in versi presso l’<strong>Accademia d’Arte del Dramma Antico</strong> dell’<strong>INDA</strong> di Siracusa e collabora con teatri e istituzioni.</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Giuseppe Mortelliti -->
+  <div id="collab-overlay-mortelliti" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-mortelliti-title">
+    <div id="collab-overlay-backdrop-mortelliti" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-mortelliti" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-mortelliti-title" class="text-xl font-semibold">Giuseppe Mortelliti</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Nato a Messina, si diploma attore all’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong>. Nel 2014 lo spettacolo <em>84 Gradini</em> vince il premio Special Off al <strong>Roma Fringe Festival</strong>; l’anno successivo ottiene l’<strong>Outstanding Solo Performance Award</strong> al San Diego International Fringe Festival. Conduce laboratori teatrali per adulti e bambini.</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Giuseppe Savio -->
+  <div id="collab-overlay-savio" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-savio-title">
+    <div id="collab-overlay-backdrop-savio" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-savio" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-savio-title" class="text-xl font-semibold">Giuseppe Savio</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Studia arte della parola con <strong>Claudio Puglisi</strong> e <strong>Paolo Giuranna</strong> presso la <strong>Bottega Teatrale di Firenze</strong>. Si specializza in <strong>tragedia greca</strong> e <strong>commedia dell’arte</strong>. Consegue la <em>Praktisk-pedagogisk utdanning (PPU)</em> in teatro presso la <strong>Kunsthøgskolen i Oslo</strong>. Recita nei maggiori teatri italiani e in molte città europee.</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Marco Conti -->
+  <div id="collab-overlay-marco" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-marco-title">
+    <div id="collab-overlay-backdrop-marco" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-marco" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-marco-title" class="text-xl font-semibold">Marco Conti</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Si diploma in <strong>Sprachgestaltung</strong> e arte drammatica presso il <strong>Goetheanum</strong> di Dornach (CH) con i maestri Marialucia Carones e Paolo Giuranna. Si occupa di teatro ragazzi con spettacoli e laboratori per l’associazione <strong>Arpa</strong>, di cui è fondatore. È narratore in Italia per il gruppo euritmico <strong>Märchensemble</strong> di Stoccarda (dal 2014).</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Marzia Di Giulio -->
+  <div id="collab-overlay-marzia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-marzia-title">
+    <div id="collab-overlay-backdrop-marzia" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-marzia" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-marzia-title" class="text-xl font-semibold">Marzia Di Giulio</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Studia <strong>commedia dell’arte</strong> con Claudia Contin e Ferruccio Merisi; si diploma in <strong>Sprachgestaltung</strong> e arte drammatica presso il <strong>Goetheanum</strong> (Dornach, CH) con Paolo Giuranna e Marialucia Carones. Si dedica alla formazione di maestri Waldorf e recita quando e come può.</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Tiziana Di Nunno -->
+  <div id="collab-overlay-tiziana" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-tiziana-title">
+    <div id="collab-overlay-backdrop-tiziana" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-tiziana" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-tiziana-title" class="text-xl font-semibold">Tiziana Di Nunno</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Laureata al <strong>DAMS</strong> (drammaturgia teatrale), diplomata in <strong>Sprachgestaltung</strong> e arte drammatica presso l’<strong>Università del Goetheanum</strong> con i maestri Paolo Giuranna e Marialucia Carones. Ha lavorato per 10 anni nella libreria indipendente Fanucci di Roma. Attualmente insegna arte della parola alle maestre d’asilo della scuola Waldorf del Centro Italia e ha recitato in diversi spettacoli per bambini.</p>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Valeria Almerighi -->
+  <div id="collab-overlay-valeria" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-valeria-title">
+    <div id="collab-overlay-backdrop-valeria" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6">
+      <button type="button" id="collab-overlay-close-valeria" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
+      <h3 id="collab-valeria-title" class="text-xl font-semibold">Valeria Almerighi</h3>
+      <p class="mt-2 leading-relaxed text-[15px] text-justify">Diplomata alla <strong>Silvio D’Amico</strong> (2009), prosegue la formazione presso il <strong>Théâtre National de Chaillot</strong> di Parigi con Fadhel Jaibi. Lavora con, tra gli altri, Thomas Ostermeier, Graham Vick, Fabio Cherstich, il Teatro dell’Opera di Roma e il Teatro Massimo di Palermo, G. Barberio Corsetti, A. Calenda.</p>
+    </div>
+  </div>
+
 
   <!-- Collaborazioni -->
-  <div class="mt-10">
+  <div class="mt-12">
     <h2 class="text-2xl font-semibold mb-4">In collaborazione con</h2>
     <div class="w-full">
       <table class="w-full table-fixed">
@@ -160,7 +261,7 @@ Diplomato all’<strong>Accademia Silvio D’Amico</strong> nel 1973, dopo alcun
             </td>
             <td class="w-1/3 text-center py-4 align-middle">
               <a href="https://www.accademiaaldobargero.com/" target="_blank" rel="noopener noreferrer" aria-label="Accademia Aldo Bargero (apre in nuova scheda)">
-                <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="mx-auto h-24 md:h-28 object-contain" loading="lazy" />
+                <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="mx-auto h-24 md:h-28 object-contain rounded-lg" loading="lazy" />
               </a>
             </td>
           </tr>
@@ -169,27 +270,6 @@ Diplomato all’<strong>Accademia Silvio D’Amico</strong> nel 1973, dopo alcun
     </div>
   </div>
 
-  <!-- Card Goetheanum (mossa a fine pagina) -->
-  <div class="mt-10 flex">
-    <aside class="border-2 border-black/10 rounded-xl p-4 text-sm bg-white shadow-sm" style="width:40%">
-      <img src="/img/goetheanum-1.jpg" alt="Goetheanum" class="mb-3 rounded-md" />
-      <p class="leading-relaxed">
-        Il percorso di Auriga è riconosciuto dalla
-        <strong>Sezione delle Arti della Parola e della Musica</strong> presso il
-        <strong>Goetheanum</strong> di Dornach (CH).
-      </p>
-    </aside>
-  </div>
-
-  <!-- Call to action soft -->
-  <div class="mt-10">
-    <a
-      href="/contatti"
-      class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors"
-    >
-      Contattaci per informazioni
-    </a>
-  </div>
 </section>
 <script is:inline>
   function wireModal(triggerId, overlayId, closeId, backdropId) {
@@ -222,6 +302,14 @@ Diplomato all’<strong>Accademia Silvio D’Amico</strong> nel 1973, dopo alcun
   wireModal('founder-elisa-trigger', 'founder-overlay-elisa', 'founder-overlay-close-elisa', 'founder-overlay-backdrop-elisa');
   wireModal('founder-marialucia-trigger', 'founder-overlay-marialucia', 'founder-overlay-close-marialucia', 'founder-overlay-backdrop-marialucia');
   wireModal('founder-claudio-trigger', 'founder-overlay-claudio', 'founder-overlay-close-claudio', 'founder-overlay-backdrop-claudio');
+  wireModal('collab-chiara-trigger', 'collab-overlay-chiara', 'collab-overlay-close-chiara', 'collab-overlay-backdrop-chiara');
+  wireModal('collab-flavia-trigger', 'collab-overlay-flavia', 'collab-overlay-close-flavia', 'collab-overlay-backdrop-flavia');
+  wireModal('collab-mortelliti-trigger', 'collab-overlay-mortelliti', 'collab-overlay-close-mortelliti', 'collab-overlay-backdrop-mortelliti');
+  wireModal('collab-savio-trigger', 'collab-overlay-savio', 'collab-overlay-close-savio', 'collab-overlay-backdrop-savio');
+  wireModal('collab-marco-trigger', 'collab-overlay-marco', 'collab-overlay-close-marco', 'collab-overlay-backdrop-marco');
+  wireModal('collab-marzia-trigger', 'collab-overlay-marzia', 'collab-overlay-close-marzia', 'collab-overlay-backdrop-marzia');
+  wireModal('collab-tiziana-trigger', 'collab-overlay-tiziana', 'collab-overlay-close-tiziana', 'collab-overlay-backdrop-tiziana');
+  wireModal('collab-valeria-trigger', 'collab-overlay-valeria', 'collab-overlay-close-valeria', 'collab-overlay-backdrop-valeria');
 </script>
 <style is:global>
   header {
