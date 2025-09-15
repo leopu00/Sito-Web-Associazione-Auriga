@@ -26,19 +26,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           type="button"
           id="founder-elisa-trigger"
           class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1"
-          aria-controls="founder-elisa-panel"
+          aria-controls="founder-overlay-elisa"
           aria-expanded="false"
         >
           Elisa Stagni
         </button>
       </li>
       <li>
-        <button type="button" class="underline underline-offset-2 hover:underline-offset-4 px-1 cursor-default opacity-80" disabled>
+        <button
+          type="button"
+          id="founder-marialucia-trigger"
+          class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1"
+          aria-controls="founder-overlay-marialucia"
+          aria-expanded="false"
+        >
           Marialucia Carones
         </button>
       </li>
       <li>
-        <button type="button" class="underline underline-offset-2 hover:underline-offset-4 px-1 cursor-default opacity-80" disabled>
+        <button
+          type="button"
+          id="founder-claudio-trigger"
+          class="underline underline-offset-2 hover:underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1"
+          aria-controls="founder-overlay-claudio"
+          aria-expanded="false"
+        >
           Claudio Puglisi
         </button>
       </li>
@@ -46,12 +58,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
 
   <!-- Overlay modal: Elisa Stagni -->
-  <div id="founder-overlay" class="fixed inset-0 z-50 hidden">
-    <div id="founder-overlay-backdrop" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row gap-4 md:gap-6">
+  <div id="founder-overlay-elisa" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="founder-elisa-title">
+    <div id="founder-overlay-backdrop-elisa" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
       <button
         type="button"
-        id="founder-overlay-close"
+        id="founder-overlay-close-elisa"
         class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm"
         aria-label="Chiudi pannello"
       >
@@ -64,11 +76,65 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         loading="lazy"
       />
       <div>
-        <h3 class="text-xl font-semibold">Elisa Stagni</h3>
-        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px]">
-Elisa Stagni, regista e trainer di ItinerisTeatro, artista indipendente. Collabora con associazioni e compagnie teatrali e lavora come tecnico attrezzista al Teatro La Fenice di Venezia.
-Diplomata in Sprachgestaltung e in pedagogia Waldorf, laureata in Lettere ad indirizzo artistico contemporaneo, settore musica e spettacolo, si è formata come attrice e regista con i maggiori artisti della ricerca italiana e francese, in particolare presso la Scuola Sperimentale dell’Attore di Pordenone e con il Theatre du Radeau di Le Mans.
-Attualmente collabora nel coordinamento della gestione della segreteria del corso triennale di formazione
+        <h3 id="founder-elisa-title" class="text-xl font-semibold">Elisa Stagni</h3>
+        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px] text-justify">
+<strong>Elisa Stagni</strong>, regista e trainer di ItinerisTeatro, artista indipendente. Collabora con associazioni e compagnie teatrali e lavora come tecnico attrezzista al <strong>Teatro La Fenice di Venezia</strong>.
+Diplomata in <strong>Sprachgestaltung</strong> e in <strong>pedagogia Waldorf</strong>, laureata in Lettere ad indirizzo artistico contemporaneo, settore musica e spettacolo, si è formata come attrice e regista con i maggiori artisti della ricerca italiana e francese, in particolare presso la <strong>Scuola Sperimentale dell’Attore di Pordenone</strong> e con il <strong>Theatre du Radeau di Le Mans</strong>.
+Attualmente collabora nel coordinamento della gestione della segreteria del corso triennale di formazione.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Marialucia Carones -->
+  <div id="founder-overlay-marialucia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="founder-marialucia-title">
+    <div id="founder-overlay-backdrop-marialucia" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
+      <button
+        type="button"
+        id="founder-overlay-close-marialucia"
+        class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm"
+        aria-label="Chiudi pannello"
+      >
+        ×
+      </button>
+      <img
+        src="/img/marialucia-carones.jpeg"
+        alt="Marialucia Carones"
+        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
+        loading="lazy"
+      />
+      <div>
+        <h3 id="founder-marialucia-title" class="text-xl font-semibold">Marialucia Carones</h3>
+        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px] text-justify">
+(Roma 1964) attrice diplomata a Roma nella scuola diretta da Gigi Proietti e al <strong>Goetheanum</strong> di Dornach (CH), dove si è specializzata in <strong>Arte della Parola e Arte Drammatica</strong>. Ha proseguito gli studi con Michael Knapp, Cristopher Marcus, Saskia Mees, Cecilia Bertoni e Schimon Levi. Dal 1989 insegna Arte della Parola e Pedagogia Teatrale a Milano, Roma, Bologna e Basilea, lavorando parallelamente in Germania, Olanda, Svizzera, Inghilterra e Paesi Scandinavi con Compagnie Internazionali e Scuole Teatrali in varie lingue. Ha curato regie per ragazzi al teatro «Le Maschere» di Roma, co-fondato lo Staos Ensemble di Monaco e Circle X Arts di Londra, e dal 2006 dirige la prima scuola italiana di Arte della Parola.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay modal: Claudio Puglisi -->
+  <div id="founder-overlay-claudio" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="founder-claudio-title">
+    <div id="founder-overlay-backdrop-claudio" class="absolute inset-0 bg-black/60"></div>
+    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
+      <button
+        type="button"
+        id="founder-overlay-close-claudio"
+        class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm"
+        aria-label="Chiudi pannello"
+      >
+        ×
+      </button>
+      <img
+        src="/img/claudio-puglisi.jpg"
+        alt="Claudio Puglisi"
+        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
+        loading="lazy"
+      />
+      <div>
+        <h3 id="founder-claudio-title" class="text-xl font-semibold">Claudio Puglisi</h3>
+        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px] text-justify">
+Diplomato all’<strong>Accademia Silvio D’Amico</strong> nel 1973, dopo alcuni anni di intensa attività come attore e assistente alla regia ha proseguito la formazione in lingua tedesca, specializzandosi nell’interpretazione teatrale poetica (<strong>Sprachgestaltung</strong>), conclusa nel 1982. Da allora partecipa come attore e regista a spettacoli teatrali, insegna in diverse scuole di teatro (tra cui la Bottega teatrale di Vittorio Gassmann, la Scuola del teatro stabile di Padova e Venezia, l’Accademia di Palmi e la Schule für Sprachgestaltung und Schauspiel di Dornach, CH) e dal 1990 prende parte anche a film e telefilm. In teatro ha lavorato, tra gli altri, con Orazio Costa, Luigi Squarzina, Gabriele Lavia, Luca Ronconi, Walter Pagliaro e Franco Però. In cinema e televisione ha collaborato con registi come Alfredo Angeli, Gabriele Muccino, Gianni Lepre, Riccardo Donna, Giorgio Capitani, Michele Soavi, Giacomo Battiato, Vittorio Sindoni e Pupi Avati.
         </p>
       </div>
     </div>
@@ -97,30 +163,36 @@ Attualmente collabora nel coordinamento della gestione della segreteria del cors
   </div>
 </section>
 <script is:inline>
-  const elisaBtn = document.getElementById('founder-elisa-trigger');
-  const overlay = document.getElementById('founder-overlay');
-  const overlayClose = document.getElementById('founder-overlay-close');
-  const overlayBackdrop = document.getElementById('founder-overlay-backdrop');
+  function wireModal(triggerId, overlayId, closeId, backdropId) {
+    const trigger = document.getElementById(triggerId);
+    const overlay = document.getElementById(overlayId);
+    const closeBtn = document.getElementById(closeId);
+    const backdrop = document.getElementById(backdropId);
 
-  function openOverlay() {
-    overlay.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    elisaBtn && elisaBtn.setAttribute('aria-expanded', 'true');
-  }
-  function closeOverlay() {
-    overlay.classList.add('hidden');
-    document.body.style.overflow = '';
-    elisaBtn && elisaBtn.setAttribute('aria-expanded', 'false');
+    if (!trigger || !overlay) return;
+
+    function open() {
+      overlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+    function close() {
+      overlay.classList.add('hidden');
+      document.body.style.overflow = '';
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', open);
+    closeBtn && closeBtn.addEventListener('click', close);
+    backdrop && backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('hidden') && e.key === 'Escape') close();
+    });
   }
 
-  if (elisaBtn && overlay) {
-    elisaBtn.addEventListener('click', openOverlay);
-  }
-  overlayClose && overlayClose.addEventListener('click', closeOverlay);
-  overlayBackdrop && overlayBackdrop.addEventListener('click', closeOverlay);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeOverlay();
-  });
+  wireModal('founder-elisa-trigger', 'founder-overlay-elisa', 'founder-overlay-close-elisa', 'founder-overlay-backdrop-elisa');
+  wireModal('founder-marialucia-trigger', 'founder-overlay-marialucia', 'founder-overlay-close-marialucia', 'founder-overlay-backdrop-marialucia');
+  wireModal('founder-claudio-trigger', 'founder-overlay-claudio', 'founder-overlay-close-claudio', 'founder-overlay-backdrop-claudio');
 </script>
 <style is:global>
   header {
