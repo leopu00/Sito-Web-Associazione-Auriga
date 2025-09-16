@@ -2,16 +2,19 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Teatro — Auriga" headerTheme="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2" pageNamespace="teatro" pageClass="bg-[#faf7f2] text-black" pageBg="light">
-  <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
-    <h1 class="text-3xl font-bold mb-6">Teatro</h1>
-    <p class="text-lg leading-relaxed mb-8">
-      Gli spettacoli teatrali realizzati da <strong>APS Auriga</strong> negli ultimi anni:
-    </p>
+<BaseLayout title="Teatro — Auriga" headerTheme="light" headerClass="bg-white" headerStyle="background-color:white" pageNamespace="teatro" pageClass="text-black" pageBg="light" pageBgColor="#ffffff">
+  <section class="bg-[#7a0f1e]">
+    <div class="max-w-6xl mx-auto px-4 py-12 pt-20">
+      <h1 class="text-3xl font-bold mb-6 text-white">Teatro</h1>
+      <p class="text-lg leading-relaxed mb-8 text-white">
+        Gli spettacoli teatrali realizzati da <strong>APS Auriga</strong> negli ultimi anni.
+      </p>
+    </div>
+  </section>
     <!-- Sezione spettacolo: La tempesta continua -->
-    <section id="spettacolo-tempesta" class="bg-[#faf7f2]">
+    <section id="spettacolo-tempesta" class="bg-[#7a0f1e]">
       <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
-        <div class="border-2 border-black rounded-lg p-6 bg-white">
+        <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
           <div class="grid md:grid-cols-2 gap-10 items-center reveal">
             <img
               src="/img/tempesta-continua.jpg"
@@ -36,9 +39,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- Sezione spettacolo: La battaglia delle rane e dei topi -->
-    <section id="spettacolo-battaglia" class="bg-[#faf7f2]">
+    <section id="spettacolo-battaglia" class="bg-[#7a0f1e]">
       <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
-        <div class="border-2 border-black rounded-lg p-6 bg-white">
+        <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
           <div class="grid md:grid-cols-2 gap-10 items-center reveal">
             <div>
               <h2 class="text-3xl md:text-4xl font-bold text-black">La battaglia delle rane e dei topi</h2>
@@ -63,9 +66,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <!-- Sezione spettacolo: Il Paradiso -->
-    <section id="spettacolo-paradiso" class="bg-[#faf7f2]">
+    <section id="spettacolo-paradiso" class="bg-[#7a0f1e]">
       <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
-        <div class="border-2 border-black rounded-lg p-6 bg-white">
+        <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
           <div class="grid md:grid-cols-2 gap-10 items-center reveal">
             <img
               src="/img/paradiso.jpg"
@@ -88,7 +91,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </div>
     </section>
-  </section>
   <style is:global>
     header {
       position: sticky;
