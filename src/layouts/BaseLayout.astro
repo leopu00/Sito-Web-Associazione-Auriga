@@ -1,5 +1,5 @@
 ---
-const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "" } = Astro.props;
+const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "" } = Astro.props;
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
 ---
@@ -45,29 +45,52 @@ import Analytics from '@vercel/analytics/astro';
       <slot />
     </main>
 
-    <footer class={`border-t ${pageBg === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-[#faf7f2] text-black"}`}>
-      <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700 flex flex-col items-center text-center space-y-4">
-        <nav class="text-xs text-gray-600">
-          <a href="/" class="underline">Home</a>
-          <span class="mx-2">•</span>
-          <a href="/chi-siamo" class="underline">Chi siamo</a>
-          <span class="mx-2">•</span>
-          <a href="/formazione" class="underline">Formazione</a>
-          <span class="mx-2">•</span>
-          <a href="/teatro" class="underline">Teatro</a>
-          <span class="mx-2">•</span>
-          <a href="/poesia" class="underline">Poesia</a>
-          <span class="mx-2">•</span>
-          <a href="/contatti" class="underline">Contatti</a>
-        </nav>
+    <footer class={`border-t ${footerTheme === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-white text-black"} ${footerClass}`} style={footerStyle}>
+      <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700 grid grid-cols-[1fr_1.5fr_1fr] gap-6 items-start">
+        <div class="flex flex-col items-center text-left space-y-2">
+          <p class="text-xs text-gray-600 font-semibold">Contatti</p>
+          <div class="flex items-center gap-2 text-xs text-gray-600">
+            <a href="mailto:info.sprachgestaltung@gmail.com">✉️ info.sprachgestaltung@gmail.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-6">
+          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600">
+            <a href="/" class="underline">Home</a>
+            <span>•</span>
+            <a href="/chi-siamo" class="underline">Chi&nbsp;siamo</a>
+            <span>•</span>
+            <a href="/formazione" class="underline">Formazione</a>
+            <span>•</span>
+            <a href="/teatro" class="underline">Teatro</a>
+            <span>•</span>
+            <a href="/poesia" class="underline">Poesia</a>
+            <span>•</span>
+            <a href="/contatti" class="underline">Contatti</a>
+          </nav>
 
-        <p class="text-sm font-semibold">© {new Date().getFullYear()} APS Auriga</p>
+          <p class="text-sm font-semibold">© {new Date().getFullYear()} APS Auriga</p>
 
-        <nav class="text-xs text-gray-600">
-          <a href="/privacy" class="underline">Privacy Policy</a>
-          <span class="mx-2">•</span>
-          <a href="/cookie-policy" class="underline">Cookie Policy</a>
-        </nav>
+          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600">
+            <a href="/privacy" class="underline">Privacy Policy</a>
+            <span>•</span>
+            <a href="/cookie-policy" class="underline">Cookie Policy</a>
+          </nav>
+        </div>
+
+        <div class="text-center">
+          <div class="text-xs text-gray-600 mb-2 font-semibold">In collaborazione con</div>
+          <div class="grid grid-cols-1 grid-rows-3 gap-3 justify-center items-center">
+            <div class="flex items-center justify-center">
+              <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-12 md:h-14 w-auto filter grayscale" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-12 md:h-14 w-auto filter grayscale" />
+            </div>
+            <div class="flex items-center justify-center">
+              <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-12 md:h-14 w-auto filter grayscale rounded" />
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     {import.meta.env.PROD && <Analytics />}
