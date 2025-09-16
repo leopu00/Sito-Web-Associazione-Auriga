@@ -2,12 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Auriga — Benvenuti" headerTheme="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2">
+<BaseLayout
+  title="Auriga — Benvenuti"
+  headerTheme="light"
+  headerClass="bg-white"
+  headerStyle="background-color:white"
+  pageBgColor="#ffffff"
+>
   <!-- HERO full-screen con parallax e gradiente verso il nero -->
   <section
     class="relative min-h-screen flex items-center justify-center text-white"
     style="
-      background-image: url('/img/nasa-auriga-crop-2.jpg');
+      background-image: url('/img/auriga-blu-chiaro4.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center 44px;
@@ -16,7 +22,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     "
   >
     <!-- sfumatura verso nero per stacco morbido -->
-    <div class="absolute inset-x-0 bottom-0 h-48 pointer-events-none bg-gradient-to-b from-transparent to-black"></div>
+    <div class="absolute inset-x-0 bottom-0 h-48 pointer-events-none bg-gradient-to-b from-transparent to-[#014f97]"></div>
 
     <h1 class="relative z-10 text-5xl md:text-7xl font-extrabold drop-shadow">
       APS Auriga
@@ -24,9 +30,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- Sezione formazione: parte “nascosta”, si rivela salendo -->
-  <section id="formazione" class="bg-[#faf7f2] text-black">
+  <section id="formazione" class="bg-[#014f97] text-black">
     <div class="max-w-6xl mx-auto px-4 py-20">
-      <div class="border-2 border-black rounded-lg p-6 bg-white">
+      <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
         <div class="grid md:grid-cols-2 gap-10 items-center reveal">
           <img
             src="/img/corso-sapienza-trim3.jpg"
@@ -50,9 +56,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section id="teatro" class="bg-[#faf7f2] text-black">
+  <section id="teatro" class="bg-[#014f97] text-black">
     <div class="max-w-6xl mx-auto px-4 py-20">
-      <div class="border-2 border-black rounded-lg p-6 bg-white">
+      <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
         <div class="grid md:grid-cols-2 gap-10 items-center reveal">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold">Teatro</h2>
@@ -76,9 +82,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section id="poesia" class="bg-[#faf7f2] text-black">
+  <section id="poesia" class="bg-[#014f97] text-black">
     <div class="max-w-6xl mx-auto px-4 py-20">
-      <div class="border-2 border-black rounded-lg p-6 bg-white">
+      <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
         <div class="grid md:grid-cols-2 gap-10 items-center reveal">
           <img
             src="/img/premio-paolo-giuranna/_02A1876.JPG"
@@ -103,9 +109,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!--
-  <section id="eventi" class="bg-[#faf7f2] text-black">
+  <section id="eventi" class="bg-[#014f97] text-black">
     <div class="max-w-6xl mx-auto px-4 py-20">
-      <div class="border-2 border-black rounded-lg p-6 bg-white">
+      <div class="rounded-lg p-6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
         <div class="grid md:grid-cols-2 gap-10 items-center reveal">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold">Eventi</h2>

@@ -1,5 +1,5 @@
 ---
-const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", headerClass = "bg-[#faf7f2]", headerStyle = "" } = Astro.props;
+const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "" } = Astro.props;
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
 ---
@@ -22,7 +22,7 @@ import Analytics from '@vercel/analytics/astro';
       font-weight: normal;
     }
   </style>
-  <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`}>
+  <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`} style={pageBgColor ? `background-color:${pageBgColor}` : ""}>
     <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-slate-800 text-white" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center h-full">
