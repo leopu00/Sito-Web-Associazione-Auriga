@@ -2,43 +2,45 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Poesia — Auriga" headerTheme="light"  pageClass="bg-[#faf7f2] text-white"  headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2" pageBg="light">
-  <section class="max-w-6xl mx-auto px-4 py-12">
+  <section class="max-w-6xl mx-auto px-4 auriga-card-section-spacing">
     <h1 class="text-3xl font-bold mb-8 text-[#7c2935]">Poesia</h1>
-    <!-- Card: Premio Paolo Giuranna -->
-    <article class="relative w-full mb-12">
-      <div class="border-2 border-black rounded-lg p-6 bg-white text-black">
-        <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-          <div>
-            <img src="/img/premio-paolo-giuranna/_MG_0518.JPG" alt="Premio Paolo Giuranna" class="w-full h-64 md:h-96 object-cover rounded-lg" />
-          </div>
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-black">Premio Paolo Giuranna</h2>
-            <p class="mt-3 text-slate-700">
-              Concorso annuale per giovani interpreti (18–32) di poesia lirica, promosso da Auriga con partner istituzionali. Selezioni e finale si svolgono a marzo.
-            </p>
-            <a href="/poesia/premio-paolo-giuranna" class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">Scopri di più</a>
+    <div class="auriga-card-stack">
+      <!-- Card: Premio Paolo Giuranna -->
+      <article class="relative w-full">
+        <div class="auriga-card-surface">
+          <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+            <div>
+              <img src="/img/premio-paolo-giuranna/_MG_0518.JPG" alt="Premio Paolo Giuranna" class="w-full h-64 md:h-96 object-cover rounded-lg" />
+            </div>
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-black">Premio Paolo Giuranna</h2>
+              <p class="mt-3 text-slate-700">
+                Concorso annuale per giovani interpreti (18–32) di poesia lirica, promosso da Auriga con partner istituzionali. Selezioni e finale si svolgono a marzo.
+              </p>
+              <a href="/poesia/premio-paolo-giuranna" class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">Scopri di più</a>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Card: La Città della Poesia -->
-    <article class="relative w-full mb-12">
-      <div class="border-2 border-black rounded-lg p-6 bg-white text-black">
-        <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-black">La Città della Poesia</h2>
-            <p class="mt-3 text-slate-700">
-              Poesia ad alta voce: attori e musicisti danno vita a testi lirici di poeti del ‘900 e contemporanei.
-            </p>
-            <a href="/poesia/citta-della-poesia" class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">Scopri di più</a>
-          </div>
-          <div>
-            <img src="/img/citta-della-poesia/_DSF5326.JPG" alt="La Città della Poesia" class="w-full h-64 md:h-96 object-cover rounded-lg" />
+      <!-- Card: La Città della Poesia -->
+      <article class="relative w-full">
+        <div class="auriga-card-surface">
+          <div class="grid md:grid-cols-2 gap-10 items-center reveal">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-bold text-black">La Città della Poesia</h2>
+              <p class="mt-3 text-slate-700">
+                Poesia ad alta voce: attori e musicisti danno vita a testi lirici di poeti del ‘900 e contemporanei.
+              </p>
+              <a href="/poesia/citta-della-poesia" class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">Scopri di più</a>
+            </div>
+            <div>
+              <img src="/img/citta-della-poesia/_DSF5326.JPG" alt="La Città della Poesia" class="w-full h-64 md:h-96 object-cover rounded-lg" />
+            </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </section>
     <style is:global>
     header {

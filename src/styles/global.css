@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+:root {
+  --auriga-card-spacing: 2.25rem;
+  --auriga-card-spacing-lg: 3.5rem;
+  --auriga-card-radius: 0.75rem;
+  --auriga-card-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.auriga-card-stack {
+  display: grid;
+  gap: calc(var(--auriga-card-spacing) * 2);
+}
+
+.auriga-card-gap {
+  margin-bottom: var(--auriga-card-spacing);
+}
+
+.auriga-card-section-spacing {
+  padding-top: var(--auriga-card-spacing);
+  padding-bottom: var(--auriga-card-spacing);
+}
+
+.auriga-card-surface {
+  background-color: #fff;
+  border-radius: var(--auriga-card-radius);
+  padding: 1.5rem;
+  box-shadow: var(--auriga-card-shadow);
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .auriga-card-stack {
+    gap: calc(var(--auriga-card-spacing-lg) * 2);
+  }
+
+  .auriga-card-gap {
+    margin-bottom: var(--auriga-card-spacing-lg);
+  }
+
+  .auriga-card-section-spacing {
+    padding-top: var(--auriga-card-spacing-lg);
+    padding-bottom: var(--auriga-card-spacing-lg);
+  }
+
+  .auriga-card-surface {
+    padding: 1.5rem;
+  }
+}
