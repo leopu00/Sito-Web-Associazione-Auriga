@@ -7,14 +7,14 @@ interface Props {
 const { images, id = 'imageModal' } = Astro.props;
 ---
 
-<div id={id} class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50" data-images={JSON.stringify(images)}>
-  <button data-modal-prev class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 hover:bg-white/10 rounded transition-colors">←</button>
+<div id={id} class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50" data-images={JSON.stringify(images)} role="dialog" aria-modal="true">
+  <button data-modal-prev class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 hover:bg-white/10 rounded transition-colors" aria-label="Immagine precedente">←</button>
 
   <img data-modal-img src="" alt="" class="max-w-full max-h-full object-contain" />
 
-  <button data-modal-next class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 hover:bg-white/10 rounded transition-colors">→</button>
+  <button data-modal-next class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 hover:bg-white/10 rounded transition-colors" aria-label="Immagine successiva">→</button>
 
-  <button data-modal-close class="absolute top-4 right-4 text-white text-2xl p-2 hover:bg-white/10 rounded transition-colors">✕</button>
+  <button data-modal-close class="absolute top-4 right-4 text-white text-2xl p-2 hover:bg-white/10 rounded transition-colors" aria-label="Chiudi immagine">✕</button>
 
   <div data-modal-counter class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm"></div>
 </div>
