@@ -1,0 +1,175 @@
+---
+interface Props {
+  images: { src: string; alt: string }[];
+  id?: string;
+}
+
+const { images, id = "carousel" } = Astro.props;
+const modalId = `${id}-modal`;
+const modalImgId = `${id}-modal-img`;
+---
+
+<div class="relative w-full max-w-3xl mx-auto">
+  <!-- Slides container -->
+  <div class="overflow-hidden rounded">
+    <div
+      class="flex transition-transform duration-700 ease-in-out will-change-transform h-96 md:h-[40rem]"
+      id={id}
+      data-carousel
+    >
+      {images.map((img, index) => (
+        <img
+          src={img.src}
+          alt={img.alt}
+          class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in"
+          loading="lazy"
+          decoding="async"
+          data-index={index}
+        />
+      ))}
+    </div>
+  </div>
+
+  <!-- Navigation buttons -->
+  <button
+    type="button"
+    class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded transition-colors"
+    data-carousel-prev={id}
+    aria-label="Immagine precedente"
+  >
+    ←
+  </button>
+  <button
+    type="button"
+    class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded transition-colors"
+    data-carousel-next={id}
+    aria-label="Immagine successiva"
+  >
+    →
+  </button>
+
+  <!-- Dots indicators -->
+  {images.length > 1 && (
+    <div class="flex justify-center gap-2 mt-4" data-carousel-dots={id}>
+      {images.map((_, index) => (
+        <button
+          type="button"
+          class={`w-2 h-2 rounded-full transition-colors ${index === 0 ? 'bg-black' : 'bg-black/30 hover:bg-black/50'}`}
+          data-dot-index={index}
+          aria-label={`Vai all'immagine ${index + 1}`}
+        />
+      ))}
+    </div>
+  )}
+</div>
+
+<!-- Fullscreen modal -->
+<div
+  id={modalId}
+  class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50"
+  data-carousel-modal={id}
+>
+  <img
+    id={modalImgId}
+    src=""
+    alt="Immagine a schermo intero"
+    class="max-w-full max-h-full object-contain"
+  />
+  <button
+    type="button"
+    class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition-colors"
+    data-modal-close={id}
+    aria-label="Chiudi"
+  >
+    ✕
+  </button>
+</div>
+
+<script define:vars={{ id, modalId, modalImgId }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const carousel = document.getElementById(id);
+    const modal = document.getElementById(modalId);
+    const modalImg = document.getElementById(modalImgId);
+    const dotsContainer = document.querySelector(`[data-carousel-dots="${id}"]`);
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('button') : [];
+    const total = carousel ? carousel.children.length : 0;
+
+    function updateCarousel() {
+      if (!carousel || total === 0) return;
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === currentIndex) {
+          dot.classList.remove('bg-black/30', 'hover:bg-black/50');
+          dot.classList.add('bg-black');
+        } else {
+          dot.classList.remove('bg-black');
+          dot.classList.add('bg-black/30', 'hover:bg-black/50');
+        }
+      });
+    }
+
+    function move(direction) {
+      currentIndex = (currentIndex + direction + total) % total;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    // Prev/Next buttons
+    const prevBtn = document.querySelector(`[data-carousel-prev="${id}"]`);
+    const nextBtn = document.querySelector(`[data-carousel-next="${id}"]`);
+
+    if (prevBtn) prevBtn.addEventListener('click', () => move(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => move(1));
+
+    // Dots navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+
+    // Fullscreen modal
+    const imgs = carousel ? carousel.querySelectorAll('img') : [];
+
+    imgs.forEach((img) => {
+      img.addEventListener('click', () => {
+        if (modal && modalImg) {
+          modalImg.src = img.src;
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (modalImg) modalImg.src = '';
+        document.body.style.overflow = '';
+      }
+    }
+
+    const closeBtn = document.querySelector(`[data-modal-close="${id}"]`);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!modal || modal.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') move(-1);
+      if (e.key === 'ArrowRight') move(1);
+    });
+  });
+</script>
