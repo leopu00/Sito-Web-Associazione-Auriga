@@ -18,5 +18,6 @@
 @font-face {
   font-family: "WaldorfschriftRegular";
   src: url('webFonts/WaldorfschriftRegular/font.woff2') format('woff2'), url('webFonts/WaldorfschriftRegular/font.woff') format('woff');
+  font-display: swap;
 }
 
