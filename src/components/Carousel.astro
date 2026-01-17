@@ -9,23 +9,37 @@ const modalId = `${id}-modal`;
 const modalImgId = `${id}-modal-img`;
 ---
 
-<div class="relative w-full max-w-3xl mx-auto">
+<div
+  class="relative w-full max-w-3xl mx-auto"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="Galleria immagini"
+>
   <!-- Slides container -->
   <div class="overflow-hidden rounded">
     <div
       class="flex transition-transform duration-700 ease-in-out will-change-transform h-96 md:h-[40rem]"
       id={id}
       data-carousel
+      aria-live="polite"
     >
       {images.map((img, index) => (
-        <img
-          src={img.src}
-          alt={img.alt}
-          class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in"
-          loading="lazy"
-          decoding="async"
-          data-index={index}
-        />
+        <div
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`Immagine ${index + 1} di ${images.length}`}
+          class="w-full h-full flex-none shrink-0"
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            role="img"
+            class="w-full h-full object-contain object-center cursor-zoom-in"
+            loading="lazy"
+            decoding="async"
+            data-index={index}
+          />
+        </div>
       ))}
     </div>
   </div>
@@ -93,7 +107,8 @@ const modalImgId = `${id}-modal-img`;
     const modalImg = document.getElementById(modalImgId);
     const dotsContainer = document.querySelector(`[data-carousel-dots="${id}"]`);
     const dots = dotsContainer ? dotsContainer.querySelectorAll('button') : [];
-    const total = carousel ? carousel.children.length : 0;
+    const slides = carousel ? carousel.querySelectorAll('[role="group"]') : [];
+    const total = slides.length;
 
     function updateCarousel() {
       if (!carousel || total === 0) return;
@@ -134,7 +149,7 @@ const modalImgId = `${id}-modal-img`;
     });
 
     // Fullscreen modal
-    const imgs = carousel ? carousel.querySelectorAll('img') : [];
+    const imgs = carousel ? carousel.querySelectorAll('[role="group"] img') : [];
 
     imgs.forEach((img) => {
       img.addEventListener('click', () => {
