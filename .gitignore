@@ -25,3 +25,5 @@ settings.json
 
 # Types generati fuori da src/
 types.d.ts
+# Identità agent - MAI committare!
+CLAUDE.md
