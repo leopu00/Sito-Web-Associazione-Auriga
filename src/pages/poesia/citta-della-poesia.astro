@@ -1,137 +1,65 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+
+const galleriaImages = [
+  { src: "/img/citta-della-poesia/Poesia1.webp", alt: "La Città della Poesia – 1" },
+  { src: "/img/citta-della-poesia/Poesia2.webp", alt: "La Città della Poesia – 2" },
+  { src: "/img/citta-della-poesia/Poesia3.jpg", alt: "La Città della Poesia – 3" },
+  { src: "/img/citta-della-poesia/Poesia4.jpg", alt: "La Città della Poesia – 4" },
+  { src: "/img/citta-della-poesia/Poesia5.jpg", alt: "La Città della Poesia – 5" },
+];
+
+const galleriaImages2 = [
+  { src: "/img/citta-della-poesia/_DSF5272.JPG", alt: "Città della Poesia – extra 1" },
+  { src: "/img/citta-della-poesia/_DSF5275.JPG", alt: "Città della Poesia – extra 2" },
+  { src: "/img/citta-della-poesia/_DSF5294.JPG", alt: "Città della Poesia – extra 3" },
+  { src: "/img/citta-della-poesia/_DSF5296.JPG", alt: "Città della Poesia – extra 4" },
+  { src: "/img/citta-della-poesia/_DSF5301.JPG", alt: "Città della Poesia – extra 5" },
+  { src: "/img/citta-della-poesia/_DSF5307.JPG", alt: "Città della Poesia – extra 6" },
+  { src: "/img/citta-della-poesia/_DSF5309.JPG", alt: "Città della Poesia – extra 7" },
+  { src: "/img/citta-della-poesia/_DSF5318.JPG", alt: "Città della Poesia – extra 8" },
+  { src: "/img/citta-della-poesia/_DSF5319.JPG", alt: "Città della Poesia – extra 9" },
+  { src: "/img/citta-della-poesia/_DSF5326.JPG", alt: "Città della Poesia – extra 10" },
+  { src: "/img/citta-della-poesia/_DSF5332.JPG", alt: "Città della Poesia – extra 11" },
+  { src: "/img/citta-della-poesia/_DSF5338.JPG", alt: "Città della Poesia – extra 12" },
+  { src: "/img/citta-della-poesia/_DSF5340.JPG", alt: "Città della Poesia – extra 13" },
+  { src: "/img/citta-della-poesia/_DSF5357.JPG", alt: "Città della Poesia – extra 14" },
+  { src: "/img/citta-della-poesia/_DSF5371.JPG", alt: "Città della Poesia – extra 15" },
+  { src: "/img/citta-della-poesia/_DSF5388.JPG", alt: "Città della Poesia – extra 16" },
+  { src: "/img/citta-della-poesia/_DSF5401.JPG", alt: "Città della Poesia – extra 17" },
+  { src: "/img/citta-della-poesia/_DSF5404.JPG", alt: "Città della Poesia – extra 18" },
+  { src: "/img/citta-della-poesia/_DSF5417.JPG", alt: "Città della Poesia – extra 19" },
+];
 ---
 <BaseLayout title="La Città della Poesia — Auriga" headerTheme="light" pageNamespace="citta-della-poesia" pageClass="bg-[#faf7f2] text-black" pageBg="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2">
   <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
     <h1 class="text-3xl font-bold mb-6 text-[#7c2935]">La Città della Poesia</h1>
     <p class="text-lg leading-relaxed text-justify">
-      L’APS Auriga organizza la rassegna <strong class="text-[#7c2935]">“La Città della Poesia”</strong>, serie di incontri dedicati
+      L'APS Auriga organizza la rassegna <strong class="text-[#7c2935]">"La Città della Poesia"</strong>, serie di incontri dedicati
       alla recitazione della poesia ad alta voce. Gli incontri sono di volta in volta dedicati a temi
       o autori diversi: attori professionisti, con una particolare attenzione per la poesia,
-      presentano testi poetici del ‘900 e contemporanei in un dialogo creativo con la musica
+      presentano testi poetici del '900 e contemporanei in un dialogo creativo con la musica
       (violino, tiorba, fisarmonica, clarinetto, viola da gamba, etc.).
     </p>
 
     <div class="mb-10"></div>
 
-    <!-- Galleria -->
+    <!-- Galleria 1 -->
     <h2 class="text-2xl font-semibold">Galleria</h2>
-    <div class="mt-2 relative w-full max-w-3xl mx-auto">
-      <div class="overflow-hidden rounded">
-        <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-96 md:h-[40rem]" id="carousel-citta">
-          <img src="/img/citta-della-poesia/Poesia1.webp" alt="La Città della Poesia – 1" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/Poesia2.webp" alt="La Città della Poesia – 2" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/Poesia3.jpg"  alt="La Città della Poesia – 3" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/Poesia4.jpg"  alt="La Città della Poesia – 5" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/Poesia5.jpg"  alt="La Città della Poesia – 4" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <button onclick="moveCitta(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
-      <button onclick="moveCitta(1)"  class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
+    <div class="mt-2">
+      <Carousel images={galleriaImages} id="carousel-citta" />
     </div>
+
     <div class="h-20"></div>
 
-    <div class="mt-0 relative w-full max-w-5xl mx-auto">
-      <div class="overflow-hidden rounded">
-        <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-96 md:h-[40rem]" id="carousel-citta-2">
-          <img src="/img/citta-della-poesia/_DSF5272.JPG" alt="Città della Poesia – extra 1" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5275.JPG" alt="Città della Poesia – extra 2" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5294.JPG" alt="Città della Poesia – extra 3" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5296.JPG" alt="Città della Poesia – extra 4" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5301.JPG" alt="Città della Poesia – extra 5" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5307.JPG" alt="Città della Poesia – extra 6" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5309.JPG" alt="Città della Poesia – extra 7" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5318.JPG" alt="Città della Poesia – extra 8" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5319.JPG" alt="Città della Poesia – extra 9" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5326.JPG" alt="Città della Poesia – extra 10" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5332.JPG" alt="Città della Poesia – extra 11" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5338.JPG" alt="Città della Poesia – extra 12" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5340.JPG" alt="Città della Poesia – extra 13" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5357.JPG" alt="Città della Poesia – extra 14" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5371.JPG" alt="Città della Poesia – extra 15" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5388.JPG" alt="Città della Poesia – extra 16" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5401.JPG" alt="Città della Poesia – extra 17" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5404.JPG" alt="Città della Poesia – extra 18" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-          <img src="/img/citta-della-poesia/_DSF5417.JPG" alt="Città della Poesia – extra 19" class="w-full h-full object-contain object-center flex-none shrink-0 cursor-zoom-in" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <button onclick="moveCitta2(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
-      <button onclick="moveCitta2(1)"  class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
+    <!-- Galleria 2 -->
+    <div class="max-w-5xl mx-auto">
+      <Carousel images={galleriaImages2} id="carousel-citta-2" />
     </div>
-
-    <script is:inline>
-      window.addEventListener('DOMContentLoaded', () => {
-        let idx = 0;
-        const car = document.getElementById('carousel-citta');
-        const tot = car ? car.children.length : 0;
-        function moveCitta(d) {
-          if (!car || tot === 0) return;
-          idx = (idx + d + tot) % tot;
-          car.style.transform = `translateX(-${idx * 100}%)`;
-        }
-        window.moveCitta = moveCitta;
-
-        // Modal fullscreen
-        const imgs = car ? car.querySelectorAll('img') : [];
-        const modal = document.getElementById('imgModal');
-        const modalImg = document.getElementById('modalImg');
-        imgs.forEach((img) => {
-          img.addEventListener('click', () => {
-            if (modal && modalImg) {
-              modalImg.src = img.src;
-              modal.classList.remove('hidden');
-              modal.classList.add('flex');
-            }
-          });
-        });
-        function closeModal() {
-          if (modal) {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            if (modalImg) modalImg.src = '';
-          }
-        }
-        window.closeModal = closeModal;
-        if (modal) {
-          modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-          });
-        }
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') closeModal();
-        });
-
-        // Second carousel
-        let idx2 = 0;
-        const car2 = document.getElementById('carousel-citta-2');
-        const tot2 = car2 ? car2.children.length : 0;
-        function moveCitta2(d) {
-          if (!car2 || tot2 === 0) return;
-          idx2 = (idx2 + d + tot2) % tot2;
-          car2.style.transform = `translateX(-${idx2 * 100}%)`;
-        }
-        window.moveCitta2 = moveCitta2;
-
-        const imgs2 = car2 ? car2.querySelectorAll('img') : [];
-        imgs2.forEach((img) => {
-          img.addEventListener('click', () => {
-            if (modal && modalImg) {
-              modalImg.src = img.src;
-              modal.classList.remove('hidden');
-              modal.classList.add('flex');
-            }
-          });
-        });
-      });
-    </script>
 
     <div class="mt-10">
       <a href="/poesia" class="inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">← Torna a Poesia</a>
-    </div>
-
-    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
-      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
 </BaseLayout>
