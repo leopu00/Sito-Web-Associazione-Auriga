@@ -32,7 +32,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
   <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`} style={pageBgColor ? `background-color:${pageBgColor}` : ""}>
     <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-slate-800 text-white" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center h-full">
+        <a href="/" class="flex items-center h-full" aria-label="Torna alla homepage">
           <img src="/LOGO-2.svg" alt="Auriga Logo" class="h-full" />
         </a>
         <nav class="flex gap-6 text-sm">
@@ -61,7 +61,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
           </div>
         </div>
         <div class="flex flex-col items-center text-center space-y-6">
-          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600">
+          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600" aria-label="Navigazione principale">
             <a href="/" class="underline">Home</a>
             <span>•</span>
             <a href="/chi-siamo" class="underline">Chi&nbsp;siamo</a>
@@ -79,7 +79,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
 
           <p class="text-sm font-semibold">© {new Date().getFullYear()} APS Auriga</p>
 
-          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600">
+          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600" aria-label="Link legali">
             <a href="/privacy" class="underline">Privacy Policy</a>
             <span>•</span>
             <a href="/cookie-policy" class="underline">Cookie Policy</a>
