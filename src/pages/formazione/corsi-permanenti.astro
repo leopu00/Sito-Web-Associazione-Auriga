@@ -1,5 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+
+const carouselImages = [
+  { src: "/img/CorsoPermanente1.jpg", alt: "Corsi permanenti – 1" },
+  { src: "/img/CorsoPermanente2.jpg", alt: "Corsi permanenti – 2" },
+  { src: "/img/CorsoPermanente3.jpg", alt: "Corsi permanenti – 3" },
+];
 ---
 
 <BaseLayout title="Corsi permanenti — Auriga" headerTheme="light" pageNamespace="corsi-permanenti" pageClass="bg-white text-black" pageBg="light">
@@ -9,78 +16,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       Fin dal <strong>2016</strong>, APS Auriga organizza corsi della durata <strong>triennale</strong>, con incontri a cadenza <strong>mensile</strong>,
       per tutti coloro che desiderano specializzarsi in <strong>Sprachgestaltung</strong> in lingua italiana e <strong>Arte drammatica</strong>.<br></p>
     <div class="mb-10"></div>
-    <div class="w-full mb-6 rounded-lg overflow-hidden h-64 md:h-80">
-      <div class="relative w-full h-full">
-        <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-full" id="carousel-permanenti">
-          <img src="/img/CorsoPermanente1.jpg" alt="Corsi permanenti – 1" class="w-full h-full object-contain object-center flex-none shrink-0" />
-          <img src="/img/CorsoPermanente2.jpg" alt="Corsi permanenti – 2" class="w-full h-full object-contain object-center flex-none shrink-0" />
-          <img src="/img/CorsoPermanente3.jpg" alt="Corsi permanenti – 3" class="w-full h-full object-contain object-center flex-none shrink-0" />
-        </div>
-        <!-- Frecce -->
-        <button onclick="movePermanenti(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
-        <button onclick="movePermanenti(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
-      </div>
-    </div>
 
-    <script is:inline>
-      window.addEventListener('DOMContentLoaded', () => {
-        let idxP = 0;
-        const carP = document.getElementById('carousel-permanenti');
-        const totP = carP ? carP.children.length : 0;
-        function movePermanenti(d) {
-          if (!carP || totP === 0) return;
-          idxP = (idxP + d + totP) % totP;
-          carP.style.transform = `translateX(-${idxP * 100}%)`;
-        }
-        // Expose for arrow buttons defined with inline onclick
-        window.movePermanenti = movePermanenti;
+    <Carousel images={carouselImages} id="carousel-permanenti" />
 
-        // Modal handling
-        const imgs = carP ? carP.querySelectorAll('img') : [];
-        const modal = document.getElementById('imgModal');
-        const modalImg = document.getElementById('modalImg');
-
-        imgs.forEach((img) => {
-          img.classList.add('cursor-zoom-in');
-          img.addEventListener('click', () => {
-            if (modal && modalImg) {
-              modalImg.src = img.src;
-              modal.classList.remove('hidden');
-              modal.classList.add('flex');
-            }
-          });
-        });
-
-        function closeModal() {
-          if (modal) {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            if (modalImg) modalImg.src = '';
-          }
-        }
-        // Expose close for the ✕ button (inline onclick)
-        window.closeModal = closeModal;
-
-        // Close on click outside the image
-        if (modal) {
-          modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-          });
-        }
-        // Close on ESC
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') closeModal();
-        });
-      });
-    </script>
     <div class="mb-10"></div>
-      <p class="text-lg leading-relaxed text-justify">I corsi sono organizzati in collaborazione con l’
+      <p class="text-lg leading-relaxed text-justify">I corsi sono organizzati in collaborazione con l'
       <strong>
         <a href="https://www.accademiaaldobargero.com/" target="_blank" rel="noopener" class="text-blue-600 underline"
         >Accademia Aldo Bargero</a>
       </strong>
       e si tengono nella sede
-      dell’Accademia, presso <strong>Oriago di Mira</strong>.
+      dell'Accademia, presso <strong>Oriago di Mira</strong>.
     </p>
     <div class="w-full max-w-4xl mx-auto mt-10">
       <iframe
@@ -112,10 +58,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       >
         Contattaci per ulteriori informazioni
       </a>
-    </div>
-    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
-      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
 </BaseLayout>
