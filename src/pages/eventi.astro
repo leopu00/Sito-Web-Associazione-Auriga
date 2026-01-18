@@ -79,7 +79,7 @@ const pastEvents: EventEntry[] = [
     location: "Scuole Waldorf del Veneto",
     description:
       "Spettacolo itinerante dal poemetto greco, con un viaggio condiviso tra comunità e scuole in tre tappe successive.",
-    image: "/img/battaglia-rane-topi/DSCF3912.jpg",
+    image: "/img/battaglia-rane-topi/DSCF3838.jpg",
     imageAlt: "Scena teatrale de La battaglia delle rane e dei topi",
     link: "/teatro/battaglia-rane-topi",
   },
@@ -120,28 +120,28 @@ const pastEvents: EventEntry[] = [
     link: "/poesia/la-citta-della-poesia",
   },
   {
-    id: "convegno-sprachgestaltung",
-    category: "convegno",
-    title: "Convegno sulla Sprachgestaltung",
-    date: "Ottobre 2024",
-    location: "Nuovo Teatro Ateneo 'Università La Sapienza'",
-    description:
-      "Una giornata di studio dedicata alla Sprachgestaltung con docenti e professionisti del linguaggio scenico e pedagogico.",
-    image: "/img/sapienzacorso.jpg",
-    imageAlt: "Relatori riuniti al Nuovo Teatro Ateneo della Sapienza",
-    link: "/formazione/corsi-intensivi",
-  },
-  {
     id: "la-tempesta-continua-2024-ottobre",
     category: "teatro",
     title: "La tempesta continua",
-    date: "Ottobre 2024",
+    date: "Ottobre 11, 2024",
     location: "Nuovo Teatro Ateneo 'Università La Sapienza'",
     description:
       "Nuova produzione liberamente ispirata alla Tempesta di Shakespeare, con musiche originali e un cast internazionale.",
     image: "/img/tempesta-continua.jpg",
     imageAlt: "Scena centrale dello spettacolo La tempesta continua",
     link: "/teatro/tempesta-continua",
+  },
+  {
+    id: "convegno-sprachgestaltung",
+    category: "convegno",
+    title: "Convegno sulla Sprachgestaltung",
+    date: "Ottobre 10, 2024",
+    location: "Nuovo Teatro Ateneo 'Università La Sapienza'",
+    description:
+      "Una giornata di studio dedicata alla Sprachgestaltung con docenti e professionisti del linguaggio scenico e pedagogico.",
+    image: "/img/sapienzacorso.jpg",
+    imageAlt: "Relatori riuniti al Nuovo Teatro Ateneo della Sapienza",
+    link: "/formazione/corsi-intensivi",
   },
   {
     id: "la-tempesta-continua-2024-luglio",
@@ -151,7 +151,7 @@ const pastEvents: EventEntry[] = [
     location: "Goetheaunm - Dornach",
     description:
       "Nuova produzione liberamente ispirata alla Tempesta di Shakespeare, con musiche originali e un cast internazionale.",
-    image: "/img/tempesta-continua.jpg",
+    image: "/img/tempesta-quartetto.jpg",
     imageAlt: "Scena centrale dello spettacolo La tempesta continua",
     link: "/teatro/tempesta-continua",
   },
@@ -163,7 +163,7 @@ const pastEvents: EventEntry[] = [
     location: "CAE",
     description:
       "Spettacolo itinerante dal poemetto greco, con un viaggio condiviso tra comunità e scuole in tre tappe successive.",
-    image: "/img/battaglia-rane-topi/DSCF3912.jpg",
+    image: "/img/battaglia-rane-topi/DSCF4046.jpg",
     imageAlt: "Scena teatrale de La battaglia delle rane e dei topi",
     link: "/teatro/battaglia-rane-topi",
   },
@@ -220,8 +220,8 @@ const pastEvents: EventEntry[] = [
 const categoryColors: Record<string, { bg: string; text: string; border: string; hoverBorder: string }> = {
   arteterapia: { bg: "bg-purple-50", text: "text-purple-700", border: "border-l-purple-500", hoverBorder: "hover:border-purple-400" },
   teatro: { bg: "bg-rose-50", text: "text-rose-900", border: "border-l-rose-800", hoverBorder: "hover:border-rose-700" },
-  poesia: { bg: "bg-violet-50", text: "text-violet-700", border: "border-l-violet-500", hoverBorder: "hover:border-violet-400" },
-  convegno: { bg: "bg-teal-50", text: "text-teal-700", border: "border-l-teal-500", hoverBorder: "hover:border-teal-400" },
+  poesia: { bg: "bg-indigo-50", text: "text-indigo-700", border: "border-l-indigo-500", hoverBorder: "hover:border-indigo-400" },
+  convegno: { bg: "bg-emerald-50", text: "text-emerald-700", border: "border-l-emerald-600", hoverBorder: "hover:border-emerald-500" },
 };
 
 const getCategoryColor = (category: string) => categoryColors[category] || { bg: "bg-slate-50", text: "text-slate-700", border: "border-l-slate-500", hoverBorder: "hover:border-slate-400" };
@@ -392,7 +392,7 @@ const timelineItems: TimelineItem[] = [
                   <!-- Left column -->
                   <div class={`flex ${item.isInverted ? "justify-end pr-4" : "justify-end pr-4"}`}>
                     {item.isInverted ? (
-                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] ${getCategoryColor(item.category).hoverBorder}`} id={item.id}>
+                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] hover:border-slate-200`} id={item.id}>
                         <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
                         <div class="p-6 lg:p-8">
                           <h3 class="text-2xl font-semibold text-slate-900">{item.title}</h3>
@@ -425,8 +425,8 @@ const timelineItems: TimelineItem[] = [
                     <span class={`block w-4 h-4 rounded-full border-[3px] border-white shadow-[0_0_0_4px_rgba(0,0,0,0.08)] transition-transform duration-300 group-hover:scale-125 ${
                       item.category === "arteterapia" ? "bg-purple-500" :
                       item.category === "teatro" ? "bg-rose-800" :
-                      item.category === "poesia" ? "bg-violet-500" :
-                      item.category === "convegno" ? "bg-teal-500" : "bg-slate-500"
+                      item.category === "poesia" ? "bg-indigo-500" :
+                      item.category === "convegno" ? "bg-emerald-600" : "bg-slate-500"
                     }`} aria-hidden="true"></span>
                   </div>
 
@@ -441,7 +441,7 @@ const timelineItems: TimelineItem[] = [
                         <p class="mt-1.5 text-sm text-slate-600">{item.location}</p>
                       </div>
                     ) : (
-                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] ${getCategoryColor(item.category).hoverBorder}`} id={item.id}>
+                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] hover:border-slate-200`} id={item.id}>
                         <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
                         <div class="p-6 lg:p-8">
                           <h3 class="text-2xl font-semibold text-slate-900">{item.title}</h3>
