@@ -55,8 +55,21 @@ header {
   z-index: 50;
 }
 
-/* Barba.js transition styles */
-.is-transitioning {
-  pointer-events: none;
-  cursor: progress;
+/* View Transitions - ottimizzazione performance */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-group(*) {
+  animation-duration: 800ms;
+}
+
+/* Previeni scatti durante le transizioni */
+html:has(::view-transition) {
+  overflow: hidden;
+}
+
+main {
+  will-change: opacity, transform;
 }

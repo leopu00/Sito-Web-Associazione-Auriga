@@ -1,9 +1,13 @@
 ---
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions, slide, fade } from 'astro:transitions';
 
-const { title = "Auriga", description = "Associazione culturale Auriga - Teatro, Poesia, Formazione", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "" } = Astro.props;
+const { title = "Auriga", description = "Associazione culturale Auriga - Teatro, Poesia, Formazione", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "", transition = "fade" } = Astro.props;
+
+const transitionAnim = transition === "slide"
+  ? slide({ duration: '800ms' })
+  : fade({ duration: '800ms' });
 ---
 
 <html lang="it">
@@ -104,7 +108,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
       }
     </script>
 
-    <main class={`flex-1 min-h-screen ${pageClass}`} data-page-bg={pageBg}>
+    <main class={`flex-1 min-h-screen ${pageClass}`} data-page-bg={pageBg} transition:animate={transitionAnim}>
       <slot />
     </main>
 
