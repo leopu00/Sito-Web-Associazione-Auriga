@@ -234,24 +234,64 @@ const timelineItems: TimelineItem[] = [
 
 <BaseLayout
   title="Eventi — Auriga"
-  headerTheme="light"
-  headerClass="bg-[#faf7f2]"
-  headerStyle="background-color:#faf7f2"
-  pageBg="light"
+  headerTheme="dark"
+  headerClass="bg-transparent"
+  headerStyle=""
+  pageBg="dark"
 >
-  <section class="relative min-h-[360px] flex items-center justify-center overflow-hidden bg-[#014f97] text-white">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#012b5c] via-[#014f97] to-[#021b45]"></div>
-    <div class="absolute left-1/2 top-[-220px] h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(159,210,255,0.45),_rgba(1,79,151,0))] opacity-90"></div>
-    <div class="absolute right-[12%] top-[18%] h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.22),_rgba(1,43,92,0))] opacity-90 blur-2xl"></div>
-    <div class="absolute left-[8%] bottom-[-140px] h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(2,28,67,0.65),_rgba(1,79,151,0))] opacity-70 blur-3xl"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6 py-24 text-center">
-      <h1 class="text-4xl md:text-5xl font-semibold">Eventi</h1>
+  <section class="relative overflow-hidden text-white">
+    <!-- Mesh gradient background -->
+    <div class="absolute inset-0 bg-[#1a0a2e]"></div>
+
+    <!-- BORDO SINISTRO -->
+    <div class="absolute top-[0%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#7c3aed] opacity-80 blur-[80px]"></div>
+    <div class="absolute top-[20%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#3b82f6] opacity-75 blur-[70px]"></div>
+    <div class="absolute top-[40%] left-[-12%] w-[42%] h-[28%] rounded-full bg-[#ec4899] opacity-70 blur-[75px]"></div>
+    <div class="absolute top-[60%] left-[-8%] w-[38%] h-[25%] rounded-full bg-[#06b6d4] opacity-65 blur-[70px]"></div>
+    <div class="absolute top-[80%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#8b5cf6] opacity-70 blur-[80px]"></div>
+
+    <!-- BORDO DESTRO -->
+    <div class="absolute top-[0%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#ec4899] opacity-80 blur-[80px]"></div>
+    <div class="absolute top-[18%] right-[-10%] w-[40%] h-[25%] rounded-full bg-[#f97316] opacity-75 blur-[70px]"></div>
+    <div class="absolute top-[38%] right-[-12%] w-[42%] h-[28%] rounded-full bg-[#a855f7] opacity-70 blur-[75px]"></div>
+    <div class="absolute top-[58%] right-[-8%] w-[38%] h-[25%] rounded-full bg-[#f472b6] opacity-65 blur-[70px]"></div>
+    <div class="absolute top-[78%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#f97316] opacity-70 blur-[80px]"></div>
+
+    <!-- CENTRO - HERO -->
+    <div class="absolute top-[5%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#06b6d4] opacity-70 blur-[65px]"></div>
+    <div class="absolute top-[8%] left-[40%] w-[35%] h-[25%] rounded-full bg-[#d946ef] opacity-75 blur-[65px]"></div>
+    <div class="absolute top-[3%] left-[55%] w-[30%] h-[22%] rounded-full bg-[#fbbf24] opacity-60 blur-[60px]"></div>
+    <div class="absolute top-[12%] left-[25%] w-[30%] h-[22%] rounded-full bg-[#f43f5e] opacity-65 blur-[60px]"></div>
+    <div class="absolute top-[15%] left-[50%] w-[32%] h-[24%] rounded-full bg-[#10b981] opacity-60 blur-[65px]"></div>
+    <div class="absolute top-[20%] left-[35%] w-[35%] h-[25%] rounded-full bg-[#fb7185] opacity-65 blur-[65px]"></div>
+
+    <!-- CENTRO - MIDDLE -->
+    <div class="absolute top-[28%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#22d3d1] opacity-60 blur-[70px]"></div>
+    <div class="absolute top-[30%] left-[45%] w-[38%] h-[26%] rounded-full bg-[#c084fc] opacity-65 blur-[70px]"></div>
+    <div class="absolute top-[35%] left-[30%] w-[40%] h-[28%] rounded-full bg-[#f97316] opacity-55 blur-[70px]"></div>
+    <div class="absolute top-[40%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#818cf8] opacity-60 blur-[65px]"></div>
+    <div class="absolute top-[42%] left-[50%] w-[35%] h-[25%] rounded-full bg-[#fb923c] opacity-55 blur-[65px]"></div>
+
+    <!-- CENTRO - BOTTOM -->
+    <div class="absolute top-[50%] left-[25%] w-[40%] h-[28%] rounded-full bg-[#e879f9] opacity-60 blur-[70px]"></div>
+    <div class="absolute top-[55%] left-[40%] w-[38%] h-[26%] rounded-full bg-[#14b8a6] opacity-55 blur-[70px]"></div>
+    <div class="absolute top-[60%] left-[15%] w-[42%] h-[28%] rounded-full bg-[#6366f1] opacity-60 blur-[75px]"></div>
+    <div class="absolute top-[65%] left-[45%] w-[40%] h-[28%] rounded-full bg-[#ec4899] opacity-55 blur-[70px]"></div>
+    <div class="absolute top-[70%] left-[25%] w-[45%] h-[30%] rounded-full bg-[#0ea5e9] opacity-55 blur-[75px]"></div>
+    <div class="absolute top-[75%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#d946ef] opacity-50 blur-[70px]"></div>
+    <div class="absolute top-[82%] left-[20%] w-[45%] h-[30%] rounded-full bg-[#fbbf24] opacity-50 blur-[75px]"></div>
+    <div class="absolute top-[88%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#7c3aed] opacity-55 blur-[70px]"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Eventi</h1>
+      </div>
     </div>
-    <div class="pointer-events-none absolute -bottom-20 h-20 w-full bg-gradient-to-b from-transparent via-[#033b7a]/80 to-[#014f97] md:-bottom-28 md:h-28"></div>
-  </section>
-  <section class="relative bg-[#014f97] py-16 md:py-20">
-    <div class="absolute inset-0 bg-gradient-to-b from-[#014f97] via-[#023b7e] to-[#012b5c]"></div>
-    <div class="relative max-w-6xl mx-auto px-4">
+
+    <!-- Timeline content -->
+    <div class="relative z-10 pb-16 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4">
       <div class="rounded-[28px] border-2 border-black/40 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-12">
         <header class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
@@ -379,6 +419,7 @@ const timelineItems: TimelineItem[] = [
             );
           })}
         </ol>
+      </div>
       </div>
     </div>
   </section>
