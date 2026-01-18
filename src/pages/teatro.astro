@@ -3,17 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Teatro — Auriga" headerTheme="light" headerClass="bg-white" headerStyle="background-color:white" pageNamespace="teatro" pageClass="text-black" pageBg="light" pageBgColor="#ffffff">
-  <section class="bg-[#7a0f1e]">
-    <div class="max-w-6xl mx-auto px-4 py-12 pt-20">
-      <h1 class="text-3xl font-bold mb-6 text-white">Teatro</h1>
-      <p class="text-lg leading-relaxed mb-8 text-white">
-        Gli spettacoli teatrali realizzati da <strong>APS Auriga</strong> negli ultimi anni.
-      </p>
+  <section class="bg-[#7a0f1e] text-white">
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Teatro</h1>
+      </div>
     </div>
-  </section>
 
-  <section class="bg-[#7a0f1e]">
-    <div class="max-w-6xl mx-auto px-4 auriga-card-section-spacing">
+    <!-- Cards section -->
+    <div class="relative z-10 pb-16 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4">
       <div class="auriga-card-stack">
         <article class="auriga-card-surface">
           <div class="grid md:grid-cols-2 gap-10 items-center reveal">
@@ -21,6 +21,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               src="/img/tempesta-continua.jpg"
               alt="La tempesta continua"
               class="w-full h-64 md:h-96 object-cover rounded-lg"
+              loading="lazy"
+              decoding="async"
+              
             />
             <div>
               <h2 class="text-3xl md:text-4xl font-bold">La tempesta continua</h2>
@@ -55,6 +58,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               src="/img/battaglia-rane.jpg"
               alt="La battaglia delle rane e dei topi"
               class="w-full h-64 md:h-96 object-cover rounded-lg"
+              loading="lazy"
+              decoding="async"
+              
             />
           </div>
         </article>
@@ -65,6 +71,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               src="/img/paradiso.jpg"
               alt="Il Paradiso"
               class="w-full h-64 md:h-96 object-cover rounded-lg"
+              loading="lazy"
+              decoding="async"
+              
             />
             <div>
               <h2 class="text-3xl md:text-4xl font-bold">Il Paradiso</h2>
@@ -81,13 +90,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
         </article>
       </div>
+      </div>
     </div>
   </section>
-  <style is:global>
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-  </style>
 </BaseLayout>

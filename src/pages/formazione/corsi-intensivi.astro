@@ -1,121 +1,90 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Carousel from "../../components/Carousel.astro";
+
+const galleryImages = [
+  { src: "/img/CorsoIntensivoSapienza0.jpg", alt: "Corsi intensivi – 1" },
+  { src: "/img/CorsoIntensivoSapienza1.jpg", alt: "Corsi intensivi – 2" },
+  { src: "/img/CorsoIntensivoSapienza2.jpg", alt: "Corsi intensivi – 3" },
+];
 ---
 
-<BaseLayout title="Corsi intensivi — Auriga" headerTheme="light" pageNamespace="corsi-intensivi" pageClass="bg-white text-black" pageBg="light">
+<BaseLayout title="Corsi intensivi — Auriga" headerTheme="light" headerClass="bg-white" headerStyle="background-color:#ffffff" pageNamespace="corsi-intensivi" pageClass="bg-white text-black" pageBg="light">
   <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
-    <h1 class="text-3xl font-bold mb-6">Corsi intensivi</h1>
-    <div class="flex justify-center mb-6">
-      <img src="/img/sapienza-logo.png" alt="Corsi intensivi" class="w-[400px] h-auto object-contain mx-auto" style="max-width:400px;" />
+    <!-- Header con logo e titolo -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-8">Corsi intensivi</h1>
+      <img
+        src="/img/sapienza-logo.png"
+        alt="Logo Università La Sapienza"
+        class="w-64 h-auto object-contain mx-auto"
+      />
     </div>
-    <p class="text-lg leading-relaxed text-justify">
-    Dal <strong>2025</strong>, l’APS Auriga, grazie a una <strong>convenzione triennale</strong> con l’Università <strong>“La Sapienza” di Roma</strong>, organizza <strong>corsi intensivi</strong> di circa <strong>30 incontri</strong> in un <strong>trimestre</strong>, dedicati agli studenti dell’Università.<br></p>
-<div class="mb-10"></div>
-<div class="w-full mb-6 rounded-lg overflow-hidden h-64 md:h-80">
-      <div class="relative w-full h-full">
-        <div class="flex transition-transform duration-700 ease-in-out will-change-transform h-full" id="carousel-intensivi">
-          <img src="/img/CorsoIntensivoSapienza0.jpg" alt="Corsi intensivi – 1" class="w-full h-full object-contain object-center flex-none shrink-0" />
-          <img src="/img/CorsoIntensivoSapienza1.jpg" alt="Corsi intensivi – 2" class="w-full h-full object-contain object-center flex-none shrink-0" />
-          <img src="/img/CorsoIntensivoSapienza2.jpg" alt="Corsi intensivi – 3" class="w-full h-full object-contain object-center flex-none shrink-0" />
+
+    <!-- Info principale -->
+    <div class="space-y-4 text-lg leading-relaxed max-w-4xl mx-auto mb-8 text-center">
+      <p>
+        Dal <strong>2025</strong>, l'APS Auriga, grazie a una <strong>convenzione triennale</strong> con
+        l'Università <strong>"La Sapienza" di Roma</strong>, organizza <strong>corsi intensivi</strong>
+        di circa <strong>30 incontri</strong> in un <strong>trimestre</strong>, dedicati agli studenti dell'Università.
+      </p>
+      <p class="text-gray-700">
+        I corsi si concentrano sulla <strong>Sprachgestaltung</strong> (arte della parola) e l'<strong>arte drammatica</strong>,
+        offrendo un percorso formativo intensivo che unisce teoria e pratica teatrale.
+      </p>
+    </div>
+
+    <!-- Galleria -->
+    <div class="mb-12">
+      <Carousel images={galleryImages} id="carousel-intensivi" />
+    </div>
+
+    <!-- Sezioni affiancate: Struttura e Sedi -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- Card Struttura -->
+      <div class="bg-white rounded-2xl p-8 border-2 border-[#7c2935] shadow-sm">
+        <h2 class="text-2xl font-bold mb-4 text-[#7c2935]">Struttura del corso</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-[#7c2935] mr-2">•</span>
+            <span><strong>Durata:</strong> 1 trimestre</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#7c2935] mr-2">•</span>
+            <span><strong>Incontri:</strong> circa 30 lezioni</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#7c2935] mr-2">•</span>
+            <span><strong>Destinatari:</strong> studenti universitari della Sapienza</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-[#7c2935] mr-2">•</span>
+            <span><strong>Materie:</strong> Sprachgestaltung e arte drammatica</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card Sedi -->
+      <div class="bg-white rounded-2xl p-8 border-2 border-[#7c2935] shadow-sm">
+        <h2 class="text-2xl font-bold mb-4 text-[#7c2935]">Sedi</h2>
+        <div class="space-y-4 text-gray-700">
+          <div>
+            <p class="font-bold text-gray-900">Teatro Ateneo della Sapienza</p>
+            <p class="text-sm text-gray-600">Università La Sapienza, Roma</p>
+          </div>
+          <div>
+            <p class="font-bold text-gray-900">Fondazione Culturasì</p>
+            <p class="text-sm text-gray-600">Città dell'Altra Economia, Testaccio, Roma</p>
+          </div>
         </div>
-        <!-- Frecce -->
-        <button onclick="moveIntensivi(-1)" class="absolute top-1/2 left-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">←</button>
-        <button onclick="moveIntensivi(1)" class="absolute top-1/2 right-0 -translate-y-1/2 bg-black/60 text-white p-2 rounded">→</button>
       </div>
     </div>
 
-    <script is:inline>
-    window.addEventListener('DOMContentLoaded', () => {
-      let idxI = 0;
-      const carI = document.getElementById('carousel-intensivi');
-      const totI = carI ? carI.children.length : 0;
-      function moveIntensivi(d) {
-        if (!carI || totI === 0) return;
-        idxI = (idxI + d + totI) % totI;
-        carI.style.transform = `translateX(-${idxI * 100}%)`;
-      }
-      // Expose for arrow buttons
-      window.moveIntensivi = moveIntensivi;
-
-      // Modal handling (same pattern as corsi permanenti)
-      const imgs = carI ? carI.querySelectorAll('img') : [];
-      const modal = document.getElementById('imgModal');
-      const modalImg = document.getElementById('modalImg');
-
-      imgs.forEach((img) => {
-        img.classList.add('cursor-zoom-in');
-        img.addEventListener('click', () => {
-          if (modal && modalImg) {
-            modalImg.src = img.src;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-          }
-        });
-      });
-
-      function closeModal() {
-        if (modal) {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-          if (modalImg) modalImg.src = '';
-        }
-      }
-      window.closeModal = closeModal;
-
-      if (modal) {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) closeModal();
-        });
-      }
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-      });
-    });
-  </script>
-    <div class="mb-10"></div>
-
-    <p class="text-lg leading-relaxed text-justify"></p>Le sedi: <strong>Teatro Ateneo della Sapienza</strong> e <strong><a href="https://fondazioneculturasi.it/fondazione/" target="_blank" class="text-blue-500 underline font-bold">Fondazione Culturasì</a></strong> (Città dell’Altra Economia, <strong>Testaccio</strong>).
-    </p>
-    <div class="w-full max-w-4xl mx-auto mt-10">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.8125799552986!2d12.472194866131586!3d41.875378665972534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6028ab731951%3A0x8d4ffbd95d854f43!2sCitt%C3%A0%20dell&#39;Altra%20Economia!5e0!3m2!1sen!2sit!4v1755550944241!5m2!1sen!2sit"
-        width="100%"
-        height="400"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-      <p class="mt-2 text-center">
-        <a href="https://maps.app.goo.gl/ZeiEjdKukN8AWKah6" target="_blank" class="text-blue-500 underline">
-          Apri in Google Maps
-        </a>
-      </p>
-    </div>
-    <div class="mt-10 flex justify-between items-center max-w-2xl mx-auto w-full">
-      <a
-        href="/formazione"
-        class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors"
-      >
-        Indietro
+    <!-- CTA -->
+    <div class="mt-12 flex flex-wrap gap-3">
+      <a href="/formazione" class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors">
+        ← Indietro
       </a>
-      <a
-        href="/contatti"
-        class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors"
-      >
-        Contattaci per ulteriori informazioni
-      </a>
-    </div>
-
-    <div id="imgModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
-      <img id="modalImg" src="" alt="Immagine a schermo intero" class="max-w-full max-h-full object-contain" />
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">✕</button>
     </div>
   </section>
-  <style is:global>
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-  </style>
 </BaseLayout>

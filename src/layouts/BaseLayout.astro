@@ -1,8 +1,14 @@
 ---
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+import { ViewTransitions, slide, fade } from 'astro:transitions';
 
-const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "" } = Astro.props;
+const { title = "Auriga", description = "Associazione culturale Auriga - Teatro, Poesia, Formazione", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "", transition = "fade" } = Astro.props;
+
+const transitionAnim = transition === "slide"
+  ? slide({ duration: '800ms' })
+  : fade({ duration: '800ms' });
 ---
 
 <html lang="it">
@@ -10,9 +16,16 @@ const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageCla
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/img/og-image.jpg" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/svg+xml" href="/LOGO-2.svg" />
     <link rel="stylesheet" href="/MyWebfontsKit.css" />
     <link rel="preload" href="/webFonts/WaldorfschriftRegular/font.woff2" as="font" type="font/woff2" crossorigin>
+    <ViewTransitions />
   </head>
   <style is:global>
     header nav a,
@@ -24,78 +37,126 @@ const { title = "Auriga", headerTheme = "light", pageNamespace = "page", pageCla
     }
   </style>
   <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`} style={pageBgColor ? `background-color:${pageBgColor}` : ""}>
-    <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-slate-800 text-white" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
+    <header
+      id="main-header"
+      data-theme={headerTheme}
+      class={`${headerTheme === "dark" ? "fixed" : "sticky"} top-0 left-0 right-0 z-50 transition-all duration-300 ${headerTheme === "dark" ? "text-white border-transparent bg-transparent" : "bg-white border-b border-slate-200 text-black"} ${headerClass}`}
+      style={headerStyle}
+    >
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center h-full">
+        <a href="/" class="flex items-center h-full" aria-label="Torna alla homepage">
           <img src="/LOGO-2.svg" alt="Auriga Logo" class="h-full" />
         </a>
-        <nav class="flex gap-6 text-sm">
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden xl:flex gap-6 text-sm">
           <a href="/" class="hover:underline">Auriga</a>
           <a href="/chi-siamo" class="hover:underline">Chi siamo</a>
           <a href="/formazione" class="hover:underline">Formazione</a>
           <a href="/teatro" class="hover:underline">Teatro</a>
           <a href="/poesia" class="hover:underline">Poesia</a>
-          <!-- <a href="/arteterapia" class="hover:underline">Arteterapia</a> -->
           <a href="/eventi" class="hover:underline">Eventi</a>
           <a href="/contatti" class="hover:underline">Contatti</a>
         </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="xl:hidden p-3" aria-label="Menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
+
+      <!-- Mobile Navigation -->
+      <nav id="mobile-menu" class="hidden xl:hidden border-t border-slate-200">
+        <div class="px-4 py-4 space-y-1">
+          <a href="/" class="block py-3 text-center text-lg hover:underline">Auriga</a>
+          <a href="/chi-siamo" class="block py-3 text-center text-lg hover:underline">Chi siamo</a>
+          <a href="/formazione" class="block py-3 text-center text-lg hover:underline">Formazione</a>
+          <a href="/teatro" class="block py-3 text-center text-lg hover:underline">Teatro</a>
+          <a href="/poesia" class="block py-3 text-center text-lg hover:underline">Poesia</a>
+          <a href="/eventi" class="block py-3 text-center text-lg hover:underline">Eventi</a>
+          <a href="/contatti" class="block py-3 text-center text-lg hover:underline">Contatti</a>
+        </div>
+      </nav>
     </header>
 
-    <main class={`flex-1 min-h-screen ${pageClass}`} data-page-bg={pageBg}>
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          mobileMenuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+          mobileMenu?.classList.toggle('hidden');
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        const headerTheme = header?.dataset.theme;
+
+        if (header && headerTheme === 'dark') {
+          const updateHeader = () => {
+            if (window.scrollY > 10) {
+              header.classList.add('bg-white/10', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+            } else {
+              header.classList.remove('bg-white/10', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+            }
+          };
+
+          window.addEventListener('scroll', updateHeader, { passive: true });
+          updateHeader();
+        }
+      });
+    </script>
+
+    <main class={`flex-1 min-h-screen ${pageClass}`} data-page-bg={pageBg} transition:animate={transitionAnim}>
       <slot />
     </main>
 
     <footer class={`border-t ${footerTheme === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-white text-black"} ${footerClass}`} style={footerStyle}>
-      <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700 grid grid-cols-[1fr_1.5fr_1fr] gap-6 items-start">
-        <div class="flex flex-col items-center text-left space-y-2">
-          <p class="text-xs text-gray-600 font-semibold">Contatti</p>
-          <div class="flex items-center gap-2 text-xs text-gray-600">
-            <a href="mailto:info.sprachgestaltung@gmail.com">✉️ info.sprachgestaltung@gmail.com</a>
+      <div class="max-w-6xl mx-auto px-6 py-8">
+
+        <!-- Layout compatto: mobile vertical, desktop horizontal -->
+        <div class="flex flex-col md:grid md:grid-cols-[auto_1fr_auto] md:gap-8 lg:gap-12 items-center space-y-6 md:space-y-0">
+
+          <!-- Contatti (sinistra su desktop) -->
+          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
+            <p class="text-sm font-semibold text-gray-800">Contatti</p>
+            <a href="mailto:info.sprachgestaltung@gmail.com" class="text-xs text-gray-600 hover:text-blue-600 transition-colors">
+              info.sprachgestaltung@gmail.com
+            </a>
           </div>
-        </div>
-        <div class="flex flex-col items-center text-center space-y-6">
-          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600">
-            <a href="/" class="underline">Home</a>
-            <span>•</span>
-            <a href="/chi-siamo" class="underline">Chi&nbsp;siamo</a>
-            <span>•</span>
-            <a href="/formazione" class="underline">Formazione</a>
-            <span>•</span>
-            <a href="/teatro" class="underline">Teatro</a>
-            <span>•</span>
-            <a href="/poesia" class="underline">Poesia</a>
-            <span>•</span>
-            <a href="/eventi" class="underline">Eventi</a>
-            <span>•</span>
-            <a href="/contatti" class="underline">Contatti</a>
-          </nav>
 
-          <p class="text-sm font-semibold">© {new Date().getFullYear()} APS Auriga</p>
+          <!-- Centro: Privacy e Copyright -->
+          <div class="flex flex-col items-center space-y-2">
+            <nav class="flex flex-wrap justify-center gap-x-2 text-xs" aria-label="Link legali">
+              <a href="/privacy" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a>
+              <span class="text-gray-400">•</span>
+              <a href="/cookie-policy" class="text-gray-600 hover:text-blue-600 transition-colors">Cookie Policy</a>
+            </nav>
+            <p class="text-sm font-semibold text-gray-800">© {new Date().getFullYear()} APS Auriga</p>
+          </div>
 
-          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600">
-            <a href="/privacy" class="underline">Privacy Policy</a>
-            <span>•</span>
-            <a href="/cookie-policy" class="underline">Cookie Policy</a>
-          </nav>
-        </div>
-
-        <div class="text-center">
-          <div class="text-xs text-gray-600 mb-2 font-semibold">In collaborazione con</div>
-          <div class="grid grid-cols-1 grid-rows-3 gap-3 justify-center items-center">
-            <div class="flex items-center justify-center">
-              <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-12 md:h-14 w-auto filter grayscale" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-12 md:h-14 w-auto filter grayscale" />
-            </div>
-            <div class="flex items-center justify-center">
-              <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-12 md:h-14 w-auto filter grayscale rounded" />
+          <!-- Collaborazioni (destra su desktop) -->
+          <div class="flex flex-col items-center md:items-end space-y-3">
+            <p class="text-sm font-semibold text-gray-800">In collaborazione con</p>
+            <div class="flex flex-row gap-4 items-center">
+              <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-10 w-auto grayscale hover:grayscale-0 transition-all duration-300" loading="lazy" decoding="async" />
+              <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300" loading="lazy" decoding="async" />
+              <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-8 w-auto rounded grayscale hover:grayscale-0 transition-all duration-300" loading="lazy" decoding="async" />
             </div>
           </div>
+
         </div>
       </div>
     </footer>
-    {import.meta.env.PROD && <Analytics />}
+    {import.meta.env.PROD && (
+      <>
+        <Analytics />
+        <SpeedInsights />
+      </>
+    )}
   </body>
 </html>

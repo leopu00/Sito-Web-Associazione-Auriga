@@ -32,7 +32,21 @@ type TimelineDividerItem = {
 
 type TimelineItem = TimelineEventItem | TimelineDividerItem;
 
-const upcomingEvents: EventEntry[] = [
+const upcomingEvents: EventEntry[] = [];
+
+const pastEvents: EventEntry[] = [
+  {
+    id: "il-paradiso-2025-dicembre",
+    category: "teatro",
+    title: "Il Paradiso",
+    date: "Dicembre 12–14, 2025",
+    location: "CAE - Città dell'Altra Economia, Roma",
+    description:
+      "Le donne di Moravia in scena: quattro figure femminili tra quotidianità e imprevisti drammatici, in un paradiso fatto di contrasti radicali tra amore e violenza, vita e morte.",
+    image: "/img/il-paradiso-moravia-locandina.jpg",
+    imageAlt: "Locandina dello spettacolo Il Paradiso con Chiara Catalano",
+    link: "/teatro/paradiso-2025",
+  },
   {
     id: "il-paradiso-2025-dicembre",
     category: "teatro",
@@ -49,7 +63,7 @@ const upcomingEvents: EventEntry[] = [
     id: "sei-modalita",
     category: "arteterapia",
     title: "Sei modalità di comunicazione",
-    date: "Dal 19 al 21 Settembre 2025",
+    date: "Settembre 19–21, 2025",
     location: "Accademia Aldo Bargero Oriago, Oriago (VE)",
     description:
       "Tre giorni di arteterapia per esplorare le sei modalità con cui corpo, voce e immaginazione costruiscono relazione, ascolto e cura.",
@@ -57,14 +71,11 @@ const upcomingEvents: EventEntry[] = [
     imageAlt: "Ingresso dell'Accademia Oriago con luce del tramonto",
     link: "/arteterapia",
   },
-];
-
-const pastEvents: EventEntry[] = [
   {
     id: "battaglia-rane-topi-2025-maggio",
     category: "teatro",
     title: "La battaglia delle rane e dei topi",
-    date: "26 Maggio 2025",
+    date: "Maggio 2025",
     location: "Etica Bio Festival di Caulonia",
     description:
       "Spettacolo itinerante dal poemetto greco, con un viaggio condiviso tra comunità e scuole in tre tappe successive.",
@@ -80,7 +91,7 @@ const pastEvents: EventEntry[] = [
     location: "Scuole Waldorf del Veneto",
     description:
       "Spettacolo itinerante dal poemetto greco, con un viaggio condiviso tra comunità e scuole in tre tappe successive.",
-    image: "/img/battaglia-rane-topi/DSCF3912.jpg",
+    image: "/img/battaglia-rane-topi/DSCF3838.jpg",
     imageAlt: "Scena teatrale de La battaglia delle rane e dei topi",
     link: "/teatro/battaglia-rane-topi",
   },
@@ -97,10 +108,22 @@ const pastEvents: EventEntry[] = [
     link: "/poesia/premio-paolo-giuranna",
   },
   {
+    id: "il-paradiso",
+    category: "teatro",
+    title: "Il Paradiso",
+    date: "Febbraio 14–16, 2025",
+    location: "Teatro Belli, Roma",
+    description:
+      "Messa in scena della terza cantica dantesca con un lavoro corale su voce, luce e movimento.",
+    image: "/img/paradiso.jpg",
+    imageAlt: "Ensemble in scena durante Il Paradiso",
+    link: "/teatro/paradiso",
+  },
+  {
     id: "citta-poesia-4",
     category: "poesia",
     title: "La Città della Poesia IV.",
-    date: "14 Dicembre 2024",
+    date: "Dicembre 2024",
     location: "CAE",
     description:
       "Quarto appuntamento della rassegna con letture sceniche, musica e voci giovani dedicate alla poesia contemporanea.",
@@ -109,22 +132,10 @@ const pastEvents: EventEntry[] = [
     link: "/poesia/la-citta-della-poesia",
   },
   {
-    id: "convegno-sprachgestaltung",
-    category: "convegno",
-    title: "Convegno sulla Sprachgestaltung",
-    date: "11 Ottobre 2024",
-    location: "Nuovo Teatro Ateneo 'Università La Sapienza'",
-    description:
-      "Una giornata di studio dedicata alla Sprachgestaltung con docenti e professionisti del linguaggio scenico e pedagogico.",
-    image: "/img/sapienzacorso.jpg",
-    imageAlt: "Relatori riuniti al Nuovo Teatro Ateneo della Sapienza",
-    link: "/formazione/corsi-intensivi",
-  },
-  {
     id: "la-tempesta-continua-2024-ottobre",
     category: "teatro",
     title: "La tempesta continua",
-    date: "10 Ottobre 2024",
+    date: "Ottobre 11, 2024",
     location: "Nuovo Teatro Ateneo 'Università La Sapienza'",
     description:
       "Nuova produzione liberamente ispirata alla Tempesta di Shakespeare, con musiche originali e un cast internazionale.",
@@ -133,14 +144,26 @@ const pastEvents: EventEntry[] = [
     link: "/teatro/tempesta-continua",
   },
   {
+    id: "convegno-sprachgestaltung",
+    category: "convegno",
+    title: "Convegno sulla Sprachgestaltung",
+    date: "Ottobre 10, 2024",
+    location: "Nuovo Teatro Ateneo 'Università La Sapienza'",
+    description:
+      "Una giornata di studio dedicata alla Sprachgestaltung con docenti e professionisti del linguaggio scenico e pedagogico.",
+    image: "/img/sapienzacorso.jpg",
+    imageAlt: "Relatori riuniti al Nuovo Teatro Ateneo della Sapienza",
+    link: "/formazione/corsi-intensivi",
+  },
+  {
     id: "la-tempesta-continua-2024-luglio",
     category: "teatro",
     title: "La tempesta continua",
-    date: "11 Luglio 2024",
+    date: "Luglio 2024",
     location: "Goetheaunm - Dornach",
     description:
       "Nuova produzione liberamente ispirata alla Tempesta di Shakespeare, con musiche originali e un cast internazionale.",
-    image: "/img/tempesta-continua.jpg",
+    image: "/img/tempesta-quartetto.jpg",
     imageAlt: "Scena centrale dello spettacolo La tempesta continua",
     link: "/teatro/tempesta-continua",
   },
@@ -152,7 +175,7 @@ const pastEvents: EventEntry[] = [
     location: "CAE",
     description:
       "Spettacolo itinerante dal poemetto greco, con un viaggio condiviso tra comunità e scuole in tre tappe successive.",
-    image: "/img/battaglia-rane-topi/DSCF3912.jpg",
+    image: "/img/battaglia-rane-topi/DSCF4046.jpg",
     imageAlt: "Scena teatrale de La battaglia delle rane e dei topi",
     link: "/teatro/battaglia-rane-topi",
   },
@@ -160,7 +183,7 @@ const pastEvents: EventEntry[] = [
     id: "citta-poesia-3",
     category: "poesia",
     title: "La Città della Poesia III.",
-    date: "13 Aprile 2024",
+    date: "Aprile 2024",
     location: "CAE",
     description:
       "Terzo incontro del ciclo con poeti ospiti, musica dal vivo e la partecipazione degli allievi dei corsi Auriga.",
@@ -181,22 +204,10 @@ const pastEvents: EventEntry[] = [
     link: "/poesia/premio-paolo-giuranna",
   },
   {
-    id: "il-paradiso",
-    category: "teatro",
-    title: "Il Paradiso",
-    date: "Dal 14 al 16 Febbraio 2024",
-    location: "Teatro Belli, Roma",
-    description:
-      "Messa in scena della terza cantica dantesca con un lavoro corale su voce, luce e movimento.",
-    image: "/img/paradiso.jpg",
-    imageAlt: "Ensemble in scena durante Il Paradiso",
-    link: "/teatro/paradiso",
-  },
-  {
     id: "citta-poesia-2",
     category: "poesia",
     title: "La Città della Poesia II.",
-    date: "20 Gennaio 2024",
+    date: "Gennaio 2024",
     location: "CAE",
     description:
       "Secondo appuntamento della rassegna con focus sulla poesia del Novecento letta ad alta voce e accompagnata da musica.",
@@ -208,7 +219,7 @@ const pastEvents: EventEntry[] = [
     id: "citta-poesia-1",
     category: "poesia",
     title: "La Città della Poesia I.",
-    date: "24 Novembre 2023",
+    date: "Novembre 2023",
     location: "CAE",
     description:
       "Debutto della rassegna con letture corali, improvvisazioni e incontri con il pubblico della città.",
@@ -217,6 +228,15 @@ const pastEvents: EventEntry[] = [
     link: "/poesia/la-citta-della-poesia",
   },
 ];
+
+const categoryColors: Record<string, { bg: string; text: string; border: string; hoverBorder: string }> = {
+  arteterapia: { bg: "bg-purple-50", text: "text-purple-700", border: "border-l-purple-500", hoverBorder: "hover:border-purple-400" },
+  teatro: { bg: "bg-rose-50", text: "text-rose-900", border: "border-l-rose-500", hoverBorder: "hover:border-rose-400" },
+  poesia: { bg: "bg-indigo-50", text: "text-indigo-700", border: "border-l-indigo-500", hoverBorder: "hover:border-indigo-400" },
+  convegno: { bg: "bg-amber-50", text: "text-amber-700", border: "border-l-amber-500", hoverBorder: "hover:border-amber-400" },
+};
+
+const getCategoryColor = (category: string) => categoryColors[category] || { bg: "bg-slate-50", text: "text-slate-700", border: "border-l-slate-500", hoverBorder: "hover:border-slate-400" };
 
 let timelineOrder = 0;
 
@@ -234,12 +254,13 @@ const buildTimelineEvent = (event: EventEntry, scope: TimelineScope): TimelineEv
 
 const timelineItems: TimelineItem[] = [
   ...upcomingEvents.map((event) => buildTimelineEvent(event, "upcoming")),
-  {
-    type: "divider",
+  // Show divider only if there are upcoming events
+  ...(upcomingEvents.length > 0 ? [{
+    type: "divider" as const,
     id: "past-events-divider",
     title: "Eventi passati",
     description: "Qui trovi gli eventi passati dell'Associazione Auriga.",
-  },
+  }] : []),
   ...pastEvents.map((event) => buildTimelineEvent(event, "past")),
 ];
 ---
@@ -247,42 +268,109 @@ const timelineItems: TimelineItem[] = [
 <BaseLayout
   title="Eventi — Auriga"
   headerTheme="light"
-  headerClass="bg-[#faf7f2]"
-  headerStyle="background-color:#faf7f2"
+  headerClass=""
+  headerStyle=""
   pageBg="light"
 >
-  <section class="relative min-h-[360px] flex items-center justify-center overflow-hidden bg-[#014f97] text-white">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#012b5c] via-[#014f97] to-[#021b45]"></div>
-    <div class="absolute left-1/2 top-[-220px] h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(159,210,255,0.45),_rgba(1,79,151,0))] opacity-90"></div>
-    <div class="absolute right-[12%] top-[18%] h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.22),_rgba(1,43,92,0))] opacity-90 blur-2xl"></div>
-    <div class="absolute left-[8%] bottom-[-140px] h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(2,28,67,0.65),_rgba(1,79,151,0))] opacity-70 blur-3xl"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6 py-24 text-center">
-      <h1 class="text-4xl md:text-5xl font-semibold">Eventi</h1>
-    </div>
-    <div class="pointer-events-none absolute -bottom-20 h-20 w-full bg-gradient-to-b from-transparent via-[#033b7a]/80 to-[#014f97] md:-bottom-28 md:h-28"></div>
-  </section>
-  <section class="relative bg-[#014f97] py-16 md:py-20">
-    <div class="absolute inset-0 bg-gradient-to-b from-[#014f97] via-[#023b7e] to-[#012b5c]"></div>
-    <div class="relative max-w-6xl mx-auto px-4">
-      <div class="rounded-[28px] border-2 border-black/40 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-12">
-        <header class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-semibold text-[#014f97]">Prossimi eventi</h2>
-            <p class="mt-4 text-slate-700 max-w-2xl">
-              Qui trovi i prossimi eventi dell'Associazione Auriga.
-            </p>
-          </div>
-        </header>
+  <section class="relative overflow-hidden text-white">
+    <!-- Mesh gradient background -->
+    <div class="absolute inset-0 bg-[#1a0a2e]"></div>
 
-        <ol class="timeline list-none m-0 mt-12 p-0">
+    <!-- BORDO SINISTRO -->
+    <div class="absolute top-[0%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#7c3aed] opacity-80 blur-[120px]"></div>
+    <div class="absolute top-[20%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#3b82f6] opacity-75 blur-[110px]"></div>
+    <div class="absolute top-[40%] left-[-12%] w-[42%] h-[28%] rounded-full bg-[#ec4899] opacity-70 blur-[115px]"></div>
+    <div class="absolute top-[60%] left-[-8%] w-[38%] h-[25%] rounded-full bg-[#06b6d4] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[80%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#8b5cf6] opacity-70 blur-[120px]"></div>
+
+    <!-- BORDO DESTRO -->
+    <div class="absolute top-[0%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#ec4899] opacity-80 blur-[120px]"></div>
+    <div class="absolute top-[18%] right-[-10%] w-[40%] h-[25%] rounded-full bg-[#f97316] opacity-75 blur-[110px]"></div>
+    <div class="absolute top-[38%] right-[-12%] w-[42%] h-[28%] rounded-full bg-[#a855f7] opacity-70 blur-[115px]"></div>
+    <div class="absolute top-[58%] right-[-8%] w-[38%] h-[25%] rounded-full bg-[#f472b6] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[78%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#f97316] opacity-70 blur-[120px]"></div>
+
+    <!-- CENTRO - HERO (riempito) -->
+    <div class="absolute top-[-5%] left-[25%] w-[50%] h-[35%] rounded-full bg-[#8b5cf6] opacity-70 blur-[120px]"></div>
+    <div class="absolute top-[0%] left-[35%] w-[45%] h-[30%] rounded-full bg-[#c084fc] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[5%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#06b6d4] opacity-70 blur-[100px]"></div>
+    <div class="absolute top-[5%] left-[50%] w-[40%] h-[28%] rounded-full bg-[#d946ef] opacity-75 blur-[100px]"></div>
+    <div class="absolute top-[10%] left-[30%] w-[45%] h-[30%] rounded-full bg-[#f472b6] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[8%] left-[30%] w-[40%] h-[30%] rounded-full bg-[#fbbf24] opacity-75 blur-[90px]"></div>
+    <div class="absolute top-[3%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#facc15] opacity-65 blur-[85px]"></div>
+    <div class="absolute top-[15%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#10b981] opacity-55 blur-[100px]"></div>
+    <div class="absolute top-[18%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#fb7185] opacity-60 blur-[105px]"></div>
+
+    <!-- CENTRO - MIDDLE -->
+    <div class="absolute top-[28%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#22d3d1] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[30%] left-[45%] w-[38%] h-[26%] rounded-full bg-[#c084fc] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[35%] left-[30%] w-[40%] h-[28%] rounded-full bg-[#f97316] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[40%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#818cf8] opacity-60 blur-[100px]"></div>
+    <div class="absolute top-[42%] left-[50%] w-[35%] h-[25%] rounded-full bg-[#fb923c] opacity-55 blur-[100px]"></div>
+
+    <!-- CENTRO - BOTTOM -->
+    <div class="absolute top-[50%] left-[25%] w-[40%] h-[28%] rounded-full bg-[#e879f9] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[55%] left-[40%] w-[38%] h-[26%] rounded-full bg-[#14b8a6] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[60%] left-[15%] w-[42%] h-[28%] rounded-full bg-[#6366f1] opacity-60 blur-[115px]"></div>
+    <div class="absolute top-[65%] left-[45%] w-[40%] h-[28%] rounded-full bg-[#ec4899] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[70%] left-[25%] w-[45%] h-[30%] rounded-full bg-[#0ea5e9] opacity-55 blur-[115px]"></div>
+    <div class="absolute top-[75%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#d946ef] opacity-50 blur-[110px]"></div>
+    <div class="absolute top-[82%] left-[20%] w-[45%] h-[30%] rounded-full bg-[#fbbf24] opacity-50 blur-[115px]"></div>
+    <div class="absolute top-[88%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#7c3aed] opacity-55 blur-[110px]"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Eventi</h1>
+      </div>
+    </div>
+
+    <!-- Timeline content -->
+    <div class="relative z-10 pb-16 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4">
+      <div class="rounded-[28px] border-2 border-black/40 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-12">
+        <!-- Titolo e intro -->
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-semibold text-slate-800">I nostri eventi</h2>
+          <p class="mt-3 text-slate-600 max-w-2xl mx-auto">Dal 2023 organizziamo spettacoli, letture, workshop e incontri dedicati all'arte della parola e al teatro.</p>
+        </div>
+
+        <!-- Legenda categorie -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10 pb-8 border-b border-slate-200">
+          <div class="flex flex-col items-center text-center p-4">
+            <span class="w-4 h-4 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.4)] mb-2"></span>
+            <span class="text-sm font-semibold text-slate-800">Teatro</span>
+            <span class="text-xs text-slate-500 mt-1">Spettacoli e performance</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-4">
+            <span class="w-4 h-4 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.4)] mb-2"></span>
+            <span class="text-sm font-semibold text-slate-800">Poesia</span>
+            <span class="text-xs text-slate-500 mt-1">Letture e premi</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-4">
+            <span class="w-4 h-4 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.4)] mb-2"></span>
+            <span class="text-sm font-semibold text-slate-800">Arteterapia</span>
+            <span class="text-xs text-slate-500 mt-1">Workshop e laboratori</span>
+          </div>
+          <div class="flex flex-col items-center text-center p-4">
+            <span class="w-4 h-4 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)] mb-2"></span>
+            <span class="text-sm font-semibold text-slate-800">Convegno</span>
+            <span class="text-xs text-slate-500 mt-1">Incontri e studi</span>
+          </div>
+        </div>
+
+        <ol class="relative space-y-8 md:space-y-0">
+          <!-- Timeline line - hidden on mobile, visible on md+ -->
+          <div class="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-[#014f97]/20 via-[#014f97]/60 to-[#014f97]/20" aria-hidden="true"></div>
+
           {timelineItems.map((item) => {
             if (item.type === "divider") {
               return (
-                <li class="timeline__divider" id={item.id}>
-                  <div class="timeline__dividerInner">
-                    <h2 class="timeline__dividerTitle">{item.title}</h2>
+                <li class="relative py-8 md:py-12" id={item.id}>
+                  <div class="max-w-lg">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-[#014f97]">{item.title}</h2>
                     {item.description && (
-                      <p class="timeline__dividerDescription">{item.description}</p>
+                      <p class="mt-3 text-slate-600 leading-relaxed">{item.description}</p>
                     )}
                   </div>
                 </li>
@@ -290,24 +378,27 @@ const timelineItems: TimelineItem[] = [
             }
 
             return (
-              <li class={`timeline__item relative pb-16 md:pb-20 last:pb-0${item.isInverted ? " timeline__item--inverted" : ""}`}>
-                <div class="timeline__date">
-                  <p class="text-[11px] uppercase tracking-[0.4em] text-[#014f97] font-semibold">{item.category}</p>
-                  <p class="mt-3 text-lg md:text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
-                  <div class={`mt-2 text-sm text-slate-600 whitespace-pre-line${item.isInverted ? " md:text-left" : " md:text-right"}`}>
-                    <span class="block font-medium text-slate-700">{item.location}</span>
+              <li class="relative pb-8 md:pb-16 last:pb-0">
+                <!-- Mobile: stacked layout -->
+                <div class="md:hidden">
+                  <!-- Date/Location header -->
+                  <div class={`mb-4 pl-5 border border-black/10`}>
+                    <span class={`inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${getCategoryColor(item.category).bg} ${getCategoryColor(item.category).text}`}>
+                      {item.category}
+                    </span>
+                    <p class="mt-2 text-lg font-semibold text-slate-900">{item.date}</p>
+                    <p class="mt-1 text-sm text-slate-600">{item.location}</p>
                   </div>
-                </div>
-                <div class={`timeline__content mt-6 md:mt-0${item.isInverted ? " timeline__content--inverted" : " timeline__content--default"}`}>
-                  <article class="group h-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-transform duration-300 hover:-translate-y-1" id={item.id}>
-                    <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover md:h-64" />
-                    <div class="p-6 md:p-7">
-                      <h3 class="text-2xl font-semibold text-[#014f97]">{item.title}</h3>
-                      <p class="mt-4 text-slate-700 leading-relaxed">{item.description}</p>
-                      <div class={`mt-6 flex justify-start${item.isInverted ? " md:justify-start" : " md:justify-end"}`}>
+                  <!-- Card -->
+                  <article class={`group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg`} id={`${item.id}-mobile`}>
+                    <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-48 w-full object-cover" />
+                    <div class="p-5">
+                      <h3 class="text-xl font-semibold text-slate-900">{item.title}</h3>
+                      <p class="mt-3 text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                      <div class="mt-5">
                         <a
                           href={item.ctaHref}
-                          class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-5 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#014f97] focus-visible:ring-offset-white"
+                          class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
                           aria-label={`Scopri di più su ${item.title}`}
                         >
                           Scopri di più
@@ -317,181 +408,88 @@ const timelineItems: TimelineItem[] = [
                     </div>
                   </article>
                 </div>
-                <span class="timeline__dot" aria-hidden="true"></span>
+
+                <!-- Desktop: zigzag layout -->
+                <div class={`hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-12 ${item.isInverted ? "" : ""}`}>
+                  <!-- Left column -->
+                  <div class={`flex ${item.isInverted ? "justify-end pr-4" : "justify-end pr-4"}`}>
+                    {item.isInverted ? (
+                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] hover:border-slate-200`} id={item.id}>
+                        <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
+                        <div class="p-6 lg:p-8">
+                          <h3 class="text-2xl font-semibold text-slate-900">{item.title}</h3>
+                          <p class="mt-3 text-slate-600 leading-relaxed">{item.description}</p>
+                          <div class="mt-6">
+                            <a
+                              href={item.ctaHref}
+                              class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500"
+                              aria-label={`Scopri di più su ${item.title}`}
+                            >
+                              Scopri di più
+                              <span aria-hidden="true">→</span>
+                            </a>
+                          </div>
+                        </div>
+                      </article>
+                    ) : (
+                      <div class="text-right pt-4">
+                        <span class={`inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${getCategoryColor(item.category).bg} ${getCategoryColor(item.category).text}`}>
+                          {item.category}
+                        </span>
+                        <p class="mt-2 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
+                        <p class="mt-1.5 text-sm text-slate-600">{item.location}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <!-- Center dot - colored by category -->
+                  <div class="absolute left-1/2 top-6 -translate-x-1/2 z-10">
+                    <span class={`block w-4 h-4 rounded-full border-[3px] border-white shadow-[0_0_0_4px_rgba(0,0,0,0.08)] transition-transform duration-300 group-hover:scale-125 ${
+                      item.category === "arteterapia" ? "bg-purple-500" :
+                      item.category === "teatro" ? "bg-rose-500" :
+                      item.category === "poesia" ? "bg-indigo-500" :
+                      item.category === "convegno" ? "bg-amber-500" : "bg-slate-500"
+                    }`} aria-hidden="true"></span>
+                  </div>
+
+                  <!-- Right column -->
+                  <div class={`flex ${item.isInverted ? "justify-start pl-4" : "justify-start pl-4"}`}>
+                    {item.isInverted ? (
+                      <div class="text-left pt-4">
+                        <span class={`inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${getCategoryColor(item.category).bg} ${getCategoryColor(item.category).text}`}>
+                          {item.category}
+                        </span>
+                        <p class="mt-2 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
+                        <p class="mt-1.5 text-sm text-slate-600">{item.location}</p>
+                      </div>
+                    ) : (
+                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] hover:border-slate-200`} id={item.id}>
+                        <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
+                        <div class="p-6 lg:p-8">
+                          <h3 class="text-2xl font-semibold text-slate-900">{item.title}</h3>
+                          <p class="mt-3 text-slate-600 leading-relaxed">{item.description}</p>
+                          <div class="mt-6 flex justify-end">
+                            <a
+                              href={item.ctaHref}
+                              class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500"
+                              aria-label={`Scopri di più su ${item.title}`}
+                            >
+                              Scopri di più
+                              <span aria-hidden="true">→</span>
+                            </a>
+                          </div>
+                        </div>
+                      </article>
+                    )}
+                  </div>
+                </div>
               </li>
             );
           })}
         </ol>
       </div>
+      </div>
     </div>
   </section>
 
-  <style>
-    .timeline {
-      position: relative;
-      padding-top: 0.5rem;
-      --timeline-gap: clamp(1.5rem, 3vw, 2.35rem);
-      --timeline-offset: clamp(0.8rem, 2.2vw, 1.4rem);
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 1.5rem;
-      bottom: 1.5rem;
-      left: 6rem;
-      width: 2px;
-      background: linear-gradient(180deg, rgba(1, 79, 151, 0.15), rgba(1, 79, 151, 0.65));
-      pointer-events: none;
-    }
-    .timeline__item {
-      position: relative;
-      padding-left: 6.5rem;
-    }
-    .timeline__date {
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 6rem;
-      padding-right: var(--timeline-offset);
-      text-align: right;
-    }
-    .timeline__content--default,
-    .timeline__content--inverted {
-      position: relative;
-    }
-    .timeline__dot {
-      position: absolute;
-      top: 2.75rem;
-      left: 6rem;
-      width: 1.1rem;
-      height: 1.1rem;
-      transform: translate(-50%, -50%);
-      border-radius: 9999px;
-      background: #014f97;
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 0 6px rgba(1, 79, 151, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      z-index: 1;
-    }
-    .timeline__item:hover .timeline__dot {
-      transform: translate(-50%, -50%) scale(1.1);
-      box-shadow: 0 0 0 7px rgba(1, 79, 151, 0.22);
-    }
-    .timeline__divider {
-      position: relative;
-      padding: 2.5rem 0 3rem;
-      text-align: left;
-    }
-    .timeline__dividerInner {
-      position: relative;
-      z-index: 1;
-      max-width: 32rem;
-    }
-    .timeline__dividerTitle {
-      margin: 0;
-      font-size: 1.875rem;
-      line-height: 1.25;
-      font-weight: 600;
-      color: #014f97;
-    }
-    .timeline__dividerDescription {
-      margin-top: 1rem;
-      margin-bottom: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #475569;
-    }
-
-    @media (min-width: 768px) {
-      .timeline {
-        padding-top: 1rem;
-        --timeline-gap: clamp(1.9rem, 2vw + 0.8rem, 2.6rem);
-        --timeline-offset: clamp(1rem, 1.6vw, 1.6rem);
-      }
-      .timeline::before {
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(180deg, rgba(1, 79, 151, 0.25), rgba(1, 79, 151, 0.7));
-      }
-      .timeline__item {
-        padding-left: 0;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        column-gap: var(--timeline-gap);
-      }
-      .timeline__date {
-        position: relative;
-        width: auto;
-        padding-right: var(--timeline-offset);
-        max-width: 280px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-self: flex-end;
-      }
-      .timeline__content--default {
-        padding-left: var(--timeline-offset);
-        justify-self: flex-start;
-      }
-      .timeline__content--inverted {
-        padding-right: var(--timeline-offset);
-        justify-self: flex-end;
-      }
-      .timeline__dot {
-        left: 50%;
-        top: 3rem;
-      }
-      .timeline__item--inverted .timeline__date {
-        order: 2;
-        text-align: left;
-        padding-right: 0;
-        padding-left: var(--timeline-offset);
-        align-items: flex-start;
-        justify-self: flex-start;
-      }
-      .timeline__item--inverted .timeline__content {
-        order: 1;
-      }
-      .timeline__divider {
-        padding: 3rem 0 3.5rem;
-      }
-      .timeline__dividerInner {
-        max-width: 36rem;
-      }
-      .timeline__dividerTitle {
-        font-size: 2.125rem;
-      }
-      .timeline__dividerDescription {
-        font-size: 1.05rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .timeline__item {
-        column-gap: calc(var(--timeline-gap) + 0.25rem);
-      }
-      .timeline__date {
-        padding-right: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__item--inverted .timeline__date {
-        padding-left: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__content--default {
-        padding-left: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__content--inverted {
-        padding-right: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__dividerInner {
-        max-width: 34rem;
-        padding-left: 0;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .timeline__item,
-      .timeline__dot {
-        transition: none;
-      }
-    }
-  </style>
 </BaseLayout>

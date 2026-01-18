@@ -1,0 +1,93 @@
+---
+interface Props {
+  images: Array<{ src: string; alt: string }>;
+  id?: string;
+}
+
+const { images, id = 'imageModal' } = Astro.props;
+---
+
+<div id={id} class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50" data-images={JSON.stringify(images)} role="dialog" aria-modal="true">
+  <button data-modal-prev class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 hover:bg-white/10 rounded transition-colors" aria-label="Immagine precedente">←</button>
+
+  <img data-modal-img src="" alt="" class="max-w-full max-h-full object-contain" />
+
+  <button data-modal-next class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl p-2 hover:bg-white/10 rounded transition-colors" aria-label="Immagine successiva">→</button>
+
+  <button data-modal-close class="absolute top-4 right-4 text-white text-2xl p-2 hover:bg-white/10 rounded transition-colors" aria-label="Chiudi immagine">✕</button>
+
+  <div data-modal-counter class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm"></div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-images]').forEach((modal) => {
+      const images: Array<{ src: string; alt: string }> = JSON.parse(modal.getAttribute('data-images') || '[]');
+      const modalImg = modal.querySelector('[data-modal-img]') as HTMLImageElement;
+      const prevBtn = modal.querySelector('[data-modal-prev]');
+      const nextBtn = modal.querySelector('[data-modal-next]');
+      const closeBtn = modal.querySelector('[data-modal-close]');
+      const counter = modal.querySelector('[data-modal-counter]');
+
+      let currentIndex = 0;
+
+      function updateImage() {
+        if (!modalImg || images.length === 0) return;
+        modalImg.src = images[currentIndex].src;
+        modalImg.alt = images[currentIndex].alt;
+        if (counter) {
+          counter.textContent = `${currentIndex + 1} / ${images.length}`;
+        }
+      }
+
+      function openModal(index: number) {
+        currentIndex = index;
+        updateImage();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (modalImg) modalImg.src = '';
+      }
+
+      function navigate(direction: number) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        updateImage();
+      }
+
+      // Expose openModal globally with modal id
+      const modalId = modal.id;
+      (window as any)[`openModal_${modalId}`] = openModal;
+
+      // Event listeners
+      prevBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigate(-1);
+      });
+
+      nextBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navigate(1);
+      });
+
+      closeBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+      });
+    });
+  });
+</script>
