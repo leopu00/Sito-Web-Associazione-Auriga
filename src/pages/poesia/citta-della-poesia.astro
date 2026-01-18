@@ -32,29 +32,40 @@ const galleriaImages2 = [
   { src: "/img/citta-della-poesia/_DSF5417.JPG", alt: "Città della Poesia – extra 19" },
 ];
 ---
-<BaseLayout title="La Città della Poesia — Auriga" headerTheme="light" pageNamespace="citta-della-poesia" pageClass="bg-[#faf7f2] text-black" pageBg="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2" >
-  <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
-    <h1 class="text-3xl font-bold mb-6 text-[#7c2935]">La Città della Poesia</h1>
-    <p class="text-lg leading-relaxed text-justify">
-      L'APS Auriga organizza la rassegna <strong class="text-[#7c2935]">"La Città della Poesia"</strong>, serie di incontri dedicati
-      alla recitazione della poesia ad alta voce. Gli incontri sono di volta in volta dedicati a temi
-      o autori diversi: attori professionisti, con una particolare attenzione per la poesia,
-      presentano testi poetici del '900 e contemporanei in un dialogo creativo con la musica
-      (violino, tiorba, fisarmonica, clarinetto, viola da gamba, etc.).
-    </p>
+<BaseLayout
+  title="La Città della Poesia — Auriga"
+  headerTheme="light"
+  pageNamespace="citta-della-poesia"
+  pageClass="bg-white text-black"
+  pageBg="light"
+  headerClass="bg-white"
+  headerStyle="background-color:white"
+  transition="slide"
+>
+  <!-- Hero centrato -->
+  <div class="flex items-center justify-center">
+    <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#7c2935]">La Città della Poesia</h1>
+    </div>
+  </div>
 
-    <div class="mb-10"></div>
-
+  <section class="max-w-6xl mx-auto px-4 pb-12">
     <!-- Galleria 1 -->
-    <h2 class="text-2xl font-semibold">Galleria</h2>
-    <div class="mt-2">
+    <div class="mb-10">
       <Carousel images={galleriaImages} id="carousel-citta" />
     </div>
 
-    <div class="h-20"></div>
+    <!-- Testo -->
+    <p class="text-lg leading-relaxed text-justify mb-10">
+      L'APS Auriga organizza la rassegna <strong class="text-[#7c2935]">"La Città della Poesia"</strong>, serie di incontri dedicati
+      alla recitazione della <strong>poesia ad alta voce</strong>. Gli incontri sono di volta in volta dedicati a temi
+      o autori diversi: <strong>attori professionisti</strong>, con una particolare attenzione per la poesia,
+      presentano testi poetici del <strong>'900 e contemporanei</strong> in un dialogo creativo con la musica
+      (violino, tiorba, fisarmonica, clarinetto, viola da gamba, etc.).
+    </p>
 
     <!-- Galleria 2 -->
-    <div class="max-w-5xl mx-auto">
+    <div class="mb-10">
       <Carousel images={galleriaImages2} id="carousel-citta-2" />
     </div>
 
