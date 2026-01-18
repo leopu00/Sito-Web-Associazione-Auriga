@@ -8,18 +8,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   headerStyle="background-color:#ffffff"
   pageBg="light"
 >
-  <section class="relative overflow-hidden min-h-screen bg-white">
+  <section class="relative overflow-hidden text-white min-h-screen">
+    <!-- Mesh gradient background -->
+    <div class="absolute inset-0 bg-[#1a0a2e]"></div>
+
+    <!-- BORDO SINISTRO -->
+    <div class="absolute top-[0%] left-[-15%] w-[50%] h-[45%] rounded-full bg-[#7c3aed] opacity-75 blur-[130px]"></div>
+    <div class="absolute top-[45%] left-[-10%] w-[45%] h-[40%] rounded-full bg-[#3b82f6] opacity-65 blur-[120px]"></div>
+
+    <!-- BORDO DESTRO -->
+    <div class="absolute top-[0%] right-[-15%] w-[50%] h-[45%] rounded-full bg-[#ec4899] opacity-75 blur-[130px]"></div>
+    <div class="absolute top-[40%] right-[-10%] w-[45%] h-[40%] rounded-full bg-[#f97316] opacity-60 blur-[120px]"></div>
+
+    <!-- CENTRO -->
+    <div class="absolute top-[15%] left-[25%] w-[50%] h-[40%] rounded-full bg-[#c084fc] opacity-50 blur-[120px]"></div>
+    <div class="absolute top-[50%] left-[30%] w-[45%] h-[35%] rounded-full bg-[#06b6d4] opacity-45 blur-[115px]"></div>
+
     <!-- Hero content -->
-    <div class="relative z-10 py-16 md:py-20">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-[#7c3aed]">Contatti</h1>
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Contatti</h1>
       </div>
     </div>
 
     <!-- Content -->
     <div class="relative z-10 pb-20 md:pb-28">
-      <div class="max-w-2xl mx-auto px-4">
-        <div class="rounded-[28px] border-2 border-slate-200 bg-white shadow-lg px-8 sm:px-12 py-12 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-8 sm:px-12 py-12 text-slate-800 text-center">
 
           <h2 class="text-2xl md:text-3xl font-semibold text-[#7c3aed]">APS Auriga</h2>
           <p class="mt-4 text-slate-600 leading-relaxed">
