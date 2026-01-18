@@ -9,7 +9,7 @@ const galleryImages = [
 ];
 ---
 
-<BaseLayout title="Corsi intensivi — Auriga" headerTheme="light" pageNamespace="corsi-intensivi" pageClass="bg-white text-black" pageBg="light">
+<BaseLayout title="Corsi intensivi — Auriga" headerTheme="light" headerClass="bg-white" headerStyle="background-color:#ffffff" pageNamespace="corsi-intensivi" pageClass="bg-white text-black" pageBg="light">
   <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
     <!-- Header con logo e titolo -->
     <div class="text-center mb-12">
@@ -22,7 +22,7 @@ const galleryImages = [
     </div>
 
     <!-- Info principale -->
-    <div class="space-y-4 text-lg leading-relaxed max-w-4xl mx-auto mb-12 text-center">
+    <div class="space-y-4 text-lg leading-relaxed max-w-4xl mx-auto mb-8 text-center">
       <p>
         Dal <strong>2025</strong>, l'APS Auriga, grazie a una <strong>convenzione triennale</strong> con
         l'Università <strong>"La Sapienza" di Roma</strong>, organizza <strong>corsi intensivi</strong>
@@ -73,35 +73,17 @@ const galleryImages = [
             <p class="text-sm text-gray-600">Università La Sapienza, Roma</p>
           </div>
           <div>
-            <p class="font-bold text-gray-900">
-              <a
-                href="https://fondazioneculturasi.it/fondazione/"
-                target="_blank"
-                rel="noopener"
-                class="text-[#7c2935] hover:underline"
-              >
-                Fondazione Culturasì<span class="sr-only"> (apre in nuova scheda)</span>
-              </a>
-            </p>
+            <p class="font-bold text-gray-900">Fondazione Culturasì</p>
             <p class="text-sm text-gray-600">Città dell'Altra Economia, Testaccio, Roma</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CTA buttons -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
-      <a
-        href="/formazione"
-        class="w-full sm:w-auto inline-block px-6 py-3 border-2 border-black text-black rounded-lg hover:bg-black hover:text-white transition-colors text-center"
-      >
-        ← Torna a Formazione
-      </a>
-      <a
-        href="/contatti"
-        class="w-full sm:w-auto inline-block px-6 py-3 bg-[#7c2935] text-white rounded-lg hover:bg-[#5a0f1e] transition-colors text-center font-medium"
-      >
-        Contattaci per info
+    <!-- CTA -->
+    <div class="mt-12 flex flex-wrap gap-3">
+      <a href="/formazione" class="inline-block px-5 py-3 border border-black rounded hover:bg-black hover:text-white transition-colors">
+        ← Indietro
       </a>
     </div>
   </section>
