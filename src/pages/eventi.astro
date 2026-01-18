@@ -32,7 +32,9 @@ type TimelineDividerItem = {
 
 type TimelineItem = TimelineEventItem | TimelineDividerItem;
 
-const upcomingEvents: EventEntry[] = [
+const upcomingEvents: EventEntry[] = [];
+
+const pastEvents: EventEntry[] = [
   {
     id: "sei-modalita",
     category: "arteterapia",
@@ -45,9 +47,6 @@ const upcomingEvents: EventEntry[] = [
     imageAlt: "Ingresso dell'Accademia Oriago con luce del tramonto",
     link: "/arteterapia",
   },
-];
-
-const pastEvents: EventEntry[] = [
   {
     id: "battaglia-rane-topi-2025-maggio",
     category: "teatro",
@@ -206,6 +205,15 @@ const pastEvents: EventEntry[] = [
   },
 ];
 
+const categoryColors: Record<string, { bg: string; text: string; border: string; hoverBorder: string }> = {
+  arteterapia: { bg: "bg-fuchsia-50", text: "text-fuchsia-700", border: "border-l-fuchsia-500", hoverBorder: "hover:border-fuchsia-400" },
+  teatro: { bg: "bg-blue-50", text: "text-blue-700", border: "border-l-blue-500", hoverBorder: "hover:border-blue-400" },
+  poesia: { bg: "bg-violet-50", text: "text-violet-700", border: "border-l-violet-500", hoverBorder: "hover:border-violet-400" },
+  convegno: { bg: "bg-teal-50", text: "text-teal-700", border: "border-l-teal-500", hoverBorder: "hover:border-teal-400" },
+};
+
+const getCategoryColor = (category: string) => categoryColors[category] || { bg: "bg-slate-50", text: "text-slate-700", border: "border-l-slate-500", hoverBorder: "hover:border-slate-400" };
+
 let timelineOrder = 0;
 
 const buildTimelineEvent = (event: EventEntry, scope: TimelineScope): TimelineEventItem => {
@@ -222,12 +230,13 @@ const buildTimelineEvent = (event: EventEntry, scope: TimelineScope): TimelineEv
 
 const timelineItems: TimelineItem[] = [
   ...upcomingEvents.map((event) => buildTimelineEvent(event, "upcoming")),
-  {
-    type: "divider",
+  // Show divider only if there are upcoming events
+  ...(upcomingEvents.length > 0 ? [{
+    type: "divider" as const,
     id: "past-events-divider",
     title: "Eventi passati",
     description: "Qui trovi gli eventi passati dell'Associazione Auriga.",
-  },
+  }] : []),
   ...pastEvents.map((event) => buildTimelineEvent(event, "past")),
 ];
 ---
@@ -296,14 +305,25 @@ const timelineItems: TimelineItem[] = [
     <div class="relative z-10 pb-16 md:pb-20">
       <div class="max-w-6xl mx-auto px-4">
       <div class="rounded-[28px] border-2 border-black/40 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-12">
-        <header class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-semibold text-[#014f97]">Prossimi eventi</h2>
-            <p class="mt-4 text-slate-700 max-w-2xl">
-              Qui trovi i prossimi eventi dell'Associazione Auriga.
-            </p>
-          </div>
-        </header>
+        {upcomingEvents.length > 0 ? (
+          <header class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-12">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-semibold text-[#014f97]">Prossimi eventi</h2>
+              <p class="mt-4 text-slate-700 max-w-2xl">
+                Qui trovi i prossimi eventi dell'Associazione Auriga.
+              </p>
+            </div>
+          </header>
+        ) : (
+          <header class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-12">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-semibold text-[#014f97]">I nostri eventi</h2>
+              <p class="mt-4 text-slate-700 max-w-2xl">
+                Scopri tutti gli eventi dell'Associazione Auriga.
+              </p>
+            </div>
+          </header>
+        )}
 
         <ol class="relative mt-12 space-y-8 md:space-y-0">
           <!-- Timeline line - hidden on mobile, visible on md+ -->
@@ -328,21 +348,23 @@ const timelineItems: TimelineItem[] = [
                 <!-- Mobile: stacked layout -->
                 <div class="md:hidden">
                   <!-- Date/Location header -->
-                  <div class="mb-4 pl-6 border-l-4 border-[#014f97]">
-                    <p class="text-[11px] uppercase tracking-[0.35em] text-[#014f97] font-semibold">{item.category}</p>
-                    <p class="mt-1.5 text-lg font-semibold text-slate-900">{item.date}</p>
+                  <div class={`mb-4 pl-5 border border-black/10`}>
+                    <span class={`inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${getCategoryColor(item.category).bg} ${getCategoryColor(item.category).text}`}>
+                      {item.category}
+                    </span>
+                    <p class="mt-2 text-lg font-semibold text-slate-900">{item.date}</p>
                     <p class="mt-1 text-sm text-slate-600">{item.location}</p>
                   </div>
                   <!-- Card -->
-                  <article class="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg" id={`${item.id}-mobile`}>
+                  <article class={`group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg`} id={`${item.id}-mobile`}>
                     <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-48 w-full object-cover" />
                     <div class="p-5">
-                      <h3 class="text-xl font-semibold text-[#014f97]">{item.title}</h3>
-                      <p class="mt-3 text-slate-700 text-sm leading-relaxed">{item.description}</p>
+                      <h3 class="text-xl font-semibold text-slate-900">{item.title}</h3>
+                      <p class="mt-3 text-slate-600 text-sm leading-relaxed">{item.description}</p>
                       <div class="mt-5">
                         <a
                           href={item.ctaHref}
-                          class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-4 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white"
+                          class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
                           aria-label={`Scopri di più su ${item.title}`}
                         >
                           Scopri di più
@@ -354,19 +376,19 @@ const timelineItems: TimelineItem[] = [
                 </div>
 
                 <!-- Desktop: zigzag layout -->
-                <div class={`hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-12 ${item.isInverted ? "" : ""}`}>
+                <div class={`hidden md:grid md:grid-cols-2 md:gap-4 lg:gap-6 ${item.isInverted ? "" : ""}`}>
                   <!-- Left column -->
                   <div class={`flex ${item.isInverted ? "justify-start" : "justify-end"}`}>
                     {item.isInverted ? (
-                      <article class="group max-w-md overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(1,49,97,0.22)]" id={item.id}>
+                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] ${getCategoryColor(item.category).hoverBorder}`} id={item.id}>
                         <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
-                        <div class="p-6 lg:p-7">
-                          <h3 class="text-2xl font-semibold text-[#014f97]">{item.title}</h3>
-                          <p class="mt-4 text-slate-700 leading-relaxed">{item.description}</p>
+                        <div class="p-6 lg:p-8">
+                          <h3 class="text-2xl font-semibold text-slate-900">{item.title}</h3>
+                          <p class="mt-3 text-slate-600 leading-relaxed">{item.description}</p>
                           <div class="mt-6">
                             <a
                               href={item.ctaHref}
-                              class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-5 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#014f97]"
+                              class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500"
                               aria-label={`Scopri di più su ${item.title}`}
                             >
                               Scopri di più
@@ -376,37 +398,46 @@ const timelineItems: TimelineItem[] = [
                         </div>
                       </article>
                     ) : (
-                      <div class="text-right pr-8 lg:pr-12 pt-4 max-w-xs">
-                        <p class="text-[11px] uppercase tracking-[0.4em] text-[#014f97] font-semibold">{item.category}</p>
-                        <p class="mt-3 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
-                        <p class="mt-2 text-sm text-slate-600">{item.location}</p>
+                      <div class="text-right pt-4">
+                        <span class={`inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${getCategoryColor(item.category).bg} ${getCategoryColor(item.category).text}`}>
+                          {item.category}
+                        </span>
+                        <p class="mt-2 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
+                        <p class="mt-1.5 text-sm text-slate-600">{item.location}</p>
                       </div>
                     )}
                   </div>
 
-                  <!-- Center dot -->
+                  <!-- Center dot - colored by category -->
                   <div class="absolute left-1/2 top-6 -translate-x-1/2 z-10">
-                    <span class="block w-4 h-4 rounded-full bg-[#014f97] border-[3px] border-white shadow-[0_0_0_4px_rgba(1,79,151,0.15)] transition-transform duration-300 group-hover:scale-110" aria-hidden="true"></span>
+                    <span class={`block w-4 h-4 rounded-full border-[3px] border-white shadow-[0_0_0_4px_rgba(0,0,0,0.08)] transition-transform duration-300 group-hover:scale-125 ${
+                      item.category === "arteterapia" ? "bg-fuchsia-500" :
+                      item.category === "teatro" ? "bg-blue-500" :
+                      item.category === "poesia" ? "bg-violet-500" :
+                      item.category === "convegno" ? "bg-teal-500" : "bg-slate-500"
+                    }`} aria-hidden="true"></span>
                   </div>
 
                   <!-- Right column -->
-                  <div class={`flex ${item.isInverted ? "justify-end" : "justify-start"}`}>
+                  <div class={`flex ${item.isInverted ? "justify-start" : "justify-start"}`}>
                     {item.isInverted ? (
-                      <div class="text-left pl-8 lg:pl-12 pt-4 max-w-xs">
-                        <p class="text-[11px] uppercase tracking-[0.4em] text-[#014f97] font-semibold">{item.category}</p>
-                        <p class="mt-3 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
-                        <p class="mt-2 text-sm text-slate-600">{item.location}</p>
+                      <div class="text-left pt-4">
+                        <span class={`inline-block px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${getCategoryColor(item.category).bg} ${getCategoryColor(item.category).text}`}>
+                          {item.category}
+                        </span>
+                        <p class="mt-2 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
+                        <p class="mt-1.5 text-sm text-slate-600">{item.location}</p>
                       </div>
                     ) : (
-                      <article class="group max-w-md overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(1,49,97,0.22)]" id={item.id}>
+                      <article class={`group max-w-md overflow-hidden rounded-2xl border-2 border-transparent bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_35px_80px_rgba(1,49,97,0.25)] ${getCategoryColor(item.category).hoverBorder}`} id={item.id}>
                         <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
-                        <div class="p-6 lg:p-7">
-                          <h3 class="text-2xl font-semibold text-[#014f97]">{item.title}</h3>
-                          <p class="mt-4 text-slate-700 leading-relaxed">{item.description}</p>
+                        <div class="p-6 lg:p-8">
+                          <h3 class="text-2xl font-semibold text-slate-900">{item.title}</h3>
+                          <p class="mt-3 text-slate-600 leading-relaxed">{item.description}</p>
                           <div class="mt-6 flex justify-end">
                             <a
                               href={item.ctaHref}
-                              class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-5 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#014f97]"
+                              class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500"
                               aria-label={`Scopri di più su ${item.title}`}
                             >
                               Scopri di più
