@@ -29,27 +29,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="mt-12">
     <h2 class="text-2xl font-semibold mb-8 text-center">Soci fondatori</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Elisa Stagni -->
-      <button
-        type="button"
-        id="founder-elisa-trigger"
-        class="group text-left focus:outline-none focus:ring-2 focus:ring-black/30 rounded-lg overflow-hidden transition-transform hover:-translate-y-1"
-        aria-controls="founder-overlay-elisa"
-        aria-expanded="false"
-      >
-        <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-          <img
-            src="/img/elisa-stagni.jpg"
-            alt="Elisa Stagni"
-            class="w-full h-64 object-cover"
-            loading="lazy"
-          />
-          <div class="p-4 text-center">
-            <h3 class="text-xl font-semibold">Elisa Stagni</h3>
-          </div>
-        </div>
-      </button>
-
       <!-- Marialucia Carones -->
       <button
         type="button"
@@ -91,6 +70,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
         </div>
       </button>
+
+      <!-- Elisa Stagni -->
+      <button
+        type="button"
+        id="founder-elisa-trigger"
+        class="group text-left focus:outline-none focus:ring-2 focus:ring-black/30 rounded-lg overflow-hidden transition-transform hover:-translate-y-1"
+        aria-controls="founder-overlay-elisa"
+        aria-expanded="false"
+      >
+        <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <img
+            src="/img/elisa-stagni.jpg"
+            alt="Elisa Stagni"
+            class="w-full h-64 object-cover"
+            loading="lazy"
+          />
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-semibold">Elisa Stagni</h3>
+          </div>
+        </div>
+      </button>
     </div>
   </div>
 
@@ -99,14 +99,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h2 class="text-2xl font-semibold mb-6 text-center">Collaboratori</h2>
     <div class="flex justify-center">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl">
+        <button type="button" id="collab-valeria-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-valeria" aria-expanded="false">Valeria Almerighi</button>
         <button type="button" id="collab-chiara-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-chiara" aria-expanded="false">Chiara Catalano</button>
-        <button type="button" id="collab-flavia-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-flavia" aria-expanded="false">Flavia Giovannelli</button>
-        <button type="button" id="collab-mortelliti-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-mortelliti" aria-expanded="false">Giuseppe Mortelliti</button>
-        <button type="button" id="collab-savio-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-savio" aria-expanded="false">Giuseppe Savio</button>
         <button type="button" id="collab-marco-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-marco" aria-expanded="false">Marco Conti</button>
         <button type="button" id="collab-marzia-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-marzia" aria-expanded="false">Marzia Di Giulio</button>
         <button type="button" id="collab-tiziana-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-tiziana" aria-expanded="false">Tiziana Di Nunno</button>
-        <button type="button" id="collab-valeria-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-valeria" aria-expanded="false">Valeria Almerighi</button>
+        <button type="button" id="collab-flavia-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-flavia" aria-expanded="false">Flavia Giovannelli</button>
+        <button type="button" id="collab-mortelliti-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-mortelliti" aria-expanded="false">Giuseppe Mortelliti</button>
+        <button type="button" id="collab-savio-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-sm" style="font-family: 'WaldorfschriftRegular', serif;" aria-controls="collab-overlay-savio" aria-expanded="false">Giuseppe Savio</button>
       </div>
     </div>
   </div>
