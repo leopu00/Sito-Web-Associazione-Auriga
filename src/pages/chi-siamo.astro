@@ -115,83 +115,95 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <!-- Overlay modal: Elisa Stagni -->
   <div id="founder-overlay-elisa" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="founder-elisa-title">
-    <div id="founder-overlay-backdrop-elisa" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
-      <button
-        type="button"
-        id="founder-overlay-close-elisa"
-        class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm"
-        aria-label="Chiudi pannello"
-      >
-        ×
-      </button>
-      <img
-        src="/img/elisa-stagni.jpg"
-        alt="Elisa Stagni"
-        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
-        loading="lazy"
-      />
-      <div>
-        <h3 id="founder-elisa-title" class="text-xl font-semibold">Elisa Stagni</h3>
-        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px] text-justify">
+    <div id="founder-overlay-backdrop-elisa" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button
+            type="button"
+            id="founder-overlay-close-elisa"
+            class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl"
+            aria-label="Chiudi pannello"
+          >
+            ×
+          </button>
+          <img
+            src="/img/elisa-stagni.jpg"
+            alt="Elisa Stagni"
+            class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0"
+            loading="lazy"
+          />
+          <div class="flex-1">
+            <h3 id="founder-elisa-title" class="text-2xl md:text-3xl font-semibold">Elisa Stagni</h3>
+            <p class="mt-4 whitespace-pre-line leading-relaxed text-base md:text-lg text-justify">
 <strong>Elisa Stagni</strong>, regista e trainer di ItinerisTeatro, artista indipendente. Collabora con associazioni e compagnie teatrali e lavora come tecnico attrezzista al <strong>Teatro La Fenice di Venezia</strong>.
-Diplomata in <strong>Sprachgestaltung</strong> e in <strong>pedagogia Waldorf</strong>, laureata in Lettere ad indirizzo artistico contemporaneo, settore musica e spettacolo, si è formata come attrice e regista con i maggiori artisti della ricerca italiana e francese, in particolare presso la <strong>Scuola Sperimentale dell’Attore di Pordenone</strong> e con il <strong>Theatre du Radeau di Le Mans</strong>.
+Diplomata in <strong>Sprachgestaltung</strong> e in <strong>pedagogia Waldorf</strong>, laureata in Lettere ad indirizzo artistico contemporaneo, settore musica e spettacolo, si è formata come attrice e regista con i maggiori artisti della ricerca italiana e francese, in particolare presso la <strong>Scuola Sperimentale dell'Attore di Pordenone</strong> e con il <strong>Theatre du Radeau di Le Mans</strong>.
 Attualmente collabora nel coordinamento della gestione della segreteria del corso triennale di formazione.
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Marialucia Carones -->
   <div id="founder-overlay-marialucia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="founder-marialucia-title">
-    <div id="founder-overlay-backdrop-marialucia" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
-      <button
-        type="button"
-        id="founder-overlay-close-marialucia"
-        class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm"
-        aria-label="Chiudi pannello"
-      >
-        ×
-      </button>
-      <img
-        src="/img/chi-siamo/Marialucia-Carones.jpg"
-        alt="Marialucia Carones"
-        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
-        loading="lazy"
-      />
-      <div>
-        <h3 id="founder-marialucia-title" class="text-xl font-semibold">Marialucia Carones</h3>
-        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px] text-justify">
+    <div id="founder-overlay-backdrop-marialucia" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button
+            type="button"
+            id="founder-overlay-close-marialucia"
+            class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl"
+            aria-label="Chiudi pannello"
+          >
+            ×
+          </button>
+          <img
+            src="/img/chi-siamo/Marialucia-Carones.jpg"
+            alt="Marialucia Carones"
+            class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0"
+            loading="lazy"
+          />
+          <div class="flex-1">
+            <h3 id="founder-marialucia-title" class="text-2xl md:text-3xl font-semibold">Marialucia Carones</h3>
+            <p class="mt-4 whitespace-pre-line leading-relaxed text-base md:text-lg text-justify">
 Ha conseguito il diploma presso il <strong>Laboratorio di Esercitazioni Sceniche</strong> di Roma diretto da Gigi Proietti; in seguito ha proseguito i suoi studi in Svizzera presso il <strong>Goetheanum</strong> (Basilea). Dopo questi anni di formazione ha lavorato per diversi anni come attrice nei paesi di lingua tedesca, partecipando a produzioni teatrali sotto la direzione di Michael Knapp, Christopher Marcus, Saskia Mees, Cecilia Bertoni, Schimon Levi, Paolo Giuranna e Claudio Puglisi.
-        </p>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Claudio Puglisi -->
   <div id="founder-overlay-claudio" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="founder-claudio-title">
-    <div id="founder-overlay-backdrop-claudio" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-4xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
-      <button
-        type="button"
-        id="founder-overlay-close-claudio"
-        class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm"
-        aria-label="Chiudi pannello"
-      >
-        ×
-      </button>
-      <img
-        src="/img/claudio-puglisi.jpg"
-        alt="Claudio Puglisi"
-        class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100"
-        loading="lazy"
-      />
-      <div>
-        <h3 id="founder-claudio-title" class="text-xl font-semibold">Claudio Puglisi</h3>
-        <p class="mt-2 whitespace-pre-line leading-relaxed text-[15px] text-justify">
-Presidente, attore e regista formato all’<strong>Accademia Silvio D’Amico</strong> (1973) e alla <strong>Schule für Sprachgestaltung und Schauspiel</strong> di Dornach (1982), dopo alcuni anni di intensa attività come attore e assistente alla regia prosegue la formazione in lingua tedesca fino al 1982, specializzandosi nell’interpretazione teatrale poetica (<strong>Sprachgestaltung</strong>). Da allora lavora come attore e regista, insegna in diverse scuole di teatro e dal 1990 partecipa anche a film e serie TV. In teatro ha collaborato con Orazio Costa, Luigi Squarzina, Gabriele Lavia, Luca Ronconi, Walter Pagliaro e Franco Però; al cinema e in televisione con Alfredo Angeli, Gabriele Muccino, Riccardo Donna, Giorgio Capitani, Michele Soavi, Giacomo Battiato e Pupi Avati.
-        </p>
+    <div id="founder-overlay-backdrop-claudio" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button
+            type="button"
+            id="founder-overlay-close-claudio"
+            class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl"
+            aria-label="Chiudi pannello"
+          >
+            ×
+          </button>
+          <img
+            src="/img/claudio-puglisi.jpg"
+            alt="Claudio Puglisi"
+            class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0"
+            loading="lazy"
+          />
+          <div class="flex-1">
+            <h3 id="founder-claudio-title" class="text-2xl md:text-3xl font-semibold">Claudio Puglisi</h3>
+            <p class="mt-4 whitespace-pre-line leading-relaxed text-base md:text-lg text-justify">
+Presidente, attore e regista formato all'<strong>Accademia Silvio D'Amico</strong> (1973) e alla <strong>Schule für Sprachgestaltung und Schauspiel</strong> di Dornach (1982), dopo alcuni anni di intensa attività come attore e assistente alla regia prosegue la formazione in lingua tedesca fino al 1982, specializzandosi nell'interpretazione teatrale poetica (<strong>Sprachgestaltung</strong>). Da allora lavora come attore e regista, insegna in diverse scuole di teatro e dal 1990 partecipa anche a film e serie TV. In teatro ha collaborato con Orazio Costa, Luigi Squarzina, Gabriele Lavia, Luca Ronconi, Walter Pagliaro e Franco Però; al cinema e in televisione con Alfredo Angeli, Gabriele Muccino, Riccardo Donna, Giorgio Capitani, Michele Soavi, Giacomo Battiato e Pupi Avati.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
