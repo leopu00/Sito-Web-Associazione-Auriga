@@ -3,69 +3,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout
   title="formazione — Auriga"
-  headerTheme="dark"
-  headerClass="!text-[#7c2935]"
-  headerStyle=""
+  headerTheme="light"
+  headerClass="bg-white"
+  headerStyle="background-color:#ffffff"
   pageBg="light"
 >
-  <section class="relative overflow-hidden text-white">
-    <!-- Mesh gradient background -->
-    <div class="absolute inset-0 bg-[#2d0f14]"></div>
+  <section class="relative overflow-hidden">
+    <!-- Sfondo bianco base -->
+    <div class="absolute inset-0 bg-white"></div>
 
-    <!-- BORDO SINISTRO -->
-    <div class="absolute top-[0%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#7c2935] opacity-80 blur-[120px]"></div>
-    <div class="absolute top-[20%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#dc2626] opacity-75 blur-[110px]"></div>
-    <div class="absolute top-[40%] left-[-12%] w-[42%] h-[28%] rounded-full bg-[#b91c1c] opacity-70 blur-[115px]"></div>
-    <div class="absolute top-[60%] left-[-8%] w-[38%] h-[25%] rounded-full bg-[#991b1b] opacity-65 blur-[110px]"></div>
-    <div class="absolute top-[80%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#7c2935] opacity-70 blur-[120px]"></div>
+    <!-- Sfumature rosso scuro delicate ai bordi -->
+    <div class="absolute top-[-10%] left-[-20%] w-[50%] h-[60%] rounded-full bg-[#7c2935] opacity-25 blur-[150px]"></div>
+    <div class="absolute top-[-15%] right-[-20%] w-[50%] h-[60%] rounded-full bg-[#7c2935] opacity-25 blur-[150px]"></div>
+    <div class="absolute bottom-[-20%] left-[-15%] w-[45%] h-[50%] rounded-full bg-[#7c2935] opacity-20 blur-[140px]"></div>
+    <div class="absolute bottom-[-20%] right-[-15%] w-[45%] h-[50%] rounded-full bg-[#7c2935] opacity-20 blur-[140px]"></div>
 
-    <!-- BORDO DESTRO -->
-    <div class="absolute top-[0%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#dc2626] opacity-80 blur-[120px]"></div>
-    <div class="absolute top-[18%] right-[-10%] w-[40%] h-[25%] rounded-full bg-[#b91c1c] opacity-75 blur-[110px]"></div>
-    <div class="absolute top-[38%] right-[-12%] w-[42%] h-[28%] rounded-full bg-[#ef4444] opacity-70 blur-[115px]"></div>
-    <div class="absolute top-[58%] right-[-8%] w-[38%] h-[25%] rounded-full bg-[#7c2935] opacity-65 blur-[110px]"></div>
-    <div class="absolute top-[78%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#dc2626] opacity-70 blur-[120px]"></div>
-
-    <!-- CENTRO - HERO (riempito) -->
-    <div class="absolute top-[-5%] left-[25%] w-[50%] h-[35%] rounded-full bg-[#7c2935] opacity-70 blur-[120px]"></div>
-    <div class="absolute top-[0%] left-[35%] w-[45%] h-[30%] rounded-full bg-[#dc2626] opacity-65 blur-[110px]"></div>
-    <div class="absolute top-[5%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#b91c1c] opacity-70 blur-[100px]"></div>
-    <div class="absolute top-[5%] left-[50%] w-[40%] h-[28%] rounded-full bg-[#ef4444] opacity-75 blur-[100px]"></div>
-    <div class="absolute top-[10%] left-[30%] w-[45%] h-[30%] rounded-full bg-[#f87171] opacity-60 blur-[110px]"></div>
-    <div class="absolute top-[8%] left-[30%] w-[40%] h-[30%] rounded-full bg-[#fca5a5] opacity-75 blur-[90px]"></div>
-    <div class="absolute top-[3%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#991b1b] opacity-65 blur-[85px]"></div>
-    <div class="absolute top-[15%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#7f1d1d] opacity-55 blur-[100px]"></div>
-    <div class="absolute top-[18%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#dc2626] opacity-60 blur-[105px]"></div>
-
-    <!-- CENTRO - MIDDLE -->
-    <div class="absolute top-[28%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#ef4444] opacity-60 blur-[110px]"></div>
-    <div class="absolute top-[30%] left-[45%] w-[38%] h-[26%] rounded-full bg-[#7c2935] opacity-65 blur-[110px]"></div>
-    <div class="absolute top-[35%] left-[30%] w-[40%] h-[28%] rounded-full bg-[#b91c1c] opacity-55 blur-[110px]"></div>
-    <div class="absolute top-[40%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#f87171] opacity-60 blur-[100px]"></div>
-    <div class="absolute top-[42%] left-[50%] w-[35%] h-[25%] rounded-full bg-[#dc2626] opacity-55 blur-[100px]"></div>
-
-    <!-- CENTRO - BOTTOM -->
-    <div class="absolute top-[50%] left-[25%] w-[40%] h-[28%] rounded-full bg-[#ef4444] opacity-60 blur-[110px]"></div>
-    <div class="absolute top-[55%] left-[40%] w-[38%] h-[26%] rounded-full bg-[#991b1b] opacity-55 blur-[110px]"></div>
-    <div class="absolute top-[60%] left-[15%] w-[42%] h-[28%] rounded-full bg-[#7c2935] opacity-60 blur-[115px]"></div>
-    <div class="absolute top-[65%] left-[45%] w-[40%] h-[28%] rounded-full bg-[#dc2626] opacity-55 blur-[110px]"></div>
-    <div class="absolute top-[70%] left-[25%] w-[45%] h-[30%] rounded-full bg-[#b91c1c] opacity-55 blur-[115px]"></div>
-    <div class="absolute top-[75%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#ef4444] opacity-50 blur-[110px]"></div>
-    <div class="absolute top-[82%] left-[20%] w-[45%] h-[30%] rounded-full bg-[#7f1d1d] opacity-50 blur-[115px]"></div>
-    <div class="absolute top-[88%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#7c2935] opacity-55 blur-[110px]"></div>
+    <!-- Sfumatura centrale molto delicata -->
+    <div class="absolute top-[10%] left-[20%] w-[60%] h-[40%] rounded-full bg-[#7c2935] opacity-15 blur-[160px]"></div>
 
     <!-- Hero content -->
-    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
-      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Formazione</h1>
+    <div class="relative z-10 min-h-[280px] md:min-h-[320px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-[#7c2935]">Formazione</h1>
       </div>
     </div>
 
     <!-- Content -->
     <div class="relative z-10 pb-16 md:pb-20">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="rounded-[28px] border-2 border-black/40 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-12">
-          <div class="mt-6 space-y-5 leading-relaxed md:leading-8 text-lg text-justify text-gray-800">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10">
+          <div class="space-y-5 leading-relaxed md:leading-8 text-lg text-justify text-gray-800">
             <p>Il mestiere dell'<strong>attore</strong> nell'immaginario comune è stato associato a molti ideali collegati alle mode del momento, alla sorte che, il più delle volte, subiva l'<strong>arte scenica</strong>. La <strong>naturalezza</strong> dell'interpretazione è stata sempre più considerata una virtù somma, un valore insostituibile. In particolare, da quando il termine di confronto è divenuto sempre più la vita di tutti i giorni, la <strong>spontaneità</strong> ha creato un "<strong>mito</strong>" che a sua volta ha trasformato l'arte dell'attore, richiedendo piuttosto scatenamenti viscerali che elaborazioni approfondite e condotte coscienziosamente.</p>
             <p>Nei primi anni del secolo scorso, in un momento di svolta epocale di tutte le arti, viene una risposta profondamente significativa a molti degli interrogativi sull'arte dell'interprete teatrale. La <strong>parola</strong> riprende una posizione centrale nel percorso di formazione e si affianca alla <strong>musica</strong> nella valutazione oggettiva dell'interprete.</p>
             <p>Il <strong>fonema</strong> - vocalico e consonantico -, l'<strong>immagine sonora</strong>, il susseguirsi ritmico delle sillabe e dei versi, la frase nella sua costruzione, le atmosfere suggerite dalle risonanze prevalenti nel <strong>testo poetico</strong>, e tanti altri aspetti del <strong>linguaggio</strong> sempre meno presenti in quegli anni di trasformazione, tornano a divenire strumenti espressivi grazie a nuovi punti di vista che colgono la sostanza conoscitiva vivente nel linguaggio.</p>
@@ -128,7 +94,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
             </article>
           </div>
-        </div>
       </div>
     </div>
   </section>
