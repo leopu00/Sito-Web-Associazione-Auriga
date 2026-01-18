@@ -96,20 +96,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <!-- Collaboratori -->
   <div class="mt-12">
-    <h2 class="text-2xl font-semibold mb-4">Collaboratori</h2>
-    <div class="inline-grid grid-cols-1 md:grid-cols-[max-content_max-content] gap-x-6 md:gap-x-8 gap-y-2">
-      <ul class="list-disc list-inside space-y-1">
-        <li><button type="button" id="collab-chiara-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-chiara" aria-expanded="false">Chiara Catalano</button></li>
-        <li><button type="button" id="collab-flavia-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-flavia" aria-expanded="false">Flavia Giovannelli</button></li>
-        <li><button type="button" id="collab-mortelliti-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-mortelliti" aria-expanded="false">Giuseppe Mortelliti</button></li>
-        <li><button type="button" id="collab-savio-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-savio" aria-expanded="false">Giuseppe Savio</button></li>
-      </ul>
-      <ul class="list-disc list-inside space-y-1">
-        <li><button type="button" id="collab-marco-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-marco" aria-expanded="false">Marco Conti</button></li>
-        <li><button type="button" id="collab-marzia-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-marzia" aria-expanded="false">Marzia Di Giulio</button></li>
-        <li><button type="button" id="collab-tiziana-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-tiziana" aria-expanded="false">Tiziana Di Nunno</button></li>
-        <li><button type="button" id="collab-valeria-trigger" class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1" aria-controls="collab-overlay-valeria" aria-expanded="false">Valeria Almerighi</button></li>
-      </ul>
+    <h2 class="text-2xl font-semibold mb-6 text-center">Collaboratori</h2>
+    <div class="flex justify-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl">
+        <button type="button" id="collab-chiara-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-chiara" aria-expanded="false">Chiara Catalano</button>
+        <button type="button" id="collab-flavia-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-flavia" aria-expanded="false">Flavia Giovannelli</button>
+        <button type="button" id="collab-mortelliti-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-mortelliti" aria-expanded="false">Giuseppe Mortelliti</button>
+        <button type="button" id="collab-savio-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-savio" aria-expanded="false">Giuseppe Savio</button>
+        <button type="button" id="collab-marco-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-marco" aria-expanded="false">Marco Conti</button>
+        <button type="button" id="collab-marzia-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-marzia" aria-expanded="false">Marzia Di Giulio</button>
+        <button type="button" id="collab-tiziana-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-tiziana" aria-expanded="false">Tiziana Di Nunno</button>
+        <button type="button" id="collab-valeria-trigger" class="text-center py-3 px-4 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-400 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-black/30 text-base font-medium" aria-controls="collab-overlay-valeria" aria-expanded="false">Valeria Almerighi</button>
+      </div>
     </div>
   </div>
 
@@ -210,116 +208,148 @@ Presidente, attore e regista formato all'<strong>Accademia Silvio D'Amico</stron
 
   <!-- Overlay modal: Chiara Catalano -->
   <div id="collab-overlay-chiara" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-chiara-title">
-    <div id="collab-overlay-backdrop-chiara" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-chiara" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/Chiara-Catalano.jpg" alt="Chiara Catalano" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-chiara-title" class="text-xl font-semibold">Chiara Catalano</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">
-Diplomata in Pianoforte al <strong>Conservatorio “Santa Cecilia”</strong> di Roma e laureata in Musicologia all’<strong>Università Tor Vergata</strong>. Si forma come attrice all’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong>. Ha lavorato come attrice con importanti registi italiani ed esteri in spettacoli di prosa e musicali. Dal 2021 segue <strong>Claudio Puglisi</strong> e <strong>Marialucia Carones</strong> nello studio e nella pratica della <strong>Sprachgestaltung</strong> e Arte Drammatica. Negli ultimi anni ha curato la rassegna <em>La città della poesia</em> e realizzato progetti teatrali, tra cui <em>Il Paradiso</em>, ispirato ad alcuni racconti di <strong>A. Moravia</strong>, debutto stagione 24/25.
-        </p>
+    <div id="collab-overlay-backdrop-chiara" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-chiara" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/Chiara-Catalano.jpg" alt="Chiara Catalano" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-chiara-title" class="text-2xl md:text-3xl font-semibold">Chiara Catalano</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">
+Diplomata in Pianoforte al <strong>Conservatorio "Santa Cecilia"</strong> di Roma e laureata in Musicologia all'<strong>Università Tor Vergata</strong>. Si forma come attrice all'<strong>Accademia Nazionale d'Arte Drammatica "Silvio D'Amico"</strong>. Ha lavorato come attrice con importanti registi italiani ed esteri in spettacoli di prosa e musicali. Dal 2021 segue <strong>Claudio Puglisi</strong> e <strong>Marialucia Carones</strong> nello studio e nella pratica della <strong>Sprachgestaltung</strong> e Arte Drammatica. Negli ultimi anni ha curato la rassegna <em>La città della poesia</em> e realizzato progetti teatrali, tra cui <em>Il Paradiso</em>, ispirato ad alcuni racconti di <strong>A. Moravia</strong>, debutto stagione 24/25.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Flavia Giovannelli -->
   <div id="collab-overlay-flavia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-flavia-title">
-    <div id="collab-overlay-backdrop-flavia" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-flavia" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/flavia-giovannelli.jpg" alt="Flavia Giovannelli" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-flavia-title" class="text-xl font-semibold">Flavia Giovannelli</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">
-Nata a Roma nel 1975. Si forma prima come attrice, poi come pedagoga teatrale presso l’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong>, dove consegue il Diploma Accademico di II livello. Terminati gli studi, lavora come attrice e approfondisce l’<strong>Arte della Parola (Sprachgestaltung)</strong> e la pedagogia di Rudolf Steiner come metodo di educazione al parlare per allievi attori. Dal 2006 al 2011 è assistente del Maestro <strong>Paolo Giuranna</strong> presso la “Silvio D’Amico”. Dal 2012 è docente di recitazione in versi presso l’<strong>Accademia d’Arte del Dramma Antico</strong> dell’<strong>Istituto Nazionale del Dramma Antico (INDA)</strong> di Siracusa.
-        </p>
+    <div id="collab-overlay-backdrop-flavia" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-flavia" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/flavia-giovannelli.jpg" alt="Flavia Giovannelli" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-flavia-title" class="text-2xl md:text-3xl font-semibold">Flavia Giovannelli</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">
+Nata a Roma nel 1975. Si forma prima come attrice, poi come pedagoga teatrale presso l'<strong>Accademia Nazionale d'Arte Drammatica "Silvio D'Amico"</strong>, dove consegue il Diploma Accademico di II livello. Terminati gli studi, lavora come attrice e approfondisce l'<strong>Arte della Parola (Sprachgestaltung)</strong> e la pedagogia di Rudolf Steiner come metodo di educazione al parlare per allievi attori. Dal 2006 al 2011 è assistente del Maestro <strong>Paolo Giuranna</strong> presso la "Silvio D'Amico". Dal 2012 è docente di recitazione in versi presso l'<strong>Accademia d'Arte del Dramma Antico</strong> dell'<strong>Istituto Nazionale del Dramma Antico (INDA)</strong> di Siracusa.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Giuseppe Mortelliti -->
   <div id="collab-overlay-mortelliti" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-mortelliti-title">
-    <div id="collab-overlay-backdrop-mortelliti" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-mortelliti" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/Giuseppe-Mortelliti.jpg" alt="Giuseppe Mortelliti" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-mortelliti-title" class="text-xl font-semibold">Giuseppe Mortelliti</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">
-Nato a Messina nel 1984, si diploma attore all’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong>, studiando tra gli altri con Salveti, Giuranna, Ronconi, Monetta, Romei, Manetti, Masciopinto, Lievi, Marchesini. Si dedica anche alla drammaturgia e alla regia. Nel 2014 lo spettacolo <em>84 Gradini</em>, di cui è interprete e autore, vince il <strong>Premio Special Off</strong> al <strong>Roma Fringe Festival</strong>; l’anno seguente ottiene il <strong>Solo Performance Award</strong> al San Diego Fringe Festival. Nel 2018 avvia il progetto di scrittura teatrale e viaggi in bicicletta in solitaria <em>Con un quaderno nel portapacchi</em>. Allena l’arte della parola e conduce laboratori teatrali per adulti e bambini di ogni età.
-        </p>
+    <div id="collab-overlay-backdrop-mortelliti" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-mortelliti" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/Giuseppe-Mortelliti.jpg" alt="Giuseppe Mortelliti" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-mortelliti-title" class="text-2xl md:text-3xl font-semibold">Giuseppe Mortelliti</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">
+Nato a Messina nel 1984, si diploma attore all'<strong>Accademia Nazionale d'Arte Drammatica "Silvio D'Amico"</strong>, studiando tra gli altri con Salveti, Giuranna, Ronconi, Monetta, Romei, Manetti, Masciopinto, Lievi, Marchesini. Si dedica anche alla drammaturgia e alla regia. Nel 2014 lo spettacolo <em>84 Gradini</em>, di cui è interprete e autore, vince il <strong>Premio Special Off</strong> al <strong>Roma Fringe Festival</strong>; l'anno seguente ottiene il <strong>Solo Performance Award</strong> al San Diego Fringe Festival. Nel 2018 avvia il progetto di scrittura teatrale e viaggi in bicicletta in solitaria <em>Con un quaderno nel portapacchi</em>. Allena l'arte della parola e conduce laboratori teatrali per adulti e bambini di ogni età.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Giuseppe Savio -->
   <div id="collab-overlay-savio" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-savio-title">
-    <div id="collab-overlay-backdrop-savio" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-savio" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/Giuseppe-Savio.JPG" alt="Giuseppe Savio" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-savio-title" class="text-xl font-semibold">Giuseppe Savio</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">Padovano, inizia diciannovenne a frequentare corsi di teatro nella propria città e la <strong>Scuola di Teatro Regionale del Veneto</strong>. Nel 1989 si diploma a Firenze presso la <strong>Bottega Teatrale</strong> diretta da <strong>Vittorio Gassman</strong>; consegue una specializzazione in <strong>tragedia greca</strong> presso l’<strong>Accademia Teatrale della Calabria</strong>; studia <strong>commedia dell’arte</strong> a Parigi (Théâtre du Soleil); a Oslo consegue le competenze di insegnante di teatro presso l’<strong>Accademia Nazionale d’Arte di Norvegia</strong> (KhiO). Ha recitato nei maggiori teatri italiani, alternando l’attività di attore a quella di pedagogo teatrale.</p>
+    <div id="collab-overlay-backdrop-savio" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-savio" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/Giuseppe-Savio.JPG" alt="Giuseppe Savio" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-savio-title" class="text-2xl md:text-3xl font-semibold">Giuseppe Savio</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">Padovano, inizia diciannovenne a frequentare corsi di teatro nella propria città e la <strong>Scuola di Teatro Regionale del Veneto</strong>. Nel 1989 si diploma a Firenze presso la <strong>Bottega Teatrale</strong> diretta da <strong>Vittorio Gassman</strong>; consegue una specializzazione in <strong>tragedia greca</strong> presso l'<strong>Accademia Teatrale della Calabria</strong>; studia <strong>commedia dell'arte</strong> a Parigi (Théâtre du Soleil); a Oslo consegue le competenze di insegnante di teatro presso l'<strong>Accademia Nazionale d'Arte di Norvegia</strong> (KhiO). Ha recitato nei maggiori teatri italiani, alternando l'attività di attore a quella di pedagogo teatrale.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Marco Conti -->
   <div id="collab-overlay-marco" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-marco-title">
-    <div id="collab-overlay-backdrop-marco" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-marco" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/Marco-Conti.jpg" alt="Marco Conti" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-marco-title" class="text-xl font-semibold">Marco Conti</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">
-Attore diplomato all’<strong>Accademia di Arte della Parola e Arte Drammatica</strong> del <strong>Goetheanum</strong> di Dornach (CH) e alla <strong>Palestra dell’Attore di Roma</strong>. Dal 2006 svolge attività artistica e pedagogica con particolare attenzione al teatro ragazzi, collaborando con compagnie in Italia, Germania, Svizzera e Olanda. Dal 2012 approfondisce la pedagogia steineriana e coordina progetti artistico‑educativi per l’infanzia e l’adolescenza, tra cui centri estivi, laboratori residenziali e percorsi di orientamento. È fondatore dell’associazione <strong>ARPA</strong>, attiva nella produzione di spettacoli e nella promozione culturale ed educativa.
-        </p>
+    <div id="collab-overlay-backdrop-marco" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-marco" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/Marco-Conti.jpg" alt="Marco Conti" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-marco-title" class="text-2xl md:text-3xl font-semibold">Marco Conti</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">
+Attore diplomato all'<strong>Accademia di Arte della Parola e Arte Drammatica</strong> del <strong>Goetheanum</strong> di Dornach (CH) e alla <strong>Palestra dell'Attore di Roma</strong>. Dal 2006 svolge attività artistica e pedagogica con particolare attenzione al teatro ragazzi, collaborando con compagnie in Italia, Germania, Svizzera e Olanda. Dal 2012 approfondisce la pedagogia steineriana e coordina progetti artistico‑educativi per l'infanzia e l'adolescenza, tra cui centri estivi, laboratori residenziali e percorsi di orientamento. È fondatore dell'associazione <strong>ARPA</strong>, attiva nella produzione di spettacoli e nella promozione culturale ed educativa.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Marzia Di Giulio -->
   <div id="collab-overlay-marzia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-marzia-title">
-    <div id="collab-overlay-backdrop-marzia" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-marzia" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/marzia-di-giulio.JPG" alt="Marzia Di Giulio" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-marzia-title" class="text-xl font-semibold">Marzia Di Giulio</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">
-Si diploma come attrice nella scuola napoletana del <strong>Teatro Leopardi</strong> (2000, metodo Stanislavskij). Consegue specializzazioni in <strong>pre‑espressività</strong> con l’argentino Josuè Luis Sanchez Martin e in <strong>commedia dell’arte</strong> (studio antropologico) presso la <strong>Scuola Sperimentale dell’Attore</strong> di Pordenone. Si specializza in <strong>Biomeccanica</strong> (metodo Mejerchol’d) e nel metodo <strong>Michail Čechov</strong> alla Palestra dell’Attore di Roma. Nel 2011 si diploma in <strong>Arte Drammatica</strong> e <strong>Sprachgestaltung</strong> presso la <strong>Libera Università del Goetheanum</strong> (Dornach–Basilea). Lavora come attrice e pedagoga.
-        </p>
+    <div id="collab-overlay-backdrop-marzia" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-marzia" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/marzia-di-giulio.JPG" alt="Marzia Di Giulio" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-marzia-title" class="text-2xl md:text-3xl font-semibold">Marzia Di Giulio</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">
+Si diploma come attrice nella scuola napoletana del <strong>Teatro Leopardi</strong> (2000, metodo Stanislavskij). Consegue specializzazioni in <strong>pre‑espressività</strong> con l'argentino Josuè Luis Sanchez Martin e in <strong>commedia dell'arte</strong> (studio antropologico) presso la <strong>Scuola Sperimentale dell'Attore</strong> di Pordenone. Si specializza in <strong>Biomeccanica</strong> (metodo Mejerchol'd) e nel metodo <strong>Michail Čechov</strong> alla Palestra dell'Attore di Roma. Nel 2011 si diploma in <strong>Arte Drammatica</strong> e <strong>Sprachgestaltung</strong> presso la <strong>Libera Università del Goetheanum</strong> (Dornach–Basilea). Lavora come attrice e pedagoga.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Tiziana Di Nunno -->
   <div id="collab-overlay-tiziana" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-tiziana-title">
-    <div id="collab-overlay-backdrop-tiziana" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-tiziana" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/tiziana-di-nunno.jpg" alt="Tiziana Di Nunno" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-tiziana-title" class="text-xl font-semibold">Tiziana Di Nunno</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">Dopo la laurea in <strong>DAMS</strong> (Università degli Studi <strong>Roma Tre</strong>, 2004) e il diploma in <strong>Sprachgestaltung</strong> e Arte Drammatica (Università del <strong>Goetheanum</strong>, Basilea, 2011), svolge attività di attrice, insegnante e libraia. Nel 2014 co‑fonda l’APS <strong>A.R.PA.</strong> – Artisti Riuniti della Parola, impegnata in campo artistico e pedagogico. L’esperienza nel terzo settore le consente di acquisire competenze amministrative, grazie alle quali dal 2021 collabora con Edoardo Gallo, commercialista per organizzazioni non‑profit. Per l’Associazione Auriga lavora come attrice negli spettacoli <em>La tempesta continua</em>, <em>La battaglia delle rane e dei topi</em>, <em>La città della poesia</em> e come organizzatrice del <em>Premio Paolo Giuranna</em> – Concorso nazionale di declamazione di poesia.</p>
+    <div id="collab-overlay-backdrop-tiziana" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-tiziana" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/tiziana-di-nunno.jpg" alt="Tiziana Di Nunno" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-tiziana-title" class="text-2xl md:text-3xl font-semibold">Tiziana Di Nunno</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">Dopo la laurea in <strong>DAMS</strong> (Università degli Studi <strong>Roma Tre</strong>, 2004) e il diploma in <strong>Sprachgestaltung</strong> e Arte Drammatica (Università del <strong>Goetheanum</strong>, Basilea, 2011), svolge attività di attrice, insegnante e libraia. Nel 2014 co‑fonda l'APS <strong>A.R.PA.</strong> – Artisti Riuniti della Parola, impegnata in campo artistico e pedagogico. L'esperienza nel terzo settore le consente di acquisire competenze amministrative, grazie alle quali dal 2021 collabora con Edoardo Gallo, commercialista per organizzazioni non‑profit. Per l'Associazione Auriga lavora come attrice negli spettacoli <em>La tempesta continua</em>, <em>La battaglia delle rane e dei topi</em>, <em>La città della poesia</em> e come organizzatrice del <em>Premio Paolo Giuranna</em> – Concorso nazionale di declamazione di poesia.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Overlay modal: Valeria Almerighi -->
   <div id="collab-overlay-valeria" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="collab-valeria-title">
-    <div id="collab-overlay-backdrop-valeria" class="absolute inset-0 bg-black/60"></div>
-    <div class="relative mx-auto mt-20 max-w-3xl bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <button type="button" id="collab-overlay-close-valeria" class="absolute right-3 top-3 inline-flex items-center justify-center w-9 h-9 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm" aria-label="Chiudi pannello">×</button>
-      <img src="/img/chi-siamo/Valeria-Almerighi.jpg" alt="Valeria Almerighi" class="w-full md:w-[220px] h-56 md:h-[220px] object-cover rounded-lg bg-gray-100" loading="lazy" />
-      <div>
-        <h3 id="collab-valeria-title" class="text-xl font-semibold">Valeria Almerighi</h3>
-        <p class="mt-2 leading-relaxed text-[15px] text-justify">
-Si diploma in recitazione presso l’<strong>Accademia Nazionale d’Arte Drammatica “Silvio D’Amico”</strong> e prosegue gli studi al <strong>Théâtre National de Chaillot</strong> di Parigi. Lavora con registi italiani e stranieri per il teatro di prosa e come attrice‑cantante nei principali teatri d’opera italiani. Dal 2021 si occupa anche di formazione: con la <strong>World Youth Orchestra</strong> coordina progetti internazionali di formazione e diplomazia culturale e, come attrice, recita poesie e narrazioni in spettacoli con orchestra (ad es. <em>Le due lune</em>, in 11 paesi). Nel 2024 fonda l’associazione culturale <strong>Estella</strong>, con cui sviluppa anche percorsi formativi all’estero.
-        </p>
+    <div id="collab-overlay-backdrop-valeria" class="absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full w-full overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
+          <button type="button" id="collab-overlay-close-valeria" class="absolute right-4 top-4 inline-flex items-center justify-center w-10 h-10 rounded-md border border-black/10 bg-white text-black/70 hover:text-black shadow-sm text-2xl" aria-label="Chiudi pannello">×</button>
+          <img src="/img/chi-siamo/Valeria-Almerighi.jpg" alt="Valeria Almerighi" class="w-full md:w-[280px] h-64 md:h-[280px] object-cover rounded-lg bg-gray-100 flex-shrink-0" loading="lazy" />
+          <div class="flex-1">
+            <h3 id="collab-valeria-title" class="text-2xl md:text-3xl font-semibold">Valeria Almerighi</h3>
+            <p class="mt-4 leading-relaxed text-base md:text-lg text-justify">
+Si diploma in recitazione presso l'<strong>Accademia Nazionale d'Arte Drammatica "Silvio D'Amico"</strong> e prosegue gli studi al <strong>Théâtre National de Chaillot</strong> di Parigi. Lavora con registi italiani e stranieri per il teatro di prosa e come attrice‑cantante nei principali teatri d'opera italiani. Dal 2021 si occupa anche di formazione: con la <strong>World Youth Orchestra</strong> coordina progetti internazionali di formazione e diplomazia culturale e, come attrice, recita poesie e narrazioni in spettacoli con orchestra (ad es. <em>Le due lune</em>, in 11 paesi). Nel 2024 fonda l'associazione culturale <strong>Estella</strong>, con cui sviluppa anche percorsi formativi all'estero.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
