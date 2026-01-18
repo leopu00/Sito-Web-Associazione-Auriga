@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 const { title = "Auriga", description = "Associazione culturale Auriga - Teatro, Poesia, Formazione", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "" } = Astro.props;
 ---
@@ -146,6 +147,11 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
         </div>
       </div>
     </footer>
-    {import.meta.env.PROD && <Analytics />}
+    {import.meta.env.PROD && (
+      <>
+        <Analytics />
+        <SpeedInsights />
+      </>
+    )}
   </body>
 </html>
