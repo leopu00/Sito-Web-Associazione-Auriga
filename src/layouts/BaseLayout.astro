@@ -57,14 +57,14 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
 
       <!-- Mobile Navigation -->
       <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-200">
-        <div class="px-4 py-3 space-y-3">
-          <a href="/" class="block py-2 hover:underline">Auriga</a>
-          <a href="/chi-siamo" class="block py-2 hover:underline">Chi siamo</a>
-          <a href="/formazione" class="block py-2 hover:underline">Formazione</a>
-          <a href="/teatro" class="block py-2 hover:underline">Teatro</a>
-          <a href="/poesia" class="block py-2 hover:underline">Poesia</a>
-          <a href="/eventi" class="block py-2 hover:underline">Eventi</a>
-          <a href="/contatti" class="block py-2 hover:underline">Contatti</a>
+        <div class="px-4 py-4 space-y-1">
+          <a href="/" class="block py-3 text-center text-lg hover:underline">Auriga</a>
+          <a href="/chi-siamo" class="block py-3 text-center text-lg hover:underline">Chi siamo</a>
+          <a href="/formazione" class="block py-3 text-center text-lg hover:underline">Formazione</a>
+          <a href="/teatro" class="block py-3 text-center text-lg hover:underline">Teatro</a>
+          <a href="/poesia" class="block py-3 text-center text-lg hover:underline">Poesia</a>
+          <a href="/eventi" class="block py-3 text-center text-lg hover:underline">Eventi</a>
+          <a href="/contatti" class="block py-3 text-center text-lg hover:underline">Contatti</a>
         </div>
       </nav>
     </header>
@@ -85,57 +85,57 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
     </main>
 
     <footer class={`border-t ${footerTheme === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-white text-black"} ${footerClass}`} style={footerStyle}>
-      <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
         <!-- Mobile: Stack verticale, Desktop: 3 colonne -->
-        <div class="flex flex-col md:grid md:grid-cols-[1fr_1.5fr_1fr] gap-8 md:gap-6 items-start">
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_2fr_1fr] gap-10 md:gap-12 items-start">
 
           <!-- Sezione Contatti -->
-          <div class="flex flex-col items-center w-full space-y-2">
-            <p class="text-xs text-gray-600 font-semibold">Contatti</p>
-            <div class="flex items-center gap-2 text-xs text-gray-600 text-center">
-              <a href="mailto:info.sprachgestaltung@gmail.com" class="break-all">✉️ info.sprachgestaltung@gmail.com</a>
-            </div>
+          <div class="flex flex-col items-center md:items-start w-full space-y-3">
+            <p class="text-sm font-bold text-gray-800">Contatti</p>
+            <a href="mailto:info.sprachgestaltung@gmail.com" class="text-sm text-gray-600 hover:text-blue-600 transition-colors break-all">
+              info.sprachgestaltung@gmail.com
+            </a>
           </div>
 
           <!-- Sezione Navigazione e Copyright -->
-          <div class="flex flex-col items-center text-center space-y-6 w-full">
-            <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600" aria-label="Navigazione principale">
-              <a href="/" class="underline">Home</a>
-              <span>•</span>
-              <a href="/chi-siamo" class="underline">Chi&nbsp;siamo</a>
-              <span>•</span>
-              <a href="/formazione" class="underline">Formazione</a>
-              <span>•</span>
-              <a href="/teatro" class="underline">Teatro</a>
-              <span>•</span>
-              <a href="/poesia" class="underline">Poesia</a>
-              <span>•</span>
-              <a href="/eventi" class="underline">Eventi</a>
-              <span>•</span>
-              <a href="/contatti" class="underline">Contatti</a>
+          <div class="flex flex-col items-center text-center space-y-5 w-full">
+            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm" aria-label="Navigazione principale">
+              <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+              <span class="text-gray-400">•</span>
+              <a href="/chi-siamo" class="text-gray-700 hover:text-blue-600 transition-colors">Chi&nbsp;siamo</a>
+              <span class="text-gray-400">•</span>
+              <a href="/formazione" class="text-gray-700 hover:text-blue-600 transition-colors">Formazione</a>
+              <span class="text-gray-400">•</span>
+              <a href="/teatro" class="text-gray-700 hover:text-blue-600 transition-colors">Teatro</a>
+              <span class="text-gray-400">•</span>
+              <a href="/poesia" class="text-gray-700 hover:text-blue-600 transition-colors">Poesia</a>
+              <span class="text-gray-400">•</span>
+              <a href="/eventi" class="text-gray-700 hover:text-blue-600 transition-colors">Eventi</a>
+              <span class="text-gray-400">•</span>
+              <a href="/contatti" class="text-gray-700 hover:text-blue-600 transition-colors">Contatti</a>
             </nav>
 
-            <p class="text-sm font-semibold">© {new Date().getFullYear()} APS Auriga</p>
+            <p class="text-base font-bold text-gray-800">© {new Date().getFullYear()} APS Auriga</p>
 
-            <nav class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-gray-600" aria-label="Link legali">
-              <a href="/privacy" class="underline">Privacy Policy</a>
-              <span>•</span>
-              <a href="/cookie-policy" class="underline">Cookie Policy</a>
+            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm" aria-label="Link legali">
+              <a href="/privacy" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a>
+              <span class="text-gray-400">•</span>
+              <a href="/cookie-policy" class="text-gray-600 hover:text-blue-600 transition-colors">Cookie Policy</a>
             </nav>
           </div>
 
           <!-- Sezione Collaborazioni -->
-          <div class="text-center w-full">
-            <div class="text-xs text-gray-600 mb-4 font-semibold">In collaborazione con</div>
-            <div class="flex flex-row md:flex-col gap-4 md:gap-3 justify-center items-center">
+          <div class="text-center md:text-right w-full">
+            <p class="text-sm font-bold text-gray-800 mb-5">In collaborazione con</p>
+            <div class="flex flex-row md:flex-col gap-5 md:gap-4 justify-center md:justify-end items-center">
               <div class="flex items-center justify-center">
-                <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-10 md:h-12 w-auto filter grayscale" loading="lazy" decoding="async" />
+                <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-10 md:h-14 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
               </div>
               <div class="flex items-center justify-center">
-                <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-10 md:h-12 w-auto filter grayscale" loading="lazy" decoding="async" />
+                <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-10 md:h-14 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
               </div>
               <div class="flex items-center justify-center">
-                <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-10 md:h-12 w-auto filter grayscale rounded" loading="lazy" decoding="async" />
+                <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-10 md:h-14 w-auto rounded opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>

@@ -11,13 +11,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <!-- HERO full-screen con parallax e gradiente verso il nero -->
   <section
-    class="relative min-h-screen flex items-center justify-center text-white"
+    class="relative min-h-screen flex items-center justify-center text-white hero-bg"
     style="
       background-image: url('/img/auriga-blu-chiaro4.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center 44px;
-      background-attachment: fixed;
       background-color: black;
     "
   >
@@ -114,8 +113,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- Stili per l'effetto reveal -->
+  <!-- Stili per l'effetto reveal e hero -->
   <style is:global>
+    /* Hero background: fixed solo su desktop per evitare pixelatura mobile */
+    @media (min-width: 768px) {
+      .hero-bg {
+        background-attachment: fixed !important;
+      }
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(48px);
