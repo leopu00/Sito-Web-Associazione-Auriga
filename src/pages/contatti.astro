@@ -1,12 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Contatti — Auriga" headerTheme="light" pageClass="bg-[#faf7f2] text-black" pageBg="light">
-  <section class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-4">Contatti</h1>
-    <p>APS Auriga</p>
-    <ul class="mt-4 space-y-2">
-      <li>Email: <a href="mailto:info.sprachgestaltung@gmail.com" class="text-blue-600 hover:underline">info.sprachgestaltung@gmail.com</a></li>
-    </ul>
+<BaseLayout
+  title="Contatti — Auriga"
+  headerTheme="dark"
+  headerClass="bg-transparent"
+  headerStyle=""
+  pageBg="dark"
+>
+  <section class="relative overflow-hidden text-white min-h-screen">
+    <!-- Mesh gradient background -->
+    <div class="absolute inset-0 bg-[#1a0a2e]"></div>
+
+    <!-- BORDO SINISTRO -->
+    <div class="absolute top-[0%] left-[-15%] w-[50%] h-[45%] rounded-full bg-[#7c3aed] opacity-75 blur-[130px]"></div>
+    <div class="absolute top-[45%] left-[-10%] w-[45%] h-[40%] rounded-full bg-[#3b82f6] opacity-65 blur-[120px]"></div>
+
+    <!-- BORDO DESTRO -->
+    <div class="absolute top-[0%] right-[-15%] w-[50%] h-[45%] rounded-full bg-[#ec4899] opacity-75 blur-[130px]"></div>
+    <div class="absolute top-[40%] right-[-10%] w-[45%] h-[40%] rounded-full bg-[#f97316] opacity-60 blur-[120px]"></div>
+
+    <!-- CENTRO -->
+    <div class="absolute top-[15%] left-[25%] w-[50%] h-[40%] rounded-full bg-[#c084fc] opacity-50 blur-[120px]"></div>
+    <div class="absolute top-[50%] left-[30%] w-[45%] h-[35%] rounded-full bg-[#06b6d4] opacity-45 blur-[115px]"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Contatti</h1>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 pb-20 md:pb-28">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-8 sm:px-12 py-12 text-slate-800">
+
+          <h2 class="text-2xl md:text-3xl font-semibold text-[#7c3aed]">APS Auriga</h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            Per informazioni sui corsi, eventi e collaborazioni, contattaci tramite email.
+          </p>
+
+          <div class="mt-8">
+            <h3 class="font-semibold text-slate-900">Email</h3>
+            <a href="mailto:info.sprachgestaltung@gmail.com" class="mt-1 inline-block text-[#7c3aed] hover:text-[#6d28d9] transition-colors font-medium">
+              info.sprachgestaltung@gmail.com
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>

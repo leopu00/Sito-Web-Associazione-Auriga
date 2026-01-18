@@ -30,7 +30,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
     }
   </style>
   <body class={`min-h-screen flex flex-col ${pageBg === "dark" ? "bg-black text-white" : "bg-[#faf7f2] text-black"}`} style={pageBgColor ? `background-color:${pageBgColor}` : ""}>
-    <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-slate-800 text-white" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
+    <header class={`sticky top-0 z-50 border-b ${headerTheme === "dark" ? "border-white/10 text-white bg-white/5 backdrop-blur-xl" : "border-slate-200 text-black"} ${headerClass}`} style={headerStyle}>
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center h-full" aria-label="Torna alla homepage">
           <img src="/LOGO-2.svg" alt="Auriga Logo" class="h-full" />

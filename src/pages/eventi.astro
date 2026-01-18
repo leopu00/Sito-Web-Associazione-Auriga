@@ -234,24 +234,64 @@ const timelineItems: TimelineItem[] = [
 
 <BaseLayout
   title="Eventi — Auriga"
-  headerTheme="light"
-  headerClass="bg-[#faf7f2]"
-  headerStyle="background-color:#faf7f2"
-  pageBg="light"
+  headerTheme="dark"
+  headerClass="bg-transparent"
+  headerStyle=""
+  pageBg="dark"
 >
-  <section class="relative min-h-[360px] flex items-center justify-center overflow-hidden bg-[#014f97] text-white">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#012b5c] via-[#014f97] to-[#021b45]"></div>
-    <div class="absolute left-1/2 top-[-220px] h-[460px] w-[460px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(159,210,255,0.45),_rgba(1,79,151,0))] opacity-90"></div>
-    <div class="absolute right-[12%] top-[18%] h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.22),_rgba(1,43,92,0))] opacity-90 blur-2xl"></div>
-    <div class="absolute left-[8%] bottom-[-140px] h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(2,28,67,0.65),_rgba(1,79,151,0))] opacity-70 blur-3xl"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6 py-24 text-center">
-      <h1 class="text-4xl md:text-5xl font-semibold">Eventi</h1>
+  <section class="relative overflow-hidden text-white">
+    <!-- Mesh gradient background -->
+    <div class="absolute inset-0 bg-[#1a0a2e]"></div>
+
+    <!-- BORDO SINISTRO -->
+    <div class="absolute top-[0%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#7c3aed] opacity-80 blur-[120px]"></div>
+    <div class="absolute top-[20%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#3b82f6] opacity-75 blur-[110px]"></div>
+    <div class="absolute top-[40%] left-[-12%] w-[42%] h-[28%] rounded-full bg-[#ec4899] opacity-70 blur-[115px]"></div>
+    <div class="absolute top-[60%] left-[-8%] w-[38%] h-[25%] rounded-full bg-[#06b6d4] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[80%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#8b5cf6] opacity-70 blur-[120px]"></div>
+
+    <!-- BORDO DESTRO -->
+    <div class="absolute top-[0%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#ec4899] opacity-80 blur-[120px]"></div>
+    <div class="absolute top-[18%] right-[-10%] w-[40%] h-[25%] rounded-full bg-[#f97316] opacity-75 blur-[110px]"></div>
+    <div class="absolute top-[38%] right-[-12%] w-[42%] h-[28%] rounded-full bg-[#a855f7] opacity-70 blur-[115px]"></div>
+    <div class="absolute top-[58%] right-[-8%] w-[38%] h-[25%] rounded-full bg-[#f472b6] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[78%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#f97316] opacity-70 blur-[120px]"></div>
+
+    <!-- CENTRO - HERO -->
+    <div class="absolute top-[5%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#06b6d4] opacity-70 blur-[100px]"></div>
+    <div class="absolute top-[8%] left-[40%] w-[35%] h-[25%] rounded-full bg-[#d946ef] opacity-75 blur-[100px]"></div>
+    <div class="absolute top-[3%] left-[55%] w-[30%] h-[22%] rounded-full bg-[#fbbf24] opacity-60 blur-[95px]"></div>
+    <div class="absolute top-[12%] left-[25%] w-[30%] h-[22%] rounded-full bg-[#f43f5e] opacity-65 blur-[95px]"></div>
+    <div class="absolute top-[15%] left-[50%] w-[32%] h-[24%] rounded-full bg-[#10b981] opacity-60 blur-[100px]"></div>
+    <div class="absolute top-[20%] left-[35%] w-[35%] h-[25%] rounded-full bg-[#fb7185] opacity-65 blur-[100px]"></div>
+
+    <!-- CENTRO - MIDDLE -->
+    <div class="absolute top-[28%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#22d3d1] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[30%] left-[45%] w-[38%] h-[26%] rounded-full bg-[#c084fc] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[35%] left-[30%] w-[40%] h-[28%] rounded-full bg-[#f97316] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[40%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#818cf8] opacity-60 blur-[100px]"></div>
+    <div class="absolute top-[42%] left-[50%] w-[35%] h-[25%] rounded-full bg-[#fb923c] opacity-55 blur-[100px]"></div>
+
+    <!-- CENTRO - BOTTOM -->
+    <div class="absolute top-[50%] left-[25%] w-[40%] h-[28%] rounded-full bg-[#e879f9] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[55%] left-[40%] w-[38%] h-[26%] rounded-full bg-[#14b8a6] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[60%] left-[15%] w-[42%] h-[28%] rounded-full bg-[#6366f1] opacity-60 blur-[115px]"></div>
+    <div class="absolute top-[65%] left-[45%] w-[40%] h-[28%] rounded-full bg-[#ec4899] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[70%] left-[25%] w-[45%] h-[30%] rounded-full bg-[#0ea5e9] opacity-55 blur-[115px]"></div>
+    <div class="absolute top-[75%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#d946ef] opacity-50 blur-[110px]"></div>
+    <div class="absolute top-[82%] left-[20%] w-[45%] h-[30%] rounded-full bg-[#fbbf24] opacity-50 blur-[115px]"></div>
+    <div class="absolute top-[88%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#7c3aed] opacity-55 blur-[110px]"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Eventi</h1>
+      </div>
     </div>
-    <div class="pointer-events-none absolute -bottom-20 h-20 w-full bg-gradient-to-b from-transparent via-[#033b7a]/80 to-[#014f97] md:-bottom-28 md:h-28"></div>
-  </section>
-  <section class="relative bg-[#014f97] py-16 md:py-20">
-    <div class="absolute inset-0 bg-gradient-to-b from-[#014f97] via-[#023b7e] to-[#012b5c]"></div>
-    <div class="relative max-w-6xl mx-auto px-4">
+
+    <!-- Timeline content -->
+    <div class="relative z-10 pb-16 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4">
       <div class="rounded-[28px] border-2 border-black/40 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-12">
         <header class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
@@ -262,15 +302,18 @@ const timelineItems: TimelineItem[] = [
           </div>
         </header>
 
-        <ol class="timeline list-none m-0 mt-12 p-0">
+        <ol class="relative mt-12 space-y-8 md:space-y-0">
+          <!-- Timeline line - hidden on mobile, visible on md+ -->
+          <div class="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-[#014f97]/20 via-[#014f97]/60 to-[#014f97]/20" aria-hidden="true"></div>
+
           {timelineItems.map((item) => {
             if (item.type === "divider") {
               return (
-                <li class="timeline__divider" id={item.id}>
-                  <div class="timeline__dividerInner">
-                    <h2 class="timeline__dividerTitle">{item.title}</h2>
+                <li class="relative py-8 md:py-12" id={item.id}>
+                  <div class="max-w-lg">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-[#014f97]">{item.title}</h2>
                     {item.description && (
-                      <p class="timeline__dividerDescription">{item.description}</p>
+                      <p class="mt-3 text-slate-600 leading-relaxed">{item.description}</p>
                     )}
                   </div>
                 </li>
@@ -278,24 +321,25 @@ const timelineItems: TimelineItem[] = [
             }
 
             return (
-              <li class={`timeline__item relative pb-16 md:pb-20 last:pb-0${item.isInverted ? " timeline__item--inverted" : ""}`}>
-                <div class="timeline__date">
-                  <p class="text-[11px] uppercase tracking-[0.4em] text-[#014f97] font-semibold">{item.category}</p>
-                  <p class="mt-3 text-lg md:text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
-                  <div class={`mt-2 text-sm text-slate-600 whitespace-pre-line${item.isInverted ? " md:text-left" : " md:text-right"}`}>
-                    <span class="block font-medium text-slate-700">{item.location}</span>
+              <li class="relative pb-8 md:pb-16 last:pb-0">
+                <!-- Mobile: stacked layout -->
+                <div class="md:hidden">
+                  <!-- Date/Location header -->
+                  <div class="mb-4 pl-6 border-l-4 border-[#014f97]">
+                    <p class="text-[11px] uppercase tracking-[0.35em] text-[#014f97] font-semibold">{item.category}</p>
+                    <p class="mt-1.5 text-lg font-semibold text-slate-900">{item.date}</p>
+                    <p class="mt-1 text-sm text-slate-600">{item.location}</p>
                   </div>
-                </div>
-                <div class={`timeline__content mt-6 md:mt-0${item.isInverted ? " timeline__content--inverted" : " timeline__content--default"}`}>
-                  <article class="group h-full overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-transform duration-300 hover:-translate-y-1" id={item.id}>
-                    <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover md:h-64" />
-                    <div class="p-6 md:p-7">
-                      <h3 class="text-2xl font-semibold text-[#014f97]">{item.title}</h3>
-                      <p class="mt-4 text-slate-700 leading-relaxed">{item.description}</p>
-                      <div class={`mt-6 flex justify-start${item.isInverted ? " md:justify-start" : " md:justify-end"}`}>
+                  <!-- Card -->
+                  <article class="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-lg" id={`${item.id}-mobile`}>
+                    <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-48 w-full object-cover" />
+                    <div class="p-5">
+                      <h3 class="text-xl font-semibold text-[#014f97]">{item.title}</h3>
+                      <p class="mt-3 text-slate-700 text-sm leading-relaxed">{item.description}</p>
+                      <div class="mt-5">
                         <a
                           href={item.ctaHref}
-                          class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-5 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#014f97] focus-visible:ring-offset-white"
+                          class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-4 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white"
                           aria-label={`Scopri di più su ${item.title}`}
                         >
                           Scopri di più
@@ -305,181 +349,79 @@ const timelineItems: TimelineItem[] = [
                     </div>
                   </article>
                 </div>
-                <span class="timeline__dot" aria-hidden="true"></span>
+
+                <!-- Desktop: zigzag layout -->
+                <div class={`hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-12 ${item.isInverted ? "" : ""}`}>
+                  <!-- Left column -->
+                  <div class={`flex ${item.isInverted ? "justify-start" : "justify-end"}`}>
+                    {item.isInverted ? (
+                      <article class="group max-w-md overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(1,49,97,0.22)]" id={item.id}>
+                        <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
+                        <div class="p-6 lg:p-7">
+                          <h3 class="text-2xl font-semibold text-[#014f97]">{item.title}</h3>
+                          <p class="mt-4 text-slate-700 leading-relaxed">{item.description}</p>
+                          <div class="mt-6">
+                            <a
+                              href={item.ctaHref}
+                              class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-5 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#014f97]"
+                              aria-label={`Scopri di più su ${item.title}`}
+                            >
+                              Scopri di più
+                              <span aria-hidden="true">→</span>
+                            </a>
+                          </div>
+                        </div>
+                      </article>
+                    ) : (
+                      <div class="text-right pr-8 lg:pr-12 pt-4 max-w-xs">
+                        <p class="text-[11px] uppercase tracking-[0.4em] text-[#014f97] font-semibold">{item.category}</p>
+                        <p class="mt-3 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
+                        <p class="mt-2 text-sm text-slate-600">{item.location}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <!-- Center dot -->
+                  <div class="absolute left-1/2 top-6 -translate-x-1/2 z-10">
+                    <span class="block w-4 h-4 rounded-full bg-[#014f97] border-[3px] border-white shadow-[0_0_0_4px_rgba(1,79,151,0.15)] transition-transform duration-300 group-hover:scale-110" aria-hidden="true"></span>
+                  </div>
+
+                  <!-- Right column -->
+                  <div class={`flex ${item.isInverted ? "justify-end" : "justify-start"}`}>
+                    {item.isInverted ? (
+                      <div class="text-left pl-8 lg:pl-12 pt-4 max-w-xs">
+                        <p class="text-[11px] uppercase tracking-[0.4em] text-[#014f97] font-semibold">{item.category}</p>
+                        <p class="mt-3 text-xl font-semibold text-slate-900 leading-tight">{item.date}</p>
+                        <p class="mt-2 text-sm text-slate-600">{item.location}</p>
+                      </div>
+                    ) : (
+                      <article class="group max-w-md overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_25px_60px_rgba(1,49,97,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(1,49,97,0.22)]" id={item.id}>
+                        <img src={item.image} alt={item.imageAlt} loading="lazy" class="h-56 w-full object-cover lg:h-64" />
+                        <div class="p-6 lg:p-7">
+                          <h3 class="text-2xl font-semibold text-[#014f97]">{item.title}</h3>
+                          <p class="mt-4 text-slate-700 leading-relaxed">{item.description}</p>
+                          <div class="mt-6 flex justify-end">
+                            <a
+                              href={item.ctaHref}
+                              class="inline-flex items-center gap-2 rounded-full border border-[#014f97] px-5 py-2 text-sm font-semibold text-[#014f97] transition-colors hover:bg-[#014f97] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#014f97]"
+                              aria-label={`Scopri di più su ${item.title}`}
+                            >
+                              Scopri di più
+                              <span aria-hidden="true">→</span>
+                            </a>
+                          </div>
+                        </div>
+                      </article>
+                    )}
+                  </div>
+                </div>
               </li>
             );
           })}
         </ol>
       </div>
+      </div>
     </div>
   </section>
 
-  <style>
-    .timeline {
-      position: relative;
-      padding-top: 0.5rem;
-      --timeline-gap: clamp(1.5rem, 3vw, 2.35rem);
-      --timeline-offset: clamp(0.8rem, 2.2vw, 1.4rem);
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 1.5rem;
-      bottom: 1.5rem;
-      left: 6rem;
-      width: 2px;
-      background: linear-gradient(180deg, rgba(1, 79, 151, 0.15), rgba(1, 79, 151, 0.65));
-      pointer-events: none;
-    }
-    .timeline__item {
-      position: relative;
-      padding-left: 6.5rem;
-    }
-    .timeline__date {
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 6rem;
-      padding-right: var(--timeline-offset);
-      text-align: right;
-    }
-    .timeline__content--default,
-    .timeline__content--inverted {
-      position: relative;
-    }
-    .timeline__dot {
-      position: absolute;
-      top: 2.75rem;
-      left: 6rem;
-      width: 1.1rem;
-      height: 1.1rem;
-      transform: translate(-50%, -50%);
-      border-radius: 9999px;
-      background: #014f97;
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 0 6px rgba(1, 79, 151, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      z-index: 1;
-    }
-    .timeline__item:hover .timeline__dot {
-      transform: translate(-50%, -50%) scale(1.1);
-      box-shadow: 0 0 0 7px rgba(1, 79, 151, 0.22);
-    }
-    .timeline__divider {
-      position: relative;
-      padding: 2.5rem 0 3rem;
-      text-align: left;
-    }
-    .timeline__dividerInner {
-      position: relative;
-      z-index: 1;
-      max-width: 32rem;
-    }
-    .timeline__dividerTitle {
-      margin: 0;
-      font-size: 1.875rem;
-      line-height: 1.25;
-      font-weight: 600;
-      color: #014f97;
-    }
-    .timeline__dividerDescription {
-      margin-top: 1rem;
-      margin-bottom: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #475569;
-    }
-
-    @media (min-width: 768px) {
-      .timeline {
-        padding-top: 1rem;
-        --timeline-gap: clamp(1.9rem, 2vw + 0.8rem, 2.6rem);
-        --timeline-offset: clamp(1rem, 1.6vw, 1.6rem);
-      }
-      .timeline::before {
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(180deg, rgba(1, 79, 151, 0.25), rgba(1, 79, 151, 0.7));
-      }
-      .timeline__item {
-        padding-left: 0;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        column-gap: var(--timeline-gap);
-      }
-      .timeline__date {
-        position: relative;
-        width: auto;
-        padding-right: var(--timeline-offset);
-        max-width: 280px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-self: flex-end;
-      }
-      .timeline__content--default {
-        padding-left: var(--timeline-offset);
-        justify-self: flex-start;
-      }
-      .timeline__content--inverted {
-        padding-right: var(--timeline-offset);
-        justify-self: flex-end;
-      }
-      .timeline__dot {
-        left: 50%;
-        top: 3rem;
-      }
-      .timeline__item--inverted .timeline__date {
-        order: 2;
-        text-align: left;
-        padding-right: 0;
-        padding-left: var(--timeline-offset);
-        align-items: flex-start;
-        justify-self: flex-start;
-      }
-      .timeline__item--inverted .timeline__content {
-        order: 1;
-      }
-      .timeline__divider {
-        padding: 3rem 0 3.5rem;
-      }
-      .timeline__dividerInner {
-        max-width: 36rem;
-      }
-      .timeline__dividerTitle {
-        font-size: 2.125rem;
-      }
-      .timeline__dividerDescription {
-        font-size: 1.05rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .timeline__item {
-        column-gap: calc(var(--timeline-gap) + 0.25rem);
-      }
-      .timeline__date {
-        padding-right: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__item--inverted .timeline__date {
-        padding-left: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__content--default {
-        padding-left: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__content--inverted {
-        padding-right: calc(var(--timeline-offset) + 0.5rem);
-      }
-      .timeline__dividerInner {
-        max-width: 34rem;
-        padding-left: 0;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .timeline__item,
-      .timeline__dot {
-        transition: none;
-      }
-    }
-  </style>
 </BaseLayout>
