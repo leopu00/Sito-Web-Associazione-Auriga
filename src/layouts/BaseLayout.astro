@@ -37,7 +37,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex gap-6 text-sm">
+        <nav class="hidden xl:flex gap-6 text-sm">
           <a href="/" class="hover:underline">Auriga</a>
           <a href="/chi-siamo" class="hover:underline">Chi siamo</a>
           <a href="/formazione" class="hover:underline">Formazione</a>
@@ -48,7 +48,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
         </nav>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2" aria-label="Menu" aria-expanded="false">
+        <button id="mobile-menu-btn" class="xl:hidden p-2" aria-label="Menu" aria-expanded="false">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -56,7 +56,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
       </div>
 
       <!-- Mobile Navigation -->
-      <nav id="mobile-menu" class="hidden lg:hidden border-t border-slate-200">
+      <nav id="mobile-menu" class="hidden xl:hidden border-t border-slate-200">
         <div class="px-4 py-4 space-y-1">
           <a href="/" class="block py-3 text-center text-lg hover:underline">Auriga</a>
           <a href="/chi-siamo" class="block py-3 text-center text-lg hover:underline">Chi siamo</a>
@@ -85,14 +85,14 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
     </main>
 
     <footer class={`border-t ${footerTheme === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-white text-black"} ${footerClass}`} style={footerStyle}>
-      <div class="max-w-6xl mx-auto px-6 py-10 lg:py-16">
+      <div class="max-w-6xl mx-auto px-6 py-10 xl:py-16">
 
         <!-- Layout Mobile vs Desktop -->
-        <div class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-[1fr_2fr_1fr] lg:gap-12">
+        <div class="space-y-10 xl:space-y-0 xl:grid xl:grid-cols-[1fr_2fr_1fr] xl:gap-12">
 
           <!-- Sezione Contatti -->
-          <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-3">
-            <p class="text-base lg:text-sm font-bold text-gray-800">Contatti</p>
+          <div class="flex flex-col items-center xl:items-start text-center xl:text-left space-y-3">
+            <p class="text-base xl:text-sm font-bold text-gray-800">Contatti</p>
             <a href="mailto:info.sprachgestaltung@gmail.com" class="text-sm text-gray-600 hover:text-blue-600 transition-colors break-words">
               info.sprachgestaltung@gmail.com
             </a>
@@ -118,7 +118,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
             </nav>
 
             <!-- Copyright -->
-            <p class="text-lg lg:text-base font-bold text-gray-800">© {new Date().getFullYear()} APS Auriga</p>
+            <p class="text-lg xl:text-base font-bold text-gray-800">© {new Date().getFullYear()} APS Auriga</p>
 
             <!-- Link legali -->
             <nav class="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm" aria-label="Link legali">
@@ -129,9 +129,9 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
           </div>
 
           <!-- Sezione Collaborazioni -->
-          <div class="flex flex-col items-center lg:items-end text-center lg:text-right">
-            <p class="text-base lg:text-sm font-bold text-gray-800 mb-6 lg:mb-5">In collaborazione con</p>
-            <div class="flex flex-col gap-5 lg:gap-4 items-center lg:items-end">
+          <div class="flex flex-col items-center xl:items-end text-center xl:text-right">
+            <p class="text-base xl:text-sm font-bold text-gray-800 mb-6 xl:mb-5">In collaborazione con</p>
+            <div class="flex flex-col gap-5 xl:gap-4 items-center xl:items-end">
               <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-14 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
               <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-14 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
               <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-14 w-auto rounded opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
