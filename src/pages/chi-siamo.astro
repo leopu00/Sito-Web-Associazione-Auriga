@@ -342,44 +342,46 @@ Si diploma in recitazione presso l’<strong>Accademia Nazionale d’Arte Dramma
   </div>
 
 </section>
-<script is:inline>
-  function wireModal(triggerId, overlayId, closeId, backdropId) {
-    const trigger = document.getElementById(triggerId);
-    const overlay = document.getElementById(overlayId);
-    const closeBtn = document.getElementById(closeId);
-    const backdrop = document.getElementById(backdropId);
+<script>
+  document.addEventListener('astro:page-load', () => {
+    function wireModal(triggerId, overlayId, closeId, backdropId) {
+      const trigger = document.getElementById(triggerId);
+      const overlay = document.getElementById(overlayId);
+      const closeBtn = document.getElementById(closeId);
+      const backdrop = document.getElementById(backdropId);
 
-    if (!trigger || !overlay) return;
+      if (!trigger || !overlay) return;
 
-    function open() {
-      overlay.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      trigger.setAttribute('aria-expanded', 'true');
+      function open() {
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      trigger.addEventListener('click', open);
+      closeBtn && closeBtn.addEventListener('click', close);
+      backdrop && backdrop.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('hidden') && e.key === 'Escape') close();
+      });
     }
-    function close() {
-      overlay.classList.add('hidden');
-      document.body.style.overflow = '';
-      trigger.setAttribute('aria-expanded', 'false');
-    }
 
-    trigger.addEventListener('click', open);
-    closeBtn && closeBtn.addEventListener('click', close);
-    backdrop && backdrop.addEventListener('click', close);
-    document.addEventListener('keydown', (e) => {
-      if (!overlay.classList.contains('hidden') && e.key === 'Escape') close();
-    });
-  }
-
-  wireModal('founder-elisa-trigger', 'founder-overlay-elisa', 'founder-overlay-close-elisa', 'founder-overlay-backdrop-elisa');
-  wireModal('founder-marialucia-trigger', 'founder-overlay-marialucia', 'founder-overlay-close-marialucia', 'founder-overlay-backdrop-marialucia');
-  wireModal('founder-claudio-trigger', 'founder-overlay-claudio', 'founder-overlay-close-claudio', 'founder-overlay-backdrop-claudio');
-  wireModal('collab-chiara-trigger', 'collab-overlay-chiara', 'collab-overlay-close-chiara', 'collab-overlay-backdrop-chiara');
-  wireModal('collab-flavia-trigger', 'collab-overlay-flavia', 'collab-overlay-close-flavia', 'collab-overlay-backdrop-flavia');
-  wireModal('collab-mortelliti-trigger', 'collab-overlay-mortelliti', 'collab-overlay-close-mortelliti', 'collab-overlay-backdrop-mortelliti');
-  wireModal('collab-savio-trigger', 'collab-overlay-savio', 'collab-overlay-close-savio', 'collab-overlay-backdrop-savio');
-  wireModal('collab-marco-trigger', 'collab-overlay-marco', 'collab-overlay-close-marco', 'collab-overlay-backdrop-marco');
-  wireModal('collab-marzia-trigger', 'collab-overlay-marzia', 'collab-overlay-close-marzia', 'collab-overlay-backdrop-marzia');
-  wireModal('collab-tiziana-trigger', 'collab-overlay-tiziana', 'collab-overlay-close-tiziana', 'collab-overlay-backdrop-tiziana');
-  wireModal('collab-valeria-trigger', 'collab-overlay-valeria', 'collab-overlay-close-valeria', 'collab-overlay-backdrop-valeria');
+    wireModal('founder-elisa-trigger', 'founder-overlay-elisa', 'founder-overlay-close-elisa', 'founder-overlay-backdrop-elisa');
+    wireModal('founder-marialucia-trigger', 'founder-overlay-marialucia', 'founder-overlay-close-marialucia', 'founder-overlay-backdrop-marialucia');
+    wireModal('founder-claudio-trigger', 'founder-overlay-claudio', 'founder-overlay-close-claudio', 'founder-overlay-backdrop-claudio');
+    wireModal('collab-chiara-trigger', 'collab-overlay-chiara', 'collab-overlay-close-chiara', 'collab-overlay-backdrop-chiara');
+    wireModal('collab-flavia-trigger', 'collab-overlay-flavia', 'collab-overlay-close-flavia', 'collab-overlay-backdrop-flavia');
+    wireModal('collab-mortelliti-trigger', 'collab-overlay-mortelliti', 'collab-overlay-close-mortelliti', 'collab-overlay-backdrop-mortelliti');
+    wireModal('collab-savio-trigger', 'collab-overlay-savio', 'collab-overlay-close-savio', 'collab-overlay-backdrop-savio');
+    wireModal('collab-marco-trigger', 'collab-overlay-marco', 'collab-overlay-close-marco', 'collab-overlay-backdrop-marco');
+    wireModal('collab-marzia-trigger', 'collab-overlay-marzia', 'collab-overlay-close-marzia', 'collab-overlay-backdrop-marzia');
+    wireModal('collab-tiziana-trigger', 'collab-overlay-tiziana', 'collab-overlay-close-tiziana', 'collab-overlay-backdrop-tiziana');
+    wireModal('collab-valeria-trigger', 'collab-overlay-valeria', 'collab-overlay-close-valeria', 'collab-overlay-backdrop-valeria');
+  });
 </script>
 </BaseLayout>
