@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Chi siamo — Auriga" headerTheme="light" pageNamespace="chi-siamo" pageClass="bg-white text-black" pageBg="light">
+<BaseLayout title="Chi siamo — Auriga" headerTheme="light" headerClass="bg-white" headerStyle="background-color:#ffffff" pageNamespace="chi-siamo" pageClass="bg-white text-black" pageBg="light">
 <!-- Hero -->
 <div class="relative min-h-[380px] md:min-h-[440px] flex items-center justify-center bg-white">
   <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Chi siamo</h1>
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight">Chi siamo</h1>
   </div>
 </div>
 
@@ -27,42 +27,71 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <!-- Soci fondatori -->
   <div class="mt-12">
-    <h2 class="text-2xl font-semibold mb-4">Soci fondatori</h2>
-    <ul class="list-disc list-inside leading-relaxed space-y-1">
-      <li>
-        <button
-          type="button"
-          id="founder-elisa-trigger"
-          class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1"
-          aria-controls="founder-overlay-elisa"
-          aria-expanded="false"
-        >
-          Elisa Stagni
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          id="founder-marialucia-trigger"
-          class="underline underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1"
-          aria-controls="founder-overlay-marialucia"
-          aria-expanded="false"
-        >
-          Marialucia Carones
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          id="founder-claudio-trigger"
-          class="underline underline-offset-2 hover:underline-offset-2 hover:underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black/30 rounded px-1"
-          aria-controls="founder-overlay-claudio"
-          aria-expanded="false"
-        >
-          Claudio Puglisi
-        </button>
-      </li>
-    </ul>
+    <h2 class="text-2xl font-semibold mb-8">Soci fondatori</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Elisa Stagni -->
+      <button
+        type="button"
+        id="founder-elisa-trigger"
+        class="group text-left focus:outline-none focus:ring-2 focus:ring-black/30 rounded-lg overflow-hidden transition-transform hover:-translate-y-1"
+        aria-controls="founder-overlay-elisa"
+        aria-expanded="false"
+      >
+        <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <img
+            src="/img/elisa-stagni.jpg"
+            alt="Elisa Stagni"
+            class="w-full h-64 object-cover"
+            loading="lazy"
+          />
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-semibold">Elisa Stagni</h3>
+          </div>
+        </div>
+      </button>
+
+      <!-- Marialucia Carones -->
+      <button
+        type="button"
+        id="founder-marialucia-trigger"
+        class="group text-left focus:outline-none focus:ring-2 focus:ring-black/30 rounded-lg overflow-hidden transition-transform hover:-translate-y-1"
+        aria-controls="founder-overlay-marialucia"
+        aria-expanded="false"
+      >
+        <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <img
+            src="/img/chi-siamo/Marialucia-Carones.jpg"
+            alt="Marialucia Carones"
+            class="w-full h-64 object-cover"
+            loading="lazy"
+          />
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-semibold">Marialucia Carones</h3>
+          </div>
+        </div>
+      </button>
+
+      <!-- Claudio Puglisi -->
+      <button
+        type="button"
+        id="founder-claudio-trigger"
+        class="group text-left focus:outline-none focus:ring-2 focus:ring-black/30 rounded-lg overflow-hidden transition-transform hover:-translate-y-1"
+        aria-controls="founder-overlay-claudio"
+        aria-expanded="false"
+      >
+        <div class="bg-white border-2 border-slate-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <img
+            src="/img/claudio-puglisi.jpg"
+            alt="Claudio Puglisi"
+            class="w-full h-64 object-cover"
+            loading="lazy"
+          />
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-semibold">Claudio Puglisi</h3>
+          </div>
+        </div>
+      </button>
+    </div>
   </div>
 
   <!-- Collaboratori -->
