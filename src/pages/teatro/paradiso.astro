@@ -14,7 +14,7 @@ const galleriaImages = [
 ];
 ---
 
-<BaseLayout title="Il Paradiso — Auriga" headerTheme="light" pageNamespace="teatro-paradiso" pageClass="bg-[#faf7f2] text-black" pageBg="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2" transition="slide">
+<BaseLayout title="Il Paradiso — Auriga" headerTheme="light" pageNamespace="teatro-paradiso" pageClass="bg-[#faf7f2] text-black" pageBg="light" headerClass="bg-[#faf7f2]" headerStyle="background-color:#faf7f2" >
   <section class="max-w-6xl mx-auto px-4 py-12 pt-20">
 
     <!-- Header -->
@@ -30,7 +30,7 @@ const galleriaImages = [
 
     <!-- Hero / immagine principale -->
     <div class="mt-6 rounded-xl overflow-hidden">
-      <img src="/img/paradiso.jpg" alt="Il Paradiso" class="w-full h-80 md:h-[28rem] object-cover" loading="lazy" decoding="async" transition:name="hero-paradiso" />
+      <img src="/img/paradiso.jpg" alt="Il Paradiso" class="w-full h-80 md:h-[28rem] object-cover" loading="eager"  />
     </div>
 
     <!-- Sinossi -->
@@ -87,7 +87,7 @@ const galleriaImages = [
     </p>
     <div class="mt-4 rounded-xl overflow-hidden flex justify-start">
       <a href="https://www.teatrobelli.it/index.php?page=inscena&idc=1042" target="_blank" rel="noopener noreferrer" aria-label="Apri la pagina del Teatro Belli di Roma (apre in nuova scheda)">
-        <img src="/img/il-paradiso-locandina.jpg" alt="Locandina Il Paradiso – Teatro Belli" class="max-w-xl w-full h-auto object-contain" loading="lazy" decoding="async" />
+        <img src="/img/il-paradiso-locandina.jpg" alt="Locandina Il Paradiso – Teatro Belli" class="max-w-xl w-full h-auto object-contain" loading="eager" />
       </a>
     </div>
 

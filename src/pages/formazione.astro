@@ -8,49 +8,101 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   headerStyle="background-color:#ffffff"
   pageBg="light"
 >
-  <!-- Gradients laterali per tutta la pagina -->
-  <div class="relative min-h-screen">
-    <!-- Gradients rosso scuro ai bordi laterali -->
-    <div class="fixed inset-0 pointer-events-none">
-      <div class="absolute top-0 left-0 bottom-0 w-[35%] bg-gradient-to-r from-[#7c2935]/20 via-[#7c2935]/10 to-transparent"></div>
-      <div class="absolute top-0 right-0 bottom-0 w-[35%] bg-gradient-to-l from-[#7c2935]/20 via-[#7c2935]/10 to-transparent"></div>
+  <!-- Mesh gradient background section - tutta la pagina -->
+  <section class="relative overflow-hidden min-h-screen text-white">
+    <!-- Background base bordeaux/rosso Sapienza -->
+    <div class="absolute inset-0 bg-[#881337]"></div>
+
+    <!-- Sfumature solo in alcuni punti -->
+    <!-- Angolo sinistro alto - tocco di viola -->
+    <div class="absolute top-[0%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#8b5cf6] opacity-30 blur-[140px]"></div>
+
+    <!-- Destra verso il centro - rosso più scuro -->
+    <div class="absolute top-[10%] right-[-5%] w-[45%] h-[30%] rounded-full bg-[#be123c] opacity-40 blur-[130px]"></div>
+
+    <!-- Centro - sfumatura viola molto leggera -->
+    <div class="absolute top-[35%] left-[30%] w-[50%] h-[25%] rounded-full bg-[#7c3aed] opacity-25 blur-[150px]"></div>
+
+    <!-- Basso sinistra - rosso scuro -->
+    <div class="absolute bottom-[5%] left-[-8%] w-[40%] h-[30%] rounded-full bg-[#9f1239] opacity-35 blur-[140px]"></div>
+
+    <!-- Basso destra - tocco finale viola -->
+    <div class="absolute bottom-[0%] right-[-10%] w-[35%] h-[25%] rounded-full bg-[#a78bfa] opacity-20 blur-[150px]"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Formazione</h1>
+      </div>
     </div>
 
-    <!-- Hero -->
-    <section class="relative py-16 md:py-20">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-[#7c2935]">Formazione</h1>
-      </div>
-    </section>
-
-    <!-- Sezione paragrafi con sfondo bianco -->
-    <section class="relative pb-12 md:pb-16">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="bg-white rounded-2xl px-8 py-10 md:px-12 md:py-12 shadow-sm">
-          <div class="space-y-5 leading-relaxed md:leading-8 text-lg text-justify text-gray-800">
+    <!-- Sezione paragrafi integrata nello sfondo -->
+    <div class="relative z-10 pb-16 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="rounded-[28px] border-2 border-white/20 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-8 py-10 md:px-12 md:py-14">
+          <div class="space-y-6 text-lg md:text-xl text-gray-800 leading-relaxed" style="line-height: 1.7;">
             <p>Il mestiere dell'<strong>attore</strong> nell'immaginario comune è stato associato a molti ideali collegati alle mode del momento, alla sorte che, il più delle volte, subiva l'<strong>arte scenica</strong>. La <strong>naturalezza</strong> dell'interpretazione è stata sempre più considerata una virtù somma, un valore insostituibile. In particolare, da quando il termine di confronto è divenuto sempre più la vita di tutti i giorni, la <strong>spontaneità</strong> ha creato un "<strong>mito</strong>" che a sua volta ha trasformato l'arte dell'attore, richiedendo piuttosto scatenamenti viscerali che elaborazioni approfondite e condotte coscienziosamente.</p>
             <p>Nei primi anni del secolo scorso, in un momento di svolta epocale di tutte le arti, viene una risposta profondamente significativa a molti degli interrogativi sull'arte dell'interprete teatrale. La <strong>parola</strong> riprende una posizione centrale nel percorso di formazione e si affianca alla <strong>musica</strong> nella valutazione oggettiva dell'interprete.</p>
             <p>Il <strong>fonema</strong> - vocalico e consonantico -, l'<strong>immagine sonora</strong>, il susseguirsi ritmico delle sillabe e dei versi, la frase nella sua costruzione, le atmosfere suggerite dalle risonanze prevalenti nel <strong>testo poetico</strong>, e tanti altri aspetti del <strong>linguaggio</strong> sempre meno presenti in quegli anni di trasformazione, tornano a divenire strumenti espressivi grazie a nuovi punti di vista che colgono la sostanza conoscitiva vivente nel linguaggio.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Sezione cards con gradients visibili -->
-    <section class="relative pb-16 md:pb-20">
-      <div class="max-w-6xl mx-auto px-6 sm:px-10">
+    <!-- Sezione cards integrata nello sfondo -->
+    <div class="relative z-10 pb-16 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4">
         <div class="space-y-8">
-          <article class="auriga-card-surface">
+          <!-- Card Corsi Intensivi -->
+          <article class="auriga-card-surface relative">
+            <div class="absolute top-4 left-4 z-10">
+              <img
+                src="/img/sapienza-logo.png"
+                alt="Logo Università La Sapienza"
+                class="h-16 w-auto object-contain rounded-xl shadow-lg bg-white/90 backdrop-blur-sm p-2"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div class="grid md:grid-cols-2 gap-10 items-center">
               <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#7c2935]">
+                  <a href="/formazione/corsi-intensivi" class="hover:underline">Corsi intensivi</a>
+                </h2>
+                <p class="mt-3 text-gray-700">
+                  Corsi <strong>trimestrali intensivi</strong> per studenti universitari, in collaborazione con <strong>La Sapienza</strong>.
+                </p>
+                <a
+                  href="/formazione/corsi-intensivi"
+                  class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors"
+                >
+                  Scopri di più
+                </a>
+              </div>
+              <div>
                 <img
-                  src="/img/CorsoPermanente1.jpg"
-                  alt="Lezioni del corso permanente di Sprachgestaltung"
+                  src="/img/CorsoIntensivoSapienza.jpg"
+                  alt="Studenti durante il corso intensivo alla Sapienza"
                   class="w-full h-64 md:h-96 object-cover rounded-lg"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
+            </div>
+          </article>
+
+          <!-- Card Corsi Permanenti -->
+          <article class="auriga-card-surface relative">
+            <div class="absolute top-4 left-4 z-10">
+              <img
+                src="/img/accademia-aldo-bargero-logo.jpg"
+                alt="Logo Accademia Aldo Bargero"
+                class="h-16 w-16 object-cover rounded-xl shadow-lg bg-white/90 backdrop-blur-sm p-1"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h2 class="text-3xl md:text-4xl font-bold text-[#7c2935]">
                   <a href="/formazione/corsi-permanenti" class="hover:underline">Corsi permanenti</a>
@@ -66,37 +118,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   Scopri di più
                 </a>
               </div>
-            </div>
-          </article>
-          <article class="auriga-card-surface">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-              <div class="md:order-2">
+              <div>
                 <img
-                  src="/img/CorsoIntensivoSapienza.jpg"
-                  alt="Studenti durante il corso intensivo alla Sapienza"
+                  src="/img/CorsoPermanente1.jpg"
+                  alt="Lezioni del corso permanente di Sprachgestaltung"
                   class="w-full h-64 md:h-96 object-cover rounded-lg"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div class="md:order-1">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#7c2935]">
-                  <a href="/formazione/corsi-intensivi" class="hover:underline">Corsi intensivi</a>
-                </h2>
-                <p class="mt-3 text-gray-700">
-                  Corsi <strong>trimestrali intensivi</strong> per studenti universitari, in collaborazione con <strong>La Sapienza</strong>.
-                </p>
-                <a
-                  href="/formazione/corsi-intensivi"
-                  class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors"
-                >
-                  Scopri di più
-                </a>
-              </div>
             </div>
           </article>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </BaseLayout>
