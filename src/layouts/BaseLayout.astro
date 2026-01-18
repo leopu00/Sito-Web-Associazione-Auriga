@@ -114,39 +114,36 @@ const transitionAnim = transition === "slide"
     </main>
 
     <footer class={`border-t ${footerTheme === "dark" ? "border-slate-800 bg-black text-slate-300" : "border-slate-200 bg-white text-black"} ${footerClass}`} style={footerStyle}>
-      <div class="max-w-4xl mx-auto px-6 py-10 md:py-14">
+      <div class="max-w-6xl mx-auto px-6 py-8">
 
-        <!-- Layout centrato verticale -->
-        <div class="flex flex-col items-center text-center space-y-8">
+        <!-- Layout compatto: mobile vertical, desktop horizontal -->
+        <div class="flex flex-col md:grid md:grid-cols-[auto_1fr_auto] md:gap-8 lg:gap-12 items-center space-y-6 md:space-y-0">
 
-          <!-- Contatti -->
-          <div class="space-y-2">
-            <p class="text-sm font-bold text-gray-800">Contatti</p>
-            <a href="mailto:info.sprachgestaltung@gmail.com" class="text-sm text-gray-600 hover:text-blue-600 transition-colors break-words">
+          <!-- Contatti (sinistra su desktop) -->
+          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
+            <p class="text-sm font-semibold text-gray-800">Contatti</p>
+            <a href="mailto:info.sprachgestaltung@gmail.com" class="text-xs text-gray-600 hover:text-blue-600 transition-colors">
               info.sprachgestaltung@gmail.com
             </a>
           </div>
 
-          <!-- Link legali -->
-          <nav class="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm" aria-label="Link legali">
-            <a href="/privacy" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a>
-            <span class="text-gray-400">•</span>
-            <a href="/cookie-policy" class="text-gray-600 hover:text-blue-600 transition-colors">Cookie Policy</a>
-          </nav>
+          <!-- Centro: Privacy e Copyright -->
+          <div class="flex flex-col items-center space-y-2">
+            <nav class="flex flex-wrap justify-center gap-x-2 text-xs" aria-label="Link legali">
+              <a href="/privacy" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a>
+              <span class="text-gray-400">•</span>
+              <a href="/cookie-policy" class="text-gray-600 hover:text-blue-600 transition-colors">Cookie Policy</a>
+            </nav>
+            <p class="text-sm font-semibold text-gray-800">© {new Date().getFullYear()} APS Auriga</p>
+          </div>
 
-          <!-- Copyright -->
-          <p class="text-base font-bold text-gray-800">© {new Date().getFullYear()} APS Auriga</p>
-
-          <!-- Collaborazioni -->
-          <div class="space-y-5">
-            <p class="text-sm font-bold text-gray-800">In collaborazione con</p>
-            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-center">
-              <!-- Sapienza -->
-              <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-12 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
-              <!-- Culturasi -->
-              <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-10 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
-              <!-- Aldo Bargero -->
-              <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-10 w-auto rounded opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+          <!-- Collaborazioni (destra su desktop) -->
+          <div class="flex flex-col items-center md:items-end space-y-3">
+            <p class="text-sm font-semibold text-gray-800">In collaborazione con</p>
+            <div class="flex flex-row gap-4 items-center">
+              <img src="/img/sapienza-logo.png" alt="Sapienza" class="h-10 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              <img src="/img/logo-culturasi.svg" alt="Fondazione Culturasi" class="h-8 w-auto opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              <img src="/img/accademia-aldo-bargero.jpg" alt="Accademia Aldo Bargero" class="h-8 w-auto rounded opacity-75 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
             </div>
           </div>
 
