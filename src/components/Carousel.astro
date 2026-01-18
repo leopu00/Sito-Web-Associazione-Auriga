@@ -100,7 +100,7 @@ const modalImgId = `${id}-modal-img`;
 </div>
 
 <script define:vars={{ id, modalId, modalImgId }}>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     let currentIndex = 0;
     const carousel = document.getElementById(id);
     const modal = document.getElementById(modalId);
