@@ -54,3 +54,9 @@ header {
   top: 0;
   z-index: 50;
 }
+
+/* Barba.js transition styles */
+.is-transitioning {
+  pointer-events: none;
+  cursor: progress;
+}

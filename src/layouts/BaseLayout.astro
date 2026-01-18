@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Analytics from '@vercel/analytics/astro';
+import { ViewTransitions } from 'astro:transitions';
 
 const { title = "Auriga", description = "Associazione culturale Auriga - Teatro, Poesia, Formazione", headerTheme = "light", pageNamespace = "page", pageClass = "", pageBg = "light", pageBgColor = "", headerClass = "bg-[#faf7f2]", headerStyle = "", footerTheme = "light", footerClass = "", footerStyle = "" } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { title = "Auriga", description = "Associazione culturale Auriga - Teatro,
     <link rel="icon" type="image/svg+xml" href="/LOGO-2.svg" />
     <link rel="stylesheet" href="/MyWebfontsKit.css" />
     <link rel="preload" href="/webFonts/WaldorfschriftRegular/font.woff2" as="font" type="font/woff2" crossorigin>
+    <ViewTransitions />
   </head>
   <style is:global>
     header nav a,
