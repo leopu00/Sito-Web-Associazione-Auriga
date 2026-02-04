@@ -32,7 +32,20 @@ type TimelineDividerItem = {
 
 type TimelineItem = TimelineEventItem | TimelineDividerItem;
 
-const upcomingEvents: EventEntry[] = [];
+const upcomingEvents: EventEntry[] = [
+  {
+    id: "premio-paolo-giuranna-2026",
+    category: "poesia",
+    title: "Premio Paolo Giuranna III.",
+    date: "Marzo 27–29, 2026",
+    location: "Fondazione Culturasi / Teatro \"Eleonora Duse\", Roma",
+    description:
+      "Terza edizione del concorso di poesia per giovani attori e allievi attori dai 18 ai 32 anni. Seminario di Sprachgestaltung e serata finale di declamazione con borse di studio.",
+    image: "/img/premio-paolo-giuranna/_02A1876.JPG",
+    imageAlt: "Premio Paolo Giuranna - declamazione sul palco",
+    link: "/poesia/premio-giuranna-2026",
+  },
+];
 
 const pastEvents: EventEntry[] = [
   {

@@ -1,0 +1,532 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="L'Arte dell'Attore - Io vivo la parola! | APS Auriga"
+  description="Laboratorio intensivo di studio e residenza artistica. Corso interamente finanziato da NUOVO IMAIE 2026. A cura di APS AURIGA."
+  headerTheme="light"
+  pageNamespace="io-vivo-la-parola"
+  pageClass="bg-white text-black"
+  pageBg="light"
+  headerClass="bg-white"
+  headerStyle="background-color:white"
+>
+
+  <!-- HERO -->
+  <section class="relative bg-gradient-to-b from-[#003366] to-[#00557a] text-white py-20 md:py-28 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex justify-center items-center gap-6 mb-8">
+        <img src="/img/nuovo-imaie-logo.svg" alt="Logo NUOVO IMAIE" class="h-10 md:h-14 brightness-0 invert" />
+      </div>
+      <p class="text-sm md:text-base uppercase tracking-widest mb-4 text-blue-200">Progetto di Alta Formazione NUOVO IMAIE 2026</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">L'Arte dell'Attore — Io vivo la parola!</h1>
+      <p class="text-lg md:text-xl text-blue-100 mb-2">Laboratorio intensivo di studio e residenza artistica</p>
+      <p class="text-base md:text-lg text-blue-200 mb-6">Corso interamente finanziato da NUOVO IMAIE 2026</p>
+      <p class="text-sm text-blue-200 mb-8">A cura di <strong class="text-white">APS AURIGA</strong></p>
+      <p class="text-lg md:text-xl italic text-blue-100 max-w-3xl mx-auto mb-8">
+        Dieci giorni per rimettere al centro ciò che spesso si perde: la parola come forza viva, sostenuta da corpo, ritmo, immaginazione e precisione.
+      </p>
+      <div class="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-8 py-4">
+        <p class="text-xl md:text-2xl font-semibold">Dal 21 al 30 agosto 2026</p>
+        <p class="text-sm text-blue-200 mt-1">Roma — Ex Mattatoio, Testaccio</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COS'E IL PROGETTO -->
+  <section id="progetto" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl mb-6">Cos'è il progetto</h2>
+    <p class="text-lg leading-relaxed text-gray-700">
+      Questa residenza nasce per attori, doppiatori ed educatori teatrali che desiderano un lavoro rigoroso e creativo sul linguaggio: non "bella dizione", ma <strong>parola incarnata</strong>, capace di generare azione, relazione, verità scenica. È un percorso di alta formazione dove la voce non è separata dal corpo, e il testo non è un oggetto da "dire bene", ma un luogo da attraversare fino a farlo accadere.
+    </p>
+  </section>
+
+  <!-- A CHI E RIVOLTO -->
+  <section id="destinatari" class="bg-[#f8f6f3] py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl mb-6">A chi è rivolto</h2>
+      <p class="text-lg text-gray-700 mb-6">Il progetto è destinato a un pubblico professionale e in formazione:</p>
+      <ul class="space-y-4 text-gray-700">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+          <span><strong>Attori e interpreti</strong> (teatro, cinema, performing arts)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+          <span><strong>Doppiatori, speaker, voci</strong> che vogliono affinare lo strumento vocale</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+          <span><strong>Educatori teatrali e formatori</strong> interessati alla parola come strumento pedagogico e creativo</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+          <span><strong>Studenti di scuole/accademie</strong> che cercano un approfondimento sul linguaggio</span>
+        </li>
+      </ul>
+      <div class="mt-8 bg-white border-l-4 border-[#003366] p-4 rounded-r-lg">
+        <p class="text-sm text-gray-600"><strong>Requisito di accesso:</strong> la selezione è riservata esclusivamente ai <strong>Soci o Membri NUOVO IMAIE</strong> che risultino tali alla data di pubblicazione del Bando, ovvero il 10 marzo 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUTTURA IN BREVE -->
+  <section id="struttura" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl mb-8">Struttura in breve</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="bg-[#f8f6f3] rounded-xl p-5 text-center">
+        <p class="text-2xl font-bold text-[#003366]">10</p>
+        <p class="text-sm text-gray-600 mt-1">giorni consecutivi</p>
+      </div>
+      <div class="bg-[#f8f6f3] rounded-xl p-5 text-center">
+        <p class="text-2xl font-bold text-[#003366]">70</p>
+        <p class="text-sm text-gray-600 mt-1">ore totali</p>
+      </div>
+      <div class="bg-[#f8f6f3] rounded-xl p-5 text-center">
+        <p class="text-2xl font-bold text-[#003366]">21–30</p>
+        <p class="text-sm text-gray-600 mt-1">agosto 2026</p>
+      </div>
+      <div class="bg-[#f8f6f3] rounded-xl p-5 text-center">
+        <p class="text-2xl font-bold text-[#003366]">20</p>
+        <p class="text-sm text-gray-600 mt-1">posti max</p>
+      </div>
+      <div class="col-span-2 md:col-span-1 bg-[#f8f6f3] rounded-xl p-5 text-center">
+        <p class="text-lg font-bold text-[#003366]">10:30–18:30</p>
+        <p class="text-sm text-gray-600 mt-1">orario indicativo</p>
+      </div>
+    </div>
+    <p class="text-sm text-gray-500 mt-4 text-center">Pausa pranzo: 13:30 – 14:30 · 10 donne e 10 uomini selezionati</p>
+  </section>
+
+  <!-- VISIONE -->
+  <section id="visione" class="bg-[#003366] text-white py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm uppercase tracking-widest text-blue-300 mb-2">Visione</p>
+      <h2 class="text-3xl md:text-4xl mb-6">Una sfida "post-avanguardia": ridare centralità al linguaggio</h2>
+      <p class="text-lg leading-relaxed text-blue-100">
+        Dopo decenni in cui il corpo è diventato protagonista assoluto della scena, può sembrare anacronistico rimettere il linguaggio al centro… oppure è esattamente la sfida che ci serve adesso. La visione è un teatro in cui <strong class="text-white">l'interprete è al centro del processo creativo</strong>, e il linguaggio — con le sue leggi — diventa un ponte oggettivo per una collaborazione vera col regista: non esecutiva, ma propositiva, consapevole, responsabile.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISSIONE -->
+  <section id="missione" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Missione</p>
+    <h2 class="text-3xl md:text-4xl mb-6">L'interprete e la sua responsabilità</h2>
+    <p class="text-lg leading-relaxed text-gray-700">
+      Questo percorso nasce da una lunga esperienza di ricerca e di pratica: ci rivolgiamo ad attori, doppiatori ed educatori teatrali con lo slancio di chi sa che esiste ancora una sostanza infinita da cui attingere, se risuona in te la veridicità di questi principi interpretativi.
+    </p>
+    <p class="text-lg leading-relaxed text-gray-700 mt-4">
+      Il nostro strumento principale è la <strong>consapevolezza</strong>; la nostra volontà individuale è il pilota che la gestisce. E la parola, incontrata nella sua vivezza, può diventare ponte tra interiorità e mondo, tra tradizione e drammaturgia del futuro.
+    </p>
+  </section>
+
+  <!-- FONDAMENTI -->
+  <section id="fondamenti" class="bg-[#f8f6f3] py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Fondamenti</p>
+      <h2 class="text-3xl md:text-4xl mb-6">Sprachgestaltung: la parola come forza, non come "bella dizione"</h2>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Parte integrante del percorso è la <strong>Sprachgestaltung</strong>, cioè la configurazione artistica del linguaggio attraverso le sue stesse forze e leggi: studio, esercizio, ascolto profondo del suono e della sua necessità.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mt-4">
+        Da qui si attraversano le necessità stilistiche del teatro: dal classico al vicino, fino a una drammaturgia che si apre al futuro, con uno spirito creativo rinnovato.
+      </p>
+    </div>
+  </section>
+
+  <!-- METODOLOGIA -->
+  <section id="metodologia" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Metodologia</p>
+    <h2 class="text-3xl md:text-4xl mb-6">Voce, corpo, testo e immaginazione: un unico strumento</h2>
+    <p class="text-lg leading-relaxed text-gray-700">
+      La proposta didattica coniuga i principi della Sprachgestaltung sviluppata da Rudolf e Marie Steiner con i fondamenti dell'Arte Drammatica contemporanea, integrando anche educazione del movimento e pedagogia teatrale.
+    </p>
+    <p class="text-lg leading-relaxed text-gray-700 mt-4">
+      Il risultato è una metodologia che mette in relazione <strong>voce, corpo, testo e immaginazione</strong>, finalizzata alla produzione artistica e alla crescita personale e collettiva.
+    </p>
+  </section>
+
+  <!-- IL CUORE DEL LAVORO -->
+  <section id="cuore" class="bg-gradient-to-br from-[#003366] to-[#004d80] text-white py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm uppercase tracking-widest text-blue-300 mb-2">Il cuore del lavoro</p>
+      <h2 class="text-3xl md:text-4xl mb-6">Il "pentathlon" dell'attore</h2>
+      <p class="text-lg leading-relaxed text-blue-100">
+        L'intuizione centrale collega le <strong class="text-white">cinque discipline del pentathlon</strong> (corsa, salto, lotta, disco, giavellotto) ai <strong class="text-white">cinque gradini dell'interpretazione attoriale</strong>: dire il testo, differenziarlo, penetrare nella gestualità che suscita, far emergere fino alla mimesi ciò che si è elaborato, e infine collegare tutto al linguaggio verbale attraverso la conoscenza delle sue leggi e la sensibilità dell'interprete.
+      </p>
+    </div>
+  </section>
+
+  <!-- PERCORSO FORMATIVO -->
+  <section id="percorso" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Percorso formativo</p>
+    <h2 class="text-3xl md:text-4xl mb-8">Tre sguardi, un'unica crescita</h2>
+    <p class="text-lg text-gray-700 mb-8">Il programma prevede la scelta di una o più figure/personaggi di riferimento del teatro classico, affrontate in tre modalità:</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h3 class="text-xl mb-3">Marialucia Carones</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Prospettiva oggettiva ed epica, linguaggio aderente ai fatti, caratteristiche e funzioni del personaggio così come l'autore le disegna.
+        </p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h3 class="text-xl mb-3">Claudio Puglisi</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Indagine del personaggio nell'azione drammatica, dialogo tra oggettività del testo e libero arbitrio dell'attore, fino a scelte e azioni concrete in una mimesi consapevole.
+        </p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <h3 class="text-xl mb-3">Saskia Mees</h3>
+        <p class="text-xs text-[#003366] font-medium mb-2">Ospite internazionale</p>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Composizione creativa e scrittura scenica, fantasia ed estro ancorati al personaggio, per liberarne pienamente le potenzialità espressive.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUTTURA OPERATIVA -->
+  <section id="fasi" class="bg-[#f8f6f3] py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Struttura operativa</p>
+      <h2 class="text-3xl md:text-4xl mb-8">Quattro fasi</h2>
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-bold">1</div>
+          <div>
+            <h3 class="text-xl mb-1">Corpo — Pentathlon</h3>
+            <p class="text-gray-600">Tradurre lo sforzo atletico in impulso drammatico, ascoltare il ritmo interno.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-bold">2</div>
+          <div>
+            <h3 class="text-xl mb-1">Parola — Sprachgestaltung</h3>
+            <p class="text-gray-600">Anatomia del suono, dinamica del respiro, padronanza fonetica e musicale.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-bold">3</div>
+          <div>
+            <h3 class="text-xl mb-1">Sintesi scenica</h3>
+            <p class="text-gray-600">Integrazione gesto–voce–testo, mimesi consapevole e non ornamentale.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-bold">4</div>
+          <div>
+            <h3 class="text-xl mb-1">Feedback & revisione</h3>
+            <p class="text-gray-600">Auto-osservazione guidata, raffinamento e interiorizzazione.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIORNATA TIPO -->
+  <section id="giornata" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl mb-8">Giornata tipo</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <div class="space-y-4">
+          <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+            <span class="text-gray-600">Orario laboratorio</span>
+            <span class="font-semibold">10:30 – 18:30</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+            <span class="text-gray-600">Pausa pranzo</span>
+            <span class="font-semibold">13:30 – 14:30</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+            <span class="text-gray-600">Monte ore complessivo</span>
+            <span class="font-semibold">70 ore</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="space-y-4">
+          <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+            <span class="text-gray-600">Equipe</span>
+            <span class="font-semibold">3 docenti + 2 tutor</span>
+          </div>
+          <div class="border-b border-gray-200 pb-3">
+            <p class="text-gray-600 text-sm">
+              <strong>Peer feedback</strong> (sguardo registico e autovalutazione) e <strong>rifiniture individuali a rotazione</strong> (20–30 minuti) su postura, appoggio, timbro, respirazione e nodi tecnici.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM DIDATTICO -->
+  <section id="team" class="bg-[#f8f6f3] py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl mb-8">Team didattico</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl mb-4 text-[#003366]">Formatori</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+              <span><strong>Claudio Puglisi</strong> — Presidente Auriga / formatore</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+              <span><strong>Marialucia Carones</strong> — formatrice</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-[#003366] flex-shrink-0"></span>
+              <span><strong>Saskia Mees</strong> — formatrice, ospite internazionale</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl mb-4 text-[#003366]">Tutor / Assistenti</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-[#0099CC] flex-shrink-0"></span>
+              <span><strong>Chiara Catalano</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-2 h-2 rounded-full bg-[#0099CC] flex-shrink-0"></span>
+              <span><strong>Valeria Almerighi</strong></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEDE FORMATIVA -->
+  <section id="sede" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl mb-6">Sede formativa</h2>
+    <h3 class="text-xl text-[#003366] mb-4">Spazi Auriga / Fondazione Culturasì presso CAE — Ex Mattatoio (Testaccio, Roma)</h3>
+    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+      La sede è un intero padiglione in uso esclusivo dentro la <strong>CAE — Città dell'Altra Economia</strong>, nel complesso dell'ex Mattatoio di Testaccio: spazi pronti all'uso da settembre 2025, pensati per formazione, ricerca, eventi e restituzioni pubbliche.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="bg-[#f8f6f3] rounded-xl p-5">
+        <h4 class="font-semibold mb-2">Dotazioni</h4>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li>Sala teatro (~120 posti)</li>
+          <li>Sala prova con pedana in legno e pianoforte</li>
+          <li>Biblioteca, corte esterna, attrezzeria, docce</li>
+        </ul>
+      </div>
+      <div class="bg-[#f8f6f3] rounded-xl p-5">
+        <h4 class="font-semibold mb-2">Caratteristiche</h4>
+        <ul class="text-sm text-gray-600 space-y-1">
+          <li>Configurazione modulare e allestimenti flessibili</li>
+          <li>Accessibilità garantita</li>
+          <li>Sostenibilità (LED, climatizzazione a basso impatto)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELEZIONE E ATTESTATO -->
+  <section id="selezione" class="bg-[#f8f6f3] py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl mb-6">Selezione e attestato</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        La selezione mira a garantire una partecipazione eterogenea e bilanciata, accogliendo un massimo di <strong>20 partecipanti</strong> (membri o soci del Nuovo Imaie), con comunicazione dei risultati via email e lista d'attesa in caso di defezioni.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Al termine verrà rilasciato un <strong>attestato di partecipazione</strong> con il logo Nuovo Imaie e APS Auriga, riportando il monte ore svolto.
+      </p>
+    </div>
+  </section>
+
+  <!-- COME CANDIDARSI -->
+  <section id="candidatura" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl mb-8">Come candidarsi</h2>
+    <div class="space-y-6">
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#003366] text-white flex items-center justify-center text-sm font-bold">1</div>
+        <div>
+          <p class="text-lg"><strong>Scaricare e leggere il bando completo</strong></p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#003366] text-white flex items-center justify-center text-sm font-bold">2</div>
+        <div>
+          <p class="text-lg">Compilare la <strong>Scheda di candidatura online</strong> nella sezione "Invio domanda" del sito</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#003366] text-white flex items-center justify-center text-sm font-bold">3</div>
+        <div>
+          <p class="text-lg">Inviare la domanda secondo le indicazioni riportate nel bando</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#003366] text-white flex items-center justify-center text-sm font-bold">4</div>
+        <div>
+          <p class="text-lg"><strong>Scadenza candidature:</strong> entro e non oltre il <strong>18 luglio 2026</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-b from-[#003366] to-[#00557a] text-white py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl mb-8">Partecipa alla selezione</h2>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div class="flex flex-col items-center">
+          <a
+            href="/assets/bando-io-vivo-la-parola.pdf"
+            target="_blank"
+            rel="noopener"
+            class="inline-block bg-white text-[#003366] font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg"
+            download
+          >
+            Scarica il bando completo (PDF)
+          </a>
+          <p class="text-sm text-blue-200 mt-2 max-w-xs">Dentro trovi requisiti, modalità di selezione, tempi e documenti richiesti.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <a
+            href="/nuovo-imaie/candidatura"
+            class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
+          >
+            Compila e invia la domanda
+          </a>
+          <p class="text-sm text-blue-200 mt-2 max-w-xs">Hai già letto il bando? Qui fai la candidatura in pochi minuti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI-FAQ -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 py-16 md:py-20">
+    <h2 class="text-3xl md:text-4xl mb-8">Domande frequenti</h2>
+    <div class="space-y-4">
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Posso candidarmi se non sono NUOVO IMAIE?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          No, la selezione è riservata esclusivamente a Soci/Membri <strong>NUOVO IMAIE</strong>.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Devo scaricare il bando prima di compilare?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          Sì: nel bando sono indicati tutti i documenti richiesti e le regole di invio.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Posso partecipare come uditore?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          No, <strong>non sono ammessi uditori</strong>, come indicato dal bando.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Posso partecipare solo 5 giorni?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          No. È richiesta una presenza minima del <strong>80%</strong>: su 10 giorni significa almeno 8 giorni. Nella selezione verrà data preferenza a chi garantisce la disponibilità completa per l'intera durata della residenza.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Come funziona la selezione e quando saprò l'esito?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          La selezione avviene sulla base dei requisiti e del materiale inviato. Le tempistiche e le modalità di comunicazione dell'esito sono riportate nel bando.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Se invio la domanda, sono automaticamente ammesso/a?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          No. L'invio della domanda non garantisce l'ammissione: l'accesso avviene solo dopo selezione.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Ci sono posti limitati?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          Sì, i posti sono limitati e l'ammissione avviene per selezione fino a esaurimento disponibilità.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Se ho un problema tecnico con la scheda online?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          In caso di difficoltà, verifica prima di tutto i requisiti richiesti dal bando; se il problema persiste, contatta i riferimenti indicati nella sezione contatti.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>È previsto un attestato finale?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          Sì, al termine del percorso viene rilasciato un attestato di partecipazione con il totale delle ore svolte.
+        </div>
+      </details>
+
+      <details class="group border border-gray-200 rounded-xl">
+        <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
+          <span>Che cosa succede se non raggiungo la presenza minima?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-600">
+          È richiesta una presenza minima del <strong>80%</strong> (su 10 giorni almeno 8). Sotto questa soglia non è garantita l'idoneità al completamento del percorso e non verrà rilasciato attestato di frequenza.
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="bg-[#f8f6f3] py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm text-gray-500 mb-2">Per informazioni e supporto</p>
+      <p class="font-semibold">APS AURIGA</p>
+      <p class="text-sm text-gray-600">Via L. Vidaschi 18, 00152 Roma</p>
+      <p class="text-sm text-gray-600">
+        Tel: <a href="tel:+393498457930" class="text-[#003366] hover:underline">+39 349 8457930</a> ·
+        Email: <a href="mailto:info.sprachgestaltung@gmail.com" class="text-[#003366] hover:underline">info.sprachgestaltung@gmail.com</a>
+      </p>
+      <p class="text-sm text-gray-600 mt-1">
+        Riferimento: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="text-[#003366] hover:underline">328 263 4533</a>
+      </p>
+      <div class="flex justify-center items-center gap-4 mt-6">
+        <img src="/img/nuovo-imaie-logo.svg" alt="Logo NUOVO IMAIE" class="h-8" />
+        <img src="/LOGO-2.svg" alt="Logo APS Auriga" class="h-10" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
