@@ -17,31 +17,34 @@ const galleryImages = [
   headerClass="bg-white"
   headerStyle="background-color:white"
 >
-  <!-- Hero centrato -->
-  <div class="flex items-center justify-center">
-    <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
-      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#7c2935]">Premio di Poesia "Paolo Giuranna"</h1>
-      <p class="mt-3 text-lg text-gray-600">Terza Edizione &mdash; Marzo 2026, Roma</p>
+  <!-- Hero -->
+  <div class="bg-[#7c2935] text-white">
+    <div class="min-h-[280px] md:min-h-[340px] flex items-center justify-center">
+      <div class="max-w-3xl mx-auto px-6 pt-6 pb-16 md:pt-10 md:pb-20 text-center">
+        <p class="text-sm uppercase tracking-widest font-semibold opacity-80 mb-3">Bando di concorso 2026</p>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight drop-shadow-lg">Premio di Poesia<br />"Paolo Giuranna"</h1>
+        <p class="mt-3 text-lg opacity-90">Terza Edizione &mdash; Marzo 2026, Roma</p>
+      </div>
     </div>
   </div>
 
-  <section class="max-w-6xl mx-auto px-4 pb-12">
+  <section class="max-w-4xl mx-auto px-4 pb-16">
 
     <!-- Galleria -->
     <div class="mb-10">
       <Carousel images={galleryImages} id="carousel-giuranna-2026" />
     </div>
 
-    <!-- Testo intro -->
+    <!-- Intro -->
     <p class="text-lg leading-relaxed text-justify mb-10">
       La Fondazione Culturasì, con il patrocinio dell'Accademia Nazionale d'Arte Drammatica "Silvio D'Amico", dell'Università Sapienza di Roma, della Società Dante Alighieri e il sostegno della famiglia Giuranna, indice la terza edizione del <strong class="text-[#7c2935]">"Premio Paolo Giuranna"</strong>, rivolto a giovani attori e allievi attori dai <strong>18 ai 32 anni</strong>. Selezioni e finale si terranno a Roma nel mese di <strong>marzo 2026</strong>.
     </p>
 
-    <!-- Scadenza + CTA bando -->
-    <div class="bg-[#7c2935] text-white rounded-xl p-8 text-center mb-10">
+    <!-- Scadenza CTA -->
+    <div class="bg-[#7c2935] text-white rounded-2xl p-8 text-center mb-10">
       <p class="text-sm uppercase tracking-widest font-semibold opacity-80">Scadenza iscrizione</p>
       <p class="text-3xl md:text-4xl font-bold mt-2">15 Febbraio 2026</p>
-      <p class="mt-3 opacity-90">Iscrizione gratuita</p>
+      <p class="mt-3 opacity-90">Nessuna quota di iscrizione richiesta</p>
       <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/assets/Bando-Premio-Giuranna-III-edizione-2026.pdf" download class="inline-flex items-center gap-2 bg-white text-[#7c2935] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
@@ -55,40 +58,49 @@ const galleryImages = [
     </div>
 
     <!-- Fasi del concorso -->
-    <h2 class="text-2xl font-semibold mb-4">Il concorso in tre fasi</h2>
+    <h2 class="text-2xl font-bold text-[#7c2935] mb-6">Fasi del concorso</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <div class="border border-gray-200 rounded-xl p-6">
-        <p class="text-sm text-gray-500 font-medium">Febbraio 2026</p>
-        <h3 class="font-semibold text-lg mt-1">1. Selezione</h3>
-        <p class="text-gray-700 text-sm mt-2 leading-relaxed">Selezione dei candidati a mezzo video.</p>
+      <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#7c2935] text-white text-sm font-bold">1</span>
+          <h3 class="font-semibold text-lg">Selezione</h3>
+        </div>
+        <p class="text-sm text-gray-500 font-medium mb-2">Febbraio 2026</p>
+        <p class="text-gray-700 text-sm leading-relaxed">Selezione dei candidati a mezzo video.</p>
       </div>
-      <div class="border border-gray-200 rounded-xl p-6">
-        <p class="text-sm text-gray-500 font-medium">27&ndash;28&ndash;29 Marzo 2026</p>
-        <h3 class="font-semibold text-lg mt-1">2. Seminario</h3>
-        <p class="text-gray-700 text-sm mt-2 leading-relaxed">Seminario gratuito di <em>Sprachgestaltung</em> e preparazione del coro per la serata finale.</p>
+      <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#7c2935] text-white text-sm font-bold">2</span>
+          <h3 class="font-semibold text-lg">Seminario</h3>
+        </div>
+        <p class="text-sm text-gray-500 font-medium mb-2">27 &ndash; 28 &ndash; 29 Marzo 2026</p>
+        <p class="text-gray-700 text-sm leading-relaxed">Seminario gratuito di <em>Sprachgestaltung</em> e preparazione del coro per la serata finale.</p>
       </div>
-      <div class="border border-gray-200 rounded-xl p-6">
-        <p class="text-sm text-gray-500 font-medium">29 Marzo 2026</p>
-        <h3 class="font-semibold text-lg mt-1">3. Finale</h3>
-        <p class="text-gray-700 text-sm mt-2 leading-relaxed">Serata di declamazione con pubblico e proclamazione dei vincitori.</p>
+      <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#7c2935] text-white text-sm font-bold">3</span>
+          <h3 class="font-semibold text-lg">Finale</h3>
+        </div>
+        <p class="text-sm text-gray-500 font-medium mb-2">29 Marzo 2026</p>
+        <p class="text-gray-700 text-sm leading-relaxed">Serata di declamazione con pubblico e proclamazione dei vincitori.</p>
       </div>
     </div>
 
     <!-- Premi -->
-    <h2 class="text-2xl font-semibold mb-4">Premi</h2>
+    <h2 class="text-2xl font-bold text-[#7c2935] mb-6">Premi</h2>
     <p class="text-gray-700 mb-4">Tre borse di studio offerte dalla Fondazione Culturasì:</p>
-    <div class="grid grid-cols-3 gap-4 mb-10 text-center">
-      <div class="border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">1&deg; Premio</p>
-        <p class="text-2xl font-bold mt-1">&euro; 1.000</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+      <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-xl p-6 text-center">
+        <p class="text-sm font-semibold text-yellow-700 uppercase tracking-wider">1&deg; Premio</p>
+        <p class="text-3xl font-bold text-yellow-800 mt-2">&euro; 1.000</p>
       </div>
-      <div class="border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">2&deg; Premio</p>
-        <p class="text-2xl font-bold mt-1">&euro; 750</p>
+      <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6 text-center">
+        <p class="text-sm font-semibold text-gray-600 uppercase tracking-wider">2&deg; Premio</p>
+        <p class="text-3xl font-bold text-gray-800 mt-2">&euro; 750</p>
       </div>
-      <div class="border border-gray-200 rounded-xl p-5">
-        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">3&deg; Premio</p>
-        <p class="text-2xl font-bold mt-1">&euro; 450</p>
+      <div class="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-6 text-center">
+        <p class="text-sm font-semibold text-orange-700 uppercase tracking-wider">3&deg; Premio</p>
+        <p class="text-3xl font-bold text-orange-800 mt-2">&euro; 450</p>
       </div>
     </div>
 
@@ -99,7 +111,7 @@ const galleryImages = [
 
     <!-- Locandina -->
     <div class="mb-10 max-w-3xl mx-auto">
-      <img src="/img/premio-paolo-giuranna/premiogiuranna.png" alt="Locandina Premio Paolo Giuranna" class="max-w-full h-auto mx-auto block" loading="lazy" decoding="async" />
+      <img src="/img/premio-paolo-giuranna/premiogiuranna.png" alt="Locandina Premio Paolo Giuranna" class="max-w-full h-auto mx-auto block rounded-xl shadow-lg" loading="lazy" decoding="async" />
     </div>
 
     <div class="mt-10">
