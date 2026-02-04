@@ -402,8 +402,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       const MAX_IMG_SIZE = 10 * 1024 * 1024; // 10 MB
       const MAX_PDF_SIZE = 15 * 1024 * 1024; // 15 MB
 
-      const FILE_ERROR_CLASS = 'ring-2 ring-red-400 rounded-lg';
-
       function validateFile(input: HTMLInputElement, maxSize: number, allowedTypes: string[], label: string): string | null {
         if (!input.files || input.files.length === 0) {
           input.classList.add('ring-2', 'ring-red-400', 'rounded-lg');
