@@ -165,18 +165,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <!-- Script: accende la reveal quando entra in viewport -->
   <script>
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in-view');
-            // se vuoi animare una volta sola, smetti di osservare
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    function initReveal() {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    }
+
+    // Ascolta astro:page-load per reinizializzare dopo navigazione View Transitions
+    document.addEventListener('astro:page-load', initReveal);
   </script>
 </BaseLayout>
