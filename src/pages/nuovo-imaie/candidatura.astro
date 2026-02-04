@@ -10,26 +10,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   pageBg="light"
 >
   <section class="relative overflow-hidden text-white min-h-screen">
-    <!-- Mesh gradient background - toni caldi ambra/dorato -->
-    <div class="absolute inset-0 bg-[#1a1208]"></div>
+    <!-- Mesh gradient background - toni blu coerenti con landing IMAIE -->
+    <div class="absolute inset-0 bg-[#001a33]"></div>
 
-    <div class="absolute top-[0%] left-[-15%] w-[50%] h-[45%] rounded-full bg-[#d97706] opacity-60 blur-[130px]"></div>
-    <div class="absolute top-[40%] left-[-10%] w-[45%] h-[40%] rounded-full bg-[#92400e] opacity-50 blur-[120px]"></div>
+    <div class="absolute top-[0%] left-[-15%] w-[50%] h-[45%] rounded-full bg-[#003366] opacity-60 blur-[130px]"></div>
+    <div class="absolute top-[40%] left-[-10%] w-[45%] h-[40%] rounded-full bg-[#004d80] opacity-50 blur-[120px]"></div>
 
-    <div class="absolute top-[0%] right-[-15%] w-[50%] h-[45%] rounded-full bg-[#b45309] opacity-55 blur-[130px]"></div>
-    <div class="absolute top-[45%] right-[-10%] w-[40%] h-[35%] rounded-full bg-[#78350f] opacity-45 blur-[120px]"></div>
+    <div class="absolute top-[0%] right-[-15%] w-[50%] h-[45%] rounded-full bg-[#00557a] opacity-55 blur-[130px]"></div>
+    <div class="absolute top-[45%] right-[-10%] w-[40%] h-[35%] rounded-full bg-[#0099CC] opacity-35 blur-[120px]"></div>
 
-    <div class="absolute top-[20%] left-[25%] w-[50%] h-[35%] rounded-full bg-[#f59e0b] opacity-35 blur-[120px]"></div>
-    <div class="absolute top-[55%] left-[30%] w-[40%] h-[30%] rounded-full bg-[#d97706] opacity-30 blur-[115px]"></div>
+    <div class="absolute top-[20%] left-[25%] w-[50%] h-[35%] rounded-full bg-[#0077b6] opacity-30 blur-[120px]"></div>
+    <div class="absolute top-[55%] left-[30%] w-[40%] h-[30%] rounded-full bg-[#003366] opacity-25 blur-[115px]"></div>
 
     <!-- Hero content -->
     <div class="relative z-10 min-h-[320px] md:min-h-[400px] flex items-center justify-center">
       <div class="max-w-3xl mx-auto px-6 py-20 md:py-24 text-center">
-        <p class="text-amber-200/80 text-sm md:text-base uppercase tracking-widest mb-4">NUOVO IMAIE 2026</p>
+        <p class="text-blue-200/80 text-sm md:text-base uppercase tracking-widest mb-4">NUOVO IMAIE 2026</p>
         <h1 class="text-3xl md:text-5xl font-bold tracking-tight drop-shadow-lg leading-tight">
           Scheda di candidatura
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-amber-100/80 max-w-xl mx-auto">
+        <p class="mt-4 text-lg md:text-xl text-blue-100/80 max-w-xl mx-auto">
           L'Arte dell'Attore — Io vivo la parola!
         </p>
       </div>
@@ -40,11 +40,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <div class="max-w-3xl mx-auto px-4">
 
         <!-- Intro -->
-        <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+        <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
           <p class="text-slate-600 leading-relaxed">
             Compila tutti i campi obbligatori (<span class="text-red-600">*</span>) e allega i documenti richiesti.
             Prima di compilare, assicurati di aver letto il
-            <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-amber-700 hover:text-amber-900 underline font-medium">bando completo</a>.
+            <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-[#003366] hover:text-[#00557a] underline font-medium">bando completo</a>.
           </p>
           <p class="mt-3 text-sm text-slate-500">
             Scadenza candidature: <strong>entro e non oltre il 18 luglio 2026</strong>.
@@ -55,8 +55,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <form id="candidatura-form" novalidate>
 
           <!-- Sezione 1: Dati anagrafici -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-8">1. Dati anagrafici</h2>
+          <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold text-[#003366] mb-8">1. Dati anagrafici</h2>
 
             <div class="grid md:grid-cols-2 gap-6">
               <!-- Nome -->
@@ -70,7 +70,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="nome"
                   required
                   autocomplete="given-name"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="Il tuo nome"
                 />
               </div>
@@ -86,7 +86,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="cognome"
                   required
                   autocomplete="family-name"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="Il tuo cognome"
                 />
               </div>
@@ -101,7 +101,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   id="data-nascita"
                   name="data_nascita"
                   required
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                 />
               </div>
 
@@ -119,7 +119,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="citta"
                   required
                   autocomplete="address-level2"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="Es. Roma"
                 />
               </div>
@@ -135,7 +135,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="provincia"
                   required
                   maxlength="2"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors uppercase"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors uppercase"
                   placeholder="Es. RM"
                 />
               </div>
@@ -151,7 +151,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="email"
                   required
                   autocomplete="email"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="nome@email.com"
                 />
               </div>
@@ -167,7 +167,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="telefono"
                   required
                   autocomplete="tel"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="+39 333 1234567"
                 />
               </div>
@@ -175,8 +175,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <!-- Sezione 2: Requisiti NUOVO IMAIE -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-2">2. Requisiti NUOVO IMAIE</h2>
+          <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold text-[#003366] mb-2">2. Requisiti NUOVO IMAIE</h2>
             <p class="text-sm text-slate-500 mb-8">Selezione riservata ai Soci o Membri NUOVO IMAIE iscritti alla data del 10 marzo 2025.</p>
 
             <div class="grid md:grid-cols-2 gap-6">
@@ -190,7 +190,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   id="codice-imaie"
                   name="codice_imaie"
                   required
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="Il tuo codice identificativo"
                 />
               </div>
@@ -205,15 +205,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   id="data-iscrizione"
                   name="data_iscrizione_imaie"
                   required
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                 />
               </div>
             </div>
           </div>
 
           <!-- Sezione 3: Video (facoltativo) -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-2">3. Link video</h2>
+          <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold text-[#003366] mb-2">3. Link video</h2>
             <p class="text-sm text-slate-500 mb-8">Facoltativo. Puoi inserire fino a 2 link a video (YouTube, Vimeo, ecc.).</p>
 
             <div class="space-y-6">
@@ -225,7 +225,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   type="url"
                   id="video-1"
                   name="video_1"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="https://www.youtube.com/watch?v=..."
                 />
               </div>
@@ -238,7 +238,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   type="url"
                   id="video-2"
                   name="video_2"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
+                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0099CC] focus:border-[#0099CC] transition-colors"
                   placeholder="https://vimeo.com/..."
                 />
               </div>
@@ -246,8 +246,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <!-- Sezione 4: Allegati -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-2">4. Allegati</h2>
+          <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold text-[#003366] mb-2">4. Allegati</h2>
             <p class="text-sm text-slate-500 mb-8">Carica i documenti richiesti nei formati indicati.</p>
 
             <div class="space-y-8">
@@ -263,7 +263,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="foto_1"
                   required
                   accept=".jpg,.jpeg"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
+                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-[#003366] hover:file:bg-blue-100 file:cursor-pointer cursor-pointer"
                 />
               </div>
 
@@ -279,7 +279,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="foto_2"
                   required
                   accept=".jpg,.jpeg"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
+                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-[#003366] hover:file:bg-blue-100 file:cursor-pointer cursor-pointer"
                 />
               </div>
 
@@ -295,7 +295,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="cv"
                   required
                   accept=".pdf"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
+                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-[#003366] hover:file:bg-blue-100 file:cursor-pointer cursor-pointer"
                 />
               </div>
 
@@ -311,25 +311,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                   name="lettera_motivazionale"
                   required
                   accept=".pdf"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
+                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-[#003366] hover:file:bg-blue-100 file:cursor-pointer cursor-pointer"
                 />
               </div>
             </div>
           </div>
 
           <!-- Sezione 5: Consenso privacy -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+          <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
             <div class="flex items-start gap-3">
               <input
                 type="checkbox"
                 id="privacy"
                 name="privacy"
                 required
-                class="mt-1 h-5 w-5 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer shrink-0"
+                class="mt-1 h-5 w-5 rounded border-slate-300 text-[#003366] focus:ring-[#0099CC] cursor-pointer shrink-0"
               />
               <label for="privacy" class="text-sm text-slate-600 leading-relaxed cursor-pointer">
                 Dichiaro di aver letto il
-                <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-amber-700 hover:text-amber-900 underline">bando completo</a>
+                <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-[#003366] hover:text-[#00557a] underline">bando completo</a>
                 e acconsento al trattamento dei miei dati personali ai sensi della normativa vigente in materia di protezione dei dati personali, per le finalita connesse alla selezione dei partecipanti al laboratorio.
                 <span class="text-red-600">*</span>
               </label>
@@ -337,7 +337,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <!-- Errori di validazione -->
-          <div id="form-errors" class="hidden rounded-[28px] border border-red-300 bg-red-50/95 shadow-lg px-6 sm:px-10 py-6 text-red-800 mb-8">
+          <div id="form-errors" class="hidden rounded-xl border border-red-300 bg-red-50/95 shadow-lg px-6 sm:px-10 py-6 text-red-800 mb-8">
             <p class="font-semibold mb-2">Attenzione</p>
             <ul id="error-list" class="list-disc list-inside text-sm space-y-1"></ul>
           </div>
@@ -347,7 +347,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <button
               type="submit"
               id="submit-btn"
-              class="inline-block px-10 py-4 bg-amber-700 hover:bg-amber-800 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              class="inline-block px-10 py-4 bg-[#003366] hover:bg-[#00557a] text-white text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
               Invia domanda
             </button>
@@ -355,7 +355,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </form>
 
         <!-- Messaggio di conferma -->
-        <div id="success-message" class="hidden rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-14 text-center">
+        <div id="success-message" class="hidden rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-14 text-center">
           <div class="text-green-600 mb-6">
             <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -372,7 +372,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </div>
 
         <!-- Contatti e info -->
-        <div class="mt-12 text-center text-amber-200/70 text-sm space-y-2">
+        <div class="mt-12 text-center text-blue-200/70 text-sm space-y-2">
           <p>Per informazioni: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="underline hover:text-white transition-colors">328 263 4533</a></p>
           <p>APS AURIGA — <a href="mailto:info.sprachgestaltung@gmail.com" class="underline hover:text-white transition-colors">info.sprachgestaltung@gmail.com</a></p>
           <p class="mt-4">
