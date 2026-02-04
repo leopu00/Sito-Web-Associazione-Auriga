@@ -27,3 +27,4 @@ settings.json
 types.d.ts
 # Identità agent - MAI committare!
 CLAUDE.md
+.vercel
