@@ -20,7 +20,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <img src="/img/nuovo-imaie-logo.svg" alt="Logo NUOVO IMAIE" class="h-10 md:h-14 brightness-0 invert" />
       </div>
       <p class="text-sm md:text-base uppercase tracking-widest mb-4 text-blue-200">Progetto di Alta Formazione NUOVO IMAIE 2026</p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">L'Arte dell'Attore — Io vivo la parola!</h1>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">L'Arte dell'Attore — Io vivo la parola!</h1>
       <p class="text-lg md:text-xl text-blue-100 mb-2">Laboratorio intensivo di studio e residenza artistica</p>
       <p class="text-base md:text-lg text-blue-200 mb-6">Corso interamente finanziato da NUOVO IMAIE 2026</p>
       <p class="text-sm text-blue-200 mb-8">A cura di <strong class="text-white">APS AURIGA</strong></p>
@@ -375,13 +375,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="bg-gradient-to-b from-[#003366] to-[#00557a] text-white py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl mb-8">Partecipa alla selezione</h2>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-stretch">
         <div class="flex flex-col items-center">
           <a
             href="/assets/bando-io-vivo-la-parola.pdf"
             target="_blank"
             rel="noopener"
-            class="inline-block bg-white text-[#003366] font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg"
+            class="inline-block w-full sm:w-auto text-center bg-white text-[#003366] font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg"
             download
           >
             Scarica il bando completo (PDF)
@@ -391,7 +391,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="flex flex-col items-center">
           <a
             href="/nuovo-imaie/candidatura"
-            class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
+            class="inline-block w-full sm:w-auto text-center bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
           >
             Compila e invia la domanda
           </a>
@@ -408,7 +408,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Posso candidarmi se non sono NUOVO IMAIE?</span>
+          <span class="pr-4">Posso candidarmi se non sono NUOVO IMAIE?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -418,7 +418,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Devo scaricare il bando prima di compilare?</span>
+          <span class="pr-4">Devo scaricare il bando prima di compilare?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -428,7 +428,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Posso partecipare come uditore?</span>
+          <span class="pr-4">Posso partecipare come uditore?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -438,7 +438,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Posso partecipare solo 5 giorni?</span>
+          <span class="pr-4">Posso partecipare solo 5 giorni?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -448,7 +448,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Come funziona la selezione e quando saprò l'esito?</span>
+          <span class="pr-4">Come funziona la selezione e quando saprò l'esito?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -458,7 +458,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Se invio la domanda, sono automaticamente ammesso/a?</span>
+          <span class="pr-4">Se invio la domanda, sono automaticamente ammesso/a?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -468,7 +468,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Ci sono posti limitati?</span>
+          <span class="pr-4">Ci sono posti limitati?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -478,7 +478,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Se ho un problema tecnico con la scheda online?</span>
+          <span class="pr-4">Se ho un problema tecnico con la scheda online?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -488,7 +488,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>È previsto un attestato finale?</span>
+          <span class="pr-4">È previsto un attestato finale?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">
@@ -498,7 +498,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <details class="group border border-gray-200 rounded-xl">
         <summary class="flex justify-between items-center cursor-pointer p-5 font-semibold hover:bg-gray-50 rounded-xl">
-          <span>Che cosa succede se non raggiungo la presenza minima?</span>
+          <span class="pr-4">Che cosa succede se non raggiungo la presenza minima?</span>
           <span class="text-gray-400 group-open:rotate-45 transition-transform text-xl">+</span>
         </summary>
         <div class="px-5 pb-5 text-gray-600">

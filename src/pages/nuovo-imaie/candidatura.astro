@@ -39,6 +39,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="relative z-10 pb-20 md:pb-28">
       <div class="max-w-3xl mx-auto px-4">
 
+        <!-- Contenuto form (nascosto dopo invio) -->
+        <div id="form-wrapper">
+
         <!-- Intro -->
         <div class="rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
           <p class="text-slate-600 leading-relaxed">
@@ -105,13 +108,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 />
               </div>
 
-              <!-- Placeholder per allineamento grid -->
-              <div class="hidden md:block"></div>
-
               <!-- Citta -->
               <div>
                 <label for="citta" class="block text-sm font-medium text-slate-700 mb-1">
-                  Domicilio — Citta <span class="text-red-600">*</span>
+                  Domicilio — Città <span class="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -330,7 +330,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               <label for="privacy" class="text-sm text-slate-600 leading-relaxed cursor-pointer">
                 Dichiaro di aver letto il
                 <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-[#003366] hover:text-[#00557a] underline">bando completo</a>
-                e acconsento al trattamento dei miei dati personali ai sensi della normativa vigente in materia di protezione dei dati personali, per le finalita connesse alla selezione dei partecipanti al laboratorio.
+                e acconsento al trattamento dei miei dati personali ai sensi della normativa vigente in materia di protezione dei dati personali, per le finalità connesse alla selezione dei partecipanti al laboratorio.
                 <span class="text-red-600">*</span>
               </label>
             </div>
@@ -354,6 +354,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
         </form>
 
+        <!-- Contatti e info -->
+        <div class="mt-12 text-center text-amber-200/70 text-sm space-y-2">
+          <p>Per informazioni: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="underline hover:text-white transition-colors">328 263 4533</a></p>
+          <p>APS AURIGA — <a href="mailto:info.sprachgestaltung@gmail.com" class="underline hover:text-white transition-colors">info.sprachgestaltung@gmail.com</a></p>
+          <p class="mt-4">
+            <a href="/io-vivo-la-parola" class="underline hover:text-white transition-colors">
+              ← Torna alla pagina del progetto
+            </a>
+          </p>
+        </div>
+
+        </div><!-- /form-wrapper -->
+
         <!-- Messaggio di conferma -->
         <div id="success-message" class="hidden rounded-xl border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-14 text-center">
           <div class="text-green-600 mb-6">
@@ -371,17 +384,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </a>
         </div>
 
-        <!-- Contatti e info -->
-        <div class="mt-12 text-center text-blue-200/70 text-sm space-y-2">
-          <p>Per informazioni: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="underline hover:text-white transition-colors">328 263 4533</a></p>
-          <p>APS AURIGA — <a href="mailto:info.sprachgestaltung@gmail.com" class="underline hover:text-white transition-colors">info.sprachgestaltung@gmail.com</a></p>
-          <p class="mt-4">
-            <a href="/io-vivo-la-parola" class="underline hover:text-white transition-colors">
-              ← Torna alla pagina del progetto
-            </a>
-          </p>
-        </div>
-
       </div>
     </div>
   </section>
@@ -389,6 +391,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <script>
     document.addEventListener('astro:page-load', () => {
       const form = document.getElementById('candidatura-form') as HTMLFormElement | null;
+      const formWrapper = document.getElementById('form-wrapper');
       const errorsBox = document.getElementById('form-errors');
       const errorList = document.getElementById('error-list');
       const successMessage = document.getElementById('success-message');
@@ -399,31 +402,38 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       const MAX_IMG_SIZE = 10 * 1024 * 1024; // 10 MB
       const MAX_PDF_SIZE = 15 * 1024 * 1024; // 15 MB
 
+      const FILE_ERROR_CLASS = 'ring-2 ring-red-400 rounded-lg';
+
       function validateFile(input: HTMLInputElement, maxSize: number, allowedTypes: string[], label: string): string | null {
         if (!input.files || input.files.length === 0) {
+          input.className = input.className + ' ' + FILE_ERROR_CLASS;
           return `${label}: nessun file selezionato.`;
         }
         const file = input.files[0];
         const ext = file.name.split('.').pop()?.toLowerCase() || '';
         if (!allowedTypes.includes(ext)) {
+          input.className = input.className + ' ' + FILE_ERROR_CLASS;
           return `${label}: formato non valido. Richiesto: ${allowedTypes.join(', ')}.`;
         }
         if (file.size > maxSize) {
+          input.className = input.className + ' ' + FILE_ERROR_CLASS;
           return `${label}: il file supera la dimensione massima di ${Math.round(maxSize / (1024 * 1024))} MB.`;
         }
+        input.className = input.className.replace(/ ?ring-2 ring-red-400 rounded-lg/g, '');
         return null;
       }
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const errors: string[] = [];
+        let firstErrorEl: HTMLElement | null = null;
 
         // Campi testo obbligatori
         const requiredFields = [
           { id: 'nome', label: 'Nome' },
           { id: 'cognome', label: 'Cognome' },
           { id: 'data-nascita', label: 'Data di nascita' },
-          { id: 'citta', label: 'Citta' },
+          { id: 'citta', label: 'Città' },
           { id: 'provincia', label: 'Provincia' },
           { id: 'email', label: 'Email' },
           { id: 'telefono', label: 'Telefono' },
@@ -434,8 +444,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         requiredFields.forEach(({ id, label }) => {
           const el = document.getElementById(id) as HTMLInputElement | null;
           if (!el || !el.value.trim()) {
-            errors.push(`${label} e obbligatorio.`);
+            errors.push(`${label} è obbligatorio.`);
             el?.classList.add('border-red-400');
+            if (!firstErrorEl && el) firstErrorEl = el;
           } else {
             el.classList.remove('border-red-400');
           }
@@ -446,37 +457,31 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         if (emailEl && emailEl.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
           errors.push('Email: formato non valido.');
           emailEl.classList.add('border-red-400');
+          if (!firstErrorEl) firstErrorEl = emailEl;
         }
 
         // Validazione file
-        const foto1Error = validateFile(
-          document.getElementById('foto-1') as HTMLInputElement,
-          MAX_IMG_SIZE, ['jpg', 'jpeg'], 'Foto 1'
-        );
-        if (foto1Error) errors.push(foto1Error);
+        const fileChecks = [
+          { id: 'foto-1', max: MAX_IMG_SIZE, types: ['jpg', 'jpeg'], label: 'Foto 1' },
+          { id: 'foto-2', max: MAX_IMG_SIZE, types: ['jpg', 'jpeg'], label: 'Foto 2' },
+          { id: 'cv', max: MAX_PDF_SIZE, types: ['pdf'], label: 'Curriculum Vitae' },
+          { id: 'lettera', max: MAX_PDF_SIZE, types: ['pdf'], label: 'Lettera motivazionale' },
+        ];
 
-        const foto2Error = validateFile(
-          document.getElementById('foto-2') as HTMLInputElement,
-          MAX_IMG_SIZE, ['jpg', 'jpeg'], 'Foto 2'
-        );
-        if (foto2Error) errors.push(foto2Error);
-
-        const cvError = validateFile(
-          document.getElementById('cv') as HTMLInputElement,
-          MAX_PDF_SIZE, ['pdf'], 'Curriculum Vitae'
-        );
-        if (cvError) errors.push(cvError);
-
-        const letteraError = validateFile(
-          document.getElementById('lettera') as HTMLInputElement,
-          MAX_PDF_SIZE, ['pdf'], 'Lettera motivazionale'
-        );
-        if (letteraError) errors.push(letteraError);
+        fileChecks.forEach(({ id, max, types, label }) => {
+          const input = document.getElementById(id) as HTMLInputElement;
+          const err = validateFile(input, max, types, label);
+          if (err) {
+            errors.push(err);
+            if (!firstErrorEl) firstErrorEl = input;
+          }
+        });
 
         // Validazione privacy
         const privacyEl = document.getElementById('privacy') as HTMLInputElement | null;
         if (!privacyEl?.checked) {
-          errors.push('Devi accettare il consenso al trattamento dei dati personali.');
+          errors.push('È necessario accettare il consenso al trattamento dei dati personali.');
+          if (!firstErrorEl && privacyEl) firstErrorEl = privacyEl;
         }
 
         // Validazione URL video (se compilati)
@@ -485,8 +490,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           if (el && el.value.trim()) {
             try {
               new URL(el.value.trim());
+              el.classList.remove('border-red-400');
             } catch {
               errors.push(`Link video ${i + 1}: URL non valido.`);
+              el.classList.add('border-red-400');
+              if (!firstErrorEl) firstErrorEl = el;
             }
           }
         });
@@ -497,7 +505,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           if (errorList) {
             errorList.innerHTML = errors.map(e => `<li>${e}</li>`).join('');
           }
-          errorsBox?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Scroll al primo campo con errore
+          if (firstErrorEl) {
+            firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            errorsBox?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
           return;
         }
 
@@ -509,9 +522,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           submitBtn.textContent = 'Invio in corso...';
         }
 
-        // Simula invio (qui andra collegato il backend reale)
+        // Simula invio (qui andrà collegato il backend reale)
         setTimeout(() => {
-          form.classList.add('hidden');
+          formWrapper?.classList.add('hidden');
           successMessage?.classList.remove('hidden');
           successMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 1200);
