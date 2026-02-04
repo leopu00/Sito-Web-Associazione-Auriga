@@ -6,386 +6,177 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   description="Scheda di candidatura online per il laboratorio L'Arte dell'Attore - Io vivo la parola! Corso finanziato da NUOVO IMAIE 2026."
   headerTheme="light"
   headerClass="bg-white"
-  headerStyle="background-color:#ffffff"
+  headerStyle="background-color:white"
   pageBg="light"
 >
-  <section class="relative overflow-hidden text-white min-h-screen">
-    <!-- Mesh gradient background - toni caldi ambra/dorato -->
-    <div class="absolute inset-0 bg-[#1a1208]"></div>
 
-    <div class="absolute top-[0%] left-[-15%] w-[50%] h-[45%] rounded-full bg-[#d97706] opacity-60 blur-[130px]"></div>
-    <div class="absolute top-[40%] left-[-10%] w-[45%] h-[40%] rounded-full bg-[#92400e] opacity-50 blur-[120px]"></div>
+  <!-- Hero compatto -->
+  <section class="bg-gradient-to-b from-[#003366] to-[#00557a] text-white py-14 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm uppercase tracking-widest text-blue-200 mb-3">NUOVO IMAIE 2026</p>
+      <h1 class="text-3xl md:text-5xl leading-tight mb-3">Scheda di candidatura</h1>
+      <p class="text-blue-100">L'Arte dell'Attore — Io vivo la parola!</p>
+      <p class="text-sm text-blue-200 mt-4">Scadenza: <strong class="text-white">18 luglio 2026</strong></p>
+    </div>
+  </section>
 
-    <div class="absolute top-[0%] right-[-15%] w-[50%] h-[45%] rounded-full bg-[#b45309] opacity-55 blur-[130px]"></div>
-    <div class="absolute top-[45%] right-[-10%] w-[40%] h-[35%] rounded-full bg-[#78350f] opacity-45 blur-[120px]"></div>
+  <!-- Form -->
+  <section class="max-w-3xl mx-auto px-4 py-12 md:py-16">
 
-    <div class="absolute top-[20%] left-[25%] w-[50%] h-[35%] rounded-full bg-[#f59e0b] opacity-35 blur-[120px]"></div>
-    <div class="absolute top-[55%] left-[30%] w-[40%] h-[30%] rounded-full bg-[#d97706] opacity-30 blur-[115px]"></div>
+    <div id="form-wrapper">
 
-    <!-- Hero content -->
-    <div class="relative z-10 min-h-[320px] md:min-h-[400px] flex items-center justify-center">
-      <div class="max-w-3xl mx-auto px-6 py-20 md:py-24 text-center">
-        <p class="text-amber-200/80 text-sm md:text-base uppercase tracking-widest mb-4">NUOVO IMAIE 2026</p>
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight drop-shadow-lg leading-tight">
-          Scheda di candidatura
-        </h1>
-        <p class="mt-4 text-lg md:text-xl text-amber-100/80 max-w-xl mx-auto">
-          L'Arte dell'Attore — Io vivo la parola!
-        </p>
+      <p class="text-gray-600 mb-8">
+        Compila i campi obbligatori (<span class="text-red-600">*</span>) e allega i documenti richiesti.
+        Leggi il <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-[#003366] font-semibold hover:underline">bando completo</a> prima di compilare.
+      </p>
+
+      <form id="candidatura-form" novalidate>
+
+        <!-- Dati anagrafici -->
+        <fieldset class="mb-10">
+          <legend class="text-xl font-bold text-[#003366] mb-6">Dati anagrafici</legend>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="form-field">
+              <label for="nome" class="form-label form-label-required">Nome</label>
+              <input type="text" id="nome" name="nome" required autocomplete="given-name" class="form-input" placeholder="Il tuo nome" />
+            </div>
+            <div class="form-field">
+              <label for="cognome" class="form-label form-label-required">Cognome</label>
+              <input type="text" id="cognome" name="cognome" required autocomplete="family-name" class="form-input" placeholder="Il tuo cognome" />
+            </div>
+            <div class="form-field">
+              <label for="data-nascita" class="form-label form-label-required">Data di nascita</label>
+              <input type="date" id="data-nascita" name="data_nascita" required class="form-input" />
+            </div>
+            <div class="form-field">
+              <label for="email" class="form-label form-label-required">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" class="form-input" placeholder="nome@email.com" />
+            </div>
+            <div class="form-field">
+              <label for="telefono" class="form-label form-label-required">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" required autocomplete="tel" class="form-input" placeholder="+39 333 1234567" />
+            </div>
+            <div class="form-field">
+              <label for="citta" class="form-label form-label-required">Domicilio — Città</label>
+              <input type="text" id="citta" name="citta" required autocomplete="address-level2" class="form-input" placeholder="Es. Roma" />
+            </div>
+            <div class="form-field">
+              <label for="provincia" class="form-label form-label-required">Provincia</label>
+              <input type="text" id="provincia" name="provincia" required maxlength="2" class="form-input uppercase" placeholder="Es. RM" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Requisiti NUOVO IMAIE -->
+        <fieldset class="mb-10">
+          <legend class="text-xl font-bold text-[#003366] mb-2">Requisiti NUOVO IMAIE</legend>
+          <p class="text-sm text-gray-500 mb-6">Riservato ai Soci/Membri iscritti alla data del 10 marzo 2025.</p>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="form-field">
+              <label for="codice-imaie" class="form-label form-label-required">Codice ID NUOVO IMAIE</label>
+              <input type="text" id="codice-imaie" name="codice_imaie" required class="form-input" placeholder="Il tuo codice identificativo" />
+            </div>
+            <div class="form-field">
+              <label for="data-iscrizione" class="form-label form-label-required">Data di iscrizione</label>
+              <input type="date" id="data-iscrizione" name="data_iscrizione_imaie" required class="form-input" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Allegati -->
+        <fieldset class="mb-10">
+          <legend class="text-xl font-bold text-[#003366] mb-6">Allegati</legend>
+          <div class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="form-field">
+                <label for="foto-1" class="form-label form-label-required">Foto 1</label>
+                <p class="text-xs text-gray-500">JPG — max 10 MB</p>
+                <input type="file" id="foto-1" name="foto_1" required accept=".jpg,.jpeg" class="form-input" />
+              </div>
+              <div class="form-field">
+                <label for="foto-2" class="form-label form-label-required">Foto 2</label>
+                <p class="text-xs text-gray-500">JPG — max 10 MB</p>
+                <input type="file" id="foto-2" name="foto_2" required accept=".jpg,.jpeg" class="form-input" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div class="form-field">
+                <label for="cv" class="form-label form-label-required">Curriculum Vitae</label>
+                <p class="text-xs text-gray-500">PDF — max 15 MB</p>
+                <input type="file" id="cv" name="cv" required accept=".pdf" class="form-input" />
+              </div>
+              <div class="form-field">
+                <label for="lettera" class="form-label form-label-required">Lettera motivazionale</label>
+                <p class="text-xs text-gray-500">PDF — max 15 MB</p>
+                <input type="file" id="lettera" name="lettera_motivazionale" required accept=".pdf" class="form-input" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Video (facoltativo) -->
+        <fieldset class="mb-10">
+          <legend class="text-xl font-bold text-[#003366] mb-2">Link video</legend>
+          <p class="text-sm text-gray-500 mb-6">Facoltativo — fino a 2 link (YouTube, Vimeo, ecc.).</p>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="form-field">
+              <label for="video-1" class="form-label">Video 1</label>
+              <input type="url" id="video-1" name="video_1" class="form-input" placeholder="https://..." />
+            </div>
+            <div class="form-field">
+              <label for="video-2" class="form-label">Video 2</label>
+              <input type="url" id="video-2" name="video_2" class="form-input" placeholder="https://..." />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Privacy -->
+        <div class="mb-8 flex items-start gap-3">
+          <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-5 w-5 rounded border-gray-300 text-[#003366] focus:ring-[#003366] cursor-pointer shrink-0" />
+          <label for="privacy" class="text-sm text-gray-600 leading-relaxed cursor-pointer">
+            Dichiaro di aver letto il <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-[#003366] underline">bando</a>
+            e acconsento al trattamento dei dati personali per le finalità connesse alla selezione. <span class="text-red-600">*</span>
+          </label>
+        </div>
+
+        <!-- Errori -->
+        <div id="form-errors" class="hidden bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-red-800" role="alert" aria-live="assertive">
+          <p class="font-semibold mb-2">Correggi i seguenti errori:</p>
+          <ul id="error-list" class="list-disc list-inside text-sm space-y-1"></ul>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="submit-btn" class="form-submit-btn">
+          Invia domanda
+        </button>
+
+      </form>
+
+      <!-- Contatti -->
+      <div class="mt-10 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+        <p>Informazioni: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="text-[#003366] hover:underline">328 263 4533</a></p>
+        <p class="mt-1"><a href="mailto:info.sprachgestaltung@gmail.com" class="text-[#003366] hover:underline">info.sprachgestaltung@gmail.com</a></p>
+        <p class="mt-3"><a href="/io-vivo-la-parola" class="text-[#003366] hover:underline">← Torna alla pagina del progetto</a></p>
+      </div>
+
+    </div><!-- /form-wrapper -->
+
+    <!-- Conferma -->
+    <div id="success-message" class="hidden">
+      <div class="form-success-message py-12">
+        <svg class="w-14 h-14 mx-auto mb-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <h2 class="text-2xl font-bold text-emerald-800 mb-2">Domanda inviata correttamente</h2>
+        <p class="text-emerald-700">Riceverai una mail di conferma.</p>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/io-vivo-la-parola" class="inline-block px-6 py-3 border-2 border-[#003366] text-[#003366] rounded-lg font-semibold hover:bg-[#003366] hover:text-white transition-colors">
+          Torna alla pagina del progetto
+        </a>
       </div>
     </div>
 
-    <!-- Form content -->
-    <div class="relative z-10 pb-20 md:pb-28">
-      <div class="max-w-3xl mx-auto px-4">
-
-        <!-- Contenuto form (nascosto dopo invio) -->
-        <div id="form-wrapper">
-
-        <!-- Intro -->
-        <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-          <p class="text-slate-600 leading-relaxed">
-            Compila tutti i campi obbligatori (<span class="text-red-600">*</span>) e allega i documenti richiesti.
-            Prima di compilare, assicurati di aver letto il
-            <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-amber-700 hover:text-amber-900 underline font-medium">bando completo</a>.
-          </p>
-          <p class="mt-3 text-sm text-slate-500">
-            Scadenza candidature: <strong>entro e non oltre il 18 luglio 2026</strong>.
-          </p>
-        </div>
-
-        <!-- Form -->
-        <form id="candidatura-form" novalidate>
-
-          <!-- Sezione 1: Dati anagrafici -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-8">1. Dati anagrafici</h2>
-
-            <div class="grid md:grid-cols-2 gap-6">
-              <!-- Nome -->
-              <div>
-                <label for="nome" class="block text-sm font-medium text-slate-700 mb-1">
-                  Nome <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  required
-                  autocomplete="given-name"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="Il tuo nome"
-                />
-              </div>
-
-              <!-- Cognome -->
-              <div>
-                <label for="cognome" class="block text-sm font-medium text-slate-700 mb-1">
-                  Cognome <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="cognome"
-                  name="cognome"
-                  required
-                  autocomplete="family-name"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="Il tuo cognome"
-                />
-              </div>
-
-              <!-- Data di nascita -->
-              <div>
-                <label for="data-nascita" class="block text-sm font-medium text-slate-700 mb-1">
-                  Data di nascita <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="date"
-                  id="data-nascita"
-                  name="data_nascita"
-                  required
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                />
-              </div>
-
-              <!-- Citta -->
-              <div>
-                <label for="citta" class="block text-sm font-medium text-slate-700 mb-1">
-                  Domicilio — Città <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="citta"
-                  name="citta"
-                  required
-                  autocomplete="address-level2"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="Es. Roma"
-                />
-              </div>
-
-              <!-- Provincia -->
-              <div>
-                <label for="provincia" class="block text-sm font-medium text-slate-700 mb-1">
-                  Domicilio — Provincia <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="provincia"
-                  name="provincia"
-                  required
-                  maxlength="2"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors uppercase"
-                  placeholder="Es. RM"
-                />
-              </div>
-
-              <!-- Email -->
-              <div>
-                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">
-                  Email <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  autocomplete="email"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="nome@email.com"
-                />
-              </div>
-
-              <!-- Telefono -->
-              <div>
-                <label for="telefono" class="block text-sm font-medium text-slate-700 mb-1">
-                  Telefono <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="tel"
-                  id="telefono"
-                  name="telefono"
-                  required
-                  autocomplete="tel"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="+39 333 1234567"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Sezione 2: Requisiti NUOVO IMAIE -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-2">2. Requisiti NUOVO IMAIE</h2>
-            <p class="text-sm text-slate-500 mb-8">Selezione riservata ai Soci o Membri NUOVO IMAIE iscritti alla data del 10 marzo 2025.</p>
-
-            <div class="grid md:grid-cols-2 gap-6">
-              <!-- Codice ID -->
-              <div>
-                <label for="codice-imaie" class="block text-sm font-medium text-slate-700 mb-1">
-                  Numero / Codice ID NUOVO IMAIE <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="codice-imaie"
-                  name="codice_imaie"
-                  required
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="Il tuo codice identificativo"
-                />
-              </div>
-
-              <!-- Data iscrizione -->
-              <div>
-                <label for="data-iscrizione" class="block text-sm font-medium text-slate-700 mb-1">
-                  Data di iscrizione NUOVO IMAIE <span class="text-red-600">*</span>
-                </label>
-                <input
-                  type="date"
-                  id="data-iscrizione"
-                  name="data_iscrizione_imaie"
-                  required
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Sezione 3: Video (facoltativo) -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-2">3. Link video</h2>
-            <p class="text-sm text-slate-500 mb-8">Facoltativo. Puoi inserire fino a 2 link a video (YouTube, Vimeo, ecc.).</p>
-
-            <div class="space-y-6">
-              <div>
-                <label for="video-1" class="block text-sm font-medium text-slate-700 mb-1">
-                  Link video 1
-                </label>
-                <input
-                  type="url"
-                  id="video-1"
-                  name="video_1"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="https://www.youtube.com/watch?v=..."
-                />
-              </div>
-
-              <div>
-                <label for="video-2" class="block text-sm font-medium text-slate-700 mb-1">
-                  Link video 2
-                </label>
-                <input
-                  type="url"
-                  id="video-2"
-                  name="video_2"
-                  class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                  placeholder="https://vimeo.com/..."
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Sezione 4: Allegati -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <h2 class="text-xl md:text-2xl font-semibold text-amber-800 mb-2">4. Allegati</h2>
-            <p class="text-sm text-slate-500 mb-8">Carica i documenti richiesti nei formati indicati.</p>
-
-            <div class="space-y-8">
-              <!-- Foto 1 -->
-              <div>
-                <label for="foto-1" class="block text-sm font-medium text-slate-700 mb-1">
-                  Foto 1 (JPG) <span class="text-red-600">*</span>
-                </label>
-                <p class="text-xs text-slate-500 mb-2">Solo formato .jpg/.jpeg — max 10 MB</p>
-                <input
-                  type="file"
-                  id="foto-1"
-                  name="foto_1"
-                  required
-                  accept=".jpg,.jpeg"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
-                />
-              </div>
-
-              <!-- Foto 2 -->
-              <div>
-                <label for="foto-2" class="block text-sm font-medium text-slate-700 mb-1">
-                  Foto 2 (JPG) <span class="text-red-600">*</span>
-                </label>
-                <p class="text-xs text-slate-500 mb-2">Solo formato .jpg/.jpeg — max 10 MB</p>
-                <input
-                  type="file"
-                  id="foto-2"
-                  name="foto_2"
-                  required
-                  accept=".jpg,.jpeg"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
-                />
-              </div>
-
-              <!-- CV -->
-              <div>
-                <label for="cv" class="block text-sm font-medium text-slate-700 mb-1">
-                  Curriculum Vitae (PDF) <span class="text-red-600">*</span>
-                </label>
-                <p class="text-xs text-slate-500 mb-2">Solo formato .pdf — max 15 MB</p>
-                <input
-                  type="file"
-                  id="cv"
-                  name="cv"
-                  required
-                  accept=".pdf"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
-                />
-              </div>
-
-              <!-- Lettera motivazionale -->
-              <div>
-                <label for="lettera" class="block text-sm font-medium text-slate-700 mb-1">
-                  Lettera motivazionale (PDF) <span class="text-red-600">*</span>
-                </label>
-                <p class="text-xs text-slate-500 mb-2">Breve e sintetica, segnalando eventuale conoscenza della metodologia e aspettative professionali — solo .pdf, max 15 MB</p>
-                <input
-                  type="file"
-                  id="lettera"
-                  name="lettera_motivazionale"
-                  required
-                  accept=".pdf"
-                  class="w-full text-sm text-slate-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 file:cursor-pointer cursor-pointer"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Sezione 5: Consenso privacy -->
-          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
-            <div class="flex items-start gap-3">
-              <input
-                type="checkbox"
-                id="privacy"
-                name="privacy"
-                required
-                class="mt-1 h-5 w-5 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer shrink-0"
-              />
-              <label for="privacy" class="text-sm text-slate-600 leading-relaxed cursor-pointer">
-                Dichiaro di aver letto il
-                <a href="/assets/bando-io-vivo-la-parola.pdf" target="_blank" class="text-amber-700 hover:text-amber-900 underline">bando completo</a>
-                e acconsento al trattamento dei miei dati personali ai sensi della normativa vigente in materia di protezione dei dati personali, per le finalità connesse alla selezione dei partecipanti al laboratorio.
-                <span class="text-red-600">*</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Errori di validazione -->
-          <div id="form-errors" class="hidden rounded-[28px] border border-red-300 bg-red-50/95 shadow-lg px-6 sm:px-10 py-6 text-red-800 mb-8">
-            <p class="font-semibold mb-2">Attenzione</p>
-            <ul id="error-list" class="list-disc list-inside text-sm space-y-1"></ul>
-          </div>
-
-          <!-- Pulsante INVIA -->
-          <div class="text-center">
-            <button
-              type="submit"
-              id="submit-btn"
-              class="inline-block px-10 py-4 bg-amber-700 hover:bg-amber-800 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-            >
-              Invia domanda
-            </button>
-          </div>
-        </form>
-
-        <!-- Contatti e info -->
-        <div class="mt-12 text-center text-amber-200/70 text-sm space-y-2">
-          <p>Per informazioni: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="underline hover:text-white transition-colors">328 263 4533</a></p>
-          <p>APS AURIGA — <a href="mailto:info.sprachgestaltung@gmail.com" class="underline hover:text-white transition-colors">info.sprachgestaltung@gmail.com</a></p>
-          <p class="mt-4">
-            <a href="/io-vivo-la-parola" class="underline hover:text-white transition-colors">
-              ← Torna alla pagina del progetto
-            </a>
-          </p>
-        </div>
-
-        </div><!-- /form-wrapper -->
-
-        <!-- Messaggio di conferma -->
-        <div id="success-message" class="hidden rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-14 text-center">
-          <div class="text-green-600 mb-6">
-            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 mb-4">Domanda inviata correttamente</h2>
-          <p class="text-slate-600 text-lg">Riceverai una mail di conferma.</p>
-          <a
-            href="/io-vivo-la-parola"
-            class="mt-8 inline-block px-6 py-3 border-2 border-slate-800 text-slate-800 rounded-full hover:bg-slate-800 hover:text-white transition-colors"
-          >
-            Torna alla pagina del progetto
-          </a>
-        </div>
-
-      </div>
-    </div>
   </section>
 
   <script>
@@ -399,134 +190,107 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       if (!form) return;
 
-      const MAX_IMG_SIZE = 10 * 1024 * 1024; // 10 MB
-      const MAX_PDF_SIZE = 15 * 1024 * 1024; // 15 MB
+      const MAX_IMG = 10 * 1024 * 1024;
+      const MAX_PDF = 15 * 1024 * 1024;
 
-      const FILE_ERROR_CLASS = 'ring-2 ring-red-400 rounded-lg';
-
-      function validateFile(input: HTMLInputElement, maxSize: number, allowedTypes: string[], label: string): string | null {
+      function checkFile(input: HTMLInputElement, max: number, exts: string[], label: string): string | null {
         if (!input.files || input.files.length === 0) {
-          input.className = input.className + ' ' + FILE_ERROR_CLASS;
-          return `${label}: nessun file selezionato.`;
+          input.classList.add('form-input-error');
+          return `${label}: file mancante.`;
         }
-        const file = input.files[0];
-        const ext = file.name.split('.').pop()?.toLowerCase() || '';
-        if (!allowedTypes.includes(ext)) {
-          input.className = input.className + ' ' + FILE_ERROR_CLASS;
-          return `${label}: formato non valido. Richiesto: ${allowedTypes.join(', ')}.`;
+        const f = input.files[0];
+        const ext = f.name.split('.').pop()?.toLowerCase() || '';
+        if (!exts.includes(ext)) {
+          input.classList.add('form-input-error');
+          return `${label}: formato non valido (richiesto ${exts.join('/')}).`;
         }
-        if (file.size > maxSize) {
-          input.className = input.className + ' ' + FILE_ERROR_CLASS;
-          return `${label}: il file supera la dimensione massima di ${Math.round(maxSize / (1024 * 1024))} MB.`;
+        if (f.size > max) {
+          input.classList.add('form-input-error');
+          return `${label}: supera ${Math.round(max / (1024 * 1024))} MB.`;
         }
-        input.className = input.className.replace(/ ?ring-2 ring-red-400 rounded-lg/g, '');
+        input.classList.remove('form-input-error');
         return null;
       }
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const errors: string[] = [];
-        let firstErrorEl: HTMLElement | null = null;
+        let firstErr: HTMLElement | null = null;
 
-        // Campi testo obbligatori
-        const requiredFields = [
+        // Campi obbligatori
+        const fields = [
           { id: 'nome', label: 'Nome' },
           { id: 'cognome', label: 'Cognome' },
           { id: 'data-nascita', label: 'Data di nascita' },
-          { id: 'citta', label: 'Città' },
-          { id: 'provincia', label: 'Provincia' },
           { id: 'email', label: 'Email' },
           { id: 'telefono', label: 'Telefono' },
+          { id: 'citta', label: 'Città' },
+          { id: 'provincia', label: 'Provincia' },
           { id: 'codice-imaie', label: 'Codice ID NUOVO IMAIE' },
           { id: 'data-iscrizione', label: 'Data iscrizione NUOVO IMAIE' },
         ];
 
-        requiredFields.forEach(({ id, label }) => {
+        fields.forEach(({ id, label }) => {
           const el = document.getElementById(id) as HTMLInputElement | null;
           if (!el || !el.value.trim()) {
             errors.push(`${label} è obbligatorio.`);
-            el?.classList.add('border-red-400');
-            if (!firstErrorEl && el) firstErrorEl = el;
+            el?.classList.add('form-input-error');
+            if (!firstErr && el) firstErr = el;
           } else {
-            el.classList.remove('border-red-400');
+            el.classList.remove('form-input-error');
           }
         });
 
-        // Validazione email
+        // Email formato
         const emailEl = document.getElementById('email') as HTMLInputElement | null;
         if (emailEl && emailEl.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
           errors.push('Email: formato non valido.');
-          emailEl.classList.add('border-red-400');
-          if (!firstErrorEl) firstErrorEl = emailEl;
+          emailEl.classList.add('form-input-error');
+          if (!firstErr) firstErr = emailEl;
         }
 
-        // Validazione file
-        const fileChecks = [
-          { id: 'foto-1', max: MAX_IMG_SIZE, types: ['jpg', 'jpeg'], label: 'Foto 1' },
-          { id: 'foto-2', max: MAX_IMG_SIZE, types: ['jpg', 'jpeg'], label: 'Foto 2' },
-          { id: 'cv', max: MAX_PDF_SIZE, types: ['pdf'], label: 'Curriculum Vitae' },
-          { id: 'lettera', max: MAX_PDF_SIZE, types: ['pdf'], label: 'Lettera motivazionale' },
-        ];
-
-        fileChecks.forEach(({ id, max, types, label }) => {
+        // File
+        [
+          { id: 'foto-1', max: MAX_IMG, exts: ['jpg', 'jpeg'], label: 'Foto 1' },
+          { id: 'foto-2', max: MAX_IMG, exts: ['jpg', 'jpeg'], label: 'Foto 2' },
+          { id: 'cv', max: MAX_PDF, exts: ['pdf'], label: 'CV' },
+          { id: 'lettera', max: MAX_PDF, exts: ['pdf'], label: 'Lettera motivazionale' },
+        ].forEach(({ id, max, exts, label }) => {
           const input = document.getElementById(id) as HTMLInputElement;
-          const err = validateFile(input, max, types, label);
-          if (err) {
-            errors.push(err);
-            if (!firstErrorEl) firstErrorEl = input;
-          }
+          const err = checkFile(input, max, exts, label);
+          if (err) { errors.push(err); if (!firstErr) firstErr = input; }
         });
 
-        // Validazione privacy
-        const privacyEl = document.getElementById('privacy') as HTMLInputElement | null;
-        if (!privacyEl?.checked) {
-          errors.push('È necessario accettare il consenso al trattamento dei dati personali.');
-          if (!firstErrorEl && privacyEl) firstErrorEl = privacyEl;
+        // Privacy
+        const priv = document.getElementById('privacy') as HTMLInputElement | null;
+        if (!priv?.checked) {
+          errors.push('Accetta il consenso al trattamento dati.');
+          if (!firstErr && priv) firstErr = priv;
         }
 
-        // Validazione URL video (se compilati)
+        // Video URL
         ['video-1', 'video-2'].forEach((id, i) => {
           const el = document.getElementById(id) as HTMLInputElement | null;
           if (el && el.value.trim()) {
-            try {
-              new URL(el.value.trim());
-              el.classList.remove('border-red-400');
-            } catch {
-              errors.push(`Link video ${i + 1}: URL non valido.`);
-              el.classList.add('border-red-400');
-              if (!firstErrorEl) firstErrorEl = el;
-            }
+            try { new URL(el.value.trim()); el.classList.remove('form-input-error'); }
+            catch { errors.push(`Video ${i + 1}: URL non valido.`); el.classList.add('form-input-error'); if (!firstErr) firstErr = el; }
           }
         });
 
-        // Mostra errori o successo
         if (errors.length > 0) {
           errorsBox?.classList.remove('hidden');
-          if (errorList) {
-            errorList.innerHTML = errors.map(e => `<li>${e}</li>`).join('');
-          }
-          // Scroll al primo campo con errore
-          if (firstErrorEl) {
-            firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          } else {
-            errorsBox?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
+          if (errorList) errorList.innerHTML = errors.map(e => `<li>${e}</li>`).join('');
+          (firstErr || errorsBox)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
           return;
         }
 
         errorsBox?.classList.add('hidden');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Invio in corso...'; }
 
-        // Disabilita il pulsante durante "invio"
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Invio in corso...';
-        }
-
-        // Simula invio (qui andrà collegato il backend reale)
         setTimeout(() => {
           formWrapper?.classList.add('hidden');
           successMessage?.classList.remove('hidden');
-          successMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 1200);
       });
     });
