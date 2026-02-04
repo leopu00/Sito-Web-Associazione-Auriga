@@ -17,47 +17,41 @@ const galleryImages = [
   headerClass="bg-white"
   headerStyle="background-color:white"
 >
-  <!-- Hero -->
+  <!-- Hero centrato -->
   <div class="flex items-center justify-center">
     <div class="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
-      <p class="text-sm uppercase tracking-widest text-[#7c2935] font-semibold mb-3">Bando di concorso 2026</p>
-      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#7c2935]">Premio di Poesia<br />"Paolo Giuranna"</h1>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#7c2935]">Premio di Poesia "Paolo Giuranna"</h1>
       <p class="mt-3 text-lg text-gray-600">Terza Edizione &mdash; Marzo 2026, Roma</p>
     </div>
   </div>
 
-  <section class="max-w-4xl mx-auto px-4 pb-16">
+  <section class="max-w-6xl mx-auto px-4 pb-12">
 
     <!-- Galleria -->
     <div class="mb-10">
       <Carousel images={galleryImages} id="carousel-giuranna-2026" />
     </div>
 
-    <!-- Intro -->
-    <div class="prose prose-lg max-w-none text-justify mb-10">
-      <p>
-        La <strong>Fondazione Culturasì</strong> indice la terza edizione del <strong class="text-[#7c2935]">Premio di Poesia "Paolo Giuranna"</strong>, con il patrocinio di:
-      </p>
-      <ul>
-        <li><strong>Accademia Nazionale d'Arte Drammatica "Silvio D'Amico"</strong></li>
-        <li><strong>Dipartimento di Lettere e Culture Moderne</strong> dell'Università Sapienza di Roma</li>
-        <li><strong>Società Dante Alighieri</strong></li>
-      </ul>
-      <p>e il <strong>sostegno della famiglia Giuranna</strong>.</p>
+    <!-- Testo intro -->
+    <p class="text-lg leading-relaxed text-justify mb-6">
+      La <strong class="text-[#7c2935]">Fondazione Culturasì</strong> indice la terza edizione del
+      <strong class="text-[#7c2935]">Premio di Poesia "Paolo Giuranna"</strong>, con il patrocinio
+      dell'Accademia Nazionale d'Arte Drammatica "Silvio D'Amico", del Dipartimento di Lettere e
+      Culture Moderne dell'Università Sapienza di Roma, della Società Dante Alighieri e il sostegno
+      della famiglia Giuranna.
+    </p>
+    <p class="text-lg leading-relaxed text-justify mb-10">
+      Il premio è rivolto a <strong>giovani attori e allievi attori dai 18 ai 32 anni</strong>.
+      Si svolgerà a <strong>Roma</strong> presso la Fondazione Culturasì (Largo Dino Frisullo snc)
+      e il Teatro "Eleonora Duse" (via Vittoria 6). È consentita la candidatura anche a chi ha
+      partecipato alle edizioni precedenti, fatta eccezione per i vincitori.
+    </p>
 
-      <p>
-        Il premio è rivolto a <strong>giovani attori e allievi attori dai 18 ai 32 anni</strong> e si svolgerà nel mese di <strong>marzo 2026</strong> a Roma, presso le sedi della Fondazione Culturasì (<strong>Largo Dino Frisullo snc</strong>) e il <strong>Teatro "Eleonora Duse"</strong> di via Vittoria n.6.
-      </p>
-      <p>
-        È consentito inviare la propria candidatura anche a coloro che hanno preso parte alle precedenti edizioni del premio, <strong>fatta eccezione per i vincitori</strong>.
-      </p>
-    </div>
-
-    <!-- Scadenza CTA -->
-    <div class="bg-[#7c2935] text-white rounded-2xl p-8 text-center mb-10">
+    <!-- Scadenza + CTA bando -->
+    <div class="bg-[#7c2935] text-white rounded-xl p-8 text-center mb-10">
       <p class="text-sm uppercase tracking-widest font-semibold opacity-80">Scadenza iscrizione</p>
       <p class="text-3xl md:text-4xl font-bold mt-2">15 Febbraio 2026</p>
-      <p class="mt-3 opacity-90">Nessuna quota di iscrizione richiesta</p>
+      <p class="mt-3 opacity-90">Iscrizione gratuita</p>
       <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/assets/Bando-Premio-Giuranna-III-edizione-2026.pdf" download class="inline-flex items-center gap-2 bg-white text-[#7c2935] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
@@ -71,180 +65,63 @@ const galleryImages = [
     </div>
 
     <!-- Fasi del concorso -->
-    <h2 class="text-2xl font-bold text-[#7c2935] mb-6">Fasi del concorso</h2>
+    <h2 class="text-2xl font-semibold mb-4">Il concorso in tre fasi</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <!-- Fase 1 -->
-      <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#7c2935] text-white text-sm font-bold">1</span>
-          <h3 class="font-semibold text-lg">Selezione</h3>
-        </div>
-        <p class="text-sm text-gray-500 font-medium mb-2">Febbraio 2026</p>
-        <p class="text-gray-700 text-sm leading-relaxed">
-          Selezione dei candidati a mezzo video. I candidati inviano le proprie poesie declamate a memoria via email.
-        </p>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <p class="text-sm text-gray-500 font-medium">Febbraio 2026</p>
+        <h3 class="font-semibold text-lg mt-1">1. Selezione</h3>
+        <p class="text-gray-700 text-sm mt-2 leading-relaxed">Selezione dei candidati a mezzo video.</p>
       </div>
-      <!-- Fase 2 -->
-      <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#7c2935] text-white text-sm font-bold">2</span>
-          <h3 class="font-semibold text-lg">Seminario</h3>
-        </div>
-        <p class="text-sm text-gray-500 font-medium mb-2">27 &ndash; 28 &ndash; 29 Marzo 2026</p>
-        <p class="text-gray-700 text-sm leading-relaxed">
-          Seminario gratuito di <em>Sprachgestaltung</em> (arte della parola) per i selezionati, con preparazione di un coro per la serata finale.
-        </p>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <p class="text-sm text-gray-500 font-medium">27&ndash;28&ndash;29 Marzo 2026</p>
+        <h3 class="font-semibold text-lg mt-1">2. Seminario</h3>
+        <p class="text-gray-700 text-sm mt-2 leading-relaxed">Seminario gratuito di <em>Sprachgestaltung</em> e preparazione del coro per la serata finale.</p>
       </div>
-      <!-- Fase 3 -->
-      <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#7c2935] text-white text-sm font-bold">3</span>
-          <h3 class="font-semibold text-lg">Finale</h3>
-        </div>
-        <p class="text-sm text-gray-500 font-medium mb-2">29 Marzo 2026</p>
-        <p class="text-gray-700 text-sm leading-relaxed">
-          Serata di declamazione di poesia individuale e corale con pubblico. Proclamazione dei 3 vincitori.
-        </p>
+      <div class="border border-gray-200 rounded-xl p-6">
+        <p class="text-sm text-gray-500 font-medium">29 Marzo 2026</p>
+        <h3 class="font-semibold text-lg mt-1">3. Finale</h3>
+        <p class="text-gray-700 text-sm mt-2 leading-relaxed">Serata di declamazione con pubblico e proclamazione dei vincitori.</p>
       </div>
     </div>
 
     <!-- Premi -->
-    <h2 class="text-2xl font-bold text-[#7c2935] mb-6">Premi</h2>
-    <p class="text-gray-700 mb-4">Il Premio consiste in <strong>tre borse di studio</strong> offerte dalla Fondazione Culturasì:</p>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-      <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-xl p-6 text-center">
-        <p class="text-sm font-semibold text-yellow-700 uppercase tracking-wider">1&deg; Premio</p>
-        <p class="text-3xl font-bold text-yellow-800 mt-2">&euro; 1.000</p>
-        <p class="text-sm text-yellow-700 mt-1">+ attestato di partecipazione</p>
+    <h2 class="text-2xl font-semibold mb-4">Premi</h2>
+    <p class="text-gray-700 mb-4">Tre borse di studio offerte dalla Fondazione Culturasì:</p>
+    <div class="grid grid-cols-3 gap-4 mb-10 text-center">
+      <div class="border border-gray-200 rounded-xl p-5">
+        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">1&deg; Premio</p>
+        <p class="text-2xl font-bold mt-1">&euro; 1.000</p>
       </div>
-      <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6 text-center">
-        <p class="text-sm font-semibold text-gray-600 uppercase tracking-wider">2&deg; Premio</p>
-        <p class="text-3xl font-bold text-gray-800 mt-2">&euro; 750</p>
-        <p class="text-sm text-gray-600 mt-1">+ attestato di partecipazione</p>
+      <div class="border border-gray-200 rounded-xl p-5">
+        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">2&deg; Premio</p>
+        <p class="text-2xl font-bold mt-1">&euro; 750</p>
       </div>
-      <div class="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-6 text-center">
-        <p class="text-sm font-semibold text-orange-700 uppercase tracking-wider">3&deg; Premio</p>
-        <p class="text-3xl font-bold text-orange-800 mt-2">&euro; 450</p>
-        <p class="text-sm text-orange-600 mt-1">+ attestato di partecipazione</p>
+      <div class="border border-gray-200 rounded-xl p-5">
+        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">3&deg; Premio</p>
+        <p class="text-2xl font-bold mt-1">&euro; 450</p>
       </div>
     </div>
 
-    <!-- Giuria -->
-    <h2 class="text-2xl font-bold text-[#7c2935] mb-4">Giuria</h2>
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-10">
-      <p class="text-gray-700 leading-relaxed">
-        La giuria sarà composta da <strong>docenti e attori di chiara fama</strong>, di cui uno sarà individuato dal <strong>Consiglio Accademico dell'Accademia Nazionale "Silvio D'Amico"</strong>. Il giudizio della giuria è insindacabile e inappellabile.
-      </p>
-      <p class="text-gray-600 text-sm mt-3">
-        La lista completa dei giurati sarà pubblicata sul sito della Fondazione Culturasì.
-      </p>
-    </div>
-
-    <!-- Modalita di partecipazione -->
-    <h2 class="text-2xl font-bold text-[#7c2935] mb-6">Come partecipare</h2>
-    <div class="space-y-4 mb-10">
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#7c2935]/10 text-[#7c2935] flex items-center justify-center font-bold text-sm">1</div>
-        <div>
-          <p class="font-semibold">Scarica la scheda di iscrizione</p>
-          <p class="text-gray-600 text-sm">Disponibile sul sito della Fondazione: <a href="https://www.fondazioneculturasi.it/" target="_blank" rel="noopener noreferrer" class="text-[#7c2935] underline hover:no-underline">www.fondazioneculturasi.it</a></p>
-        </div>
-      </div>
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#7c2935]/10 text-[#7c2935] flex items-center justify-center font-bold text-sm">2</div>
-        <div>
-          <p class="font-semibold">Invia il materiale via email</p>
-          <p class="text-gray-600 text-sm">Indirizzo: <a href="mailto:premiopaologiuranna@gmail.com" class="text-[#7c2935] underline hover:no-underline">premiopaologiuranna@gmail.com</a></p>
-          <p class="text-gray-600 text-sm">Oggetto: <em>"Cognome Nome Premio poesia Paolo Giuranna"</em></p>
-        </div>
-      </div>
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#7c2935]/10 text-[#7c2935] flex items-center justify-center font-bold text-sm">3</div>
-        <div>
-          <p class="font-semibold">Allega i documenti richiesti</p>
-          <ul class="text-gray-600 text-sm mt-1 space-y-1 list-disc list-inside">
-            <li><strong>Video</strong> con 2 poesie declamate a memoria (poesie edite, lingua italiana non tradotta, no vernacolo, da Leopardi ai giorni nostri) &mdash; allegati direttamente alla mail (no WeTransfer, Google Drive, Dropbox)</li>
-            <li><strong>Modulo di iscrizione</strong> compilato e firmato</li>
-            <li><strong>Fotocopia</strong> di un documento d'identità</li>
-            <li><strong>Curriculum</strong> breve</li>
-          </ul>
-        </div>
-      </div>
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#7c2935]/10 text-[#7c2935] flex items-center justify-center font-bold text-sm">4</div>
-        <div>
-          <p class="font-semibold">Rispetta la scadenza</p>
-          <p class="text-gray-600 text-sm">Entro e non oltre il <strong>15 febbraio 2026</strong>.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Info utili -->
-    <h2 class="text-2xl font-bold text-[#7c2935] mb-4">Informazioni utili</h2>
-    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 mb-10">
-      <ul class="space-y-2 text-gray-700 text-sm">
-        <li class="flex items-start gap-2">
-          <span class="text-indigo-500 mt-0.5">&#10003;</span>
-          <span>Ai candidati <strong>non è richiesta nessuna quota di iscrizione</strong>.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-indigo-500 mt-0.5">&#10003;</span>
-          <span>I candidati idonei saranno avvisati via email dopo la fase di selezione.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-indigo-500 mt-0.5">&#10003;</span>
-          <span>I candidati non potranno avanzare diritto alcuno nei confronti di eventuali riprese audio/video effettuate durante le fasi del concorso o della serata finale.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-indigo-500 mt-0.5">&#10003;</span>
-          <span>I dati personali saranno trattati ai sensi della normativa vigente ed utilizzati esclusivamente per le comunicazioni relative al Concorso.</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Sedi -->
-    <h2 class="text-2xl font-bold text-[#7c2935] mb-4">Sedi</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-      <div class="border border-gray-200 rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-1">Fondazione Culturasì</h3>
-        <p class="text-gray-600 text-sm">Largo Dino Frisullo snc, Roma</p>
-        <p class="text-gray-500 text-xs mt-1">Seminario di Sprachgestaltung</p>
-      </div>
-      <div class="border border-gray-200 rounded-xl p-6">
-        <h3 class="font-semibold text-lg mb-1">Teatro "Eleonora Duse"</h3>
-        <p class="text-gray-600 text-sm">Via Vittoria 6, Roma</p>
-        <p class="text-gray-500 text-xs mt-1">Serata finale di declamazione</p>
-      </div>
-    </div>
-
-    <!-- Contatti -->
-    <div class="bg-gray-900 text-white rounded-2xl p-8 mb-10">
-      <h2 class="text-xl font-bold mb-4">Contatti</h2>
-      <div class="space-y-2 text-sm">
-        <p><strong>Fondazione Culturasì</strong></p>
-        <p>Largo Dino Frisullo snc &ndash; Roma</p>
-        <p>Email: <a href="mailto:premiopaologiuranna@gmail.com" class="underline hover:no-underline">premiopaologiuranna@gmail.com</a></p>
-        <p>Sito: <a href="https://www.fondazioneculturasi.it/" target="_blank" rel="noopener noreferrer" class="underline hover:no-underline">www.fondazioneculturasi.it</a></p>
-      </div>
-    </div>
-
-    <!-- Scarica bando -->
-    <div class="text-center mb-10">
-      <a href="/assets/Bando-Premio-Giuranna-III-edizione-2026.pdf" download class="inline-flex items-center gap-2 bg-[#7c2935] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#5c1e28] transition-colors text-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
-        Scarica il bando completo (PDF)
-      </a>
-    </div>
+    <!-- Giuria + contatti inline -->
+    <p class="text-lg leading-relaxed text-justify mb-6">
+      La giuria sarà composta da docenti e attori di chiara fama, di cui uno individuato dal
+      Consiglio Accademico dell'Accademia Nazionale "Silvio D'Amico".
+      Per tutti i dettagli su modalità di partecipazione e materiale da inviare, consultare il
+      <a href="/assets/Bando-Premio-Giuranna-III-edizione-2026.pdf" download class="text-[#7c2935] underline hover:no-underline font-semibold">bando completo (PDF)</a>.
+    </p>
+    <p class="text-gray-600 mb-10">
+      <strong>Contatti:</strong> Fondazione Culturasì, Largo Dino Frisullo snc &ndash; Roma
+      &middot; <a href="mailto:premiopaologiuranna@gmail.com" class="text-[#7c2935] underline hover:no-underline">premiopaologiuranna@gmail.com</a>
+      &middot; <a href="https://www.fondazioneculturasi.it/" target="_blank" rel="noopener noreferrer" class="text-[#7c2935] underline hover:no-underline">www.fondazioneculturasi.it</a>
+    </p>
 
     <!-- Locandina -->
     <div class="mb-10 max-w-3xl mx-auto">
-      <img src="/img/premio-paolo-giuranna/premiogiuranna.png" alt="Locandina Premio Paolo Giuranna" class="max-w-full h-auto mx-auto block rounded-xl shadow-lg" loading="lazy" decoding="async" />
+      <img src="/img/premio-paolo-giuranna/premiogiuranna.png" alt="Locandina Premio Paolo Giuranna" class="max-w-full h-auto mx-auto block" loading="lazy" decoding="async" />
     </div>
 
-    <!-- Torna indietro -->
-    <div class="mt-10 flex gap-4 flex-wrap">
+    <div class="mt-10">
       <a href="/poesia" class="inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">&larr; Torna a Poesia</a>
-      <a href="/eventi" class="inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors">&larr; Tutti gli eventi</a>
     </div>
   </section>
 </BaseLayout>
