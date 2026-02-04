@@ -317,6 +317,25 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
           </div>
 
+          <!-- Sezione 5: Consenso privacy -->
+          <div class="rounded-[28px] border border-white/10 bg-white/95 shadow-[0_35px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacy"
+                required
+                class="mt-1 h-5 w-5 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer shrink-0"
+              />
+              <label for="privacy" class="text-sm text-slate-600 leading-relaxed cursor-pointer">
+                Dichiaro di aver letto il
+                <a href="/docs/BANDO_IO_VIVO_LA_PAROLA.pdf" target="_blank" class="text-amber-700 hover:text-amber-900 underline">bando completo</a>
+                e acconsento al trattamento dei miei dati personali ai sensi della normativa vigente in materia di protezione dei dati personali, per le finalita connesse alla selezione dei partecipanti al laboratorio.
+                <span class="text-red-600">*</span>
+              </label>
+            </div>
+          </div>
+
           <!-- Errori di validazione -->
           <div id="form-errors" class="hidden rounded-[28px] border border-red-300 bg-red-50/95 shadow-lg px-6 sm:px-10 py-6 text-red-800 mb-8">
             <p class="font-semibold mb-2">Attenzione</p>
@@ -345,11 +364,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 mb-4">Domanda inviata correttamente</h2>
           <p class="text-slate-600 text-lg">Riceverai una mail di conferma.</p>
           <a
-            href="/nuovo-imaie"
+            href="/formazione/io-vivo-la-parola"
             class="mt-8 inline-block px-6 py-3 border-2 border-slate-800 text-slate-800 rounded-full hover:bg-slate-800 hover:text-white transition-colors"
           >
             Torna alla pagina del progetto
           </a>
+        </div>
+
+        <!-- Contatti e info -->
+        <div class="mt-12 text-center text-amber-200/70 text-sm space-y-2">
+          <p>Per informazioni: <strong>Cristina Pedetta</strong> — <a href="tel:+393282634533" class="underline hover:text-white transition-colors">328 263 4533</a></p>
+          <p>APS AURIGA — <a href="mailto:info.sprachgestaltung@gmail.com" class="underline hover:text-white transition-colors">info.sprachgestaltung@gmail.com</a></p>
+          <p class="mt-4">
+            <a href="/formazione/io-vivo-la-parola" class="underline hover:text-white transition-colors">
+              ← Torna alla pagina del progetto
+            </a>
+          </p>
         </div>
 
       </div>
@@ -442,6 +472,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           MAX_PDF_SIZE, ['pdf'], 'Lettera motivazionale'
         );
         if (letteraError) errors.push(letteraError);
+
+        // Validazione privacy
+        const privacyEl = document.getElementById('privacy') as HTMLInputElement | null;
+        if (!privacyEl?.checked) {
+          errors.push('Devi accettare il consenso al trattamento dei dati personali.');
+        }
 
         // Validazione URL video (se compilati)
         ['video-1', 'video-2'].forEach((id, i) => {
