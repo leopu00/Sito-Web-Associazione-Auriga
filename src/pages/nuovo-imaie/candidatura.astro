@@ -337,7 +337,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </div>
 
           <!-- Errori di validazione -->
-          <div id="form-errors" class="hidden rounded-[28px] border border-red-300 bg-red-50/95 shadow-lg px-6 sm:px-10 py-6 text-red-800 mb-8">
+          <div id="form-errors" class="hidden rounded-[28px] border border-red-300 bg-red-50/95 shadow-lg px-6 sm:px-10 py-6 text-red-800 mb-8" role="alert" aria-live="assertive">
             <p class="font-semibold mb-2">Attenzione</p>
             <ul id="error-list" class="list-disc list-inside text-sm space-y-1"></ul>
           </div>
@@ -406,20 +406,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       function validateFile(input: HTMLInputElement, maxSize: number, allowedTypes: string[], label: string): string | null {
         if (!input.files || input.files.length === 0) {
-          input.className = input.className + ' ' + FILE_ERROR_CLASS;
+          input.classList.add('ring-2', 'ring-red-400', 'rounded-lg');
           return `${label}: nessun file selezionato.`;
         }
         const file = input.files[0];
         const ext = file.name.split('.').pop()?.toLowerCase() || '';
         if (!allowedTypes.includes(ext)) {
-          input.className = input.className + ' ' + FILE_ERROR_CLASS;
+          input.classList.add('ring-2', 'ring-red-400', 'rounded-lg');
           return `${label}: formato non valido. Richiesto: ${allowedTypes.join(', ')}.`;
         }
         if (file.size > maxSize) {
-          input.className = input.className + ' ' + FILE_ERROR_CLASS;
+          input.classList.add('ring-2', 'ring-red-400', 'rounded-lg');
           return `${label}: il file supera la dimensione massima di ${Math.round(maxSize / (1024 * 1024))} MB.`;
         }
-        input.className = input.className.replace(/ ?ring-2 ring-red-400 rounded-lg/g, '');
+        input.classList.remove('ring-2', 'ring-red-400', 'rounded-lg');
         return null;
       }
 
@@ -522,7 +522,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           submitBtn.textContent = 'Invio in corso...';
         }
 
-        // Simula invio (qui andrà collegato il backend reale)
+        // TODO: collegare backend reale (endpoint API o servizio email)
+        // Attualmente simula l'invio lato client — nessun dato viene trasmesso
         setTimeout(() => {
           formWrapper?.classList.add('hidden');
           successMessage?.classList.remove('hidden');
