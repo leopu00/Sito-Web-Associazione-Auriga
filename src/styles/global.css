@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
 :root {
+  /* Card system */
   --auriga-card-spacing: 2.25rem;
   --auriga-card-spacing-lg: 3.5rem;
   --auriga-card-radius: 0.75rem;
   --auriga-card-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  /* Landing page */
+  --landing-primary: #881337;
+  --landing-primary-dark: #6b0f2d;
+  --landing-accent: #c2185b;
+  --landing-cta-primary: #c2185b;
+  --landing-cta-primary-hover: #ad1457;
+  --landing-cta-secondary: #1a1a2e;
+  --landing-cta-secondary-hover: #16213e;
+  --landing-section-gap: 2rem;
+  --landing-card-radius: 1.25rem;
+  /* Form */
+  --form-border: #d1d5db;
+  --form-focus: #881337;
+  --form-error: #dc2626;
+  --form-success: #059669;
 }
 
 .auriga-card-stack {
@@ -58,19 +74,6 @@ header {
 /* =============================================
    LANDING PAGE - NUOVO IMAIE
    ============================================= */
-
-/* Variabili landing page */
-:root {
-  --landing-primary: #881337;
-  --landing-primary-dark: #6b0f2d;
-  --landing-accent: #c2185b;
-  --landing-cta-primary: #c2185b;
-  --landing-cta-primary-hover: #ad1457;
-  --landing-cta-secondary: #1a1a2e;
-  --landing-cta-secondary-hover: #16213e;
-  --landing-section-gap: 2rem;
-  --landing-card-radius: 1.25rem;
-}
 
 /* Hero landing page */
 .landing-hero {
@@ -228,7 +231,7 @@ header {
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
 .faq-content[data-open="true"] {
-  max-height: 500px;
+  max-height: 1000px;
 }
 
 .faq-content-inner {
@@ -241,13 +244,6 @@ header {
 /* =============================================
    FORM CANDIDATURA
    ============================================= */
-:root {
-  --form-border: #d1d5db;
-  --form-focus: #881337;
-  --form-error: #dc2626;
-  --form-success: #059669;
-}
-
 .form-field {
   display: flex;
   flex-direction: column;
