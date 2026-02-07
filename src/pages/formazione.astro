@@ -10,24 +10,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <!-- Mesh gradient background section - tutta la pagina -->
   <section class="relative overflow-hidden min-h-screen text-white">
-    <!-- Background base bordeaux/rosso Sapienza -->
-    <div class="absolute inset-0 bg-[#881337]"></div>
+    <!-- Background base viola scuro -->
+    <div class="absolute inset-0 bg-[#1a0a3e]"></div>
 
-    <!-- Sfumature solo in alcuni punti -->
-    <!-- Angolo sinistro alto - tocco di viola -->
-    <div class="absolute top-[0%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#8b5cf6] opacity-30 blur-[140px]"></div>
+    <!-- BORDO SINISTRO -->
+    <div class="absolute top-[0%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#8b5cf6] opacity-80 blur-[120px]"></div>
+    <div class="absolute top-[20%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#7c3aed] opacity-75 blur-[110px]"></div>
+    <div class="absolute top-[40%] left-[-12%] w-[42%] h-[28%] rounded-full bg-[#6366f1] opacity-70 blur-[115px]"></div>
+    <div class="absolute top-[60%] left-[-8%] w-[38%] h-[25%] rounded-full bg-[#a78bfa] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[80%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#6d28d9] opacity-70 blur-[120px]"></div>
 
-    <!-- Destra verso il centro - rosso più scuro -->
-    <div class="absolute top-[10%] right-[-5%] w-[45%] h-[30%] rounded-full bg-[#be123c] opacity-40 blur-[130px]"></div>
+    <!-- BORDO DESTRO -->
+    <div class="absolute top-[0%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#a855f7] opacity-80 blur-[120px]"></div>
+    <div class="absolute top-[18%] right-[-10%] w-[40%] h-[25%] rounded-full bg-[#c084fc] opacity-75 blur-[110px]"></div>
+    <div class="absolute top-[38%] right-[-12%] w-[42%] h-[28%] rounded-full bg-[#9333ea] opacity-70 blur-[115px]"></div>
+    <div class="absolute top-[58%] right-[-8%] w-[38%] h-[25%] rounded-full bg-[#818cf8] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[78%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#581c87] opacity-70 blur-[120px]"></div>
 
-    <!-- Centro - sfumatura viola molto leggera -->
-    <div class="absolute top-[35%] left-[30%] w-[50%] h-[25%] rounded-full bg-[#7c3aed] opacity-25 blur-[150px]"></div>
+    <!-- CENTRO - HERO -->
+    <div class="absolute top-[-5%] left-[25%] w-[50%] h-[35%] rounded-full bg-[#7c3aed] opacity-70 blur-[120px]"></div>
+    <div class="absolute top-[0%] left-[35%] w-[45%] h-[30%] rounded-full bg-[#c4b5fd] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[5%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#8b5cf6] opacity-70 blur-[100px]"></div>
+    <div class="absolute top-[5%] left-[50%] w-[40%] h-[28%] rounded-full bg-[#a78bfa] opacity-75 blur-[100px]"></div>
+    <div class="absolute top-[10%] left-[30%] w-[45%] h-[30%] rounded-full bg-[#6d28d9] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[8%] left-[30%] w-[40%] h-[30%] rounded-full bg-[#a855f7] opacity-75 blur-[90px]"></div>
+    <div class="absolute top-[3%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#c084fc] opacity-65 blur-[85px]"></div>
+    <div class="absolute top-[15%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#9333ea] opacity-55 blur-[100px]"></div>
+    <div class="absolute top-[18%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#818cf8] opacity-60 blur-[105px]"></div>
 
-    <!-- Basso sinistra - rosso scuro -->
-    <div class="absolute bottom-[5%] left-[-8%] w-[40%] h-[30%] rounded-full bg-[#9f1239] opacity-35 blur-[140px]"></div>
+    <!-- CENTRO - MIDDLE -->
+    <div class="absolute top-[28%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#6d28d9] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[30%] left-[45%] w-[38%] h-[26%] rounded-full bg-[#c4b5fd] opacity-65 blur-[110px]"></div>
+    <div class="absolute top-[35%] left-[30%] w-[40%] h-[28%] rounded-full bg-[#a855f7] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[40%] left-[20%] w-[35%] h-[25%] rounded-full bg-[#6366f1] opacity-60 blur-[100px]"></div>
+    <div class="absolute top-[42%] left-[50%] w-[35%] h-[25%] rounded-full bg-[#c084fc] opacity-55 blur-[100px]"></div>
 
-    <!-- Basso destra - tocco finale viola -->
-    <div class="absolute bottom-[0%] right-[-10%] w-[35%] h-[25%] rounded-full bg-[#a78bfa] opacity-20 blur-[150px]"></div>
+    <!-- CENTRO - BOTTOM -->
+    <div class="absolute top-[50%] left-[25%] w-[40%] h-[28%] rounded-full bg-[#8b5cf6] opacity-60 blur-[110px]"></div>
+    <div class="absolute top-[55%] left-[40%] w-[38%] h-[26%] rounded-full bg-[#7c3aed] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[60%] left-[15%] w-[42%] h-[28%] rounded-full bg-[#581c87] opacity-60 blur-[115px]"></div>
+    <div class="absolute top-[65%] left-[45%] w-[40%] h-[28%] rounded-full bg-[#a78bfa] opacity-55 blur-[110px]"></div>
+    <div class="absolute top-[70%] left-[25%] w-[45%] h-[30%] rounded-full bg-[#818cf8] opacity-55 blur-[115px]"></div>
+    <div class="absolute top-[75%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#3b0764] opacity-50 blur-[110px]"></div>
+    <div class="absolute top-[82%] left-[20%] w-[45%] h-[30%] rounded-full bg-[#a855f7] opacity-50 blur-[115px]"></div>
+    <div class="absolute top-[88%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#6d28d9] opacity-55 blur-[110px]"></div>
 
     <!-- Hero content -->
     <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
