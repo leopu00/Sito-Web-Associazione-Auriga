@@ -288,3 +288,43 @@ Si occupa del design/stile di tutte le pagine create dagli altri. Revisiona il l
 - Il bando PDF "BANDO _ IO VIVO LA PARLA.pdf" va copiato nella cartella public/assets del sito
 - Il bando PDF "Bando-Premio-Giuranna-III-edizione-2026.pdf" va copiato nella cartella public/assets del sito
 - Logo NUOVO IMAIE da trovare online e scaricare
+
+---
+
+## STATO LAVORI (aggiornato 10 Feb 2026 - fine sessione)
+
+### RICHIESTA 1: Landing Page NUOVO IMAIE
+| Elemento | Stato | Note |
+|----------|-------|------|
+| Landing page (io-vivo-la-parola.astro) | IN REVIEW | Contenuti completi, design migliorato (hero mesh gradient, reveal animations, sfumature, sezioni ristrutturate) - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| Form candidatura (candidatura.astro) | IN REVIEW | UI completa con tutti i campi. Banner avviso in cima + pulsante submit disabilitato con messaggio. IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| Backend form (API invio dati) | DA FARE | Rimandato a dopo approvazione grafica. Validazione client-side rimossa (da rimettere quando si apre) |
+| Card in formazione.astro | IN REVIEW | IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| Bando PDF scaricabile | OK | File in /public/assets/ |
+| Logo NUOVO IMAIE | OK | Presente nella pagina (non nell hero, in basso) |
+| Avviso submit disabilitato | FATTO | Banner in cima + pulsante grigio con avviso al click |
+
+### RICHIESTA 2: Premio Giuranna
+| Elemento | Stato | Note |
+|----------|-------|------|
+| News premio-giuranna-2026.astro | IN REVIEW | Contenuti OK + redesign (hero bordeaux, reveal, sezioni distinte) - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| premio-paolo-giuranna.astro | IN REVIEW | Aggiornata a III edizione + redesign - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| Card in poesia.astro | IN REVIEW | Corretta (Fondazione Culturasi) - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| eventi.astro | OK | Coerente |
+
+### INFRASTRUTTURA
+| Elemento | Stato | Note |
+|----------|-------|------|
+| Vercel Production branch | FIXATO | Cambiato da main a production (10 Feb 2026) |
+| Vercel Ignored Build Step | FIXATO | Aggiunto exit 1 alla fine del comando |
+| Deploy production | FATTO | www.apsauriga.it aggiornato (ultimo deploy OK) |
+| Documentazione Vercel | FATTO | In /auriga-sito/docs/VERCEL-DEPLOY.md |
+
+### PROSSIMA SESSIONE
+1. Approvazione grafica Comandante su tutte le pagine
+2. Eventuali correzioni grafiche
+3. Backend form candidatura (API + upload file)
+4. Deploy finale production
+5. Test end-to-end su www.apsauriga.it
+
+### REGOLA: Nulla e "FATTO" finche il Comandante non approva la grafica.
