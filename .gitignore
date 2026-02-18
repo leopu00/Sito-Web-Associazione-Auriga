@@ -27,4 +27,6 @@ settings.json
 types.d.ts
 # Identità agent - MAI committare!
 CLAUDE.md
+AGENTS.md
+GEMINI.md
 .vercel
