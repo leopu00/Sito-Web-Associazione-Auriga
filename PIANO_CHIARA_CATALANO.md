@@ -291,7 +291,7 @@ Si occupa del design/stile di tutte le pagine create dagli altri. Revisiona il l
 
 ---
 
-## STATO LAVORI (aggiornato 10 Feb 2026 - fine sessione)
+## STATO LAVORI (aggiornato 11 Feb 2026 - fine sessione 2)
 
 ### RICHIESTA 1: Landing Page NUOVO IMAIE
 | Elemento | Stato | Note |
@@ -300,31 +300,41 @@ Si occupa del design/stile di tutte le pagine create dagli altri. Revisiona il l
 | Form candidatura (candidatura.astro) | IN REVIEW | UI completa con tutti i campi. Banner avviso in cima + pulsante submit disabilitato con messaggio. IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
 | Backend form (API invio dati) | DA FARE | Rimandato a dopo approvazione grafica. Validazione client-side rimossa (da rimettere quando si apre) |
 | Card in formazione.astro | IN REVIEW | IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
-| Bando PDF scaricabile | OK | File in /public/assets/ |
+| Bando PDF scaricabile | OK | File in /public/assets/bando-io-vivo-la-parola.pdf |
 | Logo NUOVO IMAIE | OK | Presente nella pagina (non nell hero, in basso) |
 | Avviso submit disabilitato | FATTO | Banner in cima + pulsante grigio con avviso al click |
+| Contatto Cristina Pedetta | IN CORSO | Ha visto la pagina ("ottimo!"), mandera ragguagli via WhatsApp |
 
 ### RICHIESTA 2: Premio Giuranna
 | Elemento | Stato | Note |
 |----------|-------|------|
-| News premio-giuranna-2026.astro | IN REVIEW | Contenuti OK + redesign (hero bordeaux, reveal, sezioni distinte) - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
-| premio-paolo-giuranna.astro | IN REVIEW | Aggiornata a III edizione + redesign - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
-| Card in poesia.astro | IN REVIEW | Corretta (Fondazione Culturasi) - IN ATTESA APPROVAZIONE GRAFICA COMANDANTE |
+| News premio-giuranna-2026.astro | DEPLOYATO | Contenuti OK, design bordeaux mesh gradient, LIVE su www.apsauriga.it |
+| premio-paolo-giuranna.astro | DEPLOYATO | Aggiornata a III edizione + redesign, LIVE su www.apsauriga.it |
+| Locandina III edizione 2026 | DEPLOYATO | Estratta da fondazioneculturasi.it, sostituisce la vecchia II edizione |
+| Card in poesia.astro | DEPLOYATO | Corretta (Fondazione Culturasi), LIVE |
+| Bando PDF scaricabile | OK | File in /public/assets/Bando-Premio-Giuranna-III-edizione-2026.pdf |
 | eventi.astro | OK | Coerente |
+| Candidature | CHIARITO | NON passano dal nostro sito. Scheda su fondazioneculturasi.it, invio via email a premiopaologiuranna@gmail.com |
 
 ### INFRASTRUTTURA
 | Elemento | Stato | Note |
 |----------|-------|------|
 | Vercel Production branch | FIXATO | Cambiato da main a production (10 Feb 2026) |
 | Vercel Ignored Build Step | FIXATO | Aggiunto exit 1 alla fine del comando |
-| Deploy production | FATTO | www.apsauriga.it aggiornato (ultimo deploy OK) |
+| Deploy production | FATTO | www.apsauriga.it aggiornato (ultimo deploy 11 Feb 2026 OK - Ready 20s) |
 | Documentazione Vercel | FATTO | In /auriga-sito/docs/VERCEL-DEPLOY.md |
+| Pulizia repo | FATTO | Rimossi PDF duplicati dalla root, PIANO-TRANSIZIONI.md obsoleto |
 
 ### PROSSIMA SESSIONE
-1. Approvazione grafica Comandante su tutte le pagine
-2. Eventuali correzioni grafiche
-3. Backend form candidatura (API + upload file)
-4. Deploy finale production
-5. Test end-to-end su www.apsauriga.it
+1. Approvazione grafica Comandante sulle pagine NUOVO IMAIE (landing + form + card formazione)
+2. Eventuali ragguagli da Cristina Pedetta (correzioni contenuti IMAIE)
+3. Backend form candidatura (API + upload file) quando si apriranno le candidature
+4. Test end-to-end su www.apsauriga.it
+
+### NOTE
+- Premio Giuranna: scadenza candidature 15 Feb 2026 - pagine LIVE
+- NUOVO IMAIE: scadenza candidature 18 Lug 2026 - c'e tempo
+- Candidature Giuranna gestite da Fondazione Culturasi (non dal nostro sito)
+- Risposta a Chiara inviata (11 Feb 2026)
 
 ### REGOLA: Nulla e "FATTO" finche il Comandante non approva la grafica.

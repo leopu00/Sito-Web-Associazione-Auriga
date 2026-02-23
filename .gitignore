@@ -22,9 +22,12 @@ src/types.d.ts
 # Config / dati locali
 data-store.json
 settings.json
+docs/
 
 # Types generati fuori da src/
 types.d.ts
 # Identità agent - MAI committare!
 CLAUDE.md
+AGENTS.md
+GEMINI.md
 .vercel
