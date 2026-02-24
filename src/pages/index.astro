@@ -3,208 +3,162 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Auriga — Benvenuti"
-  headerTheme="light"
-  headerClass="bg-white"
-  headerStyle="background-color:white"
-  pageBgColor="#ffffff"
+  title="Auriga — La Forza della Parola"
+  headerTheme="dark"
+  headerClass="bg-transparent absolute w-full z-50 text-white"
+  headerStyle=""
+  pageBgColor="#0a0a0a"
 >
-  <section class="relative overflow-hidden text-white">
-    <!-- Background base blu scuro -->
-    <div class="absolute inset-0 bg-[#013a7a]"></div>
-
-    <!-- BORDO SINISTRO -->
-    <div class="absolute top-[0%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#4FC3F7] opacity-75 blur-[120px]"></div>
-    <div class="absolute top-[20%] left-[-10%] w-[40%] h-[25%] rounded-full bg-[#0284c7] opacity-70 blur-[110px]"></div>
-    <div class="absolute top-[40%] left-[-12%] w-[42%] h-[28%] rounded-full bg-[#29B6F6] opacity-65 blur-[115px]"></div>
-    <div class="absolute top-[60%] left-[-8%] w-[38%] h-[25%] rounded-full bg-[#0369a1] opacity-65 blur-[110px]"></div>
-    <div class="absolute top-[80%] left-[-15%] w-[45%] h-[30%] rounded-full bg-[#0ea5e9] opacity-70 blur-[120px]"></div>
-
-    <!-- BORDO DESTRO -->
-    <div class="absolute top-[0%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#03A9F4] opacity-75 blur-[120px]"></div>
-    <div class="absolute top-[18%] right-[-10%] w-[40%] h-[25%] rounded-full bg-[#38bdf8] opacity-70 blur-[110px]"></div>
-    <div class="absolute top-[38%] right-[-12%] w-[42%] h-[28%] rounded-full bg-[#0284c7] opacity-65 blur-[115px]"></div>
-    <div class="absolute top-[58%] right-[-8%] w-[38%] h-[25%] rounded-full bg-[#4FC3F7] opacity-60 blur-[110px]"></div>
-    <div class="absolute top-[78%] right-[-15%] w-[45%] h-[30%] rounded-full bg-[#0369a1] opacity-65 blur-[120px]"></div>
-
-    <!-- CENTRO - HERO (luminoso, cielo primaverile dietro "Auriga") -->
-    <div class="absolute top-[-5%] left-[20%] w-[60%] h-[38%] rounded-full bg-[#7EC8E3] opacity-80 blur-[120px]"></div>
-    <div class="absolute top-[0%] left-[30%] w-[50%] h-[32%] rounded-full bg-[#87CEEB] opacity-85 blur-[110px]"></div>
-    <div class="absolute top-[3%] left-[25%] w-[50%] h-[30%] rounded-full bg-[#B0D4F1] opacity-75 blur-[100px]"></div>
-    <div class="absolute top-[5%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#4FC3F7] opacity-80 blur-[95px]"></div>
-    <div class="absolute top-[2%] left-[15%] w-[45%] h-[30%] rounded-full bg-[#29B6F6] opacity-75 blur-[105px]"></div>
-    <div class="absolute top-[8%] left-[35%] w-[40%] h-[28%] rounded-full bg-[#03A9F4] opacity-70 blur-[100px]"></div>
-    <div class="absolute top-[5%] left-[50%] w-[35%] h-[25%] rounded-full bg-[#ADD8E6] opacity-70 blur-[90px]"></div>
-    <div class="absolute top-[12%] left-[20%] w-[40%] h-[26%] rounded-full bg-[#5BB3D0] opacity-65 blur-[100px]"></div>
-    <div class="absolute top-[15%] left-[45%] w-[35%] h-[25%] rounded-full bg-[#38bdf8] opacity-60 blur-[95px]"></div>
-
-    <!-- CENTRO - MIDDLE (mix cielo medio) -->
-    <div class="absolute top-[25%] left-[15%] w-[40%] h-[28%] rounded-full bg-[#0ea5e9] opacity-60 blur-[110px]"></div>
-    <div class="absolute top-[28%] left-[50%] w-[38%] h-[26%] rounded-full bg-[#4FC3F7] opacity-65 blur-[110px]"></div>
-    <div class="absolute top-[32%] left-[30%] w-[40%] h-[28%] rounded-full bg-[#29B6F6] opacity-55 blur-[110px]"></div>
-    <div class="absolute top-[38%] left-[10%] w-[38%] h-[25%] rounded-full bg-[#0284c7] opacity-55 blur-[115px]"></div>
-    <div class="absolute top-[40%] left-[55%] w-[35%] h-[25%] rounded-full bg-[#7EC8E3] opacity-55 blur-[100px]"></div>
-    <div class="absolute top-[35%] left-[40%] w-[35%] h-[24%] rounded-full bg-[#0369a1] opacity-50 blur-[120px]"></div>
-
-    <!-- CENTRO - BOTTOM (leggermente piu profondo) -->
-    <div class="absolute top-[50%] left-[25%] w-[40%] h-[28%] rounded-full bg-[#03A9F4] opacity-60 blur-[110px]"></div>
-    <div class="absolute top-[55%] left-[45%] w-[38%] h-[26%] rounded-full bg-[#0ea5e9] opacity-55 blur-[110px]"></div>
-    <div class="absolute top-[60%] left-[10%] w-[42%] h-[28%] rounded-full bg-[#0284c7] opacity-55 blur-[115px]"></div>
-    <div class="absolute top-[65%] left-[50%] w-[38%] h-[26%] rounded-full bg-[#4FC3F7] opacity-50 blur-[110px]"></div>
-    <div class="absolute top-[70%] left-[20%] w-[45%] h-[30%] rounded-full bg-[#29B6F6] opacity-55 blur-[115px]"></div>
-    <div class="absolute top-[75%] left-[40%] w-[40%] h-[28%] rounded-full bg-[#0369a1] opacity-50 blur-[120px]"></div>
-    <div class="absolute top-[82%] left-[15%] w-[42%] h-[28%] rounded-full bg-[#38bdf8] opacity-50 blur-[115px]"></div>
-    <div class="absolute top-[88%] left-[45%] w-[40%] h-[28%] rounded-full bg-[#0284c7] opacity-50 blur-[110px]"></div>
-    <div class="absolute top-[58%] left-[30%] w-[35%] h-[24%] rounded-full bg-[#5BB3D0] opacity-45 blur-[110px]"></div>
-    <div class="absolute top-[78%] left-[55%] w-[35%] h-[24%] rounded-full bg-[#7EC8E3] opacity-45 blur-[115px]"></div>
-
-    <!-- Hero content -->
-    <div class="relative z-10 min-h-[380px] md:min-h-[440px] flex items-center justify-center">
-      <div class="max-w-3xl mx-auto px-6 pt-6 pb-24 md:pt-10 md:pb-28 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight" style="text-shadow: 0 2px 10px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.15);">Auriga</h1>
-      </div>
-    </div>
-
-    <!-- Sezione card -->
-    <div class="relative z-10 pb-16 md:pb-20">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="auriga-card-stack">
-          <!-- Card Formazione -->
-          <article class="auriga-card-surface">
-            <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-              <img
-                src="/img/corso-sapienza-trim3.jpg"
-                alt="formazione Auriga"
-                class="w-full h-64 md:h-96 object-cover rounded-lg"
-                loading="lazy"
-                decoding="async"
-              />
-              <div>
-                <h2 class="text-3xl md:text-4xl font-bold">Formazione</h2>
-                <p class="mt-3 text-gray-700">
-                 Percorsi di formazione del linguaggio e drammaturgia con docenti competenti. Corso triennale e corsi intensivi per sviluppare competenze artistiche e interpretative.
-                </p>
-                <a
-                  href="/formazione"
-                  class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors"
-                >
-                  Scopri di più
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card Teatro -->
-          <article class="auriga-card-surface">
-            <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-              <div>
-                <h2 class="text-3xl md:text-4xl font-bold">Teatro</h2>
-                <p class="mt-3 text-gray-700">
-                  Spettacoli in repertorio e nuove produzioni, progetti che uniscono ricerca artistica e partecipazione del pubblico.
-                </p>
-                <a
-                  href="/teatro"
-                  class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors"
-                >
-                  Scopri di più
-                </a>
-              </div>
-              <img
-                src="/img/tempesta-quartetto.jpg"
-                alt="Teatro Auriga"
-                class="w-full h-64 md:h-96 object-cover rounded-lg"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </article>
-
-          <!-- Card Poesia -->
-          <article class="auriga-card-surface">
-            <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-              <img
-                src="/img/premio-paolo-giuranna/_02A1876.JPG"
-                alt="Poesia Auriga"
-                class="w-full h-64 md:h-96 object-cover rounded-lg"
-                loading="lazy"
-                decoding="async"
-              />
-              <div>
-                <h2 class="text-3xl md:text-4xl font-bold">Poesia</h2>
-                <p class="mt-3 text-gray-700">
-                  Premio dedicato ai <strong>giovani interpreti</strong> e rassegne di <strong>poesia ad alta voce</strong>, tra letture, musica e incontri con il pubblico.
-                </p>
-                <a
-                  href="/poesia"
-                  class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors"
-                >
-                  Scopri di più
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card Eventi -->
-          <article class="auriga-card-surface">
-            <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-              <div>
-                <h2 class="text-3xl md:text-4xl font-bold">Eventi</h2>
-                <p class="mt-3 text-gray-700">
-                  Scopri i prossimi appuntamenti dell'Associazione Auriga: spettacoli, workshop, letture e incontri culturali aperti al pubblico.
-                </p>
-                <a
-                  href="/eventi"
-                  class="mt-6 inline-block px-5 py-3 border border-black text-black rounded hover:bg-black hover:text-white transition-colors"
-                >
-                  Scopri di più
-                </a>
-              </div>
-              <img
-                src="/img/il-paradiso-locandina.jpg"
-                alt="Eventi Auriga"
-                class="w-full h-64 md:h-96 object-cover rounded-lg"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stili per l'effetto reveal -->
   <style is:global>
-    .reveal {
-      opacity: 0;
-      transform: translateY(48px);
-      transition: opacity .7s ease, transform .7s ease;
-      will-change: opacity, transform;
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+    
+    body {
+      background-color: #0a0a0a;
+      color: #fafafa;
+      font-family: 'Syne', sans-serif;
     }
-    .reveal.in-view {
-      opacity: 1;
-      transform: none;
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Instrument Serif', serif;
+    }
+
+    /* Effetto "Spotlight" Teatrale CSS puro */
+    .spotlight {
+      background: radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.15) 0%, rgba(0,0,0,0) 60%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .spotlight-bottom {
+      background: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0%, rgba(0,0,0,0) 50%);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .text-stroke {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+      color: transparent;
     }
   </style>
 
-  <!-- Script: accende la reveal quando entra in viewport -->
+  <!-- Hero Cinematic -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="spotlight"></div>
+    <div class="spotlight-bottom"></div>
+    
+    <!-- Testo gigante sullo sfondo (Marquee o fisso) -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 opacity-10 pointer-events-none select-none">
+       <h2 class="text-[15rem] md:text-[25rem] font-bold text-stroke leading-none whitespace-nowrap">TEATRO</h2>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center relative z-10 w-full reveal">
+      
+      <div class="md:col-span-8 flex flex-col justify-center">
+        <span class="text-red-500 font-bold uppercase tracking-[0.2em] text-sm mb-6 block border-l-2 border-red-500 pl-4">Auriga</span>
+        
+        <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-extrabold tracking-tight leading-[0.9] text-white uppercase break-words mb-4">
+          La parola<br/>
+          <span class="font-serif italic font-normal text-red-500 lowercase text-7xl md:text-9xl">diventa</span><br/>
+          Corpo.
+        </h1>
+        
+        <p class="text-xl text-gray-400 max-w-lg leading-relaxed mt-6 font-normal">
+          Non intrattenimento, ma ricerca profonda. Il rigore della Sprachgestaltung e la drammaturgia contemporanea.
+        </p>
+        
+        <div class="mt-12 flex flex-wrap gap-6 items-center">
+          <a href="#progetti" class="px-8 py-4 bg-red-600 text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-colors duration-300">
+            Esplora i Progetti
+          </a>
+          <a href="/formazione" class="group flex items-center gap-4 text-white hover:text-red-500 transition-colors">
+            <span class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-red-500 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="uppercase tracking-widest text-sm font-bold">L'Accademia</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 relative group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm filter grayscale hover:grayscale-0 transition-all duration-700">
+             <img src="/img/corso-sapienza-trim3.jpg" alt="Attore" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
+        </div>
+        <div class="absolute -bottom-10 -left-10 bg-black/80 backdrop-blur-md p-6 border border-gray-800 text-right backdrop-blur">
+          <p class="font-bold text-2xl uppercase">Nuovo IMAIE</p>
+          <p class="text-red-500 font-serif italic text-xl">2026</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Attività a Blocchi High Contrast -->
+  <section id="progetti" class="py-32 relative z-20 bg-[#0a0a0a] border-t border-gray-900">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid md:grid-cols-2 gap-0 border border-gray-800">
+        
+        <!-- Corsi -->
+        <a href="/formazione" class="group p-12 md:p-20 border-b md:border-b-0 md:border-r border-gray-800 hover:bg-[#111] transition-colors relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-8 text-gray-800 group-hover:text-red-500 transition-colors font-serif italic text-6xl opacity-50">01</div>
+          <h3 class="text-4xl md:text-5xl font-extrabold uppercase mb-6 mt-12 text-white group-hover:text-red-500 transition-colors">Accademia</h3>
+          <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-sm">
+            Formazione intensiva e permanente. Costruiamo le fondamenta del linguaggio espressivo e dello strumento attoriale.
+          </p>
+          <span class="uppercase tracking-widest text-sm font-bold border-b border-red-500 pb-1">Scopri di più</span>
+        </a>
+
+        <!-- Spettacoli -->
+        <a href="/teatro" class="group p-12 md:p-20 hover:bg-[#111] transition-colors relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-8 text-gray-800 group-hover:text-red-500 transition-colors font-serif italic text-6xl opacity-50">02</div>
+          <h3 class="text-4xl md:text-5xl font-extrabold uppercase mb-6 mt-12 text-white group-hover:text-red-500 transition-colors">La Scena</h3>
+          <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-sm">
+            Drammaturgia dell'azione scenica. Spettacoli teatrali che esplorano lo scontro puro tra emozione e struttura fisica.
+          </p>
+          <span class="uppercase tracking-widest text-sm font-bold border-b border-red-500 pb-1">I Nostri Spettacoli</span>
+        </a>
+
+      </div>
+
+      <!-- Banner Poesia -->
+      <a href="/poesia" class="group mt-12 block p-12 md:p-20 border border-gray-800 bg-[#0f0f0f] hover:bg-red-900/20 transition-colors relative overflow-hidden text-center">
+        <h3 class="text-3xl md:text-5xl font-extrabold uppercase mb-4 text-white group-hover:text-red-500 transition-colors">Poesia come Atto</h3>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8 font-serif italic">"Il suono che spezza il silenzio del palcoscenico". Rassegne e Il Premio per i nuovi interpreti vocali.</p>
+        <span class="uppercase tracking-widest text-sm font-bold text-white border-b border-white hover:border-red-500 pb-1 transition-colors">Esplora la Poesia</span>
+      </a>
+
+    </div>
+  </section>
+
   <script>
     function initReveal() {
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('in-view');
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.reveal').forEach((el) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(50px)';
+        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+        io.observe(el);
+      });
     }
-
-    // Ascolta astro:page-load per reinizializzare dopo navigazione View Transitions
     document.addEventListener('astro:page-load', initReveal);
   </script>
 </BaseLayout>
