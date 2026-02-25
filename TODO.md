@@ -1,6 +1,13 @@
 TODO LIST SITO AURIGA
 ----------------------
 
+🔥 Priorità (prossima sessione)
+[ ] Implementare modulo contatti — Backend form Contatti, collegare invio dati a servizio (email/API)
+[ ] Implementare modulo candidatura NUOVO IMAIE — Abilitare form /nuovo-imaie/candidatura con backend invio dati + upload file (foto, CV, lettera motivazionale)
+[ ] Migliorare grafica pagina Io vivo la parola — Layout, colori, tipografia, coerenza visiva
+[ ] Ripristinare sfondo blu homepage — Riportare lo sfondo home a versione precedente (blu) che era migliore
+[ ] Selezionare 2-3 immagini spazi in Io vivo la parola — Ridurre galleria spazi a sole 2-3 foto selezionate
+
 🎨 Layout & Stile
 [x] Uniformare layout: passare tutte le pagine da sfondo scuro a sfondo chiaro elegante
 [x] Adattare colori di testi, bordi e link al nuovo schema chiaro
