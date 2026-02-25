@@ -3,162 +3,181 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Auriga — La Forza della Parola"
-  headerTheme="dark"
-  headerClass="bg-transparent absolute w-full z-50 text-white"
-  headerStyle=""
-  pageBgColor="#0a0a0a"
+  title="Auriga — Benvenuti"
+  headerTheme="light"
+  headerClass="bg-white"
+  headerStyle="background-color:white"
+  pageBgColor="#ffffff"
 >
-  <style is:global>
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+  <section class="relative overflow-hidden text-white">
+    <!-- Sfondo Animato Elegante -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#013a7a] via-[#0284c7] to-[#013a7a] bg-[length:200%_200%] animate-gradient-slow"></div>
     
-    body {
-      background-color: #0a0a0a;
-      color: #fafafa;
-      font-family: 'Syne', sans-serif;
-    }
+    <!-- Luci di accento morbide (non appesantiscono il DOM) -->
+    <div class="absolute top-[-10%] left-[10%] w-[60%] h-[60%] rounded-full bg-sky-300 opacity-20 blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-400 opacity-20 blur-[100px] pointer-events-none"></div>
 
-    h1, h2, h3, .font-serif {
-      font-family: 'Instrument Serif', serif;
-    }
+    <!-- Hero content -->
+    <div class="relative z-10 min-h-[420px] md:min-h-[500px] flex items-center justify-center">
+      <div class="max-w-4xl mx-auto px-6 pt-10 pb-20 md:pt-16 md:pb-28 text-center reveal stagger-1">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight drop-shadow-xl mb-4">Auriga</h1>
+        <p class="text-lg md:text-2xl font-light text-sky-50 drop-shadow-md tracking-wide">
+          Associazione Culturale &middot; Teatro, Poesia, Formazione
+        </p>
+      </div>
+    </div>
 
-    /* Effetto "Spotlight" Teatrale CSS puro */
-    .spotlight {
-      background: radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.15) 0%, rgba(0,0,0,0) 60%);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
+    <!-- Sezione card -->
+    <div class="relative z-10 pb-16 md:pb-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="auriga-card-stack">
+          <!-- Card Formazione -->
+          <article class="auriga-card-surface group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 reveal stagger-1">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="/img/corso-sapienza-trim3.jpg"
+                  alt="formazione Auriga"
+                  class="w-full h-64 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors duration-300">Formazione</h2>
+                <p class="mt-4 text-gray-600 leading-relaxed text-lg">
+                 Percorsi di formazione del linguaggio e drammaturgia con docenti competenti. Corso triennale e corsi intensivi per sviluppare competenze artistiche e interpretative.
+                </p>
+                <a
+                  href="/formazione"
+                  class="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-medium rounded hover:bg-black hover:text-white transition-all duration-300 group/btn"
+                >
+                  Scopri di più 
+                  <span class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
-    .spotlight-bottom {
-      background: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0%, rgba(0,0,0,0) 50%);
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
+          <!-- Card Teatro -->
+          <article class="auriga-card-surface group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 reveal stagger-2">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+              <div class="order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors duration-300">Teatro</h2>
+                <p class="mt-4 text-gray-600 leading-relaxed text-lg">
+                  Spettacoli in repertorio e nuove produzioni, progetti che uniscono ricerca artistica e partecipazione del pubblico.
+                </p>
+                <a
+                  href="/teatro"
+                  class="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-medium rounded hover:bg-black hover:text-white transition-all duration-300 group/btn"
+                >
+                  Scopri di più 
+                  <span class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-lg order-1 md:order-2">
+                <img
+                  src="/img/tempesta-quartetto.jpg"
+                  alt="Teatro Auriga"
+                  class="w-full h-64 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </article>
 
-    .text-stroke {
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-      color: transparent;
+          <!-- Card Poesia -->
+          <article class="auriga-card-surface group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 reveal stagger-3">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+              <div class="overflow-hidden rounded-lg">
+                <img
+                  src="/img/premio-paolo-giuranna/_02A1876.JPG"
+                  alt="Poesia Auriga"
+                  class="w-full h-64 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors duration-300">Poesia</h2>
+                <p class="mt-4 text-gray-600 leading-relaxed text-lg">
+                  Premio dedicato ai <strong>giovani interpreti</strong> e rassegne di <strong>poesia ad alta voce</strong>, tra letture, musica e incontri con il pubblico.
+                </p>
+                <a
+                  href="/poesia"
+                  class="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-medium rounded hover:bg-black hover:text-white transition-all duration-300 group/btn"
+                >
+                  Scopri di più 
+                  <span class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card Eventi -->
+          <article class="auriga-card-surface group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 reveal stagger-4">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+              <div class="order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 group-hover:text-blue-800 transition-colors duration-300">Eventi</h2>
+                <p class="mt-4 text-gray-600 leading-relaxed text-lg">
+                  Scopri i prossimi appuntamenti dell'Associazione Auriga: spettacoli, workshop, letture e incontri culturali aperti al pubblico.
+                </p>
+                <a
+                  href="/eventi"
+                  class="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-medium rounded hover:bg-black hover:text-white transition-all duration-300 group/btn"
+                >
+                  Scopri di più 
+                  <span class="transition-transform duration-300 group-hover/btn:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-lg order-1 md:order-2">
+                <img
+                  src="/img/il-paradiso-locandina.jpg"
+                  alt="Eventi Auriga"
+                  class="w-full h-64 md:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <!-- Stili per l'effetto reveal -->
+  <style is:global>
+    .reveal {
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity .7s ease, transform .7s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: none;
     }
   </style>
 
-  <!-- Hero Cinematic -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-    <div class="spotlight"></div>
-    <div class="spotlight-bottom"></div>
-    
-    <!-- Testo gigante sullo sfondo (Marquee o fisso) -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 opacity-10 pointer-events-none select-none">
-       <h2 class="text-[15rem] md:text-[25rem] font-bold text-stroke leading-none whitespace-nowrap">TEATRO</h2>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center relative z-10 w-full reveal">
-      
-      <div class="md:col-span-8 flex flex-col justify-center">
-        <span class="text-red-500 font-bold uppercase tracking-[0.2em] text-sm mb-6 block border-l-2 border-red-500 pl-4">Auriga</span>
-        
-        <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-extrabold tracking-tight leading-[0.9] text-white uppercase break-words mb-4">
-          La parola<br/>
-          <span class="font-serif italic font-normal text-red-500 lowercase text-7xl md:text-9xl">diventa</span><br/>
-          Corpo.
-        </h1>
-        
-        <p class="text-xl text-gray-400 max-w-lg leading-relaxed mt-6 font-normal">
-          Non intrattenimento, ma ricerca profonda. Il rigore della Sprachgestaltung e la drammaturgia contemporanea.
-        </p>
-        
-        <div class="mt-12 flex flex-wrap gap-6 items-center">
-          <a href="#progetti" class="px-8 py-4 bg-red-600 text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-colors duration-300">
-            Esplora i Progetti
-          </a>
-          <a href="/formazione" class="group flex items-center gap-4 text-white hover:text-red-500 transition-colors">
-            <span class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center group-hover:border-red-500 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-            <span class="uppercase tracking-widest text-sm font-bold">L'Accademia</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="md:col-span-4 relative group">
-        <div class="aspect-[3/4] overflow-hidden rounded-sm filter grayscale hover:grayscale-0 transition-all duration-700">
-             <img src="/img/corso-sapienza-trim3.jpg" alt="Attore" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" />
-        </div>
-        <div class="absolute -bottom-10 -left-10 bg-black/80 backdrop-blur-md p-6 border border-gray-800 text-right backdrop-blur">
-          <p class="font-bold text-2xl uppercase">Nuovo IMAIE</p>
-          <p class="text-red-500 font-serif italic text-xl">2026</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Attività a Blocchi High Contrast -->
-  <section id="progetti" class="py-32 relative z-20 bg-[#0a0a0a] border-t border-gray-900">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="grid md:grid-cols-2 gap-0 border border-gray-800">
-        
-        <!-- Corsi -->
-        <a href="/formazione" class="group p-12 md:p-20 border-b md:border-b-0 md:border-r border-gray-800 hover:bg-[#111] transition-colors relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-8 text-gray-800 group-hover:text-red-500 transition-colors font-serif italic text-6xl opacity-50">01</div>
-          <h3 class="text-4xl md:text-5xl font-extrabold uppercase mb-6 mt-12 text-white group-hover:text-red-500 transition-colors">Accademia</h3>
-          <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-sm">
-            Formazione intensiva e permanente. Costruiamo le fondamenta del linguaggio espressivo e dello strumento attoriale.
-          </p>
-          <span class="uppercase tracking-widest text-sm font-bold border-b border-red-500 pb-1">Scopri di più</span>
-        </a>
-
-        <!-- Spettacoli -->
-        <a href="/teatro" class="group p-12 md:p-20 hover:bg-[#111] transition-colors relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-8 text-gray-800 group-hover:text-red-500 transition-colors font-serif italic text-6xl opacity-50">02</div>
-          <h3 class="text-4xl md:text-5xl font-extrabold uppercase mb-6 mt-12 text-white group-hover:text-red-500 transition-colors">La Scena</h3>
-          <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-sm">
-            Drammaturgia dell'azione scenica. Spettacoli teatrali che esplorano lo scontro puro tra emozione e struttura fisica.
-          </p>
-          <span class="uppercase tracking-widest text-sm font-bold border-b border-red-500 pb-1">I Nostri Spettacoli</span>
-        </a>
-
-      </div>
-
-      <!-- Banner Poesia -->
-      <a href="/poesia" class="group mt-12 block p-12 md:p-20 border border-gray-800 bg-[#0f0f0f] hover:bg-red-900/20 transition-colors relative overflow-hidden text-center">
-        <h3 class="text-3xl md:text-5xl font-extrabold uppercase mb-4 text-white group-hover:text-red-500 transition-colors">Poesia come Atto</h3>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8 font-serif italic">"Il suono che spezza il silenzio del palcoscenico". Rassegne e Il Premio per i nuovi interpreti vocali.</p>
-        <span class="uppercase tracking-widest text-sm font-bold text-white border-b border-white hover:border-red-500 pb-1 transition-colors">Esplora la Poesia</span>
-      </a>
-
-    </div>
-  </section>
-
+  <!-- Script: accende la reveal quando entra in viewport -->
   <script>
     function initReveal() {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal').forEach((el) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(50px)';
-        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        io.observe(el);
-      });
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in-view');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     }
+
+    // Ascolta astro:page-load per reinizializzare dopo navigazione View Transitions
     document.addEventListener('astro:page-load', initReveal);
   </script>
 </BaseLayout>
