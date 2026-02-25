@@ -17,22 +17,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <!-- ===== HERO: mesh gradient arancione/ambra stile poesia ===== -->
     <div class="relative overflow-visible" style="min-height:clamp(220px,40vh,340px); background-color:#b03000;">
 
-      <!-- Sfere colorate con blur - toni arancio/ambra/rosso - denso come poesia -->
-      <div class="absolute top-[0%] left-[-15%] w-[55%] h-[100%] rounded-full bg-[#FF6600] opacity-90 blur-[100px]"></div>
-      <div class="absolute top-[0%] left-[-5%] w-[45%] h-[80%] rounded-full bg-[#f97316] opacity-85 blur-[90px]"></div>
-      <div class="absolute top-[30%] left-[-10%] w-[40%] h-[70%] rounded-full bg-[#fbbf24] opacity-80 blur-[80px]"></div>
-      <div class="absolute top-[0%] right-[-15%] w-[55%] h-[100%] rounded-full bg-[#dc2626] opacity-85 blur-[100px]"></div>
-      <div class="absolute top-[0%] right-[-5%] w-[45%] h-[80%] rounded-full bg-[#ea580c] opacity-80 blur-[90px]"></div>
-      <div class="absolute top-[30%] right-[-10%] w-[40%] h-[70%] rounded-full bg-[#fb923c] opacity-75 blur-[85px]"></div>
-      <div class="absolute top-[5%] left-[15%] w-[55%] h-[60%] rounded-full bg-[#fbbf24] opacity-70 blur-[110px]"></div>
-      <div class="absolute top-[0%] left-[25%] w-[50%] h-[50%] rounded-full bg-[#FF6600] opacity-75 blur-[90px]"></div>
-      <div class="absolute top-[10%] left-[35%] w-[40%] h-[60%] rounded-full bg-[#f59e0b] opacity-65 blur-[80px]"></div>
-      <div class="absolute top-[20%] left-[20%] w-[45%] h-[50%] rounded-full bg-[#ef4444] opacity-55 blur-[85px]"></div>
-      <div class="absolute top-[15%] left-[45%] w-[35%] h-[45%] rounded-full bg-[#fed7aa] opacity-50 blur-[70px]"></div>
-      <div class="absolute top-[25%] left-[30%] w-[40%] h-[40%] rounded-full bg-[#c2410c] opacity-60 blur-[75px]"></div>
+      <!-- Contenitore sfere: overflow-hidden per non sbavare sul bianco -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-[0%] left-[-15%] w-[55%] h-[100%] rounded-full bg-[#FF6600] opacity-90 blur-[100px] hero-sphere" style="animation-duration:18s;"></div>
+        <div class="absolute top-[0%] left-[-5%] w-[45%] h-[80%] rounded-full bg-[#e8590c] opacity-85 blur-[90px] hero-sphere" style="animation-duration:22s; animation-delay:-4s;"></div>
+        <div class="absolute top-[30%] left-[-10%] w-[40%] h-[70%] rounded-full bg-[#f59e0b] opacity-80 blur-[80px] hero-sphere" style="animation-duration:20s; animation-delay:-8s;"></div>
+        <div class="absolute top-[0%] right-[-15%] w-[55%] h-[100%] rounded-full bg-[#be123c] opacity-85 blur-[100px] hero-sphere" style="animation-duration:24s; animation-delay:-2s;"></div>
+        <div class="absolute top-[0%] right-[-5%] w-[45%] h-[80%] rounded-full bg-[#db2777] opacity-70 blur-[90px] hero-sphere" style="animation-duration:19s; animation-delay:-10s;"></div>
+        <div class="absolute top-[30%] right-[-10%] w-[40%] h-[70%] rounded-full bg-[#fb923c] opacity-75 blur-[85px] hero-sphere" style="animation-duration:21s; animation-delay:-6s;"></div>
+        <div class="absolute top-[5%] left-[15%] w-[55%] h-[60%] rounded-full bg-[#eab308] opacity-65 blur-[110px] hero-sphere" style="animation-duration:25s; animation-delay:-12s;"></div>
+        <div class="absolute top-[0%] left-[25%] w-[50%] h-[50%] rounded-full bg-[#FF6600] opacity-75 blur-[90px] hero-sphere" style="animation-duration:17s; animation-delay:-3s;"></div>
+        <div class="absolute top-[10%] left-[35%] w-[40%] h-[60%] rounded-full bg-[#f43f5e] opacity-60 blur-[80px] hero-sphere" style="animation-duration:23s; animation-delay:-7s;"></div>
+        <div class="absolute top-[20%] left-[20%] w-[45%] h-[50%] rounded-full bg-[#dc2626] opacity-55 blur-[85px] hero-sphere" style="animation-duration:20s; animation-delay:-14s;"></div>
+        <div class="absolute top-[15%] left-[45%] w-[35%] h-[45%] rounded-full bg-[#fbbf24] opacity-50 blur-[70px] hero-sphere" style="animation-duration:26s; animation-delay:-9s;"></div>
+        <div class="absolute top-[25%] left-[30%] w-[40%] h-[40%] rounded-full bg-[#c2410c] opacity-60 blur-[75px] hero-sphere" style="animation-duration:18s; animation-delay:-5s;"></div>
+      </div>
 
       <!-- Testo hero centrato -->
-      <div class="max-w-3xl mx-auto px-6 pt-14 pb-24 md:pt-16 md:pb-28 text-center" style="color:#ffffff;">
+      <div class="relative z-10 max-w-3xl mx-auto px-6 pt-14 pb-24 md:pt-16 md:pb-28 text-center" style="color:#ffffff;">
         <p class="text-sm md:text-base uppercase tracking-widest mb-4" style="color:#ffffff;">NUOVO IMAIE 2026</p>
         <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight" style="color:#ffffff;">
           Scheda di candidatura
@@ -71,26 +73,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <div class="bg-white pb-20 md:pb-28">
       <div class="max-w-3xl mx-auto px-4">
 
-        <!-- Banner avviso candidature non ancora aperte -->
-        <div class="rounded-xl border border-amber-300 bg-amber-50 shadow-md px-6 sm:px-10 py-6 text-slate-800 mb-8">
-          <div class="flex items-start gap-4">
-            <div class="text-amber-500 shrink-0 mt-0.5">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-              </svg>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-800">Le candidature apriranno prossimamente</p>
-              <p class="text-sm text-slate-600 mt-1">È possibile consultare i campi richiesti, ma l'invio non è ancora attivo.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contenuto form -->
+<!-- Contenuto form -->
         <div id="form-wrapper">
 
         <!-- Intro -->
-        <div class="rounded-xl bg-white border-l-4 border-[#FF6600] shadow-md px-6 sm:px-10 py-10 text-slate-800 mb-8">
+        <div class="rounded-xl bg-white border border-slate-200 shadow-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
           <p class="text-slate-600 leading-relaxed">
             Compila tutti i campi obbligatori (<span class="text-red-600">*</span>) e allega i documenti richiesti.
             Prima di compilare, assicurati di aver letto il
@@ -101,11 +88,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
         </div>
 
-        <!-- Form -->
+<!-- Form -->
         <form id="candidatura-form" novalidate>
 
           <!-- Sezione 1: Dati anagrafici -->
-          <div class="rounded-xl bg-white border-l-4 border-[#FF6600] shadow-md px-6 sm:px-10 py-10 text-slate-800 mb-8">
+          <div class="rounded-xl bg-white border border-slate-200 shadow-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
             <div class="flex items-center gap-3 mb-2">
               <span class="w-8 h-8 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-sm font-bold shrink-0" aria-hidden="true">1</span>
               <h2 class="text-lg font-semibold text-slate-800" style="font-family: system-ui, -apple-system, sans-serif;">Dati anagrafici</h2>
@@ -144,8 +131,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
           </div>
 
-          <!-- Sezione 2: Requisiti NUOVO IMAIE -->
-          <div class="rounded-xl bg-white border-l-4 border-[#FF6600] shadow-md px-6 sm:px-10 py-10 text-slate-800 mb-8">
+<!-- Sezione 2: Requisiti NUOVO IMAIE -->
+          <div class="rounded-xl bg-white border border-slate-200 shadow-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
             <div class="flex items-center gap-3 mb-2">
               <span class="w-8 h-8 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-sm font-bold shrink-0" aria-hidden="true">2</span>
               <h2 class="text-lg font-semibold text-slate-800" style="font-family: system-ui, -apple-system, sans-serif;">Requisiti NUOVO IMAIE</h2>
@@ -164,8 +151,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
           </div>
 
-          <!-- Sezione 3: Video (facoltativo) -->
-          <div class="rounded-xl bg-white border-l-4 border-[#FF6600] shadow-md px-6 sm:px-10 py-10 text-slate-800 mb-8">
+<!-- Sezione 3: Video (facoltativo) -->
+          <div class="rounded-xl bg-white border border-slate-200 shadow-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
             <div class="flex items-center gap-3 mb-2">
               <span class="w-8 h-8 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-sm font-bold shrink-0" aria-hidden="true">3</span>
               <h2 class="text-lg font-semibold text-slate-800" style="font-family: system-ui, -apple-system, sans-serif;">Link video</h2>
@@ -184,8 +171,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
           </div>
 
-          <!-- Sezione 4: Allegati -->
-          <div class="rounded-xl bg-white border-l-4 border-[#FF6600] shadow-md px-6 sm:px-10 py-10 text-slate-800 mb-8">
+<!-- Sezione 4: Allegati -->
+          <div class="rounded-xl bg-white border border-slate-200 shadow-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
             <div class="flex items-center gap-3 mb-2">
               <span class="w-8 h-8 rounded-full bg-[#FF6600] text-white flex items-center justify-center text-sm font-bold shrink-0" aria-hidden="true">4</span>
               <h2 class="text-lg font-semibold text-slate-800" style="font-family: system-ui, -apple-system, sans-serif;">Allegati</h2>
@@ -216,8 +203,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
           </div>
 
-          <!-- Sezione 5: Consenso privacy -->
-          <div class="rounded-xl bg-white border-l-4 border-[#FF6600] shadow-md px-6 sm:px-10 py-10 text-slate-800 mb-8">
+<!-- Sezione 5: Consenso privacy -->
+          <div class="rounded-xl bg-white border border-slate-200 shadow-sm px-6 sm:px-10 py-10 text-slate-800 mb-8">
             <div class="flex items-start gap-3">
               <input type="checkbox" id="privacy" name="privacy" required class="mt-1 h-5 w-5 rounded border-slate-300 text-[#FF6600] focus:ring-[#FF6600] cursor-pointer shrink-0" />
               <label for="privacy" class="text-sm text-slate-600 leading-relaxed cursor-pointer">
@@ -237,7 +224,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
           <!-- Pulsante INVIA -->
           <div class="text-center">
-            <button type="submit" id="submit-btn" class="inline-block px-10 py-4 bg-slate-400 text-white text-lg font-semibold rounded-lg shadow-lg cursor-not-allowed">
+            <button type="submit" id="submit-btn" class="inline-block px-10 py-4 bg-[#FF6600] hover:bg-[#e55b00] text-white text-lg font-semibold rounded-lg shadow-lg cursor-pointer transition-colors">
               Invia domanda
             </button>
             <!-- Avviso post-click -->
@@ -249,10 +236,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
         <!-- Contatti e info -->
         <div class="mt-12 text-center text-slate-500 text-sm space-y-2">
-          <p>Per informazioni: <strong class="text-[#003366]">Cristina Pedetta</strong> — <a href="tel:+393282634533" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">328 263 4533</a></p>
-          <p>APS AURIGA — <a href="tel:+393498457930" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">349 845 7930</a> — <a href="mailto:info.sprachgestaltung@gmail.com" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">info.sprachgestaltung@gmail.com</a></p>
-          <p class="mt-4">
-            <a href="/io-vivo-la-parola" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">← Torna alla pagina del progetto</a>
+          <p>Per informazioni: <strong class="text-[#003366]">Cristina Pedetta</strong> — <a href="tel:+393282634533" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">+39 328 263 4533</a></p>
+          <p>APS AURIGA — <a href="tel:+393498457930" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">+39 349 845 7930</a> — <a href="mailto:info.sprachgestaltung@gmail.com" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">info.sprachgestaltung@gmail.com</a></p>
+          <p class="mt-10">
+            <a href="/io-vivo-la-parola" class="text-[#003366] hover:text-[#FF6600] underline transition-colors">← Torna al bando</a>
           </p>
         </div>
 
@@ -282,4 +269,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       });
     });
   </script>
+<style>
+  @keyframes sphere-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(6%, -8%) scale(1.06); }
+    50% { transform: translate(-5%, 7%) scale(0.94); }
+    75% { transform: translate(8%, 4%) scale(1.04); }
+  }
+  .hero-sphere {
+    animation: sphere-drift infinite ease-in-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-sphere { animation: none; }
+  }
+</style>
 </BaseLayout>
